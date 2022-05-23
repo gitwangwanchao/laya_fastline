@@ -1,0 +1,16 @@
+{
+  "_prjDir":"项目的存放绝对路径，不包含项目名",
+  "prjDir": "../",
+
+  "_prjName":"项目名称",
+  "prjName": "",
+
+  "_buildStartFrom":"从项目下的哪一级开始打包，不包括本级",
+  "buildStartFrom":"release/wechatgame",
+
+  "_configPath":"打包项目的配置地址",
+  "configPath":"./sourManConfig.json",
+
+  "_destDir":"存放项目的地址，即整个压缩包的管理路径",
+  "destDir":"../zip_new"
+}

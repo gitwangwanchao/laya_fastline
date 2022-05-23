@@ -1,0 +1,39 @@
+{
+    "version" : "10050", 
+    "listActiveShare":[],
+    "SafeMode" : false,
+    "isShare": false,
+    "luckCost": 100,
+    "speedCost": 10,
+    "defaultShare" :
+   {
+       "url" : "https://myhw.nalrer.cn/Moyu/quanmzc/share/9.jpg",
+       "title" : "【有人@你】来试试你能打出多少环？",
+       "pointId" : "2620",
+       "schemeId" : "36444022"
+   },
+   "listFakeShareWaitTime" : 3,
+   "revenueSpeed_time_diamond": 60,
+   "revenueSpeed_time_free": 60,
+   "luckTableParam": {
+       "baseCount": 1,
+       "addCount": 5
+   },
+  "integratingMasterSwitch": true, 
+  "videofailtoShare": true,
+  "shieldCityOpen": true,
+  "shieldCityShareTip": ["深圳","广州"],
+  "bannerLimitCity": ["北京","上海","深圳","广州","长沙","天津","杭州","成都"],
+  "banner_id": "adunit-1896b0b11c77e456",
+  "video_id": "adunit-9d8b35e635f641c9",
+  "force_share_failed_prob": 0.3,
+  "BannerRefreshCount": 12,
+  "InterstitialAdCount": 0,
+  "integralAngle": [99,199,300],
+  "integralToType": [
+      [1,1,1],
+      [1,1,1,1,2,1,1,1,1],
+      [1,1,1,1,1,1,2,1,1,1,1,1,1,1,1]
+    ],
+    "AirDropTime":60
+}

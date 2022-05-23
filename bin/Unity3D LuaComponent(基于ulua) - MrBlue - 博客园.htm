@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="LuaComponent可以支持配一个需要执行在这个gameObject上的lua脚本，并且每个gameObject上的lua都是一个实例 lua脚本形如，记得最后一定要return 这个表 而且每个" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>Unity3D LuaComponent(基于ulua) - MrBlue - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=sqi5FxOybx6gjGoG6Zfy1wD-0AwznLNLYOVx7Y9tIN0" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=h-hNL0OecmJJJBSDulvE8iy08VWrYSL9CnbTmAQnC3Q" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/mrblue/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/mrblue/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/mrblue/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=ruOFvx8_pDlyiWjHGHyOXclVmNo396_IKB8YFZjMllo"></script>
+    <script>
+        var currentBlogId = 152828;
+        var currentBlogApp = 'mrblue';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/mrblue/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/mrblue/">MrBlue</a>
+</h1>
+<h2>
+F**k round the world!
+F**k over the world!
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/mrblue/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/MrBlue">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/mrblue/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+222&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+42</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/mrblue/p/5588615.html">Unity3D LuaComponent(基于ulua)</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>LuaComponent可以支持配一个需要执行在这个gameObject上的lua脚本，并且每个gameObject上的lua都是一个实例</p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">using</span><span style="color: #000000;"> UnityEngine;
+</span><span style="color: #0000ff;">using</span><span style="color: #000000;"> LuaInterface;
+</span><span style="color: #0000ff;">using</span><span style="color: #000000;"> System.Collections.Generic;
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;">Lua组件 </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> LuaComponent : MonoBehaviour
+{
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">lua环境，需要在使用前给其赋值</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span><span style="color: #000000;"> LuaState s_luaState; 
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">函数名字定义</span>
+    <span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">class</span><span style="color: #000000;">  FuncName
+    {
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">readonly</span> <span style="color: #0000ff;">string</span> Awake = <span style="color: #800000;">"</span><span style="color: #800000;">Awake</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">readonly</span> <span style="color: #0000ff;">string</span> OnEnable = <span style="color: #800000;">"</span><span style="color: #800000;">OnEnable</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">readonly</span> <span style="color: #0000ff;">string</span> Start = <span style="color: #800000;">"</span><span style="color: #800000;">Start</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">readonly</span> <span style="color: #0000ff;">string</span> Update = <span style="color: #800000;">"</span><span style="color: #800000;">Update</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">readonly</span> <span style="color: #0000ff;">string</span> OnDisable = <span style="color: #800000;">"</span><span style="color: #800000;">OnDisable</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">readonly</span> <span style="color: #0000ff;">string</span> OnDestroy = <span style="color: #800000;">"</span><span style="color: #800000;">OnDestroy</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+    };
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">lua路径，不用填缀名，可以是bundle</span>
+    [Tooltip(<span style="color: #800000;">"</span><span style="color: #800000;">script path</span><span style="color: #800000;">"</span><span style="color: #000000;">)]
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">string</span><span style="color: #000000;"> LuaPath;
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">预存函数提高效率</span>
+    <span style="color: #0000ff;">protected</span> Dictionary&lt;<span style="color: #0000ff;">string</span>, LuaFunction&gt; mDictFunc = <span style="color: #0000ff;">new</span> Dictionary&lt;<span style="color: #0000ff;">string</span>, LuaFunction&gt;<span style="color: #000000;">();
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">lua表，当gameObject销毁时要释放</span>
+    <span style="color: #0000ff;">private</span> LuaTable mSelfTable = <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">初始化函数，可以被重写，已添加其他</span>
+    <span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">virtual</span> <span style="color: #0000ff;">bool</span><span style="color: #000000;"> Init()
+    {
+        </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">string</span><span style="color: #000000;">.IsNullOrEmpty(LuaPath))
+        {
+            </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+        }
+
+        </span><span style="color: #0000ff;">object</span>[] luaRet =<span style="color: #000000;"> s_luaState.DoFile(LuaPath);
+        </span><span style="color: #0000ff;">if</span> (luaRet == <span style="color: #0000ff;">null</span> || luaRet.Length &lt; <span style="color: #800080;">1</span><span style="color: #000000;">)
+        {
+            Debug.LogError(</span><span style="color: #800000;">"</span><span style="color: #800000;">Lua must return a table </span><span style="color: #800000;">"</span> +<span style="color: #000000;"> LuaPath);
+            </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+        }
+
+        mSelfTable </span>= luaRet[<span style="color: #800080;">0</span>] <span style="color: #0000ff;">as</span><span style="color: #000000;"> LuaTable;
+        </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">null</span> ==<span style="color: #000000;"> mSelfTable)
+        {
+            Debug.LogError(</span><span style="color: #800000;">"</span><span style="color: #800000;">null == luaTable  </span><span style="color: #800000;">"</span> +<span style="color: #000000;"> LuaPath);
+            </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+        }
+
+        AddFunc(FuncName.Awake);
+        AddFunc(FuncName.OnEnable);
+        AddFunc(FuncName.Start);
+        AddFunc(FuncName.Update);
+        AddFunc(FuncName.OnDisable);
+        AddFunc(FuncName.OnDestroy);
+
+        </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+    }
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">保存函数</span>
+    <span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">bool</span> AddFunc(<span style="color: #0000ff;">string</span><span style="color: #000000;"> name)
+    {
+        </span><span style="color: #0000ff;">var</span> func =<span style="color: #000000;"> mSelfTable.GetLuaFunction(name);
+        </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">null</span> ==<span style="color: #000000;"> func)
+        {
+            </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+        }
+        mDictFunc.Add(name, func);
+        </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+    }
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">调用函数</span>
+    <span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span> CallLuaFunction(<span style="color: #0000ff;">string</span> name, <span style="color: #0000ff;">params</span> <span style="color: #0000ff;">object</span><span style="color: #000000;">[] args)
+    {
+        LuaFunction func </span>= <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">if</span> (mDictFunc.TryGetValue(name, <span style="color: #0000ff;">out</span><span style="color: #000000;"> func))
+        {
+            func.BeginPCall();
+            </span><span style="color: #0000ff;">foreach</span> (<span style="color: #0000ff;">var</span> o <span style="color: #0000ff;">in</span><span style="color: #000000;"> args)
+            {
+                func.Push(o);
+            }
+            func.PCall();
+            func.EndPCall();
+        }
+    }
+
+    </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> Awake()
+    {
+        Init();
+        CallLuaFunction(FuncName.Awake,mSelfTable,gameObject);
+    }
+
+    </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> OnEnable()
+    {
+        CallLuaFunction(FuncName.OnEnable, mSelfTable, gameObject);
+    }
+
+    </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> Start()
+    {
+        CallLuaFunction(FuncName.Start, mSelfTable, gameObject);
+    }
+
+    </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> Update()
+    {
+        CallLuaFunction(FuncName.Update, mSelfTable, gameObject);
+    }
+
+    </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> OnDisable()
+    {
+        CallLuaFunction(FuncName.OnDisable, mSelfTable, gameObject);
+    }
+
+    </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> OnDestroy()
+    {
+        CallLuaFunction(FuncName.OnDestroy, mSelfTable, gameObject);
+
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">记得释放资源</span>
+        <span style="color: #0000ff;">foreach</span> (<span style="color: #0000ff;">var</span> pair <span style="color: #0000ff;">in</span><span style="color: #000000;">  mDictFunc)
+        {
+            pair.Value.Dispose();
+        }
+        mDictFunc.Clear();
+        </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">null</span> !=<span style="color: #000000;"> mSelfTable)
+        {
+            mSelfTable.Dispose();
+            mSelfTable </span>= <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+        }
+    }
+
+}</span></pre>
+</div>
+<p>&nbsp;</p>
+<p>lua脚本形如，记得最后一定要return 这个表 而且每个变量都得是local的</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">local</span> Player =<span style="color: #000000;"> {}
+
+</span><span style="color: #0000ff;">local</span> transform = <span style="color: #0000ff;">nil</span><span style="color: #000000;">;
+
+</span><span style="color: #0000ff;">local</span> characterController = <span style="color: #0000ff;">nil</span><span style="color: #000000;">;
+</span><span style="color: #0000ff;">local</span> moveDirection =<span style="color: #000000;"> Vector3.zero;
+
+</span><span style="color: #0000ff;">function</span><span style="color: #000000;"> Player:Awake(gameObject)
+    </span><span style="color: #ff00ff;">print</span>(<span style="color: #800000;">"</span><span style="color: #800000;">Awake</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+
+    transform </span>=<span style="color: #000000;"> gameObject.transform;
+    characterController </span>= gameObject:GetComponent(<span style="color: #800000;">'</span><span style="color: #800000;">CharacterController</span><span style="color: #800000;">'</span><span style="color: #000000;">);
+</span><span style="color: #0000ff;">end</span>
+
+<span style="color: #0000ff;">function</span><span style="color: #000000;"> Player:Start( gameObject )  
+    </span><span style="color: #ff00ff;">print</span>(<span style="color: #800000;">"</span><span style="color: #800000;">Start</span><span style="color: #800000;">"</span><span style="color: #000000;">)  
+    
+    </span><span style="color: #008000;">--</span><span style="color: #008000;">gameObject.transform.localPosition = Vector3.New(200,100);</span>
+<span style="color: #0000ff;">end</span>
+
+<span style="color: #0000ff;">function</span><span style="color: #000000;"> Player:OnDestroy( gameObject )  
+    </span><span style="color: #ff00ff;">print</span>(<span style="color: #800000;">"</span><span style="color: #800000;">OnDestroy</span><span style="color: #800000;">"</span><span style="color: #000000;">)  
+</span><span style="color: #0000ff;">end</span>
+
+<span style="color: #0000ff;">function</span><span style="color: #000000;"> Player:Update(gameObject)
+    </span><span style="color: #0000ff;">if</span> (characterController.isGrounded) <span style="color: #0000ff;">then</span><span style="color: #000000;">        
+        moveDirection </span>= Vector3.New(Input.GetAxis(<span style="color: #800000;">"</span><span style="color: #800000;">Horizontal</span><span style="color: #800000;">"</span>), <span style="color: #800080;">0</span>, <span style="color: #800080;">0</span><span style="color: #000000;">);
+        moveDirection </span>=<span style="color: #000000;"> transform:TransformDirection(moveDirection);
+        moveDirection </span>= moveDirection * <span style="color: #800080;">6</span><span style="color: #000000;">;
+    </span><span style="color: #0000ff;">end</span>    
+        <span style="color: #008000;">--</span><span style="color: #008000;"> Apply gravity</span>
+        moveDirection.y =moveDirection.y- <span style="color: #800080;">20</span> *<span style="color: #000000;"> Time.deltaTime;
+        characterController:Move(moveDirection </span>*<span style="color: #000000;"> Time.deltaTime);
+        
+</span><span style="color: #0000ff;">end</span>
+
+<span style="color: #0000ff;">return</span> Player;</pre>
+</div>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2016-06-15 19:03</span>&nbsp;<a href="https://www.cnblogs.com/mrblue/">MrBlue</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>) <a href="https://i.cnblogs.com/EditPosts.aspx?postid=5588615" rel="nofollow"> 编辑</a> <a href="javascript:void(0)" onclick="AddToWz(5588615); return false;">收藏</a>
+</div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 152828, cb_blogApp = 'mrblue', cb_blogUserGuid = '0e24c758-71c7-e211-8d02-90b11c0b17d6';
+    var cb_entryId = 5588615, cb_entryCreatedDate = '2016-06-15 19:03', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2019 MrBlue
+<br /><span id="poweredby">Powered by .NET Core 3.0.0 on Linux</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

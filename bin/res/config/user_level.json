@@ -1,0 +1,212 @@
+{"userLvInfo": [
+    {
+        "user_level": 1, 
+        "level_up_exp": 6, 
+        "max_plane": 4, 
+        "level_up_reward": 0, 
+        "reward_diamond": 0
+    }, 
+    {
+        "user_level": 2, 
+        "level_up_exp": 12, 
+        "max_plane": 5, 
+        "level_up_reward": 0, 
+        "reward_diamond": 0
+    }, 
+    {
+        "user_level": 3, 
+        "level_up_exp": 24, 
+        "max_plane": 6, 
+        "level_up_reward": 0, 
+        "reward_diamond": 3
+    }, 
+    {
+        "user_level": 4, 
+        "level_up_exp": 36, 
+        "max_plane": 7, 
+        "level_up_reward": 0, 
+        "reward_diamond": 0
+    }, 
+    {
+        "user_level": 5, 
+        "level_up_exp": 80, 
+        "max_plane": 8, 
+        "level_up_reward": 0, 
+        "reward_diamond": 3
+    }, 
+    {
+        "user_level": 6, 
+        "level_up_exp": 130, 
+        "max_plane": 9, 
+        "level_up_reward": 0, 
+        "reward_diamond": 0
+    }, 
+    {
+        "user_level": 7, 
+        "level_up_exp": 200, 
+        "max_plane": 10, 
+        "level_up_reward": 0, 
+        "reward_diamond": 0
+    }, 
+    {
+        "user_level": 8, 
+        "level_up_exp": 300, 
+        "max_plane": 11, 
+        "level_up_reward": 0, 
+        "reward_diamond": 3
+    }, 
+    {
+        "user_level": 9, 
+        "level_up_exp": 390, 
+        "max_plane": 12, 
+        "level_up_reward": 0, 
+        "reward_diamond": 0
+    }, 
+    {
+        "user_level": 10, 
+        "level_up_exp": 430, 
+        "max_plane": 12, 
+        "level_up_reward": 0, 
+        "reward_diamond": 3
+    }, 
+    {
+        "user_level": 11, 
+        "level_up_exp": 520, 
+        "max_plane": 12, 
+        "level_up_reward": 1310000, 
+        "reward_diamond": 3
+    }, 
+    {
+        "user_level": 12, 
+        "level_up_exp": 680, 
+        "max_plane": 12, 
+        "level_up_reward": 4179999, 
+        "reward_diamond": 3
+    }, 
+    {
+        "user_level": 13, 
+        "level_up_exp": 770, 
+        "max_plane": 12, 
+        "level_up_reward": 13790000, 
+        "reward_diamond": 3
+    }, 
+    {
+        "user_level": 14, 
+        "level_up_exp": 980, 
+        "max_plane": 12, 
+        "level_up_reward": 41940000, 
+        "reward_diamond": 4
+    }, 
+    {
+        "user_level": 15, 
+        "level_up_exp": 1210, 
+        "max_plane": 12, 
+        "level_up_reward": 146790000, 
+        "reward_diamond": 4
+    }, 
+    {
+        "user_level": 16, 
+        "level_up_exp": 1470, 
+        "max_plane": 12, 
+        "level_up_reward": 528440000, 
+        "reward_diamond": 4
+    }, 
+    {
+        "user_level": 17, 
+        "level_up_exp": 1750, 
+        "max_plane": 12, 
+        "level_up_reward": 1902000000, 
+        "reward_diamond": 4
+    }, 
+    {
+        "user_level": 18, 
+        "level_up_exp": 2060, 
+        "max_plane": 12, 
+        "level_up_reward": 5036000000, 
+        "reward_diamond": 4
+    }, 
+    {
+        "user_level": 19, 
+        "level_up_exp": 2390, 
+        "max_plane": 12, 
+        "level_up_reward": 14100000000, 
+        "reward_diamond": 5
+    }, 
+    {
+        "user_level": 20, 
+        "level_up_exp": 2750, 
+        "max_plane": 12, 
+        "level_up_reward": 39480000000, 
+        "reward_diamond": 5
+    }, 
+    {
+        "user_level": 21, 
+        "level_up_exp": 3130, 
+        "max_plane": 12, 
+        "level_up_reward": 118439000000, 
+        "reward_diamond": 5
+    }, 
+    {
+        "user_level": 22, 
+        "level_up_exp": 3540, 
+        "max_plane": 12, 
+        "level_up_reward": 318207000000, 
+        "reward_diamond": 5
+    }, 
+    {
+        "user_level": 23, 
+        "level_up_exp": 3970, 
+        "max_plane": 12, 
+        "level_up_reward": 1018000000000, 
+        "reward_diamond": 5
+    }, 
+    {
+        "user_level": 24, 
+        "level_up_exp": 4430, 
+        "max_plane": 12, 
+        "level_up_reward": 3360000000000, 
+        "reward_diamond": 5
+    }, 
+    {
+        "user_level": 25, 
+        "level_up_exp": 4910, 
+        "max_plane": 12, 
+        "level_up_reward": 11425000000000, 
+        "reward_diamond": 10
+    }, 
+    {
+        "user_level": 26, 
+        "level_up_exp": 5420, 
+        "max_plane": 12, 
+        "level_up_reward": 38845000000000, 
+        "reward_diamond": 10
+    }, 
+    {
+        "user_level": 27, 
+        "level_up_exp": 6370, 
+        "max_plane": 12, 
+        "level_up_reward": 89641000000000, 
+        "reward_diamond": 10
+    }, 
+    {
+        "user_level": 28, 
+        "level_up_exp": 7390, 
+        "max_plane": 12, 
+        "level_up_reward": 286853000000000, 
+        "reward_diamond": 10
+    }, 
+    {
+        "user_level": 29, 
+        "level_up_exp": 8470, 
+        "max_plane": 12, 
+        "level_up_reward": 717132000000000, 
+        "reward_diamond": 10
+    }, 
+    {
+        "user_level": 30, 
+        "level_up_exp": -1, 
+        "max_plane": 12, 
+        "level_up_reward": 1506000000000000, 
+        "reward_diamond": 20
+    }
+]}

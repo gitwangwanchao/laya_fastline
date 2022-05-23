@@ -1,0 +1,650 @@
+{
+    "BossConfig": {
+        "1": {
+        "bossid": 1,
+        "bossCheckPoint": 5,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            6,
+            10
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 105,
+        "bossHp": 0.1,
+        "bossAttack": 30,
+        "bosspic": "ui_boss/p_Boss_1.png",
+        "bossWeaponid": 1,
+        "skills": 1002
+    },
+    "2": {
+        "bossid": 2,
+        "bossCheckPoint": 10,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            11,
+            15
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 110,
+        "bossHp": 0.12,
+        "bossAttack": 35,
+        "bosspic": "ui_boss/p_Boss_2.png",
+        "bossWeaponid": 1,
+        "skills": 1003
+    },
+    "3": {
+        "bossid": 3,
+        "bossCheckPoint": 15,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            16,
+            20
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 115,
+        "bossHp": 0.15,
+        "bossAttack": 40,
+        "bosspic": "ui_boss/p_Boss_3.png",
+        "bossWeaponid": 1,
+        "skills": 1004
+    },
+    "4": {
+        "bossid": 4,
+        "bossCheckPoint": 20,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            21,
+            25
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 120,
+        "bossHp": 0.17,
+        "bossAttack": 45,
+        "bosspic": "ui_boss/p_Boss_4.png",
+        "bossWeaponid": 1,
+        "skills": 1002
+    },
+    "5": {
+        "bossid": 5,
+        "bossCheckPoint": 25,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            26,
+            30
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 125,
+        "bossHp": 0.2,
+        "bossAttack": 50,
+        "bosspic": "ui_boss/p_Boss_5.png",
+        "bossWeaponid": 1,
+        "skills": 1003
+    },
+    "6": {
+        "bossid": 6,
+        "bossCheckPoint": 30,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            31,
+            35
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 130,
+        "bossHp": 0.2,
+        "bossAttack": 60,
+        "bosspic": "ui_boss/p_Boss_6.png",
+        "bossWeaponid": 1,
+        "skills": 1001
+    },
+    "7": {
+        "bossid": 7,
+        "bossCheckPoint": 35,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            36,
+            40
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 135,
+        "bossHp": 0.2,
+        "bossAttack": 70,
+        "bosspic": "ui_boss/p_Boss_7.png",
+        "bossWeaponid": 1,
+        "skills": 1004
+    },
+    "8": {
+        "bossid": 8,
+        "bossCheckPoint": 40,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            41,
+            45
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 140,
+        "bossHp": 0.2,
+        "bossAttack": 80,
+        "bosspic": "ui_boss/p_Boss_8.png",
+        "bossWeaponid": 1,
+        "skills": 1001
+    },
+    "9": {
+        "bossid": 9,
+        "bossCheckPoint": 45,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            46,
+            50
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 145,
+        "bossHp": 0.2,
+        "bossAttack": 90,
+        "bosspic": "ui_boss/p_Boss_9.png",
+        "bossWeaponid": 1,
+        "skills": 1003
+    },
+    "10": {
+        "bossid": 10,
+        "bossCheckPoint": 50,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            51,
+            55
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 150,
+        "bossHp": 0.2,
+        "bossAttack": 100,
+        "bosspic": "ui_boss/p_Boss_10.png",
+        "bossWeaponid": 1,
+        "skills": 1004
+    },
+    "11": {
+        "bossid": 11,
+        "bossCheckPoint": 55,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            56,
+            60
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 155,
+        "bossHp": 0.2,
+        "bossAttack": 110,
+        "bosspic": "ui_boss/p_Boss_11.png",
+        "bossWeaponid": 1,
+        "skills": 1001
+    },
+    "12": {
+        "bossid": 12,
+        "bossCheckPoint": 60,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            61,
+            65
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 160,
+        "bossHp": 0.2,
+        "bossAttack": 120,
+        "bosspic": "ui_boss/p_Boss_12.png",
+        "bossWeaponid": 1,
+        "skills": 1002
+    },
+    "13": {
+        "bossid": 13,
+        "bossCheckPoint": 65,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            66,
+            70
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 165,
+        "bossHp": 0.2,
+        "bossAttack": 130,
+        "bosspic": "ui_boss/p_Boss_13.png",
+        "bossWeaponid": 1,
+        "skills": 1001
+    },
+    "14": {
+        "bossid": 14,
+        "bossCheckPoint": 70,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            71,
+            75
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 170,
+        "bossHp": 0.2,
+        "bossAttack": 140,
+        "bosspic": "ui_boss/p_Boss_14.png",
+        "bossWeaponid": 1,
+        "skills": 1003
+    },
+    "15": {
+        "bossid": 15,
+        "bossCheckPoint": 75,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            76,
+            80
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 175,
+        "bossHp": 0.2,
+        "bossAttack": 150,
+        "bosspic": "ui_boss/p_Boss_15.png",
+        "bossWeaponid": 1,
+        "skills": 1004
+    },
+    "16": {
+        "bossid": 16,
+        "bossCheckPoint": 80,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            81,
+            85
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 180,
+        "bossHp": 0.2,
+        "bossAttack": 160,
+        "bosspic": "ui_boss/p_Boss_16.png",
+        "bossWeaponid": 1,
+        "skills": 1001
+    },
+    "17": {
+        "bossid": 17,
+        "bossCheckPoint": 85,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            86,
+            90
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 185,
+        "bossHp": 0.2,
+        "bossAttack": 170,
+        "bosspic": "ui_boss/p_Boss_17.png",
+        "bossWeaponid": 1,
+        "skills": 1002
+    },
+    "18": {
+        "bossid": 18,
+        "bossCheckPoint": 90,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            91,
+            95
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 190,
+        "bossHp": 0.2,
+        "bossAttack": 180,
+        "bosspic": "ui_boss/p_Boss_18.png",
+        "bossWeaponid": 1,
+        "skills": 1001
+    },
+    "19": {
+        "bossid": 19,
+        "bossCheckPoint": 95,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            96,
+            100
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 195,
+        "bossHp": 0.2,
+        "bossAttack": 190,
+        "bosspic": "ui_boss/p_Boss_19.png",
+        "bossWeaponid": 1,
+        "skills": 1003
+    },
+    "20": {
+        "bossid": 20,
+        "bossCheckPoint": 100,
+        "time": 100,
+        "bossTime": 5,
+        "putLv": [
+            101,
+            105
+        ],
+        "pbb": [
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+        ],
+        "newBossPut": 200,
+        "bossHp": 0.2,
+        "bossAttack": 200,
+        "bosspic": "ui_boss/p_Boss_20.png",
+        "bossWeaponid": 1,
+        "skills": 1004
+    }
+    },
+    "BossSkill":{
+        "1001": {
+            "10011": {
+                "id": 10011,
+                "lv": 1,
+                "name": "加血无人机",
+                "cdTime": 500,
+                "hp": 0.7,
+                "addHp": 0.1
+            },
+            "10012": {
+                "id": 10012,
+                "lv": 2,
+                "name": "加血无人机",
+                "cdTime": 400,
+                "hp": 0.8,
+                "addHp": 0.2
+            },
+            "10013": {
+                "id": 10013,
+                "lv": 3,
+                "name": "加血无人机",
+                "cdTime": 300,
+                "hp": 1,
+                "addHp": 0.2
+            },
+            "10014": {
+                "id": 10014,
+                "lv": 4,
+                "name": "加血无人机",
+                "cdTime": 200,
+                "hp": 1.5,
+                "addHp": 0.2
+            }
+        },
+        "1002": {
+            "10021": {
+                "id": 10021,
+                "lv": 1,
+                "name": "扔油桶",
+                "cdTime": 5000,
+                "dps": 0.1
+            },
+            "10022": {
+                "id": 10022,
+                "lv": 2,
+                "name": "扔油桶",
+                "cdTime": 4500,
+                "dps": 0.3
+            },
+            "10023": {
+                "id": 10023,
+                "lv": 3,
+                "name": "扔油桶",
+                "cdTime": 4000,
+                "dps": 0.4
+            },
+            "10024": {
+                "id": 10024,
+                "lv": 4,
+                "name": "扔油桶",
+                "cdTime": 3000,
+                "dps": 0.5
+            }
+        },
+        "1003": {
+            "10031": {
+                "id": 10031,
+                "lv": 1,
+                "name": "扔轮胎",
+                "cdTime": 5000,
+                "dps": 0.1
+            },
+            "10032": {
+                "id": 10032,
+                "lv": 2,
+                "name": "扔轮胎",
+                "cdTime": 4500,
+                "dps": 0.3
+            },
+            "10033": {
+                "id": 10033,
+                "lv": 3,
+                "name": "扔轮胎",
+                "cdTime": 4000,
+                "dps": 0.4
+            },
+            "10034": {
+                "id": 10034,
+                "lv": 4,
+                "name": "扔轮胎",
+                "cdTime": 3000,
+                "dps": 0.5
+            }
+        },
+        "1004" :{
+            "10041": {
+                "id": 10041,
+                "lv": 1,
+                "name": "导弹",
+                "cdTime": 5000,
+                "dps": 0.1
+            },
+            "10042": {
+                "id": 10042,
+                "lv": 2,
+                "name": "导弹",
+                "cdTime": 4500,
+                "dps": 0.5
+            },
+            "10043": {
+                "id": 10043,
+                "lv": 3,
+                "name": "导弹",
+                "cdTime": 4000,
+                "dps": 0.7
+            },
+            "10044": {
+                "id": 10044,
+                "lv": 4,
+                "name": "导弹",
+                "cdTime": 3000,
+                "dps": 1
+            }
+        }
+    }
+}

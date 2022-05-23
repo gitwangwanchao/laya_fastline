@@ -1,0 +1,82 @@
+{
+    "1": {
+        "turn_table_id": 1,
+        "type": 1,
+        "num": 480,
+        "weight": 25,
+        "icon": "ui_main/new_rotary_gold_xiao.png",
+        "des_english": "hint_x4h",
+        "des": "4小时金币收益",
+        "name": "小堆金币"
+    },
+    "2": {
+        "turn_table_id": 2,
+        "type": 2,
+        "num": 200,
+        "weight": 3,
+        "icon": "ui_main/new_rotary_diamond_da.png",
+        "des_english": "freespin_x150s",
+        "des": "150秒双倍加速收益",
+        "name": "大量钻石"
+    },
+    "3": {
+        "turn_table_id": 3,
+        "type": 3,
+        "num": 950,
+        "weight": 3,
+        "icon": "ui_main/new_rotary_dollar_da.png",
+        "des_english": "thislevel_x1",
+        "des": "玩家通过当前关卡可获得美钞数量的1倍",
+        "name": "大量美钞"
+    },
+    "4": {
+        "turn_table_id": 4,
+        "type": 0,
+        "num": 6,
+        "weight": 5,
+        "icon": "ui_main/new_rotary_times_6.png",
+        "des_english": "freespin_x152s",
+        "des": "152秒双倍加速收益",
+        "name": "下次6倍"
+    },
+    "5": {
+        "turn_table_id": 5,
+        "type": 1,
+        "num": 1480,
+        "weight": 3,
+        "icon": "ui_main/new_rotary_gold_da.png",
+        "des_english": "hint_x20diamonds",
+        "des": "20钻石",
+        "name": "大量金币"
+    },
+    "6": {
+        "turn_table_id": 6,
+        "type": 3,
+        "num": 100,
+        "weight": 25,
+        "icon": "ui_main/new_rotary_dollar_xiao.png",
+        "des_english": "thislevel_x1/3",
+        "des": "玩家当前通过关卡可获得美钞数量的1/3",
+        "name": "小量美钞"
+    },
+    "7": {
+        "turn_table_id": 7,
+        "type": 0,
+        "num": 3,
+        "weight": 11,
+        "icon": "ui_main/new_rotary_times_3.png",
+        "des_english": "freespin_x151s",
+        "des": "151秒双倍加速收益",
+        "name": "下次3倍"
+    },
+    "8": {
+        "turn_table_id": 8,
+        "type": 2,
+        "num": 20,
+        "weight": 25,
+        "icon": "ui_main/new_rotary_diamond_xiao.png",
+        "des_english": "hint_5speed",
+        "des": "5倍收益加速",
+        "name": "小堆钻石"
+    }
+}

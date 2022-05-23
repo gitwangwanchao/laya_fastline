@@ -1,0 +1,22 @@
+{
+  "zip1":
+    [
+      {
+        "dirPath":"res/",
+        "if_move": 1,
+        "files": [
+          "config",
+          "unity",
+          "font"
+        ]
+      },
+      {
+        "dirPath":"res/atlas/",
+        "if_move": 0,
+        "files": [
+          "ui_loading.png",
+          "ui_loading.atlas"
+        ]
+      }
+    ]
+  }

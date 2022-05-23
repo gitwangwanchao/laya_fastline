@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/views/front/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/views/front/css/style.css">
+    <script src="/views/front/js/jquery-3.1.1.min.js"></script>
+    <script src="/views/front/js/bootstrap.min.js"></script>
+    <script src="/views/front/js/common.js"></script>    <link rel="stylesheet" href="/views/front/css/detail.css">
+	<script type="text/javascript" src="/views/front/js/special/special-1.js"></script>
+    <title>[Unity热更新]tolua# & LuaFramework(一)：基础 - it610.com</title>
+    <meta name="description" content="一、tolua#c#调用lua：LuaState[变量名/函数名]1.LuaStatea.执行lua代码段DoString(string)DoFile(.lua文件名)Require(.lua文件名(但没有.lua后缀))b.获取lua函数或者表LuaFunction func=lua.GetFunction(函数名);      或者      LuaFunctionfunc=lua[函数名]a">
+    <meta name="keywords" content="tolua#,LuaFramework">
+</head>
+
+<body>
+<div class="header">
+    <div class="container">
+        <nav class="nav">
+            <div class="logo">
+                <a href="/">
+                    <img class="logo-img" src="/views/front/img/webLogo2.png" alt="">
+                    <h1>it610</h1>
+                </a>
+            </div>
+            <ul class="nav-ul">
+                <li class="nav-li nav-active"><a href="/">首页</a></li>
+                <li class="nav-li">下载APP</li>
+                <li class="nav-li">课程</li>
+            </ul>
+            <div class="search">
+                <form class="search-form" onsubmit="return false;">
+                    <input type="text" name="keyword" class="form-control" id="keyword" placeholder="搜索文章">
+                    <button class="btn btn-link search-btn">
+                        <span class="glyphicon glyphicon-search" id="query"></span>
+                    </button>
+                </form>
+                <script>
+                    $(document).ready(function () {
+                        $("#query").click(function () {
+                            query();
+                        });
+
+                        $(document).keydown(function(event){
+                            if(event.which == 13){
+                                query();
+                            }
+                        });
+                    });
+
+                    function query() {
+                        var keyword = $("#keyword").val();
+                        if(keyword.length > 0){
+                            window.location.href = "/search/" + $("#keyword").val() + "/1.htm";
+                        }
+                    }
+                </script>
+            </div>
+        </nav>
+    </div>
+</div>
+    <div class="container">
+        <div class="advertising row">
+            <!-- 动态广告1 -->
+            <div class="youdao-fixed-ad" id="detail_ad_top"></div>
+        </div>
+    </div>
+
+    <div>
+        <div class="container mt15">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="post-topheader pt0">
+                        <div class="article__author clearfix">
+                            <div class="article__authorleft">
+                                <a href="javascript:void(0);">
+                                    <img class="avatar-40" src="/views/front/img/head.png" alt="lyh916">
+                                </a>
+                            </div>
+                            <div class="article__authorright">
+                                <div class="article__authormeta">
+
+                                    <a href="javascript:void(0);" class=""><strong>lyh916</strong></a>
+                                </div>
+                                <div>
+                                    <span>发布时间：2015-04-13 09:00</span>
+                                    <!-- <span>来源：互联网</span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h1 id="articleTitle">[Unity热更新]tolua# & LuaFramework(一)：基础</h1>
+                    </div>
+                    <ul class="taglist--inline inline-block article__title--tag">
+                                    <li class="tagPopup mb5">
+                                        <a class="tag" href="/search/tolua#/1.htm">
+                                            tolua#
+                                        </a>
+                                    </li>
+                                    <li class="tagPopup mb5">
+                                        <a class="tag" href="/search/LuaFramework/1.htm">
+                                            LuaFramework
+                                        </a>
+                                    </li>
+                    </ul>
+
+                    <div id="article_content" class="article_content tracking-ad">
+                        <div class="markdown_views">
+                            <div id="article_content" class="article_content">
+                                <!--文章正文-->
+                                <div id="article_content" class="article_content"> 
+ <p>一、tolua#</p> 
+ <p><span style="color:#ff0000">c#调用lua</span>：LuaState[变量名/函数名]<br> <br> 1.LuaState<br> a.执行lua代码段<br> DoString(string)<br> DoFile(.lua文件名)<br> Require(.lua文件名(但没有.lua后缀))<br> <br> b.获取lua函数或者表<br> LuaFunction&nbsp;func = lua.GetFunction(函数名); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 或者 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;LuaFunction func = lua[函数名] as LuaFunction;<br> LuaTable table = lua.GetTable(表名);<br> <br> c.Start()：如果需要使用wrap，则需要调用该方法</p> 
+ <p><br> 2.LuaFunction<br> Call()<br> <br> <br> 3.LuaTable</p> 
+ <p>LuaTable[变量名/函数名]</p> 
+ <p>ToArray()</p> 
+ <p><br> </p> 
+ <p><span style="color:#ff0000">lua调用c#</span><br> </p> 
+ <p>在c#中将引用传递到lua中后：</p> 
+ <p>1.通过“.” (点号)来使用非静态的变量以及静态的变量与方法</p> 
+ <p>2.通过'':“ (冒号)来使用非静态的方法</p> 
+ <p>3.通过"{}"来传递数组给c#</p> 
+ <p>4.创建GameObject：newObject(变量)</p> 
+ <p>5.摧毁GameObject：destroy(变量)&nbsp;</p> 
+ <p>6.获取组件：GetComponent('LuaBehaviour')<br> </p> 
+ <p><br> </p> 
+ <p>二、LuaFramework(使用PureMVC)</p> 
+ <p>a.基础模块</p> 
+ <p>1.Util：对Mono的功能进行封装，这样不继承Mono的类就能使用Mono的东西了(如transform.Find、GetComponent)；还有其他的工具方法</p> 
+ <p>2.AppFacade：继承Facade，整套框架的入口</p> 
+ <p>3.Base：继承MonoBehaviour，是一切View和Manager的基类；持有各种Manager的引用；能注册移除(view所感兴趣的)信息</p> 
+ <p>4.View：只有一个方法：public virtual void OnMessage(IMessage message) 这是处理信息的方法</p> 
+ <p>5.Manager：继承Base</p> 
+ <p>6.AppView：继承View，是一个范例：注册View所感兴趣的信息，处理信息</p> 
+ <p><br> </p> 
+ <p>b.lua模块</p> 
+ <p>1.LuaFileUtils：通过.lua文件路径和AssetBundle文件路径这两种方式来找.lua文件，并读取返回byte[]</p> 
+ <p>2.LuaLoader：继承LuaFileUtils，并无重要变化</p> 
+ <p>3.LuaEvent：类似c#中的event，提供Add和Remove方法<br> </p> 
+ <p>4.LuaLooper：继承MonoBehaviour，在Update /&nbsp;LateUpdate /&nbsp;FixedUpdate中执行对应的LuaEvent</p> 
+ <p>5.LuaBinder：如果执行的.lua文件需要用到unity中的类型，则需要用这个类给LuaState进行绑定</p> 
+ <p>6.<span style="color:rgb(255,0,0)">LuaManager</span>：继承Manager，入口类，<span style="color:#ff0000">初始化Lua代码加载路径(调试模式下是在Assets \ LuaFramework目录下，非调试模式是在C:\luaframework\lua(window系统)，默认是非调试模式)，引用一个LuaState并封装其功能(读取lua文件、调用方法等)</span></p> 
+ <p>7.LuaBehaviour：继承View，在Awake /&nbsp;Start中调用lua中对应的方法；并提供点击事件的相关处理</p> 
+ <p><br> </p> 
+ <p>c.Manager模块</p> 
+ <p>1.ResourceManager：加载AssetBundle的相关操作。在pc平台上默认加载的是Assets\StreamingAssets里的东西，移动平台上则是Application.persistentDataPath。那么如果我们想在pc平台上像移动平台一样读取外部路径(使用www)，在pc平台模拟热更新，那么就可以在Initialize这个方法修改：m_BaseDownloadingURL = "file:///" + Util.DataPath;</p> 
+ <p>unity5加载AB包的四个步骤：<br> </p> 
+ <p></p> 
+ <p style="margin-top:0px; margin-bottom:10px; padding-top:0px; padding-bottom:0px"> a.为assetbundle起名字，并打包</p> 
+ <p style="margin-top:0px; margin-bottom:10px; padding-top:0px; padding-bottom:0px"> b.加载总的依赖文件</p> 
+ <p style="margin-top:0px; margin-bottom:10px; padding-top:0px; padding-bottom:0px"> c.加载assetbundle的依赖文件</p> 
+ <p style="margin-top:0px; margin-bottom:10px; padding-top:0px; padding-bottom:0px"> d.加载assetbundle</p> 
+ <br> 
+ <p>2.PanelManager：默认lua创建的panel都要在tag为GuiCamera的物体下，提供创建panel的方法<br> </p> 
+ <p>3.ThreadManager：解包与下载资源</p> 
+ <p><br> </p> 
+ <p>lua代码分析：</p> 
+ <p>PromptPanel.lua</p> 
+ <p>1.函数是可以存储在变量中的。函数与其他所有值都是匿名的，即它们都没有名称。当讨论一个函数名时，实际上是在讨论一个持有某函数的变量。</p> 
+ <p></p> 
+ <pre name="code" class="csharp">a = {p = print}  
+a.p("hello woeld")     --hello woeld  
+print = math.sin  
+a.p(print(3.14159))    --约等于0  
+sin = a.p  
+sin(10,20)             --10 20  </pre>所以对于：function foo(x) return 2*x end &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 其实就是等于：foo = function (x) return 2*x end 
+ <br> 那么对于：function PromptPanel.Awake(obj) &nbsp;xxx end &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;其实就是等于：PromptPanel.Awake =&nbsp;function (obj) &nbsp;xxx end 
+ <p></p> 
+ <p><br> </p> 
+ <p>2.引用table</p> 
+ <p></p> 
+ <pre name="code" class="csharp">a = {}                --创建一个table,并将它的引用存储到a  
+a["x"] = 10  
+b = a                 --b与a引用了同一个table  
+  
+print(b["x"])         --10  
+b["x"] = 20  
+print(a["x"])         --20  
+a = nil               --现在只有b还在引用table  
+b = nil               --再也没有对table的引用了  </pre> 
+ <p><br> </p> 
+ <p><br> </p> 3. 
+ <p></p> 
+ <pre name="code" class="csharp">a = {}  
+x = "y"  
+a[x] = 10  
+print(a[x])    --10  
+print(a.x)     --nil  
+print(a.y)     --10  
+  
+--a.x等同于a["x"] </pre>那么，对于上面的PromptPanel.Awake，就是等于PromptPanel["Awake"] 
+ <br> 
+ <br> 
+ <p><br> </p> 
+ <p>PromptCtrl.lua</p> 
+ <p></p> 
+ <p>1.对于没有local声明的变量均为全局变量，可以在其他.lua文件中调用</p> 
+ <p>2.在Common/define.lua中注册View、Controller，define.lua中持有各种manager的引用</p> 
+ <p><br> </p> 
+ <p>PromptPanel &amp;&nbsp;PromptCtrl：PromptPanel维护了面板的控件变量，提供给PromptCtrl使用，没有model层是因为没有数据</p> 
+ <p>CtrlManager：管理controller层，维护所有的controller</p> 
+ <p>Game：在OnInitOK方法中指定开始的panel，例如例子中的：local ctrl = CtrlManager.GetCtrl(CtrlNames.Prompt);<br> </p> 
+ <p><br> </p> 
+ <p>总结</p> 
+ <p>1.对于一个panel，需要添加或修改的文件：</p> 
+ <p>a.添加xxxPanel &amp; xxxCtrl</p> 
+ <p>b.修改define、Game、CtrlManager</p> 
+ <p>详细的可见：http://blog.csdn.net/adambieber/article/details/47402805</p> 
+ <p><br> </p> 
+ <p>2.在lua中使用AB包内的资源的两种方法：</p> 
+ <p>a.panelMgr:CreatePanel('Prompt', this.OnCreate);<br> </p> 
+ <p>b.resMgr:LoadPrefab('prompt', { 'PromptItem' }, this.InitPanel);</p> 
+ <p>其中a是对b的进一步封装，因此两者都需要提供AB包名、要访问的包内资源名字(如果是panel，则默认资源名为AB包名+"Panel")以及回调方法(参数是AB包中的资源)</p> 
+ <p><br> </p> 
+ <p>3.热更新的四个步骤：打包、解包、更新和加载。而这四个步骤框架已经给我们封装好了，基本上就不需要我们去管了，但还是很有必要理解其中的过程。</p> 
+ <p>a.打包：将资源全部打包到StreamingAssets文件夹</p> 
+ <p></p> 
+ <p>打包类：LuaFramework / Editor / Packager&nbsp;</p> 
+ <p>打包lua文件：HandleLuaBundle，对Assets\LuaFramework\Lua 与&nbsp;Assets\LuaFramework\ToLua\Lua这两个目录下的所有lua文件进行打包</p> 
+ <p>打包图片等资源：HandleExampleBundle</p> 
+ <p><br> </p> 
+ <p>b.解包：在移动端StreamingAssets这个文件夹是只读的，但是要做热跟新的话，就需要写入文件，因此Application.persistentDataPath这个可读可写的路径才是数据在移动端的存放路径，同时也为了比较MD5的值，就需要将StreamingAssets的东西解包(复制)到Application.persistentDataPath</p> 
+ <p><br> </p> 
+ <p>c.更新：files.txt这个文件记录了所有的资源文件及其MD5值，每次进入游戏时都会从服务器下载最新的files.txt，然后对其遍历比较MD5值，如果值不同或者不存在则下载</p> 
+ <p><br> </p> 
+ <p>d.加载：先加载资源的依赖，再加载资源</p> 
+ <p><br> </p> 
+ <p>那么，如果我们对外发布了一个版本1.1，然后更改资源，发布1.2，要做的就是：重新生成apk并上传，然后将StreamingAssets文件夹下的东西上传到服务器，具体位置见AppConst.WebUrl；对于用户来说，如果他安装的是1.1，那么就会下载更新，如果他安装的是1.2，那么解包之后就得到最新的资源了，无需更新了。</p> 
+ <p><br> </p> 
+ <p><br> </p> 
+ <p>4.整套框架的工作流程：</p> 
+ <p>c# &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p> 
+ <p><span style="color:rgb(255,0,0)">打包</span>好后，启动游戏，GameManager会进行一些判断，如果这是游戏安装之后的第一次启动，那么就会进行<span style="color:#ff0000">解包</span>操作。如果AppConst.UpdateMode为false，那么就不会检测更新，否则就会进行<span style="color:#ff0000">更新</span>操作。然后进入初始化操作，调用Game.lua中的OnInitOK方法，进入lua逻辑。</p> 
+ <p>lua<br> </p> 
+ <p>然后调用指定控制器的Awake方法、PanelManager的CreatePanel方法，调用c#代码，创建panel，为其添加LuaBehaviour，调用xxxPanel.lua的方法，获取控件引用，进行逻辑处理。</p> 
+ <p><br> </p> 
+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--PC和WAP自适应版-->
+                    <div id="SOHUCS" sid="123"></div>
+                    <script type="text/javascript" src="/views/front/js/chanyan.js"></script>
+                    <div class="youdao-fixed-ad" id="detail_ad_bottom"></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row" id="ad">
+                        <!-- 动态广告位2 -->
+                        <div id="right-1" class="col-lg-12 col-md-12 col-sm-4 col-xs-4 ad">
+                            <div class="youdao-fixed-ad" id="detail_ad_1"> </div>
+                        </div>
+                        <div id="right-2" class="col-lg-12 col-md-12 col-sm-4 col-xs-4 ad">
+                            <div class="youdao-fixed-ad" id="detail_ad_2"></div>
+                        </div>
+                        <div id="right-3" class="col-lg-12 col-md-12 col-sm-4 col-xs-4 ad">
+                            <div class="youdao-fixed-ad" id="detail_ad_3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h4 class="pt20 mb15 mt0 border-top">你可能感兴趣的</h4>
+        <div id="paradigm-article-related">
+            <div class="recommend-post mb30">
+                <ul class="widget-links">
+                                <li><a href="/article/3.htm"
+                                       title="枚举的构造函数中抛出异常会怎样" target="_blank">枚举的构造函数中抛出异常会怎样</a>
+                                    <span class="text-muted">bylijinnan</span>
+<a class="tag" taget="_blank" href="/search/java/1.htm">java</a><a class="tag" taget="_blank" href="/search/enum/1.htm">enum</a><a class="tag" taget="_blank" href="/search/单例/1.htm">单例</a>
+                                </li>
+                                <li><a href="/article/130.htm"
+                                       title="CMake 教程" target="_blank">CMake 教程</a>
+                                    <span class="text-muted">aigo</span>
+<a class="tag" taget="_blank" href="/search/C++/1.htm">C++</a>
+                                </li>
+                                <li><a href="/article/257.htm"
+                                       title="cvc-complex-type.2.3: Element 'beans' cannot have character" target="_blank">cvc-complex-type.2.3: Element 'beans' cannot have character</a>
+                                    <span class="text-muted">Cb123456</span>
+<a class="tag" taget="_blank" href="/search/spring/1.htm">spring</a><a class="tag" taget="_blank" href="/search/Webgis/1.htm">Webgis</a>
+                                </li>
+                                <li><a href="/article/384.htm"
+                                       title="jquery实例:随页面滚动条滚动而自动加载内容" target="_blank">jquery实例:随页面滚动条滚动而自动加载内容</a>
+                                    <span class="text-muted">120153216</span>
+<a class="tag" taget="_blank" href="/search/jquery/1.htm">jquery</a>
+                                </li>
+                                <li><a href="/article/511.htm"
+                                       title="将数据库中的数据转换成dbs文件" target="_blank">将数据库中的数据转换成dbs文件</a>
+                                    <span class="text-muted">何必如此</span>
+<a class="tag" taget="_blank" href="/search/sql/1.htm">sql</a><a class="tag" taget="_blank" href="/search/dbs/1.htm">dbs</a>
+                                </li>
+                                <li><a href="/article/638.htm"
+                                       title="在IBATIS中配置SQL语句的IN方式" target="_blank">在IBATIS中配置SQL语句的IN方式</a>
+                                    <span class="text-muted">357029540</span>
+<a class="tag" taget="_blank" href="/search/ibatis/1.htm">ibatis</a>
+                                </li>
+                                <li><a href="/article/765.htm"
+                                       title="Spring3 MVC 笔记（一）" target="_blank">Spring3 MVC 笔记（一）</a>
+                                    <span class="text-muted">7454103</span>
+<a class="tag" taget="_blank" href="/search/spring/1.htm">spring</a><a class="tag" taget="_blank" href="/search/mvc/1.htm">mvc</a><a class="tag" taget="_blank" href="/search/bean/1.htm">bean</a><a class="tag" taget="_blank" href="/search/REST/1.htm">REST</a><a class="tag" taget="_blank" href="/search/JSF/1.htm">JSF</a>
+                                </li>
+                                <li><a href="/article/892.htm"
+                                       title="Timer与Spring Quartz 定时执行程序" target="_blank">Timer与Spring Quartz 定时执行程序</a>
+                                    <span class="text-muted">darkranger</span>
+<a class="tag" taget="_blank" href="/search/spring/1.htm">spring</a><a class="tag" taget="_blank" href="/search/bean/1.htm">bean</a><a class="tag" taget="_blank" href="/search/工作/1.htm">工作</a><a class="tag" taget="_blank" href="/search/quartz/1.htm">quartz</a>
+                                </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<div>
+    <div class="container">
+        <div class="indexes">
+            <strong>按字母分类：</strong>
+            <a href="/tags/A/1.htm" target="_blank">A</a><a href="/tags/B/1.htm" target="_blank">B</a><a href="/tags/C/1.htm" target="_blank">C</a><a
+                href="/tags/D/1.htm" target="_blank">D</a><a href="/tags/E/1.htm" target="_blank">E</a><a href="/tags/F/1.htm" target="_blank">F</a><a
+                href="/tags/G/1.htm" target="_blank">G</a><a href="/tags/H/1.htm" target="_blank">H</a><a href="/tags/I/1.htm" target="_blank">I</a><a
+                href="/tags/J/1.htm" target="_blank">J</a><a href="/tags/K/1.htm" target="_blank">K</a><a href="/tags/L/1.htm" target="_blank">L</a><a
+                href="/tags/M/1.htm" target="_blank">M</a><a href="/tags/N/1.htm" target="_blank">N</a><a href="/tags/O/1.htm" target="_blank">O</a><a
+                href="/tags/P/1.htm" target="_blank">P</a><a href="/tags/Q/1.htm" target="_blank">Q</a><a href="/tags/R/1.htm" target="_blank">R</a><a
+                href="/tags/S/1.htm" target="_blank">S</a><a href="/tags/T/1.htm" target="_blank">T</a><a href="/tags/U/1.htm" target="_blank">U</a><a
+                href="/tags/V/1.htm" target="_blank">V</a><a href="/tags/W/1.htm" target="_blank">W</a><a href="/tags/X/1.htm" target="_blank">X</a><a
+                href="/tags/Y/1.htm" target="_blank">Y</a><a href="/tags/Z/1.htm" target="_blank">Z</a><a href="/tags/0/1.htm" target="_blank">其他</a>
+        </div>
+    </div>
+</div>
+<footer id="footer" class="mb30 mt30">
+    <div class="container">
+        <div class="footBglm">
+            <a target="_blank" href="/">首页</a> -
+            <a target="_blank" href="/custom/about.htm">关于我们</a> -
+            <a href="javascript:void(0)">设为首页</a> -
+            <a href="javascript:void(0)">加入收藏</a> -
+            <a target="_blank" href="/search/Java/1.htm">站内搜索</a> -
+            <a target="_blank" href="/sitemap.xml">Sitemap</a> -
+            <a target="_blank" href="/custom/delete.htm">侵权投诉</a>
+        </div>
+        <div class="copyright">版权所有 IT知识库 CopyRight © 2009-2015 IT知识库 IT610.com , All Rights Reserved.
+            <a href="http://www.miibeian.gov.cn" rel="nofollow" target="_blank">京ICP备09083238号</a><br>
+        </div>
+    </div>
+</footer>
+<!-- 代码高亮 -->
+<script type="text/javascript" src="/static/syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="/static/syntaxhighlighter/scripts/shLegacy.js"></script>
+<script type="text/javascript" src="/static/syntaxhighlighter/scripts/shAutoloader.js"></script>
+<link type="text/css" rel="stylesheet" href="/static/syntaxhighlighter/styles/shCoreDefault.css"/>
+<script type="text/javascript" src="/static/syntaxhighlighter/src/my_start_1.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
