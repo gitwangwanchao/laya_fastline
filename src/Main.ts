@@ -1,36 +1,20 @@
 import GameConfig from "./GameConfig";
-import QDebug from "./framework/QDebug";
-import QConst from "./framework/QConst";
-import QEventMgr from "./framework/QEventMgr";
-import QEventType from "./game/data/QEventType";
-import QGameConst from "./game/data/QGameConst";
-import QGameMgr from "./game/core/QGameMgr";
-import QUIMgr from "./game/core/QUIMgr";
-// import QWxSDK from "./game/core/QWxSDK";
-import QGameData from "./game/data/QGameData";
-// import QTcpMgr from "./game/core/QTcpMgr";
-import QUtil from "./framework/QUtil";
+import FZConst from "./framework/FZConst";
+import FZGameManager from "./game/core/FZGameManager";
+import FZUtils from "./framework/FZUtils";
 
-// import QConst from "./framework/QConst";
-// import QTween from "./framework/QTween";
 
 class Main
 {
 	constructor()
 	{
 		//根据IDE设置初始化引擎		
-		if (window["Laya3D"]) Laya3D.init(QConst.DesignWidth, QConst.DesignHeight);
-		else Laya.init(QConst.DesignWidth, QConst.DesignHeight, Laya["WebGL"]);
-
-		// Laya.init(QConst.DesignWidth, QConst.DesignHeight, Laya["WebGL"]);
-		// Laya["Physics"] && Laya["Physics"].enable();
-
-		// 修改初始化内存
-		// window['Config3D'] && (window['Config3D']['_defaultConfig']['_defaultPhysicsMemory']=16);
+		if (window["Laya3D"]) Laya3D.init(FZConst.DesignWidth, FZConst.DesignHeight);
+		else Laya.init(FZConst.DesignWidth, FZConst.DesignHeight, Laya["WebGL"]);
 
 		
 		//适配模式
-		if (QUtil.phoneScreenAdaptive())
+		if (FZUtils.phoneScreenAdaptive())
 		{
 			Laya.stage.scaleMode = Laya.Stage.SCALE_FIXED_WIDTH;
 		}
@@ -71,7 +55,7 @@ class Main
 		if (Laya.Browser.onMiniGame) {
 			Laya.MiniAdpter.autoCacheFile =false;
 		}
-		QGameMgr.instance.init();
+		FZGameManager.instance.init();
 
 		//激活资源版本控制，version.json由IDE发布功能自动生成，如果没有也不影响后续流程
 		//Laya.ResourceVersion.enable("version.json", Laya.Handler.create(this, this.onVersionLoaded), Laya.ResourceVersion.FILENAME_VERSION);

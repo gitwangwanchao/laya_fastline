@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Scene",
-    "selectedBox":330,
-    "selecteID":332,
+    "selectedBox":2,
+    "selecteID":322,
     "searchKey":"Scene",
     "props":{"width":750,"sceneColor":"#000000","height":1334},
     "nodeParent":-1,
@@ -97,12 +97,12 @@
                         {
                             "type":"Script",
                             "switchAble":true,
-                            "source":"src/framework/QUIAnchor.ts",
-                            "searchKey":"Script,QUIAnchor",
+                            "source":"src/framework/FZUIAnchor.ts",
+                            "searchKey":"Script,FZUIAnchor",
                             "removeAble":true,
                             "props":{"y":20,"x":0},
                             "nodeParent":60,
-                            "label":"QUIAnchor",
+                            "label":"FZUIAnchor",
                             "isDirectory":false,
                             "isAniNode":true,
                             "hasChild":false,
@@ -549,19 +549,20 @@
                 {
                     "type":"Script",
                     "switchAble":true,
-                    "source":"src/framework/QUIAnchor.ts",
-                    "searchKey":"Script,QUIAnchor",
+                    "source":"src/framework/FZUIAnchor.ts",
+                    "searchKey":"Script,FZUIAnchor",
                     "removeAble":true,
                     "props":{"y":17,"x":0,"anchroType":"Top"},
                     "nodeParent":53,
-                    "label":"QUIAnchor",
+                    "label":"FZUIAnchor",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
                     "compId":78,
                     "child":[
                         ]
-                }]
+                }],
+            "$HIDDEN":false
         },
         {
             "x":15,
@@ -570,14 +571,13 @@
             "props":{"y":6,"x":0,"width":750,"var":"list_btn","name":"list_btn","height":1334},
             "nodeParent":2,
             "label":"list_btn",
-            "isOpen":true,
+            "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":26,
             "child":[
                 {
-                    "x":30,
                     "type":"Button",
                     "searchKey":"Button,btn_rotaryTable,btn_rotaryTable",
                     "props":{"y":147,"x":642,"width":100,"var":"btn_rotaryTable","stateNum":"1","name":"btn_rotaryTable","height":90},
@@ -590,7 +590,6 @@
                     "compId":127,
                     "child":[
                         {
-                            "x":45,
                             "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":51,"x":50,"skin":"ui_main/main_zhuanpan.png","scaleY":1,"scaleX":1,"rotation":360,"anchorY":1,"anchorX":0.5},
@@ -605,7 +604,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Sprite",
                             "searchKey":"Sprite,imgRedHint,imgRedHint",
                             "props":{"y":-24,"x":71.5,"var":"imgRedHint","texture":"ui_main/main_notice_point.png","name":"imgRedHint"},
@@ -618,7 +616,6 @@
                             "compId":213,
                             "child":[
                                 {
-                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_luck_num,lab_luck_num",
                                     "props":{"y":13,"x":13,"var":"lab_luck_num","text":"6","name":"lab_luck_num","fontSize":20,"color":"#ffffff","bold":false,"anchorY":0.5,"anchorX":0.5},
@@ -633,7 +630,6 @@
                                 }]
                         },
                         {
-                            "x":45,
                             "type":"Label",
                             "searchKey":"Label",
                             "props":{"y":51,"x":22,"text":"转盘","scaleY":0.6,"scaleX":0.6,"font":"font1_2"},
@@ -648,10 +644,9 @@
                         }]
                 },
                 {
-                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,sprte_change_car,sprte_change_car",
-                    "props":{"y":338,"x":375,"width":365,"visible":true,"var":"sprte_change_car","skin":"ui_car_main/car_01.png","runtime":"game/view/QChangeCarNode.ts","name":"sprte_change_car","height":255,"anchorY":0.5,"anchorX":0.5,"alpha":0},
+                    "props":{"y":338,"x":375,"width":365,"visible":true,"var":"sprte_change_car","skin":"ui_car_main/car_01.png","runtime":"game/view/FZGaiBianCarNode.ts","name":"sprte_change_car","height":255,"anchorY":0.5,"anchorX":0.5,"alpha":0},
                     "nodeParent":26,
                     "label":"sprte_change_car",
                     "isDirectory":false,
@@ -663,15 +658,14 @@
                     "$HIDDEN":false
                 },
                 {
-                    "x":30,
                     "type":"Script",
                     "switchAble":true,
-                    "source":"src/framework/QUIAnchor.ts",
-                    "searchKey":"Script,QUIAnchor",
+                    "source":"src/framework/FZUIAnchor.ts",
+                    "searchKey":"Script,FZUIAnchor",
                     "removeAble":true,
                     "props":{"y":1178,"x":597,"anchroType":"Center"},
                     "nodeParent":26,
-                    "label":"QUIAnchor",
+                    "label":"FZUIAnchor",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
@@ -680,7 +674,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Box",
                     "searchKey":"Box,box_online_gift,box_online_gift",
                     "props":{"y":250,"x":647.5,"var":"box_online_gift","name":"box_online_gift"},
@@ -815,7 +808,6 @@
                         }]
                 },
                 {
-                    "x":30,
                     "type":"Button",
                     "searchKey":"Button,btn_more_game,btn_more_game",
                     "props":{"y":390,"x":692,"var":"btn_more_game","stateNum":"1","skin":"ui_main/more_game.png","name":"btn_more_game","anchorX":0.5},
@@ -828,7 +820,6 @@
                     "compId":330,
                     "child":[
                         {
-                            "x":45,
                             "type":"Sprite",
                             "searchKey":"Sprite,more_game_notice_img,more_game_notice_img",
                             "props":{"y":-13,"x":59,"width":27,"visible":false,"var":"more_game_notice_img","texture":"ui_main/main_notice_point.png","name":"more_game_notice_img","height":32},
@@ -842,7 +833,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Label",
                             "searchKey":"Label",
                             "props":{"y":58,"x":11,"text":"奖励","scaleY":0.6,"scaleX":0.6,"font":"font1_2"},
@@ -856,7 +846,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Label",
                             "searchKey":"Label,more_game_num,more_game_num",
                             "props":{"y":-2,"x":72,"width":60,"var":"more_game_num","valign":"middle","text":"10","scaleY":0.3,"scaleX":0.3,"name":"more_game_num","height":50,"font":"font1_2","anchorY":0.5,"anchorX":0.5,"align":"center"},
@@ -1025,12 +1014,12 @@
                 {
                     "type":"Script",
                     "switchAble":true,
-                    "source":"src/framework/QUIAnchor.ts",
-                    "searchKey":"Script,QUIAnchor",
+                    "source":"src/framework/FZUIAnchor.ts",
+                    "searchKey":"Script,FZUIAnchor",
                     "removeAble":true,
                     "props":{"anchroType":"Bottom"},
                     "nodeParent":230,
-                    "label":"QUIAnchor",
+                    "label":"FZUIAnchor",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
@@ -1047,14 +1036,13 @@
             "props":{"y":6,"x":375,"width":750,"visible":true,"var":"list_car_pos","name":"list_car_pos","height":1334,"anchorY":0,"anchorX":0.5},
             "nodeParent":2,
             "label":"list_car_pos",
-            "isOpen":true,
+            "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":8,
             "child":[
                 {
-                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,bottle_bar_bg,bottle_bar_bg",
                     "props":{"x":0,"width":750,"visible":true,"var":"bottle_bar_bg","sizeGrid":"54,13,26,164","name":"bottle_bar_bg","height":200,"bottom":-8},
@@ -1246,7 +1234,6 @@
                         }]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,sprite_pos0,sprite_pos0",
                     "props":{"y":741,"x":24,"var":"sprite_pos0","texture":"ui_main/common_btn_bg5_1.png","name":"sprite_pos0"},
@@ -1260,7 +1247,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,sprite_pos1,sprite_pos1",
                     "props":{"y":740,"x":213,"var":"sprite_pos1","texture":"ui_main/common_btn_bg5_1.png","name":"sprite_pos1"},
@@ -1274,7 +1260,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,sprite_pos2,sprite_pos2",
                     "props":{"y":740,"x":389,"var":"sprite_pos2","texture":"ui_main/common_btn_bg5_1.png","name":"sprite_pos2"},
@@ -1288,7 +1273,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,sprite_pos3,sprite_pos3",
                     "props":{"y":740,"x":574,"var":"sprite_pos3","texture":"ui_main/common_btn_bg5_1.png","name":"sprite_pos3"},
@@ -1302,7 +1286,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,sprite_pos4,sprite_pos4",
                     "props":{"y":882,"x":24,"var":"sprite_pos4","texture":"ui_main/common_btn_bg5_1.png","name":"sprite_pos4"},
@@ -1316,7 +1299,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,sprite_pos5,sprite_pos5",
                     "props":{"y":882,"x":209,"var":"sprite_pos5","texture":"ui_main/common_btn_bg5_1.png","name":"sprite_pos5"},
@@ -1330,7 +1312,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,sprite_pos6,sprite_pos6",
                     "props":{"y":882,"x":389,"var":"sprite_pos6","texture":"ui_main/common_btn_bg5_1.png","name":"sprite_pos6"},
@@ -1344,7 +1325,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,sprite_pos7,sprite_pos7",
                     "props":{"y":882,"x":574,"var":"sprite_pos7","texture":"ui_main/common_btn_bg5_1.png","name":"sprite_pos7"},
@@ -1358,7 +1338,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,sprite_pos8,sprite_pos8",
                     "props":{"y":1036,"x":24,"var":"sprite_pos8","texture":"ui_main/common_btn_bg5_1.png","name":"sprite_pos8"},
@@ -1372,7 +1351,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,sprite_pos9,sprite_pos9",
                     "props":{"y":1036,"x":209,"var":"sprite_pos9","texture":"ui_main/common_btn_bg5_1.png","name":"sprite_pos9"},
@@ -1386,7 +1364,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,sprite_pos10,sprite_pos10",
                     "props":{"y":1036,"x":389,"var":"sprite_pos10","texture":"ui_main/common_btn_bg5_1.png","name":"sprite_pos10"},
@@ -1400,7 +1377,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,sprite_pos11,sprite_pos11",
                     "props":{"y":1036,"x":574,"var":"sprite_pos11","texture":"ui_main/common_btn_bg5_1.png","name":"sprite_pos11"},
@@ -1414,7 +1390,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,sprite_move,sprite_move",
                     "props":{"y":1151,"x":-268,"var":"sprite_move","skin":"ui_car_main/car_01.png","scaleY":1,"scaleX":1,"name":"sprite_move","anchorY":0.5,"anchorX":0.5},
@@ -1428,15 +1403,14 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Script",
                     "switchAble":true,
-                    "source":"src/framework/QUIAnchor.ts",
-                    "searchKey":"Script,QUIAnchor",
+                    "source":"src/framework/FZUIAnchor.ts",
+                    "searchKey":"Script,FZUIAnchor",
                     "removeAble":true,
                     "props":{"y":11,"x":0,"anchroType":"Bottom"},
                     "nodeParent":8,
-                    "label":"QUIAnchor",
+                    "label":"FZUIAnchor",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
@@ -1445,7 +1419,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,carList_hand,carList_hand",
                     "props":{"zOrder":99999,"y":1071.5,"x":404,"visible":false,"var":"carList_hand","scaleY":0.7,"scaleX":0.7,"name":"carList_hand"},
@@ -1461,7 +1434,6 @@
                     "$HIDDEN":false
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,shop_hand,shop_hand",
                     "props":{"zOrder":99999,"y":1147,"x":716,"visible":false,"var":"shop_hand","scaleY":1.2,"scaleX":1.2,"rotation":180,"name":"shop_hand"},
@@ -1516,7 +1488,6 @@
                     "$HIDDEN":false
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,synthetic_hand,synthetic_hand",
                     "props":{"zOrder":9999,"y":839,"x":236,"visible":false,"var":"synthetic_hand","texture":"ui_main/newbie_hand2.png","scaleY":1.8,"scaleX":1.8,"name":"synthetic_hand"},
@@ -1531,7 +1502,6 @@
                     "$HIDDEN":false
                 },
                 {
-                    "x":30,
                     "type":"Button",
                     "searchKey":"Button,btn_start_game,btn_start_game",
                     "props":{"y":588,"x":375,"var":"btn_start_game","stateNum":"1","skin":"ui_main/main_startGame.png","sizeGrid":"3,17,1,15","name":"btn_start_game","anchorY":0.5,"anchorX":0.5},
@@ -1546,10 +1516,9 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,img_clean,img_clean",
-                    "props":{"y":1234,"x":78,"width":110,"visible":true,"var":"img_clean","runtime":"game/view/QCleanNode.ts","name":"img_clean","height":110,"anchorY":0.5,"anchorX":0.5,"alpha":1},
+                    "props":{"y":1234,"x":78,"width":110,"visible":true,"var":"img_clean","runtime":"game/view/FZDestoryCarNode.ts","name":"img_clean","height":110,"anchorY":0.5,"anchorX":0.5,"alpha":1},
                     "nodeParent":8,
                     "label":"img_clean",
                     "isOpen":false,
@@ -1612,7 +1581,6 @@
                         }]
                 },
                 {
-                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,guideDelCarHand,guideDelCarHand",
                     "props":{"y":1049,"x":-613,"var":"guideDelCarHand","skin":"ui_main/newbie_hand2.png","scaleY":1.3,"scaleX":1.3,"name":"guideDelCarHand","anchorY":0.5,"anchorX":0.5},
@@ -1634,13 +1602,14 @@
             "props":{"y":0,"x":0,"width":750,"height":1334},
             "nodeParent":2,
             "label":"Box",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":322,
             "child":[
                 {
+                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,permanent1,permanent1",
                     "props":{"y":301,"x":65,"width":129,"var":"permanent1","sizeGrid":"32,30,38,25","scaleY":0.85,"scaleX":0.85,"name":"permanent1","height":156,"anchorY":0.5,"anchorX":0.5},
@@ -1653,6 +1622,7 @@
                     "compId":307,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,iconBg",
                             "props":{"y":66,"x":65,"width":100,"skin":"ui_common/exIconBg.png","sizeGrid":"0,0,0,0","scaleY":1.3,"scaleX":1.3,"name":"iconBg","height":100,"anchorY":0.5,"anchorX":0.5},
@@ -1666,6 +1636,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,imgSingleJcdlIcon1,imgSingleJcdlIcon1",
                             "props":{"y":16,"x":14,"width":100,"var":"imgSingleJcdlIcon1","name":"imgSingleJcdlIcon1","mouseThrough":true,"height":100},
@@ -1680,6 +1651,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Label",
                             "searchKey":"Label,lblSingleJcdlName1,lblSingleJcdlName1",
                             "props":{"y":125,"x":-12,"width":154,"var":"lblSingleJcdlName1","valign":"middle","text":"开心枪手","name":"lblSingleJcdlName1","mouseThrough":true,"height":32,"fontSize":23,"color":"#ffffff","align":"center"},
@@ -1693,6 +1665,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,resident_point1",
                             "props":{"y":6,"x":68,"skin":"ui_common/jcdl_point1.png","scaleY":0.6,"scaleX":0.6,"name":"resident_point1"},
@@ -1707,18 +1680,20 @@
                         }]
                 },
                 {
+                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,permanent2,permanent2",
                     "props":{"y":157,"x":65,"width":129,"var":"permanent2","sizeGrid":"32,30,38,25","scaleY":0.85,"scaleX":0.85,"name":"permanent2","height":156,"anchorY":0.5,"anchorX":0.5},
                     "nodeParent":322,
                     "label":"permanent2",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":263,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,iconBg1",
                             "props":{"y":66,"x":65,"width":100,"skin":"ui_common/exIconBg.png","sizeGrid":"0,0,0,0","scaleY":1.3,"scaleX":1.3,"name":"iconBg1","height":100,"anchorY":0.5,"anchorX":0.5},
@@ -1733,6 +1708,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,imgSingleJcdlIcon2,imgSingleJcdlIcon2",
                             "props":{"y":16,"x":14,"width":100,"var":"imgSingleJcdlIcon2","name":"imgSingleJcdlIcon2","mouseThrough":true,"height":100},
@@ -1748,6 +1724,7 @@
                             "$HIDDEN":true
                         },
                         {
+                            "x":45,
                             "type":"Label",
                             "searchKey":"Label,lblSingleJcdlName2,lblSingleJcdlName2",
                             "props":{"y":125,"x":-12,"width":154,"var":"lblSingleJcdlName2","valign":"middle","text":"拇指飞车","name":"lblSingleJcdlName2","mouseThrough":true,"height":32,"fontSize":23,"color":"#ffffff","align":"center"},
@@ -1761,6 +1738,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,resident_point,resident_point",
                             "props":{"y":6,"x":68,"var":"resident_point","skin":"ui_common/jcdl_point2.png","scaleY":0.6,"scaleX":0.6,"name":"resident_point"},
@@ -1776,14 +1754,15 @@
                         }]
                 },
                 {
+                    "x":30,
                     "type":"Script",
                     "switchAble":true,
-                    "source":"src/framework/QUIAnchor.ts",
-                    "searchKey":"Script,QUIAnchor",
+                    "source":"src/framework/FZUIAnchor.ts",
+                    "searchKey":"Script,FZUIAnchor",
                     "removeAble":true,
                     "props":{"y":0,"x":1,"anchroType":"Center"},
                     "nodeParent":322,
-                    "label":"QUIAnchor",
+                    "label":"FZUIAnchor",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
@@ -1792,18 +1771,20 @@
                         ]
                 },
                 {
+                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,btnSingleJcdlIcon,btnSingleJcdlIcon",
                     "props":{"y":440,"x":65,"width":129,"visible":true,"var":"btnSingleJcdlIcon","sizeGrid":"32,30,38,25","scaleY":0.85,"scaleX":0.85,"name":"btnSingleJcdlIcon","height":156,"anchorY":0.5,"anchorX":0.5},
                     "nodeParent":322,
                     "label":"btnSingleJcdlIcon",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":253,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,iconBg1,iconBg1",
                             "props":{"y":66,"x":65,"width":100,"var":"iconBg1","skin":"ui_common/exIconBg.png","scaleY":1.3,"scaleX":1.3,"name":"iconBg1","height":100,"anchorY":0.5,"anchorX":0.5},
@@ -1817,6 +1798,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,imgSingleJcdlIcon,imgSingleJcdlIcon",
                             "props":{"y":16,"x":15,"width":100,"var":"imgSingleJcdlIcon","name":"imgSingleJcdlIcon","mouseThrough":true,"height":100},
@@ -1831,6 +1813,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Label",
                             "searchKey":"Label,lblSingleJcdlName,lblSingleJcdlName",
                             "props":{"y":125,"x":-12,"width":154,"var":"lblSingleJcdlName","valign":"middle","text":"途游捕鱼","name":"lblSingleJcdlName","mouseThrough":true,"height":32,"fontSize":23,"color":"#ffffff","align":"center"},
@@ -1844,6 +1827,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,roll_point,roll_point",
                             "props":{"y":6,"x":68,"var":"roll_point","skin":"ui_common/jcdl_point1.png","scaleY":0.6,"scaleX":0.6,"name":"roll_point"},
@@ -1859,6 +1843,7 @@
                     "$HIDDEN":false
                 },
                 {
+                    "x":30,
                     "type":"Button",
                     "searchKey":"Button,btn_levelUp_1,btn_levelUp_1",
                     "props":{"y":384,"visible":false,"var":"btn_levelUp_1","stateNum":"1","skin":"ui_main/main_btn_shengji.png","scaleY":1.2,"scaleX":1.2,"name":"btn_levelUp_1","left":87},
@@ -1900,7 +1885,7 @@
                         }],
                     "$HIDDEN":true
                 }],
-            "$HIDDEN":false
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -1947,12 +1932,12 @@
                 {
                     "type":"Script",
                     "switchAble":true,
-                    "source":"src/framework/QUIAnchor.ts",
-                    "searchKey":"Script,QUIAnchor",
+                    "source":"src/framework/FZUIAnchor.ts",
+                    "searchKey":"Script,FZUIAnchor",
                     "removeAble":true,
                     "props":{"anchroType":"Bottom"},
                     "nodeParent":304,
-                    "label":"QUIAnchor",
+                    "label":"FZUIAnchor",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
