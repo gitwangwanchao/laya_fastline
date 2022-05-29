@@ -1,0 +1,7 @@
+{
+    // 定义控制块的左括号是否放置在新的一行。
+    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+
+    // 定义函数的左大括号是否放置在新的一行。
+    "typescript.format.placeOpenBraceOnNewLineForFunctions": true
+}
