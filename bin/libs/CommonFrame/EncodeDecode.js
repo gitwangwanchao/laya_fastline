@@ -2,7 +2,7 @@
  * Created by xiaochuntian on 2018/5/2.
  */
 
-tywx.EncodeDecode = {
+FZ.EncodeDecode = {
 
 
     base64Encode: function(input) {
@@ -11,7 +11,7 @@ tywx.EncodeDecode = {
         var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
         var i = 0;
 
-        input = tywx.EncodeDecode.utf8Encode(input);
+        input = FZ.EncodeDecode.utf8Encode(input);
         var len = input.length;
         while (i < len) {
 

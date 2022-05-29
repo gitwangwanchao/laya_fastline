@@ -3,12 +3,12 @@
  */
 
 
-tywx.clickStatEventType = {
+FZ.clickStatEventType = {
     /**
-     * tywx.SystemInfo.errorLogServer = "https://clienterr.touch4.me/api/bilog5/clientlog"
-     * tywx.SystemInfo.biLogServer = "https://cbi.touch4.me/api/bilog5/text"
+     * FZ.SystemInfo.errorLogServer = "https://clienterr.touch4.me/api/bilog5/clientlog"
+     * FZ.SystemInfo.biLogServer = "https://cbi.touch4.me/api/bilog5/text"
      * 使用方法:
-     * 将bilog.js加入工程后,在需要打点的地方调用tywx.BiLog.clickStat(事件id,[参数列表]);
+     * 将bilog.js加入工程后,在需要打点的地方调用FZ.BiLog.clickStat(事件id,[参数列表]);
      * 以下是由BI组规定的必须进行上报的打点,请各个项目组不要修改
      */
     clickStatEventTypeUserFrom : 99990001,//用户来源
@@ -148,42 +148,42 @@ tywx.clickStatEventType = {
     moreGameSuccess: 20121, //试玩成功领取奖励
 };
 
-tywx.BiLog = {
+FZ.BiLog = {
 
     /**
      * 上传实时log,富豪斗地主用此接口上传错误情况下的日志
      * @param logtxt:log内容
      */
     uploadLogTimely:function (logtxt) {
-        if(!tywx.StateInfo.networkConnected) {
-            tywx.LOGD('tywx.BiLog', 'net error!');
+        if(!FZ.StateInfo.networkConnected) {
+            FZ.LOGD('FZ.BiLog', 'net error!');
             return;
         }
         if(logtxt) {
             var header = ['Content-Type:text/plain'];
             var configObj = {
-                'url': tywx.SystemInfo.errorLogServer + '?cloudname=' + tywx.SystemInfo.cloudId + '.' + tywx.SystemInfo.intClientId,
+                'url': FZ.SystemInfo.errorLogServer + '?cloudname=' + FZ.SystemInfo.cloudId + '.' + FZ.SystemInfo.intClientId,
                 'header': header,
                 'postData': logtxt,
                 'callback': null
             };
-            tywx.HttpUtil.httpPost(configObj,'POST');
+            FZ.HttpUtil.httpPost(configObj,'POST');
         }
     },
 
     getSystemInfo : function(){
-        this.cloud_id = tywx.SystemInfo.cloudId;   //独立服务id
+        this.cloud_id = FZ.SystemInfo.cloudId;   //独立服务id
         this.rec_type = '1';   //日志类型
         this.rec_id     = '0'; //日志记录id
         this.receive_time  ='0'; // 日志接收时间  输出日志时统一填0，BI服务会在接收时添加
-        this.user_id = tywx.UserInfo.userId || '0';      //用户id
-        this.game_id = tywx.SystemInfo.gameId;      //游戏id
-        this.client_id = tywx.SystemInfo.clientId;
-        this.device_id = this.device_id || tywx.Util.getLocalUUID();	//device id
+        this.user_id = FZ.UserInfo.userId || '0';      //用户id
+        this.game_id = FZ.SystemInfo.gameId;      //游戏id
+        this.client_id = FZ.SystemInfo.clientId;
+        this.device_id = this.device_id || FZ.Util.getLocalUUID();	//device id
         this.ip_addr='#IP';// ip地址	占位--服务器处理
         this.nettype= "0"; //网络状况
         this.phone_maker= "0"; //手机制造商
-        this.phone_model= tywx.UserInfo.model; //手机型号
+        this.phone_model= FZ.UserInfo.model; //手机型号
         this.phone_carrier= "0";//手机运营商
         this.reserved ='0';
     },
@@ -201,7 +201,7 @@ tywx.BiLog = {
         if(logtxt!=undefined && logtxt!='') {
             var header = ['Content-Type:text/plain'];
             var configObj = {
-                'url': tywx.SystemInfo.biLogServer,
+                'url': FZ.SystemInfo.biLogServer,
                 'headers': header,
                 'postData': logtxt,
                 'obj': callbackObj,
@@ -209,7 +209,7 @@ tywx.BiLog = {
                 'callback': null
             };
         }
-        tywx.HttpUtil.httpPost(configObj,'POST');
+        FZ.HttpUtil.httpPost(configObj,'POST');
     },
 
     /**
@@ -232,10 +232,10 @@ tywx.BiLog = {
         else {
             dyeparams = paramsList;
         }
-        tywx.LOGD('BI打点', "eventid= " + eventId + " 描述 = " + JSON.stringify(dyeparams));
+        FZ.LOGD('BI打点', "eventid= " + eventId + " 描述 = " + JSON.stringify(dyeparams));
         var bilog = this.assemblelog(eventId, dyeparams);
         this.uploadClickStatLogTimely(bilog+ '\n');
-        if (tywx.UserInfo.FromShareCard == true){
+        if (FZ.UserInfo.FromShareCard == true){
             eventId = "1"+eventId;
             bilog = this.assemblelog(eventId, dyeparams);
             this.uploadClickStatLogTimely(bilog+ '\n');

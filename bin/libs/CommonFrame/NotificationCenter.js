@@ -1,6 +1,6 @@
 //全局的事件监听模块，可用于对象之间的消息传递，所以没有提供构造函数
 console.log("NotificationCenter loaded");
-tywx.NotificationCenter = {
+FZ.NotificationCenter = {
     events : {},
     listen : function(eName, handler, scope){
         this.events[eName] = this.events[eName] || [];
@@ -30,7 +30,7 @@ tywx.NotificationCenter = {
                     if(fn.scope != scope){
                         return true;
                     } else{
-                        tywx.LOGD('tywx.NotificationCenter', 'ty.NotificationCenter : remove listener by Scope: ' + msg);
+                        FZ.LOGD('FZ.NotificationCenter', 'ty.NotificationCenter : remove listener by Scope: ' + msg);
                         return false;
                     }
                 })
@@ -39,7 +39,7 @@ tywx.NotificationCenter = {
     },
 
     trigger : function(eventName, params){
-        tywx.LOGD("EventTrigger", eventName);
+        FZ.LOGD("EventTrigger", eventName);
         var fns = this.events[eventName];
         if(!fns){
           return;

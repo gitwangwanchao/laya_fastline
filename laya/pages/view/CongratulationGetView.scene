@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Dialog",
-    "selectedBox":2,
-    "selecteID":4,
+    "selectedBox":4,
+    "selecteID":79,
     "searchKey":"Dialog",
     "props":{"width":720,"sceneColor":"#000000","height":1280},
     "nodeParent":-1,
@@ -49,13 +49,14 @@
                     "props":{"y":0,"x":0},
                     "nodeParent":4,
                     "label":"Box",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":84,
                     "child":[
                         {
+                            "x":45,
                             "type":"Sprite",
                             "searchKey":"Sprite",
                             "props":{"y":465,"x":380,"width":498,"texture":"ui_main/guangquan.png","scaleY":1,"scaleX":1,"pivotY":250,"pivotX":252,"height":499},
@@ -70,6 +71,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Sprite",
                             "searchKey":"Sprite",
                             "props":{"y":477,"x":380,"width":611,"texture":"ui_main/guang.png","rotation":180,"pivotY":282,"pivotX":306,"height":563},
@@ -91,13 +93,14 @@
                     "props":{"y":125,"width":63,"var":"btnClose","stateNum":"1","skin":"ui_main/ui_close_btn.png","right":16,"name":"btnClose","height":52,"anchorY":0.5,"anchorX":1},
                     "nodeParent":4,
                     "label":"btnClose",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":65,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,flash_light,flash_light",
                             "props":{"y":50,"x":-145,"var":"flash_light","skin":"ui_main/flash_light.png","name":"flash_light","anchorY":0.5,"anchorX":0.5,"alpha":0.21},
@@ -145,7 +148,7 @@
                     "x":30,
                     "type":"Label",
                     "searchKey":"Label,item_name,item_name",
-                    "props":{"y":671,"x":366,"var":"item_name","text":"100","scaleY":0.7,"scaleX":0.7,"name":"item_name","fontSize":30,"font":"font1_2","color":"#fff7d6","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                    "props":{"y":671,"x":366,"var":"item_name","text":"100","scaleY":0.7,"scaleX":0.7,"name":"item_name","fontSize":30,"font":"font1_3","color":"#fff7d6","anchorY":0.5,"anchorX":0.5,"align":"center"},
                     "nodeParent":4,
                     "label":"item_name",
                     "isOpen":null,
@@ -233,7 +236,7 @@
                             "x":45,
                             "type":"Label",
                             "searchKey":"Label",
-                            "props":{"y":50,"x":214,"text":"领取","scaleY":1,"scaleX":1,"fontSize":38,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                            "props":{"y":50,"x":214,"text":"领取","scaleY":1,"scaleX":1,"fontSize":38,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                             "nodeParent":27,
                             "label":"Label",
                             "isOpen":null,
@@ -263,7 +266,7 @@
                             "x":45,
                             "type":"Label",
                             "searchKey":"Label",
-                            "props":{"y":115,"x":214,"text":"免费领取","scaleY":1,"scaleX":1,"fontSize":40,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                            "props":{"y":115,"x":214,"text":"免费领取","scaleY":1,"scaleX":1,"fontSize":40,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                             "nodeParent":75,
                             "label":"Label",
                             "isOpen":null,
@@ -370,7 +373,7 @@
                     "x":30,
                     "type":"Label",
                     "searchKey":"Label,dia_tip,dia_tip",
-                    "props":{"y":754,"x":220,"visible":false,"var":"dia_tip","text":"钻石可购买高级赛车","scaleY":0.7,"scaleX":0.7,"name":"dia_tip","font":"font1_2","alpha":0.5},
+                    "props":{"y":754,"x":220,"visible":false,"var":"dia_tip","text":"钻石可购买高级赛车","scaleY":0.7,"scaleX":0.7,"name":"dia_tip","font":"font1_3","alpha":0.5},
                     "nodeParent":4,
                     "label":"dia_tip",
                     "isDirectory":false,
@@ -393,7 +396,8 @@
                     "hasChild":false,
                     "compId":82,
                     "child":[
-                        ]
+                        ],
+                    "$HIDDEN":false
                 },
                 {
                     "x":30,

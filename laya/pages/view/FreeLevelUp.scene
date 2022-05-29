@@ -60,7 +60,7 @@
                     "x":30,
                     "type":"Label",
                     "searchKey":"Label,lbl_dec",
-                    "props":{"y":235,"x":364,"text":"马上升级为高级车","scaleY":0.54,"scaleX":0.54,"name":"lbl_dec","fontSize":34,"font":"font1_2","color":"#ffffff","bold":false,"anchorX":0.5,"align":"center"},
+                    "props":{"y":235,"x":364,"text":"马上升级为高级车","scaleY":0.54,"scaleX":0.54,"name":"lbl_dec","fontSize":34,"font":"font1_3","color":"#ffffff","bold":false,"anchorX":0.5,"align":"center"},
                     "nodeParent":4,
                     "label":"lbl_dec",
                     "isOpen":false,
@@ -78,13 +78,14 @@
                     "props":{"y":600,"x":375,"anchorY":0.5,"anchorX":0.5},
                     "nodeParent":4,
                     "label":"VBox",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":57,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,imgCurCarIcon,imgCurCarIcon",
                             "props":{"y":115,"x":170,"var":"imgCurCarIcon","skin":"ui_car_main/car_01.png","scaleY":1.5,"scaleX":1.5,"name":"imgCurCarIcon","anchorY":0.5,"anchorX":0.5},
@@ -99,9 +100,10 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Label",
                             "searchKey":"Label,lblCurCarName,lblCurCarName",
-                            "props":{"y":225,"x":170,"width":584,"var":"lblCurCarName","text":"车车车车","scaleY":0.5,"scaleX":0.5,"name":"lblCurCarName","height":71,"fontSize":42,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                            "props":{"y":225,"x":170,"width":584,"var":"lblCurCarName","text":"车车车车","scaleY":0.5,"scaleX":0.5,"name":"lblCurCarName","height":71,"fontSize":42,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                             "nodeParent":57,
                             "label":"lblCurCarName",
                             "isOpen":false,
@@ -113,9 +115,10 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Label",
                             "searchKey":"Label,lblCurCarLv,lblCurCarLv",
-                            "props":{"y":260,"x":170,"width":584,"var":"lblCurCarLv","text":"Lv.2","scaleY":0.5,"scaleX":0.5,"name":"lblCurCarLv","height":71,"fontSize":42,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                            "props":{"y":260,"x":170,"width":584,"var":"lblCurCarLv","text":"Lv.2","scaleY":0.5,"scaleX":0.5,"name":"lblCurCarLv","height":71,"fontSize":42,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                             "nodeParent":57,
                             "label":"lblCurCarLv",
                             "isOpen":null,
@@ -127,6 +130,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Sprite",
                             "searchKey":"Sprite",
                             "props":{"y":84,"x":350,"texture":"ui_main/tag_spr_LvUp_1.png"},
@@ -140,6 +144,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Sprite",
                             "searchKey":"Sprite",
                             "props":{"y":84,"x":390,"texture":"ui_main/tag_spr_LvUp_1.png"},
@@ -153,6 +158,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,imgLvUpCarIcon,imgLvUpCarIcon",
                             "props":{"y":115,"x":600,"var":"imgLvUpCarIcon","skin":"ui_car_main/car_02.png","scaleY":1.5,"scaleX":1.5,"name":"imgLvUpCarIcon","anchorY":0.5,"anchorX":0.5},
@@ -167,9 +173,10 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Label",
                             "searchKey":"Label,lblNextCarName,lblNextCarName",
-                            "props":{"y":225,"x":600,"var":"lblNextCarName","text":"车车车车","scaleY":0.5,"scaleX":0.5,"name":"lblNextCarName","fontSize":42,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                            "props":{"y":225,"x":600,"var":"lblNextCarName","text":"车车车车","scaleY":0.5,"scaleX":0.5,"name":"lblNextCarName","fontSize":42,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                             "nodeParent":57,
                             "label":"lblNextCarName",
                             "isOpen":false,
@@ -181,9 +188,10 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Label",
                             "searchKey":"Label,lblNextCarLv,lblNextCarLv",
-                            "props":{"y":260,"x":600,"var":"lblNextCarLv","text":"Lv.2","scaleY":0.5,"scaleX":0.5,"name":"lblNextCarLv","fontSize":42,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                            "props":{"y":260,"x":600,"var":"lblNextCarLv","text":"Lv.2","scaleY":0.5,"scaleX":0.5,"name":"lblNextCarLv","fontSize":42,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                             "nodeParent":57,
                             "label":"lblNextCarLv",
                             "isOpen":true,
@@ -254,7 +262,7 @@
                             "x":45,
                             "type":"Label",
                             "searchKey":"Label,lbl_diamond_cost,lbl_diamond_cost",
-                            "props":{"y":47,"x":236,"var":"lbl_diamond_cost","valign":"middle","text":"366","scaleY":0.8,"scaleX":0.8,"name":"lbl_diamond_cost","fontSize":44,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"left"},
+                            "props":{"y":47,"x":236,"var":"lbl_diamond_cost","valign":"middle","text":"366","scaleY":0.8,"scaleX":0.8,"name":"lbl_diamond_cost","fontSize":44,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"left"},
                             "nodeParent":34,
                             "label":"lbl_diamond_cost",
                             "isOpen":null,
@@ -297,7 +305,7 @@
                             "x":45,
                             "type":"Label",
                             "searchKey":"Label",
-                            "props":{"y":115,"x":214,"width":118,"valign":"middle","text":"免费","scaleY":0.9,"scaleX":0.9,"height":60,"fontSize":40,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                            "props":{"y":115,"x":214,"width":118,"valign":"middle","text":"免费","scaleY":0.9,"scaleX":0.9,"height":60,"fontSize":40,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                             "nodeParent":35,
                             "label":"Label",
                             "isOpen":null,

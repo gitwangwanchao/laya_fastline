@@ -3,7 +3,7 @@
  */
 
 
-tywx.Util = {
+FZ.Util = {
 
     isSceneQrCode:function (scene) {
         var qrCodeList = [1047, 1048, 1049]; //扫描小程序码,选取小程序码,识别小程序码
@@ -25,15 +25,15 @@ tywx.Util = {
     },
 
     checkLocalUUID: function() {
-        var local_uuid = tywx.Util.getItemFromLocalStorage("LOCAL_UUID_KEY", "");
+        var local_uuid = FZ.Util.getItemFromLocalStorage("LOCAL_UUID_KEY", "");
         return local_uuid != "";
     },
 
     getLocalUUID: function() {
-        var local_uuid = tywx.Util.getItemFromLocalStorage("LOCAL_UUID_KEY", "");
+        var local_uuid = FZ.Util.getItemFromLocalStorage("LOCAL_UUID_KEY", "");
         if (!local_uuid){
-            local_uuid = tywx.Util.createUUID();
-            tywx.Util.setItemToLocalStorage("LOCAL_UUID_KEY", local_uuid)
+            local_uuid = FZ.Util.createUUID();
+            FZ.Util.setItemToLocalStorage("LOCAL_UUID_KEY", local_uuid)
         }
         return local_uuid;
     },
@@ -68,7 +68,7 @@ tywx.Util = {
                 cc.sys.localStorage.setItem(keyStr, ValueStr+"");
             }
         } catch (e) {
-            tywx.LOGE("tywx.Util", "setItemToLocalStorage fail");
+            FZ.LOGE("FZ.Util", "setItemToLocalStorage fail");
         }
     },
 

@@ -425,9 +425,9 @@ namespace game.view
                     }
                 }else if(navigator.platform=='android'){
                     if (params.vibrateType == 1 || params.vibrateType == 2) {
-                        tywx.AndroidHelper.startVibrate(400);
+                        FZ.AndroidHelper.startVibrate(400);
                     }else {
-                        tywx.AndroidHelper.startVibrate(100);
+                        FZ.AndroidHelper.startVibrate(100);
                     }
                 }
             }
@@ -584,19 +584,19 @@ namespace game.view
                 this.carHp = Math.min(this.carHpMax , this.carHp);
                 var p = Math.max(0,this.carHp / this.carHpMax);
                 FZEventManager.instance.sendEvent(FZEvent.GAME_VIEW_GAME_CHANGE_HP, p); 
-                tywx.BiLog.clickStat(tywx.clickStatEventType.numberOfMedicalBagPickup,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.numberOfMedicalBagPickup,[]);
             } else if (value.item_type == 1)
             {
                 // 氮气
                 FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.get_nitrogen)
                 this.onPlaySprint();
-                tywx.BiLog.clickStat(tywx.clickStatEventType.pickupAcceleration,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.pickupAcceleration,[]);
             } else if (value.item_type == 2)
             {  //弹幕
                 this.scene.animation_weapons.visible = true
                 this.scene.animation_weapons.play(0,true);
                 FZSoundManager.instance.playSfx( FZSoundManager.instance.soundInfo_wav.damageUp);
-                tywx.BiLog.clickStat(tywx.clickStatEventType.pickupIncreasesBarrageCount,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.pickupIncreasesBarrageCount,[]);
                 // 武器升级
                 // this.scene.img_damage.visible = true;
                 // this.scene.effect_damage.play(0, true);
@@ -606,7 +606,7 @@ namespace game.view
                 FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.getMoneyDouble)
                 this.scene.effect_double.visible = true;
                 this.scene.effect_double.play(0, true);
-                tywx.BiLog.clickStat(tywx.clickStatEventType.doubleYourDollarBills,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.doubleYourDollarBills,[]);
             }
         }
 

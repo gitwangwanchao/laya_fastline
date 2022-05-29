@@ -119,7 +119,7 @@ namespace game.view
             // this.scene.loading_view_bg_2.y = _height*0.25;
             this.scene.loading_view.y = _height*0.05;
             
-            this.scene.lblVersion.text = "v"+tywx.SystemInfo.version;  //版本号
+            this.scene.lblVersion.text = "v"+FZ.SystemInfo.version;  //版本号
             
             this.stayTime = Laya.timer.currTimer;
             Laya.timer.loop(1000,this,this.loadingTimeCount);  //loading时长打点
@@ -132,8 +132,8 @@ namespace game.view
         private loadingTimeCount():void
         {
             this.timecount++;
-            if(tywx.clickStatEventType.loadingDuration[this.timecount+'']){//loading时长打点
-                tywx.BiLog.clickStat(tywx.clickStatEventType.loadingDuration[this.timecount+''],[]);
+            if(FZ.clickStatEventType.loadingDuration[this.timecount+'']){//loading时长打点
+                FZ.BiLog.clickStat(FZ.clickStatEventType.loadingDuration[this.timecount+''],[]);
             }
         }
 
@@ -181,12 +181,12 @@ namespace game.view
 
             if(this.progress >= 1)
             {
-                tywx.BiLog.clickStat(tywx.clickStatEventType.loadingResSuc,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.loadingResSuc,[]);
                 FZUIManager.instance.removeUI(FZUIManager.UI_Loading, true);
-                FZSceneManager.instance.startGame();
-                // tywx.SystemInfo.isNewUser = true;
+                // FZSceneManager.instance.startGame();
+                // FZ.SystemInfo.isNewUser = true;
                 var falg = FZSaveDateManager.instance.getItemFromLocalStorage("ISNEWUSER", "0");
-                if(tywx.SystemInfo.isNewUser == true &&  falg == "0"){
+                if(FZ.SystemInfo.isNewUser == true &&  falg == "0"){
                     var map_index = FZGameData.instance.getCheckPointData().map;
                     this.loadmap(map_index);
                 }else {
@@ -210,17 +210,11 @@ namespace game.view
             }
         }
         public completemapHandler() {
-            FZSceneManager.instance.setActive(false);
+            // FZSceneManager.instance.setActive(false);
             FZResManager.instance.RES_GAME = 1;
             FZUIManager.instance.createUI(FZUIManager.UI_GameView);
             FZMergeDateManager.instance.enterGame();
             FZEventManager.instance.sendEvent(FZEvent.EVNET_ENTER_GAME);
-        }
-
-        loadGameSceneFinished():void 
-        {
-            // var gameScene = Laya.loader.getRes("unity/LayaScene_gamesingle_garage/Conventional/gamesingle_garage.ls") as Laya.Scene3D;
-            // Laya.stage.addChild(gameScene);
         }
 
         public onDestroy():void
@@ -229,7 +223,7 @@ namespace game.view
             Laya.timer.clear(this, this.loadStay);
             Laya.timer.clear(this,this.loadingTimeCount);
             Laya.loader.clearTextureRes(FZResManager.instance.ATLAS_LOADING);
-            tywx.BiLog.clickStat(tywx.clickStatEventType.loadingTimeCount,[this.timecount]);//上传loading界面累计时长
+            FZ.BiLog.clickStat(FZ.clickStatEventType.loadingTimeCount,[this.timecount]);//上传loading界面累计时长
         }
 
         private gameHideHandler() : void

@@ -65,12 +65,12 @@ namespace game.core
             //微信小游戏
             if (Laya.Browser.onMiniGame) {
                 // 判断版本
-                if(tywx.SystemInfo.version != version) {
+                if(FZ.SystemInfo.version != version) {
                     // 开启下载zip
                     if (FZDebug.isDebug == true) {
                         this.downLoadZip(FZGameStatus.DownloadUrl + "test.zip");
                     }else {
-                        this.downLoadZip(FZGameStatus.DownloadUrl + tywx.SystemInfo.version + ".zip"); 
+                        this.downLoadZip(FZGameStatus.DownloadUrl + FZ.SystemInfo.version + ".zip"); 
                     }
                 }else {
                     this.downLoadEnd();
@@ -82,21 +82,21 @@ namespace game.core
         public downloadTask:any = undefined;
         public downLoadZip(url)
         {
-            tywx.BiLog.clickStat(tywx.clickStatEventType.downZipStart,[]);
-            tywx.SystemInfo.isDownZip = true;
+            FZ.BiLog.clickStat(FZ.clickStatEventType.downZipStart,[]);
+            FZ.SystemInfo.isDownZip = true;
             var that = this;
             var data = new Date().getTime();
             FZUtils.downloadFile(url,function(){
                 FZDebug.D("下载-解压完成后，修改本地版本号");
                 //下载-解压完成后，修改本地版本号
-                FZSaveDateManager.instance.setItemToLocalStorage("GAME_DOWNLOAD_VERSION", tywx.SystemInfo.version);
+                FZSaveDateManager.instance.setItemToLocalStorage("GAME_DOWNLOAD_VERSION", FZ.SystemInfo.version);
                 that.downLoadEnd();
             },function(){
                 FZEventManager.instance.sendEvent(FZEvent.GAME_DOWN_RESET);
                 if (FZDebug.isDebug == true) {
                     that.downLoadZip(FZGameStatus.DownloadUrl + "test.zip?" +  data);
                 }else {
-                    that.downLoadZip(FZGameStatus.DownloadUrl + tywx.SystemInfo.version + ".zip?" +  data); 
+                    that.downLoadZip(FZGameStatus.DownloadUrl + FZ.SystemInfo.version + ".zip?" +  data); 
                 }
             })
         }
@@ -119,7 +119,7 @@ namespace game.core
         {
             let prefix = "" ; //判断是否分包 FZWechat.instance.getSubpackagePath();
             if (Laya.Browser.onMiniGame) {
-                prefix = Laya.Browser.window.wx.env.USER_DATA_PATH+"/v" + tywx.SystemInfo.version + "/";
+                prefix = Laya.Browser.window.wx.env.USER_DATA_PATH+"/v" + FZ.SystemInfo.version + "/";
             }
             for (let i = this.startIndex; i < this.startIndex+this.loadFontCount; i++)
             {
@@ -141,7 +141,7 @@ namespace game.core
             let prefix = "";//FZWechat.instance.getSubpackagePath();
             var path  = "";
             if (Laya.Browser.onMiniGame) {
-                prefix = Laya.Browser.window.wx.env.USER_DATA_PATH+"/v" + tywx.SystemInfo.version + "/"; ////tywx.wxFileUtil.getCacheFilePath() + "/";
+                prefix = Laya.Browser.window.wx.env.USER_DATA_PATH+"/v" + FZ.SystemInfo.version + "/"; ////FZ.wxFileUtil.getCacheFilePath() + "/";
                 path = "subpackages/";
             }
             let listRes = [
@@ -179,7 +179,7 @@ namespace game.core
                     if (FZDebug.isDebug == true) {
                         this.downLoadZip(FZGameStatus.DownloadUrl + "test.zip");
                     }else {
-                        self.downLoadZip(FZGameStatus.DownloadUrl + tywx.SystemInfo.version + ".zip"); 
+                        self.downLoadZip(FZGameStatus.DownloadUrl + FZ.SystemInfo.version + ".zip"); 
                     }
                 }});
             }else {

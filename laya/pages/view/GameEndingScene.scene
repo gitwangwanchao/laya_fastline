@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Scene",
-    "selectedBox":52,
-    "selecteID":4,
+    "selectedBox":293,
+    "selecteID":295,
     "searchKey":"Scene",
     "props":{"width":750,"sceneColor":"#000000","height":1334},
     "nodeParent":-1,
@@ -76,16 +76,17 @@
                                     "props":{"y":283,"x":125,"width":750,"var":"boxFail","name":"boxFail","height":1334},
                                     "nodeParent":52,
                                     "label":"boxFail",
-                                    "isOpen":false,
+                                    "isOpen":true,
                                     "isDirectory":true,
                                     "isAniNode":true,
                                     "hasChild":true,
                                     "compId":54,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lab_check_point,lab_check_point",
-                                            "props":{"y":450,"x":365,"visible":true,"var":"lab_check_point","valign":"middle","text":"第1关","name":"lab_check_point","fontSize":36,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"alpha":1,"align":"center"},
+                                            "props":{"y":450,"x":365,"visible":true,"var":"lab_check_point","valign":"middle","text":"第1关","name":"lab_check_point","fontSize":36,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"alpha":1,"align":"center"},
                                             "nodeParent":54,
                                             "label":"lab_check_point",
                                             "isOpen":true,
@@ -98,18 +99,20 @@
                                             "$HIDDEN":false
                                         },
                                         {
+                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,img_item_1,img_item_1",
                                             "props":{"y":603,"x":305,"var":"img_item_1","skin":"ui_main/item_bg.png","scaleY":1,"scaleX":1,"name":"img_item_1","anchorY":0.5,"anchorX":0.5},
                                             "nodeParent":54,
                                             "label":"img_item_1",
-                                            "isOpen":false,
+                                            "isOpen":true,
                                             "isDirectory":true,
                                             "isAniNode":true,
                                             "hasChild":true,
                                             "compId":22,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"Sprite",
                                                     "searchKey":"Sprite",
                                                     "props":{"y":27,"x":32,"texture":"ui_common/flyDollar.png","scaleY":1,"scaleX":1},
@@ -123,9 +126,10 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,game_lab_gold,game_lab_gold",
-                                                    "props":{"y":84,"x":67,"var":"game_lab_gold","text":"555","scaleY":0.6,"scaleX":0.6,"name":"game_lab_gold","fontSize":40,"font":"font1_2","color":"#ffffff","bold":true,"anchorX":0.5},
+                                                    "props":{"y":84,"x":67,"var":"game_lab_gold","text":"555","scaleY":0.6,"scaleX":0.6,"name":"game_lab_gold","fontSize":40,"font":"font1_3","color":"#ffffff","bold":true,"anchorX":0.5},
                                                     "nodeParent":22,
                                                     "label":"game_lab_gold",
                                                     "isOpen":null,
@@ -139,18 +143,20 @@
                                             "$HIDDEN":false
                                         },
                                         {
+                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,img_item_2,img_item_2",
                                             "props":{"y":603,"x":444,"var":"img_item_2","skin":"ui_main/item_bg.png","scaleY":1,"scaleX":1,"name":"img_item_2","anchorY":0.5,"anchorX":0.5},
                                             "nodeParent":54,
                                             "label":"img_item_2",
-                                            "isOpen":false,
+                                            "isOpen":true,
                                             "isDirectory":true,
                                             "isAniNode":true,
                                             "hasChild":true,
                                             "compId":25,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"Sprite",
                                                     "searchKey":"Sprite",
                                                     "props":{"y":25,"x":39,"texture":"ui_common/flyDiamond.png"},
@@ -164,9 +170,10 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,game_lab_diamond,game_lab_diamond",
-                                                    "props":{"y":85,"x":64,"var":"game_lab_diamond","text":"555","scaleY":0.6,"scaleX":0.6,"name":"game_lab_diamond","fontSize":40,"font":"font1_2","color":"#ffffff","bold":true,"anchorX":0.5},
+                                                    "props":{"y":85,"x":64,"var":"game_lab_diamond","text":"555","scaleY":0.6,"scaleX":0.6,"name":"game_lab_diamond","fontSize":40,"font":"font1_3","color":"#ffffff","bold":true,"anchorX":0.5},
                                                     "nodeParent":25,
                                                     "label":"game_lab_diamond",
                                                     "isOpen":null,
@@ -179,9 +186,10 @@
                                                 }]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,label_fail_txt,label_fail_txt",
-                                            "props":{"y":335,"x":377,"var":"label_fail_txt","text":"完成度:60%","name":"label_fail_txt","fontSize":36,"font":"font1_2","color":"#ffffff","bold":true,"anchorX":0.5},
+                                            "props":{"y":335,"x":377,"var":"label_fail_txt","text":"完成度:60%","name":"label_fail_txt","fontSize":36,"font":"font1_3","color":"#ffffff","bold":true,"anchorX":0.5},
                                             "nodeParent":54,
                                             "label":"label_fail_txt",
                                             "isOpen":true,
@@ -194,6 +202,7 @@
                                             "$HIDDEN":false
                                         },
                                         {
+                                            "x":75,
                                             "type":"Animation",
                                             "searchKey":"Animation,ani_fail,ani_fail",
                                             "props":{"y":295,"x":375,"var":"ani_fail","source":"particle/shibai.ani","name":"ani_fail"},
@@ -207,6 +216,7 @@
                                                 ]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Script",
                                             "switchAble":true,
                                             "source":"src/framework/FZUIAnchor.ts",
@@ -221,168 +231,6 @@
                                             "compId":169,
                                             "child":[
                                                 ]
-                                        },
-                                        {
-                                            "type":"Image",
-                                            "searchKey":"Image,permanent1,permanent1",
-                                            "props":{"y":510,"x":658,"width":129,"visible":false,"var":"permanent1","sizeGrid":"32,30,38,25","scaleY":0.85,"scaleX":0.85,"rotation":0,"name":"permanent1","height":156,"anchorY":0.5,"anchorX":0.5},
-                                            "nodeParent":54,
-                                            "label":"permanent1",
-                                            "isOpen":false,
-                                            "isDirectory":true,
-                                            "isAniNode":true,
-                                            "hasChild":true,
-                                            "compId":335,
-                                            "child":[
-                                                {
-                                                    "type":"Image",
-                                                    "searchKey":"Image",
-                                                    "props":{"y":1,"x":11,"width":151,"skin":"ui_common/jcdl_right_bg.png","height":135},
-                                                    "nodeParent":335,
-                                                    "label":"Image",
-                                                    "isDirectory":false,
-                                                    "isAniNode":true,
-                                                    "hasChild":false,
-                                                    "compId":346,
-                                                    "child":[
-                                                        ]
-                                                },
-                                                {
-                                                    "type":"Image",
-                                                    "searchKey":"Image,iconBg",
-                                                    "props":{"y":66,"x":65,"width":100,"skin":"ui_common/exIconBg.png","sizeGrid":"0,0,0,0","scaleY":1.3,"scaleX":1.3,"name":"iconBg","height":100,"anchorY":0.5,"anchorX":0.5},
-                                                    "nodeParent":335,
-                                                    "label":"iconBg",
-                                                    "isDirectory":false,
-                                                    "isAniNode":true,
-                                                    "hasChild":false,
-                                                    "compId":337,
-                                                    "child":[
-                                                        ]
-                                                },
-                                                {
-                                                    "type":"Image",
-                                                    "searchKey":"Image,imgSingleJcdlIcon1,imgSingleJcdlIcon1",
-                                                    "props":{"y":16,"x":14,"width":100,"var":"imgSingleJcdlIcon1","name":"imgSingleJcdlIcon1","mouseThrough":true,"height":100},
-                                                    "nodeParent":335,
-                                                    "label":"imgSingleJcdlIcon1",
-                                                    "isOpen":true,
-                                                    "isDirectory":false,
-                                                    "isAniNode":true,
-                                                    "hasChild":false,
-                                                    "compId":338,
-                                                    "child":[
-                                                        ]
-                                                },
-                                                {
-                                                    "type":"Label",
-                                                    "searchKey":"Label,lblSingleJcdlName1,lblSingleJcdlName1",
-                                                    "props":{"y":-5,"x":120,"wordWrap":true,"width":35,"var":"lblSingleJcdlName1","valign":"middle","text":"开心枪手","name":"lblSingleJcdlName1","mouseThrough":true,"height":140,"fontSize":23,"color":"#ffffff","align":"center"},
-                                                    "nodeParent":335,
-                                                    "label":"lblSingleJcdlName1",
-                                                    "isDirectory":false,
-                                                    "isAniNode":true,
-                                                    "hasChild":false,
-                                                    "compId":339,
-                                                    "child":[
-                                                        ],
-                                                    "$HIDDEN":false
-                                                },
-                                                {
-                                                    "type":"Image",
-                                                    "searchKey":"Image,resident_point1",
-                                                    "props":{"y":6,"x":68,"visible":false,"skin":"ui_common/jcdl_point1.png","scaleY":0.6,"scaleX":0.6,"name":"resident_point1"},
-                                                    "nodeParent":335,
-                                                    "label":"resident_point1",
-                                                    "isDirectory":false,
-                                                    "isAniNode":true,
-                                                    "hasChild":false,
-                                                    "compId":340,
-                                                    "child":[
-                                                        ],
-                                                    "$HIDDEN":true
-                                                }]
-                                        },
-                                        {
-                                            "type":"Image",
-                                            "searchKey":"Image,btnSingleJcdlIcon,btnSingleJcdlIcon",
-                                            "props":{"y":650,"x":659,"width":129,"visible":false,"var":"btnSingleJcdlIcon","sizeGrid":"32,30,38,25","scaleY":0.85,"scaleX":0.85,"name":"btnSingleJcdlIcon","height":156,"anchorY":0.5,"anchorX":0.5},
-                                            "nodeParent":54,
-                                            "label":"btnSingleJcdlIcon",
-                                            "isOpen":false,
-                                            "isDirectory":true,
-                                            "isAniNode":true,
-                                            "hasChild":true,
-                                            "compId":336,
-                                            "child":[
-                                                {
-                                                    "type":"Image",
-                                                    "searchKey":"Image",
-                                                    "props":{"y":1,"x":11,"width":151,"skin":"ui_common/jcdl_right_bg.png","height":135},
-                                                    "nodeParent":336,
-                                                    "label":"Image",
-                                                    "isDirectory":false,
-                                                    "isAniNode":true,
-                                                    "hasChild":false,
-                                                    "compId":347,
-                                                    "child":[
-                                                        ]
-                                                },
-                                                {
-                                                    "type":"Image",
-                                                    "searchKey":"Image,iconBg1,iconBg1",
-                                                    "props":{"y":66,"x":65,"width":100,"var":"iconBg1","skin":"ui_common/exIconBg.png","scaleY":1.3,"scaleX":1.3,"name":"iconBg1","height":100,"anchorY":0.5,"anchorX":0.5},
-                                                    "nodeParent":336,
-                                                    "label":"iconBg1",
-                                                    "isDirectory":false,
-                                                    "isAniNode":true,
-                                                    "hasChild":false,
-                                                    "compId":341,
-                                                    "child":[
-                                                        ]
-                                                },
-                                                {
-                                                    "type":"Image",
-                                                    "searchKey":"Image,imgSingleJcdlIcon,imgSingleJcdlIcon",
-                                                    "props":{"y":16,"x":15,"width":100,"var":"imgSingleJcdlIcon","name":"imgSingleJcdlIcon","mouseThrough":true,"height":100},
-                                                    "nodeParent":336,
-                                                    "label":"imgSingleJcdlIcon",
-                                                    "isOpen":true,
-                                                    "isDirectory":false,
-                                                    "isAniNode":true,
-                                                    "hasChild":false,
-                                                    "compId":342,
-                                                    "child":[
-                                                        ]
-                                                },
-                                                {
-                                                    "type":"Label",
-                                                    "searchKey":"Label,lblSingleJcdlName,lblSingleJcdlName",
-                                                    "props":{"y":-5,"x":120,"wordWrap":true,"width":35,"var":"lblSingleJcdlName","valign":"middle","text":"途游捕鱼","name":"lblSingleJcdlName","mouseThrough":true,"height":140,"fontSize":23,"color":"#ffffff","align":"center"},
-                                                    "nodeParent":336,
-                                                    "label":"lblSingleJcdlName",
-                                                    "isDirectory":false,
-                                                    "isAniNode":true,
-                                                    "hasChild":false,
-                                                    "compId":343,
-                                                    "child":[
-                                                        ]
-                                                },
-                                                {
-                                                    "type":"Image",
-                                                    "searchKey":"Image,roll_point,roll_point",
-                                                    "props":{"y":6,"x":68,"visible":false,"var":"roll_point","skin":"ui_common/jcdl_point1.png","scaleY":0.6,"scaleX":0.6,"name":"roll_point"},
-                                                    "nodeParent":336,
-                                                    "label":"roll_point",
-                                                    "isDirectory":false,
-                                                    "isAniNode":true,
-                                                    "hasChild":false,
-                                                    "compId":344,
-                                                    "child":[
-                                                        ],
-                                                    "$HIDDEN":true
-                                                }],
-                                            "$HIDDEN":false
                                         }],
                                     "$HIDDEN":false
                                 },
@@ -416,7 +264,7 @@
                                                     "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label",
-                                                    "props":{"y":5,"x":61,"text":"获得奖励","font":"font1_2"},
+                                                    "props":{"y":5,"x":61,"text":"获得奖励","font":"font1_3"},
                                                     "nodeParent":222,
                                                     "label":"Label",
                                                     "isDirectory":false,
@@ -1038,7 +886,7 @@
                                                             "x":105,
                                                             "type":"Label",
                                                             "searchKey":"Label,lblGetAward,lblGetAward",
-                                                            "props":{"y":267,"x":111,"width":266,"var":"lblGetAward","text":"88888","scaleY":0.7,"scaleX":0.7,"name":"lblGetAward","height":74,"font":"font1_2","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                                            "props":{"y":267,"x":111,"width":266,"var":"lblGetAward","text":"88888","scaleY":0.7,"scaleX":0.7,"name":"lblGetAward","height":74,"font":"font1_3","anchorY":0.5,"anchorX":0.5,"align":"center"},
                                                             "nodeParent":262,
                                                             "label":"lblGetAward",
                                                             "isOpen":true,
@@ -1096,7 +944,7 @@
                                                                     "x":120,
                                                                     "type":"Label",
                                                                     "searchKey":"Label,btn_get_lbl,btn_get_lbl",
-                                                                    "props":{"y":117,"x":235,"width":212,"var":"btn_get_lbl","text":"3倍领取","scaleY":1,"scaleX":1,"name":"btn_get_lbl","height":60,"fontSize":40,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5},
+                                                                    "props":{"y":117,"x":235,"width":212,"var":"btn_get_lbl","text":"3倍领取","scaleY":1,"scaleX":1,"name":"btn_get_lbl","height":60,"fontSize":40,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5},
                                                                     "nodeParent":268,
                                                                     "label":"btn_get_lbl",
                                                                     "isOpen":null,
@@ -1187,7 +1035,7 @@
                                                             "x":105,
                                                             "type":"Label",
                                                             "searchKey":"Label",
-                                                            "props":{"y":47,"x":214,"text":"领取","scaleY":1,"scaleX":1,"fontSize":40,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5},
+                                                            "props":{"y":47,"x":214,"text":"领取","scaleY":1,"scaleX":1,"fontSize":40,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5},
                                                             "nodeParent":272,
                                                             "label":"Label",
                                                             "isOpen":null,
@@ -1280,7 +1128,7 @@
                                                     "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label",
-                                                    "props":{"y":114,"x":214,"text":"3倍领取","scaleY":1,"scaleX":1,"fontSize":40,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5},
+                                                    "props":{"y":114,"x":214,"text":"3倍领取","scaleY":1,"scaleX":1,"fontSize":40,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5},
                                                     "nodeParent":17,
                                                     "label":"Label",
                                                     "isOpen":null,
@@ -1341,7 +1189,7 @@
                                                     "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label",
-                                                    "props":{"y":51,"x":214,"width":118,"text":"领取","height":60,"fontSize":40,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5},
+                                                    "props":{"y":51,"x":214,"width":118,"text":"领取","height":60,"fontSize":40,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5},
                                                     "nodeParent":15,
                                                     "label":"Label",
                                                     "isOpen":null,
@@ -1451,13 +1299,14 @@
             "props":{"y":1,"x":0,"width":750,"var":"box_title"},
             "nodeParent":2,
             "label":"box_title",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":276,
             "child":[
                 {
+                    "x":30,
                     "type":"Box",
                     "searchKey":"Box,box_game_diamond,box_game_diamond",
                     "props":{"y":10,"x":195,"var":"box_game_diamond","name":"box_game_diamond"},
@@ -1470,6 +1319,7 @@
                     "compId":283,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":10,"x":20,"width":160,"skin":"ui_common/coin_bg.png","sizeGrid":"0,36,0,29","height":40},
@@ -1482,6 +1332,7 @@
                             "compId":284,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite,title_diamond,title_diamond",
                                     "props":{"y":-5,"x":-21,"var":"title_diamond","texture":"ui_common/flyDiamond.png","name":"title_diamond"},
@@ -1495,9 +1346,10 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_game_diamond,lab_game_diamond",
-                                    "props":{"y":3,"x":145,"var":"lab_game_diamond","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_diamond","fontSize":30,"font":"font1_2","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
+                                    "props":{"y":3,"x":145,"var":"lab_game_diamond","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_diamond","fontSize":30,"font":"font1_3","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
                                     "nodeParent":284,
                                     "label":"lab_game_diamond",
                                     "isOpen":null,
@@ -1512,6 +1364,7 @@
                     "$HIDDEN":false
                 },
                 {
+                    "x":30,
                     "type":"Box",
                     "searchKey":"Box,box_game_money,box_game_money",
                     "props":{"y":10,"x":385,"var":"box_game_money","name":"box_game_money"},
@@ -1524,6 +1377,7 @@
                     "compId":288,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":10,"x":30,"width":150,"skin":"ui_common/coin_bg.png","sizeGrid":"0,38,0,29","height":40},
@@ -1536,6 +1390,7 @@
                             "compId":289,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite,title_money,title_money",
                                     "props":{"y":-5,"x":-40,"var":"title_money","texture":"ui_common/flyDollar.png","name":"title_money"},
@@ -1549,9 +1404,10 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_game_money,lab_game_money",
-                                    "props":{"y":3,"x":135,"var":"lab_game_money","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_money","fontSize":30,"font":"font1_2","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
+                                    "props":{"y":3,"x":135,"var":"lab_game_money","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_money","fontSize":30,"font":"font1_3","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
                                     "nodeParent":289,
                                     "label":"lab_game_money",
                                     "isOpen":null,
@@ -1567,6 +1423,7 @@
                     "$HIDDEN":false
                 },
                 {
+                    "x":30,
                     "type":"Box",
                     "searchKey":"Box,box_game_gold,box_game_gold",
                     "props":{"y":10,"x":10,"var":"box_game_gold","name":"box_game_gold"},
@@ -1579,6 +1436,7 @@
                     "compId":292,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":10,"x":20,"width":160,"skin":"ui_common/coin_bg.png","sizeGrid":"0,40,0,29","height":40},
@@ -1591,6 +1449,7 @@
                             "compId":293,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite,title_gold,title_gold",
                                     "props":{"y":-5,"x":-30,"var":"title_gold","texture":"ui_common/flyCoin.png","name":"title_gold"},
@@ -1604,9 +1463,10 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_game_gold,lab_game_gold",
-                                    "props":{"y":3,"x":145,"var":"lab_game_gold","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_gold","fontSize":30,"font":"font1_2","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
+                                    "props":{"y":3,"x":145,"var":"lab_game_gold","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_gold","fontSize":30,"font":"font1_3","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
                                     "nodeParent":293,
                                     "label":"lab_game_gold",
                                     "isOpen":false,
@@ -1620,6 +1480,7 @@
                         }]
                 },
                 {
+                    "x":30,
                     "type":"Script",
                     "switchAble":true,
                     "source":"src/framework/FZUIAnchor.ts",
@@ -3838,101 +3699,7 @@
         },
         {
             "nodes":[
-                {
-                    "target":335,
-                    "keyframes":{
-                        "x":[
-                            {
-                                "value":677,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":335,
-                                "key":"x",
-                                "index":0
-                            }],
-                        "rotation":[
-                            {
-                                "value":0,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":335,
-                                "key":"rotation",
-                                "index":0
-                            },
-                            {
-                                "value":15,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":335,
-                                "key":"rotation",
-                                "index":3
-                            },
-                            {
-                                "value":-20,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":335,
-                                "key":"rotation",
-                                "index":9
-                            },
-                            {
-                                "value":20,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":335,
-                                "key":"rotation",
-                                "index":15
-                            },
-                            {
-                                "value":-10,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":335,
-                                "key":"rotation",
-                                "index":19
-                            },
-                            {
-                                "value":6,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":335,
-                                "key":"rotation",
-                                "index":21
-                            },
-                            {
-                                "value":-3,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":335,
-                                "key":"rotation",
-                                "index":23
-                            },
-                            {
-                                "value":1,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":335,
-                                "key":"rotation",
-                                "index":24
-                            },
-                            {
-                                "value":0,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":335,
-                                "key":"rotation",
-                                "index":25
-                            },
-                            {
-                                "value":0,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":335,
-                                "key":"rotation",
-                                "index":45
-                            }]
-                    }
-                }],
+                ],
             "name":"jcdlRollShake_down",
             "id":9,
             "frameRate":24,
@@ -3940,101 +3707,7 @@
         },
         {
             "nodes":[
-                {
-                    "target":336,
-                    "keyframes":{
-                        "x":[
-                            {
-                                "value":678,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":336,
-                                "key":"x",
-                                "index":0
-                            },
-                            {
-                                "value":678,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":336,
-                                "key":"x",
-                                "index":45
-                            }],
-                        "rotation":[
-                            {
-                                "value":0,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":336,
-                                "key":"rotation",
-                                "index":0
-                            },
-                            {
-                                "value":15,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":336,
-                                "key":"rotation",
-                                "index":3
-                            },
-                            {
-                                "value":-20,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":336,
-                                "key":"rotation",
-                                "index":9
-                            },
-                            {
-                                "value":20,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":336,
-                                "key":"rotation",
-                                "index":15
-                            },
-                            {
-                                "value":-10,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":336,
-                                "key":"rotation",
-                                "index":19
-                            },
-                            {
-                                "value":6,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":336,
-                                "key":"rotation",
-                                "index":21
-                            },
-                            {
-                                "value":-3,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":336,
-                                "key":"rotation",
-                                "index":23
-                            },
-                            {
-                                "value":1,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":336,
-                                "key":"rotation",
-                                "index":24
-                            },
-                            {
-                                "value":0,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":336,
-                                "key":"rotation",
-                                "index":25
-                            }]
-                    }
-                }],
+                ],
             "name":"jcdlRollShake",
             "id":10,
             "frameRate":24,

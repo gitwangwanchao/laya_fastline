@@ -31,7 +31,7 @@ namespace game.view
             this.prefix = "";//FZWechat.instance.getSubpackagePath();
             this.path = "";
             if (Laya.Browser.onMiniGame) {
-                this.prefix = Laya.Browser.window.wx.env.USER_DATA_PATH+"/v" + tywx.SystemInfo.version + "/"; ////tywx.wxFileUtil.getCacheFilePath() + "/";
+                this.prefix = Laya.Browser.window.wx.env.USER_DATA_PATH+"/v" + FZ.SystemInfo.version + "/"; ////FZ.wxFileUtil.getCacheFilePath() + "/";
                 this.path = "subpackages/"
             }
             this.scene.on(Laya.Event.MOUSE_DOWN, this, this.onMouseDown);
@@ -107,7 +107,7 @@ namespace game.view
         public onEnterGame():void
         {
             //1.清空场景内存
-            FZSceneManager.instance.setActive(false);
+            // FZSceneManager.instance.setActive(false);
             FZUIManager.instance.removeUI(FZUIManager.UI_DrawerDialog);
             FZEventManager.instance.sendEvent(FZEvent.MAIN_VIEW_REMOVE_CAR_UI);
             FZUIManager.instance.removeUI(FZUIManager.UI_Main);

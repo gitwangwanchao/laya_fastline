@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Scene",
-    "selectedBox":264,
-    "selecteID":426,
+    "selectedBox":2,
+    "selecteID":586,
     "searchKey":"Scene",
     "props":{"width":750,"sceneColor":"#000000","height":1334},
     "nodeParent":-1,
@@ -21,13 +21,14 @@
             "props":{"y":0,"x":0,"width":750,"height":1334},
             "nodeParent":2,
             "label":"Box",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":436,
             "child":[
                 {
+                    "x":30,
                     "type":"Image",
                     "searchKey":"Image",
                     "props":{"y":-200,"x":-125,"skin":"res/Texture/main_bg.jpg","sizeGrid":"0,0,0,0","scaleY":2,"scaleX":2,"height":1000,"centerX":0.5},
@@ -43,6 +44,7 @@
                     "$HIDDEN":false
                 },
                 {
+                    "x":30,
                     "type":"Script",
                     "switchAble":true,
                     "source":"src/framework/FZUIAnchor.ts",
@@ -353,25 +355,27 @@
                             "props":{"y":672,"x":0,"width":766,"visible":false,"var":"deputy_container","name":"deputy_container","height":1334,"anchorY":0.5,"anchorX":0},
                             "nodeParent":85,
                             "label":"deputy_container",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":199,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,list_container,list_container",
                                     "props":{"y":682,"x":749,"width":750,"visible":false,"var":"list_container","name":"list_container","height":165,"alpha":1},
                                     "nodeParent":199,
                                     "label":"list_container",
-                                    "isOpen":false,
+                                    "isOpen":true,
                                     "isDirectory":true,
                                     "isAniNode":true,
                                     "hasChild":true,
                                     "compId":373,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,container_shadow,container_shadow",
                                             "props":{"y":5,"x":-115,"width":1200,"var":"container_shadow","skin":"ui_main/deputy_preview_bg.png","sizeGrid":"0,0,0,0","name":"container_shadow","height":185,"alpha":1},
@@ -385,6 +389,7 @@
                                                 ]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,centerGrid,centerGrid",
                                             "props":{"y":87,"x":382,"var":"centerGrid","skin":"ui_main/deputy_choose_bg.png","scaleY":0.8,"scaleX":0.8,"name":"centerGrid","anchorY":0.5,"anchorX":0.5},
@@ -398,6 +403,7 @@
                                                 ]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,list_container_vice,list_container_vice",
                                             "props":{"y":4,"x":-1,"width":750,"var":"list_container_vice","name":"list_container_vice","height":165},
@@ -411,9 +417,10 @@
                                                 ]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,label_already,label_already",
-                                            "props":{"y":174.5,"x":325,"visible":false,"var":"label_already","text":"已装备","name":"label_already","fontSize":30,"color":"#ffffff"},
+                                            "props":{"y":174.5,"x":325,"visible":false,"var":"label_already","text":"已装备","name":"label_already","fontSize":30,"color":"#000000"},
                                             "nodeParent":373,
                                             "label":"label_already",
                                             "isOpen":true,
@@ -425,9 +432,10 @@
                                                 ]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,label_already_try,label_already_try",
-                                            "props":{"y":172.5,"x":325,"visible":false,"var":"label_already_try","text":"已装备","name":"label_already_try","fontSize":30,"color":"#ffffff"},
+                                            "props":{"y":172.5,"x":325,"visible":false,"var":"label_already_try","text":"已装备","name":"label_already_try","fontSize":30,"color":"#000000"},
                                             "nodeParent":373,
                                             "label":"label_already_try",
                                             "isDirectory":false,
@@ -438,6 +446,7 @@
                                                 ]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,label_free_try,label_free_try",
                                             "props":{"y":157.5,"x":580,"visible":false,"var":"label_free_try","text":"满级试用","name":"label_free_try","fontSize":25,"color":"#eab936"},
@@ -453,6 +462,7 @@
                                     "$HIDDEN":false
                                 },
                                 {
+                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btn_deputy_preview,btn_deputy_preview",
                                     "props":{"y":1006,"x":168,"width":428,"visible":false,"var":"btn_deputy_preview","stateNum":"1","skin":"ui_main/common_btn_yellow.png","sizeGrid":"0,0,0,0","name":"btn_deputy_preview","height":120},
@@ -465,9 +475,10 @@
                                     "compId":367,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_deputy_try,lbl_deputy_try",
-                                            "props":{"y":32,"x":182,"var":"lbl_deputy_try","text":"满级试用","scaleY":0.8,"scaleX":0.8,"name":"lbl_deputy_try","fontSize":38,"font":"font1_2","color":"#ffffff","bold":true},
+                                            "props":{"y":32,"x":182,"var":"lbl_deputy_try","text":"满级试用","scaleY":0.8,"scaleX":0.8,"name":"lbl_deputy_try","fontSize":38,"font":"font1_3","color":"#ffffff","bold":true},
                                             "nodeParent":367,
                                             "label":"lbl_deputy_try",
                                             "isDirectory":false,
@@ -478,6 +489,7 @@
                                                 ]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image",
                                             "props":{"y":31,"x":73,"skin":"ui_game/game_img_icon_video2.png"},
@@ -493,6 +505,7 @@
                                     "$HIDDEN":true
                                 },
                                 {
+                                    "x":60,
                                     "type":"Box",
                                     "searchKey":"Box,deputy_attribute_box,deputy_attribute_box",
                                     "props":{"y":793,"x":145,"width":475,"var":"deputy_attribute_box","name":"deputy_attribute_box"},
@@ -505,18 +518,20 @@
                                     "compId":200,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_cur_deputy_lv,lbl_cur_deputy_lv",
                                             "props":{"y":193,"x":35,"width":35,"var":"lbl_cur_deputy_lv","text":"3","scaleY":0.6,"scaleX":0.6,"name":"lbl_cur_deputy_lv","height":60,"fontSize":38,"font":"font1_3","color":"#fd934d","anchorY":0.5,"anchorX":1,"align":"right"},
                                             "nodeParent":200,
                                             "label":"lbl_cur_deputy_lv",
-                                            "isOpen":false,
+                                            "isOpen":true,
                                             "isDirectory":true,
                                             "isAniNode":true,
                                             "hasChild":true,
                                             "compId":250,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"ColorFilterSetter",
                                                     "switchAble":true,
                                                     "searchKey":"ColorFilterSetter",
@@ -533,9 +548,10 @@
                                                 }]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_next_deputy_lv,lbl_next_deputy_lv",
-                                            "props":{"y":190,"x":36,"var":"lbl_next_deputy_lv","text":"/20","scaleY":0.6,"scaleX":0.6,"name":"lbl_next_deputy_lv","fontSize":38,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0,"align":"left"},
+                                            "props":{"y":190,"x":36,"var":"lbl_next_deputy_lv","text":"/20","scaleY":0.6,"scaleX":0.6,"name":"lbl_next_deputy_lv","fontSize":38,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0,"align":"left"},
                                             "nodeParent":200,
                                             "label":"lbl_next_deputy_lv",
                                             "isOpen":true,
@@ -547,18 +563,20 @@
                                                 ]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,deputy_level_bg,deputy_level_bg",
                                             "props":{"y":116,"x":91,"width":310,"var":"deputy_level_bg","skin":"ui_main/fwq_jinjie_bg.png","name":"deputy_level_bg","height":50},
                                             "nodeParent":200,
                                             "label":"deputy_level_bg",
-                                            "isOpen":false,
+                                            "isOpen":true,
                                             "isDirectory":true,
                                             "isAniNode":true,
                                             "hasChild":true,
                                             "compId":228,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_0,level_bar_0",
                                                     "props":{"y":9,"x":7,"var":"level_bar_0","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_0"},
@@ -570,9 +588,11 @@
                                                     "hasChild":false,
                                                     "compId":229,
                                                     "child":[
-                                                        ]
+                                                        ],
+                                                    "$HIDDEN":false
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_1,level_bar_1",
                                                     "props":{"y":9,"x":22,"visible":false,"var":"level_bar_1","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_1"},
@@ -587,6 +607,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_2,level_bar_2",
                                                     "props":{"y":9,"x":37,"visible":false,"var":"level_bar_2","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_2"},
@@ -601,6 +622,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_3,level_bar_3",
                                                     "props":{"y":9,"x":52,"visible":false,"var":"level_bar_3","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_3"},
@@ -615,6 +637,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_4,level_bar_4",
                                                     "props":{"y":9,"x":67,"visible":false,"var":"level_bar_4","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_4"},
@@ -629,6 +652,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_5,level_bar_5",
                                                     "props":{"y":9,"x":82,"visible":false,"var":"level_bar_5","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_5"},
@@ -643,6 +667,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_6,level_bar_6",
                                                     "props":{"y":9,"x":97,"visible":false,"var":"level_bar_6","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_6"},
@@ -657,6 +682,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_7,level_bar_7",
                                                     "props":{"y":9,"x":112,"visible":false,"var":"level_bar_7","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_7"},
@@ -671,6 +697,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_8,level_bar_8",
                                                     "props":{"y":9,"x":127,"visible":false,"var":"level_bar_8","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_8"},
@@ -685,6 +712,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_9,level_bar_9",
                                                     "props":{"y":9,"x":142,"visible":false,"var":"level_bar_9","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_9"},
@@ -698,6 +726,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_10,level_bar_10",
                                                     "props":{"y":9,"x":157,"visible":false,"var":"level_bar_10","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_10"},
@@ -712,6 +741,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_11,level_bar_11",
                                                     "props":{"y":9,"x":172,"visible":false,"var":"level_bar_11","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_11"},
@@ -726,6 +756,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_12,level_bar_12",
                                                     "props":{"y":9,"x":187,"visible":false,"var":"level_bar_12","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_12"},
@@ -740,6 +771,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_13,level_bar_13",
                                                     "props":{"y":9,"x":202,"visible":false,"var":"level_bar_13","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_13"},
@@ -754,6 +786,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_14,level_bar_14",
                                                     "props":{"y":9,"x":217,"visible":false,"var":"level_bar_14","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_14"},
@@ -768,6 +801,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_15,level_bar_15",
                                                     "props":{"y":9,"x":232,"visible":false,"var":"level_bar_15","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_15"},
@@ -782,6 +816,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_16,level_bar_16",
                                                     "props":{"y":9,"x":247,"visible":false,"var":"level_bar_16","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_16"},
@@ -796,6 +831,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_17,level_bar_17",
                                                     "props":{"y":9,"x":262,"visible":false,"var":"level_bar_17","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_17"},
@@ -810,6 +846,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_18,level_bar_18",
                                                     "props":{"y":9,"x":277,"visible":false,"var":"level_bar_18","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_18"},
@@ -824,6 +861,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,level_bar_19,level_bar_19",
                                                     "props":{"y":9,"x":292,"visible":false,"var":"level_bar_19","skin":"ui_main/fwq_jinjie_bar.png","name":"level_bar_19"},
@@ -837,6 +875,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,deputy_rank_up,deputy_rank_up",
                                                     "props":{"y":24,"x":359,"var":"deputy_rank_up","skin":"ui_main/fwq_jie_2.png","name":"deputy_rank_up","anchorY":0.5,"anchorX":0.5},
@@ -851,6 +890,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,deputy_rank,deputy_rank",
                                                     "props":{"y":23,"x":-46,"var":"deputy_rank","skin":"ui_main/fwq_jie_2.png","name":"deputy_rank","anchorY":0.5,"anchorX":0.5},
@@ -866,6 +906,7 @@
                                             "$HIDDEN":false
                                         },
                                         {
+                                            "x":75,
                                             "type":"Box",
                                             "searchKey":"Box",
                                             "props":{"y":-7,"x":0},
@@ -962,6 +1003,7 @@
                                                 }]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Button",
                                             "searchKey":"Button,btn_deputy_levelup,btn_deputy_levelup",
                                             "props":{"y":210,"x":22,"var":"btn_deputy_levelup","stateNum":"1","skin":"ui_common/weapon_btn_green.png","sizeGrid":"0,0,0,0","scaleY":1,"scaleX":1,"name":"btn_deputy_levelup"},
@@ -974,6 +1016,7 @@
                                             "compId":399,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,pay_depType_icon,pay_depType_icon",
                                                     "props":{"y":20,"x":20,"var":"pay_depType_icon","skin":"ui_common/flyDollar.png","scaleY":1.5,"scaleX":1.5,"name":"pay_depType_icon"},
@@ -987,9 +1030,10 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_deputy_btn,lbl_deputy_btn",
-                                                    "props":{"y":28,"x":295,"var":"lbl_deputy_btn","text":"升级","scaleY":0.9,"scaleX":0.9,"name":"lbl_deputy_btn","fontSize":56,"font":"font1_2","color":"#ffffff","bold":true},
+                                                    "props":{"y":28,"x":295,"var":"lbl_deputy_btn","text":"升级","scaleY":0.9,"scaleX":0.9,"name":"lbl_deputy_btn","fontSize":56,"font":"font1_3","color":"#ffffff","bold":true},
                                                     "nodeParent":399,
                                                     "label":"lbl_deputy_btn",
                                                     "isOpen":true,
@@ -1001,9 +1045,10 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_deputy_lvup_pay,lbl_deputy_lvup_pay",
-                                                    "props":{"y":53,"x":180,"var":"lbl_deputy_lvup_pay","text":"25.6M","scaleY":0.6,"scaleX":0.6,"name":"lbl_deputy_lvup_pay","fontSize":30,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                                    "props":{"y":53,"x":180,"var":"lbl_deputy_lvup_pay","text":"25.6M","scaleY":0.6,"scaleX":0.6,"name":"lbl_deputy_lvup_pay","fontSize":30,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                                     "nodeParent":399,
                                                     "label":"lbl_deputy_lvup_pay",
                                                     "isOpen":null,
@@ -1015,6 +1060,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,deputy_levelUp_notice,deputy_levelUp_notice",
                                                     "props":{"y":5,"x":402,"visible":false,"var":"deputy_levelUp_notice","skin":"ui_main/main_notice_point.png","name":"deputy_levelUp_notice"},
@@ -1033,6 +1079,7 @@
                                     "$HIDDEN":false
                                 },
                                 {
+                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,deputy_preview_btn,deputy_preview_btn",
                                     "props":{"y":680,"x":697,"width":120,"var":"deputy_preview_btn","stateNum":"1","name":"deputy_preview_btn","height":140,"anchorY":0.5,"anchorX":0.5},
@@ -1045,6 +1092,7 @@
                                     "compId":377,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,deputy_preview_img,deputy_preview_img",
                                             "props":{"y":85,"x":70,"var":"deputy_preview_img","skin":"ui_main/weapon_preview_open_2.png","name":"deputy_preview_img","anchorY":0.5,"anchorX":0.5},
@@ -1061,6 +1109,7 @@
                                     "$HIDDEN":false
                                 },
                                 {
+                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image",
                                     "props":{"y":915,"x":139,"visible":false,"skin":"ui_common/imagecongra_levelup.png"},
@@ -1096,7 +1145,7 @@
                                     "props":{"y":890,"x":148,"var":"main_attribute_box","name":"main_attribute_box"},
                                     "nodeParent":264,
                                     "label":"main_attribute_box",
-                                    "isOpen":false,
+                                    "isOpen":true,
                                     "isDirectory":true,
                                     "isAniNode":true,
                                     "hasChild":true,
@@ -1109,16 +1158,17 @@
                                             "props":{"y":-11,"x":38,"var":"main_dj_spr","texture":"ui_main/ui_icon_dengji.png","name":"main_dj_spr"},
                                             "nodeParent":265,
                                             "label":"main_dj_spr",
-                                            "isOpen":false,
+                                            "isOpen":true,
                                             "isDirectory":true,
                                             "isAniNode":true,
                                             "hasChild":true,
                                             "compId":293,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_dj",
-                                                    "props":{"y":25,"x":113,"text":"等级","scaleY":0.6,"scaleX":0.6,"name":"lbl_dj","fontSize":34,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
+                                                    "props":{"y":25,"x":113,"text":"等级","scaleY":0.6,"scaleX":0.6,"name":"lbl_dj","fontSize":34,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
                                                     "nodeParent":293,
                                                     "label":"lbl_dj",
                                                     "isOpen":true,
@@ -1130,9 +1180,10 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_main_dj_value,lbl_main_dj_value",
-                                                    "props":{"y":24,"x":223,"var":"lbl_main_dj_value","text":"1","scaleY":0.6,"scaleX":0.6,"name":"lbl_main_dj_value","fontSize":36,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
+                                                    "props":{"y":24,"x":223,"var":"lbl_main_dj_value","text":"1","scaleY":0.6,"scaleX":0.6,"name":"lbl_main_dj_value","fontSize":36,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
                                                     "nodeParent":293,
                                                     "label":"lbl_main_dj_value",
                                                     "isOpen":true,
@@ -1144,6 +1195,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,main_dj_arrow,main_dj_arrow",
                                                     "props":{"y":20,"x":259,"var":"main_dj_arrow","skin":"ui_main/ui_lvup_icon.png","name":"main_dj_arrow"},
@@ -1157,6 +1209,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_main_dj_next_value,lbl_main_dj_next_value",
                                                     "props":{"y":24,"x":305,"var":"lbl_main_dj_next_value","text":"2","scaleY":0.6,"scaleX":0.6,"name":"lbl_main_dj_next_value","fontSize":36,"font":"font1_3","color":"#fec244","anchorY":0.5,"anchorX":0,"align":"left"},
@@ -1169,6 +1222,7 @@
                                                     "compId":298,
                                                     "child":[
                                                         {
+                                                            "x":105,
                                                             "type":"ColorFilterSetter",
                                                             "switchAble":true,
                                                             "searchKey":"ColorFilterSetter",
@@ -1192,16 +1246,17 @@
                                             "props":{"y":51.5,"x":32,"var":"sh_spr","texture":"ui_main/ui_icon_shanghai.png","name":"sh_spr"},
                                             "nodeParent":265,
                                             "label":"sh_spr",
-                                            "isOpen":false,
+                                            "isOpen":true,
                                             "isDirectory":true,
                                             "isAniNode":true,
                                             "hasChild":true,
                                             "compId":358,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_sh",
-                                                    "props":{"y":21,"x":121,"text":"伤害","scaleY":0.6,"scaleX":0.6,"name":"lbl_sh","fontSize":34,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
+                                                    "props":{"y":21,"x":121,"text":"伤害","scaleY":0.6,"scaleX":0.6,"name":"lbl_sh","fontSize":34,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
                                                     "nodeParent":358,
                                                     "label":"lbl_sh",
                                                     "isOpen":true,
@@ -1213,9 +1268,10 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_main_sh_value,lbl_main_sh_value",
-                                                    "props":{"y":22,"x":231,"var":"lbl_main_sh_value","text":"1","scaleY":0.6,"scaleX":0.6,"name":"lbl_main_sh_value","fontSize":36,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
+                                                    "props":{"y":22,"x":231,"var":"lbl_main_sh_value","text":"1","scaleY":0.6,"scaleX":0.6,"name":"lbl_main_sh_value","fontSize":36,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
                                                     "nodeParent":358,
                                                     "label":"lbl_main_sh_value",
                                                     "isOpen":true,
@@ -1227,6 +1283,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,main_sh_arrow,main_sh_arrow",
                                                     "props":{"y":18,"x":267,"width":14,"var":"main_sh_arrow","skin":"ui_main/ui_lvup_icon.png","name":"main_sh_arrow","height":24},
@@ -1241,6 +1298,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_main_sh_next_value,lbl_main_sh_next_value",
                                                     "props":{"y":21,"x":313,"var":"lbl_main_sh_next_value","text":"2","scaleY":0.6,"scaleX":0.6,"name":"lbl_main_sh_next_value","fontSize":36,"font":"font1_3","color":"#fec244","anchorY":0.5,"anchorX":0,"align":"left"},
@@ -1253,6 +1311,7 @@
                                                     "compId":303,
                                                     "child":[
                                                         {
+                                                            "x":105,
                                                             "type":"ColorFilterSetter",
                                                             "switchAble":true,
                                                             "searchKey":"ColorFilterSetter",
@@ -1300,7 +1359,7 @@
                                                     "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_main_btn,lbl_main_btn",
-                                                    "props":{"y":28,"x":295,"var":"lbl_main_btn","text":"升级","scaleY":0.9,"scaleX":0.9,"name":"lbl_main_btn","fontSize":38,"font":"font1_2","color":"#ffffff","bold":true},
+                                                    "props":{"y":28,"x":295,"var":"lbl_main_btn","text":"升级","scaleY":0.9,"scaleX":0.9,"name":"lbl_main_btn","fontSize":38,"font":"font1_3","color":"#ffffff","bold":true},
                                                     "nodeParent":288,
                                                     "label":"lbl_main_btn",
                                                     "isOpen":null,
@@ -1315,7 +1374,7 @@
                                                     "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_main_lvup_pay,lbl_main_lvup_pay",
-                                                    "props":{"y":53,"x":180,"var":"lbl_main_lvup_pay","text":"100000","scaleY":0.6,"scaleX":0.6,"name":"lbl_main_lvup_pay","fontSize":30,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                                    "props":{"y":53,"x":180,"var":"lbl_main_lvup_pay","text":"100000","scaleY":0.6,"scaleX":0.6,"name":"lbl_main_lvup_pay","fontSize":30,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                                     "nodeParent":288,
                                                     "label":"lbl_main_lvup_pay",
                                                     "isOpen":null,
@@ -1350,13 +1409,14 @@
                                             "props":{"y":206,"x":227,"visible":false,"var":"guide_ani_box","name":"guide_ani_box","anchorY":0.5,"anchorX":0.5},
                                             "nodeParent":265,
                                             "label":"guide_ani_box",
-                                            "isOpen":false,
+                                            "isOpen":true,
                                             "isDirectory":true,
                                             "isAniNode":true,
                                             "hasChild":true,
                                             "compId":495,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,click_img,click_img",
                                                     "props":{"y":0,"x":0,"var":"click_img","skin":"ui_ani/2_00000.png","scaleY":1.2,"scaleX":1.2,"name":"click_img"},
@@ -1370,6 +1430,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,hand_img,hand_img",
                                                     "props":{"y":200,"x":90,"var":"hand_img","skin":"ui_main/newbie_hand2.png","scaleY":1.15,"scaleX":1.15,"name":"hand_img"},
@@ -1392,7 +1453,7 @@
                                     "props":{"y":685,"x":750,"width":750,"visible":false,"var":"Mainlist_container","name":"Mainlist_container","height":165,"alpha":1},
                                     "nodeParent":264,
                                     "label":"Mainlist_container",
-                                    "isOpen":false,
+                                    "isOpen":true,
                                     "isDirectory":true,
                                     "isAniNode":true,
                                     "hasChild":true,
@@ -1444,7 +1505,7 @@
                                             "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,label_already_main,label_already_main",
-                                            "props":{"y":172.5,"x":325,"visible":false,"var":"label_already_main","text":"已装备","name":"label_already_main","fontSize":30,"color":"#ffffff"},
+                                            "props":{"y":172.5,"x":325,"visible":false,"var":"label_already_main","text":"已装备","name":"label_already_main","fontSize":30,"color":"#000000"},
                                             "nodeParent":421,
                                             "label":"label_already_main",
                                             "isDirectory":false,
@@ -1463,7 +1524,7 @@
                                     "props":{"y":683,"x":697,"width":120,"var":"main_preview_btn","stateNum":"1","name":"main_preview_btn","height":140,"anchorY":0.5,"anchorX":0.5},
                                     "nodeParent":264,
                                     "label":"main_preview_btn",
-                                    "isOpen":false,
+                                    "isOpen":true,
                                     "isDirectory":true,
                                     "isAniNode":true,
                                     "hasChild":true,
@@ -1511,13 +1572,14 @@
                             "props":{"y":228,"x":0,"width":766,"visible":false,"var":"uav_container","name":"uav_container","height":450,"anchorY":0.5,"anchorX":0},
                             "nodeParent":85,
                             "label":"uav_container",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":88,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,uav_icon_bg,uav_icon_bg",
                                     "props":{"y":389,"x":0,"width":766,"visible":true,"var":"uav_icon_bg","name":"uav_icon_bg","height":450,"anchorY":0.5,"anchorX":0},
@@ -1533,6 +1595,7 @@
                                     "$HIDDEN":false
                                 },
                                 {
+                                    "x":60,
                                     "type":"Box",
                                     "searchKey":"Box,uav_attribute_box,uav_attribute_box",
                                     "props":{"y":647,"x":158,"var":"uav_attribute_box","name":"uav_attribute_box"},
@@ -1545,9 +1608,10 @@
                                     "compId":94,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_uav_name,lbl_uav_name",
-                                            "props":{"y":-82,"x":219,"width":750,"var":"lbl_uav_name","valign":"middle","text":"机机机机机","scaleY":0.6,"scaleX":0.6,"name":"lbl_uav_name","height":56,"fontSize":36,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                            "props":{"y":-82,"x":219,"width":750,"var":"lbl_uav_name","valign":"middle","text":"机机机机机","scaleY":0.6,"scaleX":0.6,"name":"lbl_uav_name","height":56,"fontSize":36,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                                             "nodeParent":94,
                                             "label":"lbl_uav_name",
                                             "isOpen":true,
@@ -1559,6 +1623,7 @@
                                                 ]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Sprite",
                                             "searchKey":"Sprite,uva_dj_spr,uva_dj_spr",
                                             "props":{"y":17.5,"x":25,"var":"uva_dj_spr","texture":"ui_main/ui_icon_dengji.png","name":"uva_dj_spr"},
@@ -1571,9 +1636,10 @@
                                             "compId":177,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_dj,lbl_dj",
-                                                    "props":{"y":21,"x":113,"var":"lbl_dj","text":"等级","scaleY":0.6,"scaleX":0.6,"name":"lbl_dj","fontSize":34,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
+                                                    "props":{"y":21,"x":113,"var":"lbl_dj","text":"等级","scaleY":0.6,"scaleX":0.6,"name":"lbl_dj","fontSize":34,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
                                                     "nodeParent":177,
                                                     "label":"lbl_dj",
                                                     "isOpen":true,
@@ -1585,9 +1651,10 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_uav_dj_value,lbl_uav_dj_value",
-                                                    "props":{"y":22,"x":223,"var":"lbl_uav_dj_value","text":"1","scaleY":0.6,"scaleX":0.6,"name":"lbl_uav_dj_value","fontSize":36,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
+                                                    "props":{"y":22,"x":223,"var":"lbl_uav_dj_value","text":"1","scaleY":0.6,"scaleX":0.6,"name":"lbl_uav_dj_value","fontSize":36,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
                                                     "nodeParent":177,
                                                     "label":"lbl_uav_dj_value",
                                                     "isOpen":true,
@@ -1599,6 +1666,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,uav_dj_arrow,uav_dj_arrow",
                                                     "props":{"y":17,"x":259,"var":"uav_dj_arrow","skin":"ui_main/ui_lvup_icon.png","name":"uav_dj_arrow"},
@@ -1612,6 +1680,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_uav_dj_next_value,lbl_uav_dj_next_value",
                                                     "props":{"y":21,"x":305,"var":"lbl_uav_dj_next_value","text":"7","scaleY":0.6,"scaleX":0.6,"name":"lbl_uav_dj_next_value","fontSize":36,"font":"font1_3","color":"#fec244","anchorY":0.5,"anchorX":0,"align":"left"},
@@ -1624,6 +1693,7 @@
                                                     "compId":136,
                                                     "child":[
                                                         {
+                                                            "x":105,
                                                             "type":"ColorFilterSetter",
                                                             "switchAble":true,
                                                             "searchKey":"ColorFilterSetter",
@@ -1641,6 +1711,7 @@
                                                 }]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Sprite",
                                             "searchKey":"Sprite,uva_sh_spr,uva_sh_spr",
                                             "props":{"y":91.5,"x":17,"var":"uva_sh_spr","texture":"ui_main/ui_icon_shanghai.png","name":"uva_sh_spr"},
@@ -1653,9 +1724,10 @@
                                             "compId":176,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_sh",
-                                                    "props":{"y":21,"x":121,"text":"伤害","scaleY":0.6,"scaleX":0.6,"name":"lbl_sh","fontSize":34,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
+                                                    "props":{"y":21,"x":121,"text":"伤害","scaleY":0.6,"scaleX":0.6,"name":"lbl_sh","fontSize":34,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
                                                     "nodeParent":176,
                                                     "label":"lbl_sh",
                                                     "isOpen":true,
@@ -1667,9 +1739,10 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_uav_sh_value,lbl_uav_sh_value",
-                                                    "props":{"y":21,"x":231,"var":"lbl_uav_sh_value","text":"0","scaleY":0.6,"scaleX":0.6,"name":"lbl_uav_sh_value","fontSize":36,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
+                                                    "props":{"y":21,"x":231,"var":"lbl_uav_sh_value","text":"0","scaleY":0.6,"scaleX":0.6,"name":"lbl_uav_sh_value","fontSize":36,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":1,"align":"right"},
                                                     "nodeParent":176,
                                                     "label":"lbl_uav_sh_value",
                                                     "isOpen":true,
@@ -1681,6 +1754,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,uav_sh_arrow,uav_sh_arrow",
                                                     "props":{"y":17,"x":267,"var":"uav_sh_arrow","skin":"ui_main/ui_lvup_icon.png","name":"uav_sh_arrow"},
@@ -1695,6 +1769,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lbl_uav_sh_next_value,lbl_uav_sh_next_value",
                                                     "props":{"y":21,"x":313,"var":"lbl_uav_sh_next_value","text":"1","scaleY":0.6,"scaleX":0.6,"name":"lbl_uav_sh_next_value","fontSize":36,"font":"font1_3","color":"#fec244","anchorY":0.5,"anchorX":0,"align":"left"},
@@ -1707,6 +1782,7 @@
                                                     "compId":104,
                                                     "child":[
                                                         {
+                                                            "x":105,
                                                             "type":"ColorFilterSetter",
                                                             "switchAble":true,
                                                             "searchKey":"ColorFilterSetter",
@@ -1726,6 +1802,7 @@
                                     "$HIDDEN":false
                                 },
                                 {
+                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btn_uav_levelup,btn_uav_levelup",
                                     "props":{"y":874,"x":169,"var":"btn_uav_levelup","stateNum":"1","skin":"ui_common/weapon_btn_green.png","sizeGrid":"0,0,0,0","name":"btn_uav_levelup"},
@@ -1738,6 +1815,7 @@
                                     "compId":72,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,pay_type_icon,pay_type_icon",
                                             "props":{"y":18,"x":15,"var":"pay_type_icon","skin":"ui_common/flyDollar.png","scaleY":1.5,"scaleX":1.5,"name":"pay_type_icon"},
@@ -1751,9 +1829,10 @@
                                                 ]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_uav_btn,lbl_uav_btn",
-                                            "props":{"y":28,"x":295,"var":"lbl_uav_btn","text":"升级","scaleY":0.9,"scaleX":0.9,"name":"lbl_uav_btn","fontSize":38,"font":"font1_2","color":"#ffffff","bold":true},
+                                            "props":{"y":28,"x":295,"var":"lbl_uav_btn","text":"升级","scaleY":0.9,"scaleX":0.9,"name":"lbl_uav_btn","fontSize":38,"font":"font1_3","color":"#ffffff","bold":true},
                                             "nodeParent":72,
                                             "label":"lbl_uav_btn",
                                             "isOpen":null,
@@ -1765,9 +1844,10 @@
                                                 ]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_uav_lvup_pay,lbl_uav_lvup_pay",
-                                            "props":{"y":52,"x":180,"var":"lbl_uav_lvup_pay","text":"000000","scaleY":0.6,"scaleX":0.6,"name":"lbl_uav_lvup_pay","fontSize":30,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                            "props":{"y":52,"x":180,"var":"lbl_uav_lvup_pay","text":"000000","scaleY":0.6,"scaleX":0.6,"name":"lbl_uav_lvup_pay","fontSize":30,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                             "nodeParent":72,
                                             "label":"lbl_uav_lvup_pay",
                                             "isOpen":null,
@@ -1779,6 +1859,7 @@
                                                 ]
                                         },
                                         {
+                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,uav_levelUp_notice,uav_levelUp_notice",
                                             "props":{"y":0,"x":402,"visible":false,"var":"uav_levelUp_notice","skin":"ui_main/main_notice_point.png","name":"uav_levelUp_notice"},
@@ -1795,6 +1876,7 @@
                                     "$HIDDEN":false
                                 },
                                 {
+                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btn_uav_choose,btn_uav_choose",
                                     "props":{"y":1000,"x":169,"visible":false,"var":"btn_uav_choose","stateNum":"1","skin":"ui_main/common_btn_yellow.png","sizeGrid":"0,0,0,0","name":"btn_uav_choose"},
@@ -1807,9 +1889,10 @@
                                     "compId":125,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label",
-                                            "props":{"y":24,"x":165,"text":"选择","skewX":0,"scaleY":1,"scaleX":1,"fontSize":40,"font":"font1_2","color":"#ffffff","bold":true},
+                                            "props":{"y":24,"x":165,"text":"选择","skewX":0,"scaleY":1,"scaleX":1,"fontSize":40,"font":"font1_3","color":"#ffffff","bold":true},
                                             "nodeParent":125,
                                             "label":"Label",
                                             "isOpen":null,
@@ -1822,6 +1905,7 @@
                                             "$HIDDEN":false
                                         },
                                         {
+                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,uav_choose_notice,uav_choose_notice",
                                             "props":{"y":0,"x":400,"visible":false,"var":"uav_choose_notice","skin":"ui_main/main_notice_point.png","name":"uav_choose_notice"},
@@ -1838,32 +1922,19 @@
                                     "$HIDDEN":false
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lbl_uav_des,lbl_uav_des",
                                     "props":{"y":1049,"x":383,"visible":false,"var":"lbl_uav_des","text":"当前正在使用","skewX":-12,"name":"lbl_uav_des","fontSize":34,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                                     "nodeParent":88,
                                     "label":"lbl_uav_des",
                                     "isOpen":true,
-                                    "isDirectory":true,
+                                    "isDirectory":false,
                                     "isAniNode":true,
-                                    "hasChild":true,
+                                    "hasChild":false,
                                     "compId":173,
                                     "child":[
-                                        {
-                                            "type":"ColorFilterSetter",
-                                            "switchAble":true,
-                                            "searchKey":"ColorFilterSetter",
-                                            "removeAble":true,
-                                            "props":{"y":2,"x":0,"saturation":"0","hue":"0","contrast":"0","color":"#ffffff","brightness":"0","alpha":"0"},
-                                            "nodeParent":173,
-                                            "label":"ColorFilterSetter",
-                                            "isDirectory":false,
-                                            "isAniNode":true,
-                                            "hasChild":false,
-                                            "compId":190,
-                                            "child":[
-                                                ]
-                                        }]
+                                        ]
                                 }],
                             "$HIDDEN":true
                         }],
@@ -2009,14 +2080,13 @@
                     "props":{"y":1202,"x":489.27294921875,"var":"btn_uav","skin":"ui_main/levelUp_btn_uav_1.png","name":"btn_uav"},
                     "nodeParent":305,
                     "label":"btn_uav",
-                    "isOpen":true,
+                    "isOpen":false,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":317,
                     "child":[
                         {
-                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,img_uav,img_uav",
                             "props":{"y":-2,"x":-3,"visible":false,"var":"img_uav","skin":"ui_main/levelUp_btn_uav_0.png","name":"img_uav","alpha":1},
@@ -2031,7 +2101,6 @@
                             "$HIDDEN":false
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,bottom_uav_notice,bottom_uav_notice",
                             "props":{"y":7,"x":211,"visible":false,"var":"bottom_uav_notice","skin":"ui_main/main_notice_point.png","name":"bottom_uav_notice"},
@@ -2051,7 +2120,7 @@
                     "x":30,
                     "type":"Label",
                     "searchKey":"Label,lbl_dfzd_sh,lbl_dfzd_sh",
-                    "props":{"y":1123,"x":375,"visible":false,"var":"lbl_dfzd_sh","text":"单发伤害：","scaleY":1,"scaleX":1,"name":"lbl_dfzd_sh","fontSize":34,"font":"Helvetica","color":"#ffffff","anchorX":1,"align":"right"},
+                    "props":{"y":1123,"x":375,"visible":false,"var":"lbl_dfzd_sh","text":"单发伤害：","scaleY":1,"scaleX":1,"name":"lbl_dfzd_sh","fontSize":34,"font":"Helvetica","color":"#000000","anchorX":1,"align":"right"},
                     "nodeParent":305,
                     "label":"lbl_dfzd_sh",
                     "isOpen":true,
@@ -2066,7 +2135,7 @@
                     "x":30,
                     "type":"Label",
                     "searchKey":"Label,lbl_dfzd_sh_value,lbl_dfzd_sh_value",
-                    "props":{"y":1122,"x":436,"visible":false,"var":"lbl_dfzd_sh_value","text":"12345","scaleY":1,"scaleX":1,"name":"lbl_dfzd_sh_value","fontSize":34,"font":"Helvetica","color":"#ffffff","anchorX":0,"align":"right"},
+                    "props":{"y":1122,"x":436,"visible":false,"var":"lbl_dfzd_sh_value","text":"12345","scaleY":1,"scaleX":1,"name":"lbl_dfzd_sh_value","fontSize":34,"font":"Helvetica","color":"#000000","anchorX":0,"align":"right"},
                     "nodeParent":305,
                     "label":"lbl_dfzd_sh_value",
                     "isOpen":false,
@@ -2104,13 +2173,14 @@
             "props":{"y":0,"x":0,"width":750,"var":"AnchorCenter","name":"AnchorCenter"},
             "nodeParent":2,
             "label":"AnchorCenter",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":137,
             "child":[
                 {
+                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,cursor_deputy,cursor_deputy",
                     "props":{"y":123,"x":30,"var":"cursor_deputy","skin":"ui_common/cursor_deputy.png","name":"cursor_deputy"},
@@ -2126,6 +2196,7 @@
                     "$HIDDEN":false
                 },
                 {
+                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,cursor_main,cursor_main",
                     "props":{"y":123,"x":30,"var":"cursor_main","skin":"ui_common/cursor_main.png","name":"cursor_main"},
@@ -2140,6 +2211,7 @@
                     "$HIDDEN":false
                 },
                 {
+                    "x":30,
                     "type":"Button",
                     "searchKey":"Button,btn_close,btn_close",
                     "props":{"y":127,"var":"btn_close","stateNum":"1","skin":"ui_main/ui_close_btn.png","right":16,"name":"btn_close"},
@@ -2152,6 +2224,7 @@
                     "compId":71,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":52,"x":-145,"skin":"ui_main/flash_light.png","anchorY":0.5,"anchorX":0.5,"alpha":0.21},
@@ -2167,6 +2240,7 @@
                     "$HIDDEN":false
                 },
                 {
+                    "x":30,
                     "type":"Script",
                     "switchAble":true,
                     "source":"src/framework/FZUIAnchor.ts",
@@ -2373,25 +2447,27 @@
                     "props":{"y":0,"x":0,"width":750,"visible":false,"var":"close_gudie_box","name":"close_gudie_box"},
                     "nodeParent":500,
                     "label":"close_gudie_box",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":502,
                     "child":[
                         {
+                            "x":45,
                             "type":"Button",
                             "searchKey":"Button,btn_guide_close,btn_guide_close",
                             "props":{"y":128,"var":"btn_guide_close","stateNum":"1","skin":"ui_main/ui_close_btn.png","right":16,"name":"btn_guide_close"},
                             "nodeParent":502,
                             "label":"btn_guide_close",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":505,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,click_img",
                                     "props":{"y":-94,"x":-89,"skin":"ui_ani/2_00000.png","scaleY":1.2,"scaleX":1.2,"name":"click_img","blendMode":"lighter"},
@@ -2405,6 +2481,7 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,close_hand",
                                     "props":{"y":91,"x":55,"visible":true,"skin":"ui_main/newbie_hand2.png","scaleY":1.5,"scaleX":-1.5,"name":"close_hand"},
@@ -2420,6 +2497,7 @@
                             "$HIDDEN":false
                         },
                         {
+                            "x":45,
                             "type":"Script",
                             "switchAble":true,
                             "source":"src/framework/FZUIAnchor.ts",
@@ -2436,6 +2514,7 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,guide_tip,guide_tip",
                             "props":{"zOrder":2,"y":437,"x":450,"var":"guide_tip","skin":"res/Texture/guide_tip.png","sizeGrid":"45,80,42,51","name":"guide_tip","anchorY":0.5,"anchorX":0.5},
@@ -2448,6 +2527,7 @@
                             "compId":645,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lbl_tip,lbl_tip",
                                     "props":{"y":49,"x":285,"visible":true,"var":"lbl_tip","text":"点击返回主页面","name":"lbl_tip","fontSize":60,"font":"Arial","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0.5},
@@ -2472,49 +2552,53 @@
                     "props":{"y":-1,"x":0,"width":750,"visible":false,"var":"update_gudie_box","name":"update_gudie_box","height":1334},
                     "nodeParent":500,
                     "label":"update_gudie_box",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":511,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,show_container",
                             "props":{"y":670,"x":0,"width":750,"sizeGrid":"0,338,0,316","name":"show_container","height":1334,"anchorY":0.5,"anchorX":0},
                             "nodeParent":511,
                             "label":"show_container",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":512,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,main_container",
                                     "props":{"y":229,"x":0,"width":766,"visible":true,"name":"main_container","height":450,"anchorY":0.5,"anchorX":0},
                                     "nodeParent":512,
                                     "label":"main_container",
-                                    "isOpen":false,
+                                    "isOpen":true,
                                     "isDirectory":true,
                                     "isAniNode":true,
                                     "hasChild":true,
                                     "compId":585,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Box",
                                             "searchKey":"Box,main_attribute_box",
                                             "props":{"y":890,"x":148,"name":"main_attribute_box"},
                                             "nodeParent":585,
                                             "label":"main_attribute_box",
-                                            "isOpen":false,
+                                            "isOpen":true,
                                             "isDirectory":true,
                                             "isAniNode":true,
                                             "hasChild":true,
                                             "compId":586,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"Button",
                                                     "searchKey":"Button,btn_guide_main_levelup,btn_guide_main_levelup",
                                                     "props":{"y":114,"x":19,"var":"btn_guide_main_levelup","stateNum":"1","skin":"ui_main/common_btn_green.png","sizeGrid":"0,0,0,0","scaleY":1,"scaleX":1,"name":"btn_guide_main_levelup"},
@@ -2597,6 +2681,7 @@
                                                     "$HIDDEN":false
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Box",
                                                     "searchKey":"Box,guide_ani_box",
                                                     "props":{"y":223,"x":227,"visible":true,"name":"guide_ani_box","anchorY":0.5,"anchorX":0.5},
@@ -2609,6 +2694,7 @@
                                                     "compId":605,
                                                     "child":[
                                                         {
+                                                            "x":105,
                                                             "type":"Image",
                                                             "searchKey":"Image,click_img",
                                                             "props":{"y":0,"x":0,"skin":"ui_ani/2_00000.png","scaleY":1.2,"scaleX":1.2,"name":"click_img","blendMode":"lighter"},
@@ -2622,6 +2708,7 @@
                                                                 ]
                                                         },
                                                         {
+                                                            "x":105,
                                                             "type":"Image",
                                                             "searchKey":"Image,hand_img",
                                                             "props":{"y":200,"x":90,"skin":"ui_main/newbie_hand2.png","scaleY":1.5,"scaleX":1.5,"name":"hand_img"},
@@ -2640,6 +2727,7 @@
                                     "$HIDDEN":false
                                 },
                                 {
+                                    "x":60,
                                     "type":"Script",
                                     "switchAble":true,
                                     "source":"src/framework/FZUIAnchor.ts",
@@ -2658,6 +2746,7 @@
                             "$HIDDEN":false
                         },
                         {
+                            "x":45,
                             "type":"Script",
                             "switchAble":true,
                             "source":"src/framework/FZUIAnchor.ts",

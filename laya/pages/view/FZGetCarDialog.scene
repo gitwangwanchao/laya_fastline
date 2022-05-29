@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Dialog",
-    "selectedBox":235,
-    "selecteID":245,
+    "selectedBox":4,
+    "selecteID":179,
     "searchKey":"Dialog",
     "props":{"width":750,"sceneColor":"#000000","height":1334},
     "nodeParent":-1,
@@ -714,7 +714,7 @@
                             "x":45,
                             "type":"Label",
                             "searchKey":"Label,lblCarName,lblCarName",
-                            "props":{"y":30.174999999999955,"x":-500,"width":584,"visible":false,"var":"lblCarName","text":"Lv.13SUV-S","scaleY":0.85,"scaleX":0.85,"name":"lblCarName","height":71,"fontSize":48,"font":"font1_2","color":"#ffffff","bold":false,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                            "props":{"y":30.174999999999955,"x":-500,"width":584,"visible":false,"var":"lblCarName","text":"Lv.13SUV-S","scaleY":0.85,"scaleX":0.85,"name":"lblCarName","height":71,"fontSize":48,"font":"font1_3","color":"#ffffff","bold":false,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                             "nodeParent":235,
                             "label":"lblCarName",
                             "isOpen":null,
@@ -758,7 +758,7 @@
                                     "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,confirm_lbl,confirm_lbl",
-                                    "props":{"y":107,"x":214,"var":"confirm_lbl","text":"炫耀一下","scaleY":1,"scaleX":1,"name":"confirm_lbl","fontSize":38,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                    "props":{"y":107,"x":214,"var":"confirm_lbl","text":"炫耀一下","scaleY":1,"scaleX":1,"name":"confirm_lbl","fontSize":38,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                     "nodeParent":237,
                                     "label":"confirm_lbl",
                                     "isOpen":null,
@@ -779,16 +779,17 @@
                             "props":{"y":286.17499999999995,"x":21.80000000000001,"visible":false,"var":"btnVideo","stateNum":"1","skin":"ui_common/common_btn_green.png","sizeGrid":"37,91,48,55","name":"btnVideo"},
                             "nodeParent":235,
                             "label":"btnVideo",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":240,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label",
-                                    "props":{"y":115,"x":214,"text":"免费","scaleY":0.8,"scaleX":0.8,"fontSize":40,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                    "props":{"y":115,"x":214,"text":"免费","scaleY":0.8,"scaleX":0.8,"fontSize":40,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                     "nodeParent":240,
                                     "label":"Label",
                                     "isOpen":null,
@@ -801,6 +802,7 @@
                                     "$HIDDEN":false
                                 },
                                 {
+                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,free_type_icon,free_type_icon",
                                     "props":{"y":27,"x":214,"var":"free_type_icon","skin":"ui_common/free_share_icon.png","name":"free_type_icon","anchorX":0.5},
@@ -885,13 +887,14 @@
                             "props":{"y":129.17499999999995,"x":116.80000000000001,"width":252,"name":"boxCarInfo","height":119},
                             "nodeParent":235,
                             "label":"boxCarInfo",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":247,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite,imgHurtIcon,imgHurtIcon",
                                     "props":{"y":0,"x":-600,"visible":false,"var":"imgHurtIcon","texture":"ui_main/ui_icon_shanghai.png","name":"imgHurtIcon"},
@@ -904,9 +907,10 @@
                                     "compId":248,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lblHurtNum,lblHurtNum",
-                                            "props":{"y":4.5,"x":119,"width":202,"var":"lblHurtNum","text":"123","scaleY":0.5,"scaleX":0.5,"name":"lblHurtNum","height":81,"font":"font1_2","align":"center"},
+                                            "props":{"y":4.5,"x":119,"width":202,"var":"lblHurtNum","text":"123","scaleY":0.5,"scaleX":0.5,"name":"lblHurtNum","height":81,"font":"font1_3","align":"center"},
                                             "nodeParent":248,
                                             "label":"lblHurtNum",
                                             "isDirectory":false,
@@ -918,9 +922,10 @@
                                             "$HIDDEN":false
                                         },
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lblHurtText,lblHurtText",
-                                            "props":{"y":7,"x":55,"width":202,"var":"lblHurtText","text":"伤害","scaleY":0.5,"scaleX":0.5,"name":"lblHurtText","height":81,"font":"font1_2","align":"center"},
+                                            "props":{"y":7,"x":55,"width":202,"var":"lblHurtText","text":"伤害","scaleY":0.5,"scaleX":0.5,"name":"lblHurtText","height":81,"font":"font1_3","align":"center"},
                                             "nodeParent":248,
                                             "label":"lblHurtText",
                                             "isDirectory":false,
@@ -932,6 +937,7 @@
                                             "$HIDDEN":false
                                         },
                                         {
+                                            "x":75,
                                             "type":"Sprite",
                                             "searchKey":"Sprite,imgArrows0,imgArrows0",
                                             "props":{"y":7,"x":210.5,"var":"imgArrows0","texture":"ui_main/ui_icon_arrows.png","name":"imgArrows0"},
@@ -948,6 +954,7 @@
                                     "$HIDDEN":false
                                 },
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite,imgArmorIcon,imgArmorIcon",
                                     "props":{"y":62,"x":-600,"visible":false,"var":"imgArmorIcon","texture":"ui_main/ui_icon_hujia.png","name":"imgArmorIcon"},
@@ -960,9 +967,10 @@
                                     "compId":252,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lblArmorNum,lblArmorNum",
-                                            "props":{"y":6.5,"x":119,"width":202,"var":"lblArmorNum","text":"123","scaleY":0.5,"scaleX":0.5,"name":"lblArmorNum","height":81,"font":"font1_2","align":"center"},
+                                            "props":{"y":6.5,"x":119,"width":202,"var":"lblArmorNum","text":"123","scaleY":0.5,"scaleX":0.5,"name":"lblArmorNum","height":81,"font":"font1_3","align":"center"},
                                             "nodeParent":252,
                                             "label":"lblArmorNum",
                                             "isDirectory":false,
@@ -974,9 +982,10 @@
                                             "$HIDDEN":false
                                         },
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lblArmorText",
-                                            "props":{"y":9,"x":57,"width":202,"text":"护甲","scaleY":0.5,"scaleX":0.5,"name":"lblArmorText","height":81,"font":"font1_2","align":"center"},
+                                            "props":{"y":9,"x":57,"width":202,"text":"护甲","scaleY":0.5,"scaleX":0.5,"name":"lblArmorText","height":81,"font":"font1_3","align":"center"},
                                             "nodeParent":252,
                                             "label":"lblArmorText",
                                             "isDirectory":false,
@@ -988,6 +997,7 @@
                                             "$HIDDEN":false
                                         },
                                         {
+                                            "x":75,
                                             "type":"Sprite",
                                             "searchKey":"Sprite,imgArrows1,imgArrows1",
                                             "props":{"y":7,"x":210,"var":"imgArrows1","texture":"ui_main/ui_icon_arrows.png","name":"imgArrows1"},
@@ -1071,7 +1081,7 @@
                             "props":{"y":10,"x":20,"width":160,"skin":"ui_common/coin_bg.png","sizeGrid":"0,36,0,29","height":40},
                             "nodeParent":223,
                             "label":"Image",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
@@ -1094,7 +1104,7 @@
                                 {
                                     "type":"Label",
                                     "searchKey":"Label,lab_game_diamond,lab_game_diamond",
-                                    "props":{"x":145,"var":"lab_game_diamond","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_diamond","fontSize":30,"font":"font1_2","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
+                                    "props":{"x":145,"var":"lab_game_diamond","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_diamond","fontSize":30,"font":"font1_3","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
                                     "nodeParent":224,
                                     "label":"lab_game_diamond",
                                     "isOpen":null,
@@ -1131,25 +1141,27 @@
                     "props":{"y":10,"x":10,"var":"box_game_gold","name":"box_game_gold"},
                     "nodeParent":222,
                     "label":"box_game_gold",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":228,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":10,"x":20,"width":160,"skin":"ui_common/coin_bg.png","sizeGrid":"0,40,0,29","height":40},
                             "nodeParent":228,
                             "label":"Image",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":229,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite,title_gold,title_gold",
                                     "props":{"y":-5,"x":-20,"var":"title_gold","texture":"ui_common/flyCoin.png","name":"title_gold"},
@@ -1164,9 +1176,10 @@
                                     "$HIDDEN":false
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_game_gold,lab_game_gold",
-                                    "props":{"x":145,"var":"lab_game_gold","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_gold","fontSize":30,"font":"font1_2","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
+                                    "props":{"x":145,"var":"lab_game_gold","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_gold","fontSize":30,"font":"font1_3","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
                                     "nodeParent":229,
                                     "label":"lab_game_gold",
                                     "isOpen":false,

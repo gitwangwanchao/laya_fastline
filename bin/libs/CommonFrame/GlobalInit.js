@@ -1,9 +1,9 @@
 /**
  * Created by xiaochuntian on 2018/5/2.
  */
-tywx = {};
+FZ = {};
 //基础状态信息
-tywx.StateInfo = {
+FZ.StateInfo = {
     debugMode: false,          //日志开关
     networkConnected: true,   //网络状态
     networkType: 'none',      //网络类型
@@ -11,7 +11,7 @@ tywx.StateInfo = {
 };
 
 //应用系统信息z
-tywx.SystemInfo = {
+FZ.SystemInfo = {
     clientId: 'H5_2.0_weixin.weixin.0-hall20315.weixin.quanmzc',
     intClientId: 25683,
     cloudId:40,
@@ -31,14 +31,14 @@ tywx.SystemInfo = {
     biLogServer : "https://cbi.touch4.me/api/bilog5/text",
     biJsonLogServer : "https://cbi.touch4.me/api/bilog5/report",
     errorLogServer : "https://clienterr.touch4.me/api/bilog5/clientlog",
-    tywxVersion: 1.4,
+    FZVersion: 1.4,
     openLocalRecord: false,
     areaUrl : "https://iploc.ywdier.com/",
     isDownZip: false,
     isNewUser: false,
 };
 
-tywx.UserInfo = {
+FZ.UserInfo = {
     userId: 0,
     userName: 'TuWechatGame',
     userPic: '',
@@ -62,25 +62,25 @@ tywx.UserInfo = {
 /**
  * 日志相关方法,若不符合项目组标准,可自行进行扩展
  */
-tywx.LOGD = function(tag, msg) {
-    if (!tywx.StateInfo.debugMode) {
+FZ.LOGD = function(tag, msg) {
+    if (!FZ.StateInfo.debugMode) {
         return;
     }
-    tag = tag || "tywx";
+    tag = tag || "FZ";
     var logStr = tag + ' : ' + msg;
     console.log(logStr);
 };
 
-tywx.LOGE = function(tag, msg) {
-    if (!tywx.StateInfo.debugMode) {
+FZ.LOGE = function(tag, msg) {
+    if (!FZ.StateInfo.debugMode) {
         return;
     }
-    tag = tag || "tywx";
+    tag = tag || "FZ";
     var logStr = tag + ' : ' + msg;
     console.error(logStr);
 };
 
-tywx.IsWechatPlatform = function() {
+FZ.IsWechatPlatform = function() {
     try{
         wx;
         wx.showShareMenu();
@@ -328,12 +328,12 @@ tywx.IsWechatPlatform = function() {
      * These are the functions you'll usually want to call
      * They take string arguments and return either hex or base-64 encoded strings
      */
-    tywx.hex_md5 = function (s){ return binl2hex(core_md5(str2binl(s), s.length * chrsz));};
-    tywx.b64_md5 = function (s){ return binl2b64(core_md5(str2binl(s), s.length * chrsz));};
-    tywx.str_md5 = function (s){ return binl2str(core_md5(str2binl(s), s.length * chrsz));};
-    tywx.hex_hmac_md5 =function (key, data) { return binl2hex(core_hmac_md5(key, data)); };
-    tywx.b64_hmac_md5 =function (key, data) { return binl2b64(core_hmac_md5(key, data)); };
-    tywx.str_hmac_md5 =function (key, data) { return binl2str(core_hmac_md5(key, data)); };
+    FZ.hex_md5 = function (s){ return binl2hex(core_md5(str2binl(s), s.length * chrsz));};
+    FZ.b64_md5 = function (s){ return binl2b64(core_md5(str2binl(s), s.length * chrsz));};
+    FZ.str_md5 = function (s){ return binl2str(core_md5(str2binl(s), s.length * chrsz));};
+    FZ.hex_hmac_md5 =function (key, data) { return binl2hex(core_hmac_md5(key, data)); };
+    FZ.b64_hmac_md5 =function (key, data) { return binl2b64(core_hmac_md5(key, data)); };
+    FZ.str_hmac_md5 =function (key, data) { return binl2str(core_hmac_md5(key, data)); };
 
 })();
 

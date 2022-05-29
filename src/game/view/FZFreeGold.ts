@@ -98,10 +98,10 @@ namespace game.view
             FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.btn_close, this, this.onClickBtnClose, ["btn_close"]);
             
             FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.btn_game, this, this.onClickBtnGame, ["btn_game"]);
-            if(this.resType == FZGameStatus.QCurrencyType.gold&&tywx.clickStatEventType.freeGoldPanel){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.freeGoldPanel,[]);
-            }else if(this.resType == FZGameStatus.QCurrencyType.dollar&&tywx.clickStatEventType.freeCashpanel){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.freeCashpanel,[]);
+            if(this.resType == FZGameStatus.QCurrencyType.gold&&FZ.clickStatEventType.freeGoldPanel){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.freeGoldPanel,[]);
+            }else if(this.resType == FZGameStatus.QCurrencyType.dollar&&FZ.clickStatEventType.freeCashpanel){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.freeCashpanel,[]);
             }
         }
         /**
@@ -231,8 +231,8 @@ namespace game.view
 
         public shareCallBack(){
             if(this.resType == FZGameStatus.QCurrencyType.gold){
-                if(tywx.clickStatEventType.getFreeGoldSuc){
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.getFreeGoldSuc,[]);
+                if(FZ.clickStatEventType.getFreeGoldSuc){
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.getFreeGoldSuc,[]);
                 }
                 FZSaveDateManager.instance.setItemToLocalStorage("GAME_FREE_GOLD_GET_COUNT", (this.freeGetCount+1).toString());
                 FZMergeDateManager.instance.addGameGold(this.freeValue.toString());
@@ -242,8 +242,8 @@ namespace game.view
                 FZGameData.instance.playResFlyAni(null,null,{type: 1,countType: 0},null);
             }
             if(this.resType == FZGameStatus.QCurrencyType.dollar){
-                if(tywx.clickStatEventType.getFreeCashSuc){
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.getFreeCashSuc,[]);
+                if(FZ.clickStatEventType.getFreeCashSuc){
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.getFreeCashSuc,[]);
                 }
                 FZSaveDateManager.instance.setItemToLocalStorage("GAME_FREE_DOLLAR_GET_COUNT", (this.dollarGetCount+1).toString());
                 FZGameData.instance.addWeaponsCoin(this.dollarValue);
@@ -254,8 +254,8 @@ namespace game.view
                 FZEventManager.instance.sendEvent(FZEvent.GAME_LVUPFLYRES_CTRL, {itemType: 0,countType: 1});
             }
             if(this.resType == FZGameStatus.QCurrencyType.diamond){
-                if(tywx.clickStatEventType.getOneMoreGift){
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.getOneMoreGift,[]);
+                if(FZ.clickStatEventType.getOneMoreGift){
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.getOneMoreGift,[]);
                 }
                 FZMergeDateManager.instance.addGameDiamond(this.diamondValue);
                 FZGameData.instance.playResFlyAni(null,null,{type: 2,countType: 0},null);

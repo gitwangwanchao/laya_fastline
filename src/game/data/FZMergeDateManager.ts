@@ -193,13 +193,13 @@ namespace game.data
                  // 上传网络数据
                 FZMergeDateManager.instance.sendUpdataData();
                 if(this.CarMaxLevel  == FZMergeDateManager.instance.curTableCarMaxLevel) {
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.CarMaxLevel,[]);
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.CarMaxLevel,[]);
                 }
                 if(this.CarMaxLevel == 10){
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.CarMaxLevel10,[]);
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.CarMaxLevel10,[]);
                 }
                 if(this.CarMaxLevel == 30){ 
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.CarMaxLevel30,[]);
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.CarMaxLevel30,[]);
                 }
             }
         }
@@ -218,7 +218,7 @@ namespace game.data
             this.haveInfo = FZSaveDateManager.instance.getItemFromLocalStorage("GAME_DATA","");
             if(!this.haveInfo){
                 //覆盖本地数据
-                tywx.TuyooSDK.setNewUser(false);
+                FZ.TuyooSDK.setNewUser(false);
             }
             this.getUserInfo();
             Laya.timer.clear(this,this.updateUserIntegral);
@@ -403,11 +403,11 @@ namespace game.data
 			if(Laya.Browser.onMiniGame)
 			{
 				// let info = Laya.Browser.window.wx.getLaunchOptionsSync();
-                FZDebug.log("info : " + tywx.UserInfo.scene_id);
-				if(!FZUtils.isNullOrEmpty(tywx.UserInfo.scene_id)){
+                FZDebug.log("info : " + FZ.UserInfo.scene_id);
+				if(!FZUtils.isNullOrEmpty(FZ.UserInfo.scene_id)){
 					//视频本地策略
 					let spArr = [1005,1006,1011,1012,1013,1053];
-					if(spArr.indexOf(parseInt(tywx.UserInfo.scene_id)) >= 0/* || (info.query.fun_type && info.query.fun_type == "onShareAppMessage")*/){
+					if(spArr.indexOf(parseInt(FZ.UserInfo.scene_id)) >= 0/* || (info.query.fun_type && info.query.fun_type == "onShareAppMessage")*/){
 						FZGameData.instance.setOnlyCanVideo(true);
 					}else{
 						FZGameData.instance.setOnlyCanVideo(false);
@@ -515,11 +515,11 @@ namespace game.data
 
         public setUseriInviteCode()
         {
-            if(tywx.UserInfo.invite_id > 0)
+            if(FZ.UserInfo.invite_id > 0)
             {
                 new FZHttps().get("game/setInviteInfo",this,(e)=>{
                     this.updateUserIntegral();
-                },{inviteUserId:tywx.UserInfo.invite_id});
+                },{inviteUserId:FZ.UserInfo.invite_id});
             }
             else
             {
@@ -786,7 +786,7 @@ namespace game.data
 
             var __data :any= {}
             __data.gamedata = JSON.stringify(data);
-            if(tywx.UserInfo.userId!=0 && tywx.UserInfo.userId != 123){
+            if(FZ.UserInfo.userId!=0 && FZ.UserInfo.userId != 123){
                 this.setGameData(__data);    
             }
         }
@@ -1310,7 +1310,7 @@ namespace game.data
 
             gold = Math.floor(gold);
             var time = FZCfgManager.instance.getOffLineTime();
-            if(tywx.StateInfo.debugMode)
+            if(FZ.StateInfo.debugMode)
                 alert("计算离线金币 offlinetime:"+offlinetime+'offline_h:'+offline_h+'offline_s:'+offline_s+'time:'+time)
             // 判断是否弹离线弹窗
             if (offline_h > 0 || (offline_h == 0 && offline_s >= time ))
@@ -1879,7 +1879,7 @@ namespace game.data
             if (this.judgeCarSlotDataAirdrop() != -1){
                 return;
             }
-            tywx.BiLog.clickStat(tywx.clickStatEventType.ShowAirDrop,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.ShowAirDrop,[]);
              // 设置空投状态
             this.setAirDropOpenState(0);
             // 判断当前玩家车辆最高等级 30级之前降落到停车位 30级之后降临到原先的位置

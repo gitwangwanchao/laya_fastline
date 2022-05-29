@@ -2,7 +2,7 @@
     "x":0,
     "type":"Scene",
     "selectedBox":2,
-    "selecteID":68,
+    "selecteID":71,
     "searchKey":"Scene",
     "props":{"y":40,"x":40,"width":80,"sceneColor":"#ffffff","pivotY":40,"pivotX":40,"height":80},
     "nodeParent":-1,
@@ -27,7 +27,8 @@
             "hasChild":false,
             "compId":67,
             "child":[
-                ]
+                ],
+            "$HIDDEN":false
         },
         {
             "x":15,
@@ -63,7 +64,7 @@
             "x":15,
             "type":"Label",
             "searchKey":"Label,lab_name,lab_name",
-            "props":{"y":94,"x":40,"var":"lab_name","text":"弹幕","name":"lab_name","fontSize":30,"color":"#ffffff","bold":true,"anchorX":0.5},
+            "props":{"y":94,"x":40,"var":"lab_name","text":"弹幕","name":"lab_name","fontSize":30,"color":"#000000","bold":true,"anchorX":0.5},
             "nodeParent":2,
             "label":"lab_name",
             "isDirectory":false,

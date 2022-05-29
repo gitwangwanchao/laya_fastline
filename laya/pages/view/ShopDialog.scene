@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Scene",
-    "selectedBox":8,
-    "selecteID":11,
+    "selectedBox":119,
+    "selecteID":121,
     "searchKey":"Scene",
     "props":{"width":750,"sceneColor":"#000000","height":1334},
     "nodeParent":-1,
@@ -109,33 +109,31 @@
                                     "props":{"y":2,"x":0,"width":580,"renderType":"render","height":146},
                                     "nodeParent":6,
                                     "label":"Box",
-                                    "isOpen":true,
+                                    "isOpen":false,
                                     "isDirectory":true,
                                     "isAniNode":false,
                                     "hasChild":true,
                                     "compId":7,
                                     "child":[
                                         {
-                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,carCellBg,carCellBg",
                                             "props":{"y":71,"x":295,"width":554,"var":"carCellBg","skin":"ui_main/item_bg_1.png","sizeGrid":"49,59,70,48","renderType":"render","name":"carCellBg","height":146,"anchorY":0.5,"anchorX":0.5},
                                             "nodeParent":7,
                                             "label":"carCellBg",
-                                            "isOpen":true,
+                                            "isOpen":false,
                                             "isDirectory":true,
                                             "isAniNode":false,
                                             "hasChild":true,
                                             "compId":8,
                                             "child":[
                                                 {
-                                                    "x":90,
                                                     "type":"Sprite",
                                                     "searchKey":"Sprite,carSaleTag,carSaleTag",
                                                     "props":{"y":-1,"x":-4,"var":"carSaleTag","texture":"ui_main/car_item_sale_bg.png","name":"carSaleTag"},
                                                     "nodeParent":8,
                                                     "label":"carSaleTag",
-                                                    "isOpen":false,
+                                                    "isOpen":true,
                                                     "isDirectory":true,
                                                     "isAniNode":false,
                                                     "hasChild":true,
@@ -148,33 +146,17 @@
                                                             "nodeParent":43,
                                                             "label":"lblSale",
                                                             "isOpen":true,
-                                                            "isDirectory":true,
+                                                            "isDirectory":false,
                                                             "isAniNode":false,
-                                                            "hasChild":true,
+                                                            "hasChild":false,
                                                             "compId":44,
                                                             "child":[
-                                                                {
-                                                                    "type":"ColorFilterSetter",
-                                                                    "switchAble":true,
-                                                                    "searchKey":"ColorFilterSetter",
-                                                                    "removeAble":true,
-                                                                    "props":{"y":2,"x":0,"saturation":"0","hue":"0","contrast":"0","color":"#ffffff","brightness":"0","alpha":"0"},
-                                                                    "nodeParent":44,
-                                                                    "label":"ColorFilterSetter",
-                                                                    "isDirectory":false,
-                                                                    "isAniNode":false,
-                                                                    "hasChild":false,
-                                                                    "compId":86,
-                                                                    "child":[
-                                                                        ],
-                                                                    "$HIDDEN":false
-                                                                }],
+                                                                ],
                                                             "$HIDDEN":false
                                                         }],
                                                     "$HIDDEN":false
                                                 },
                                                 {
-                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lblLevel,lblLevel",
                                                     "props":{"y":56,"x":43,"width":60,"var":"lblLevel","valign":"middle","text":"1","scaleY":0.75,"scaleX":0.75,"name":"lblLevel","height":36,"fontSize":36,"font":"font1_3","color":"#605F5F","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
@@ -189,7 +171,6 @@
                                                     "$HIDDEN":false
                                                 },
                                                 {
-                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,imgCarIcon,imgCarIcon",
                                                     "props":{"y":63,"x":188,"var":"imgCarIcon","skin":"ui_car_main/car_01.png","scaleY":0.8,"scaleX":0.8,"renderType":"render","name":"imgCarIcon","disabled":false,"anchorY":0.5,"anchorX":0.5},
@@ -205,7 +186,6 @@
                                                     "$HIDDEN":false
                                                 },
                                                 {
-                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label,lblCarName,lblCarName",
                                                     "props":{"y":118,"x":184,"var":"lblCarName","text":"赛车车车","scaleY":0.5,"scaleX":0.5,"name":"lblCarName","fontSize":24,"font":"font1_3","color":"#403636","bold":false,"anchorY":0.5,"anchorX":0.5},
@@ -220,13 +200,12 @@
                                                     "$HIDDEN":false
                                                 },
                                                 {
-                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,freeBtnBuy,freeBtnBuy",
                                                     "props":{"y":110,"x":81,"width":141,"visible":false,"var":"freeBtnBuy","skin":"ui_common/common_btn_green.png","sizeGrid":"25,23,35,21","name":"freeBtnBuy","height":67,"gray":false,"anchorY":0.5,"anchorX":0.5},
                                                     "nodeParent":8,
                                                     "label":"freeBtnBuy",
-                                                    "isOpen":false,
+                                                    "isOpen":true,
                                                     "isDirectory":true,
                                                     "isAniNode":false,
                                                     "hasChild":true,
@@ -235,7 +214,7 @@
                                                         {
                                                             "type":"Label",
                                                             "searchKey":"Label,lblCost",
-                                                            "props":{"y":14,"x":70.5,"text":"免费","strokeColor":"#ffffff","scaleY":0.4,"scaleX":0.4,"name":"lblCost","fontSize":20,"font":"font1_2","color":"#FFFFFF","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                                            "props":{"y":14,"x":70.5,"text":"免费","strokeColor":"#ffffff","scaleY":0.4,"scaleX":0.4,"name":"lblCost","fontSize":20,"font":"font1_3","color":"#FFFFFF","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                                             "nodeParent":75,
                                                             "label":"lblCost",
                                                             "isOpen":null,
@@ -250,7 +229,7 @@
                                                         {
                                                             "type":"Label",
                                                             "searchKey":"Label,carPaylValue,carPaylValue",
-                                                            "props":{"y":37.5,"x":70.5,"var":"carPaylValue","valign":"middle","text":"21.5M","strokeColor":"#ffffff","scaleY":0.5,"scaleX":0.5,"name":"carPaylValue","fontSize":26,"font":"font1_2","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                                            "props":{"y":37.5,"x":70.5,"var":"carPaylValue","valign":"middle","text":"21.5M","strokeColor":"#ffffff","scaleY":0.5,"scaleX":0.5,"name":"carPaylValue","fontSize":26,"font":"font1_3","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                                             "nodeParent":75,
                                                             "label":"carPaylValue",
                                                             "isOpen":true,
@@ -265,7 +244,6 @@
                                                     "$HIDDEN":false
                                                 },
                                                 {
-                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,btnBuy,btnBuy",
                                                     "props":{"y":79,"x":446,"visible":true,"var":"btnBuy","skin":"ui_common/shop_btn_green.png","name":"btnBuy","anchorY":0.5,"anchorX":0.5,"alpha":1},
@@ -278,7 +256,6 @@
                                                     "compId":12,
                                                     "child":[
                                                         {
-                                                            "x":105,
                                                             "type":"Image",
                                                             "searchKey":"Image,imgCost,imgCost",
                                                             "props":{"y":47,"x":45,"var":"imgCost","skin":"ui_common/flyDiamond.png","scaleY":0.8,"scaleX":0.8,"name":"imgCost","anchorY":0.5,"anchorX":0.5},
@@ -293,10 +270,9 @@
                                                             "$HIDDEN":false
                                                         },
                                                         {
-                                                            "x":105,
                                                             "type":"Label",
                                                             "searchKey":"Label,lblCost,lblCost",
-                                                            "props":{"y":40,"x":120,"var":"lblCost","text":"77","strokeColor":"#ffffff","scaleY":0.6,"scaleX":0.6,"name":"lblCost","fontSize":36,"font":"font1_2","color":"#FFFFFF","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                                            "props":{"y":40,"x":120,"var":"lblCost","text":"77","strokeColor":"#ffffff","scaleY":0.6,"scaleX":0.6,"name":"lblCost","fontSize":36,"font":"font1_3","color":"#FFFFFF","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                                             "nodeParent":12,
                                                             "label":"lblCost",
                                                             "isOpen":null,
@@ -323,13 +299,14 @@
                             "props":{"y":102,"x":0,"width":657,"visible":false,"var":"listItem","spaceY":8,"name":"listItem","height":910},
                             "nodeParent":3,
                             "label":"listItem",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":20,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Box",
                                     "searchKey":"Box",
                                     "props":{"y":2,"x":0,"renderType":"render"},
@@ -342,12 +319,13 @@
                                     "compId":21,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,shopCellBg,shopCellBg",
                                             "props":{"y":5,"x":12,"width":627,"var":"shopCellBg","skin":"ui_main/item_bg_1.png","sizeGrid":"70,52,44,54","name":"shopCellBg","height":172},
                                             "nodeParent":21,
                                             "label":"shopCellBg",
-                                            "isOpen":true,
+                                            "isOpen":false,
                                             "isDirectory":true,
                                             "isAniNode":false,
                                             "hasChild":true,
@@ -359,7 +337,7 @@
                                                     "props":{"y":41.5,"x":22,"var":"img_icon","skin":"ui_main/icon_jiasu.png","name":"img_icon"},
                                                     "nodeParent":22,
                                                     "label":"img_icon",
-                                                    "isOpen":true,
+                                                    "isOpen":false,
                                                     "isDirectory":true,
                                                     "isAniNode":false,
                                                     "hasChild":true,
@@ -567,7 +545,7 @@
                                     "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_game_diamond,lab_game_diamond",
-                                    "props":{"y":3,"x":145,"var":"lab_game_diamond","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_diamond","fontSize":30,"font":"font1_2","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
+                                    "props":{"y":3,"x":145,"var":"lab_game_diamond","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_diamond","fontSize":30,"font":"font1_3","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
                                     "nodeParent":110,
                                     "label":"lab_game_diamond",
                                     "isOpen":null,
@@ -625,7 +603,7 @@
                                     "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_game_gold,lab_game_gold",
-                                    "props":{"y":3,"x":145,"var":"lab_game_gold","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_gold","fontSize":30,"font":"font1_2","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
+                                    "props":{"y":3,"x":145,"var":"lab_game_gold","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_gold","fontSize":30,"font":"font1_3","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
                                     "nodeParent":119,
                                     "label":"lab_game_gold",
                                     "isOpen":false,

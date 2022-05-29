@@ -2,7 +2,6 @@ import { ui } from "../../ui/layaMaxUI";
 import FZBaseUI from "../core/FZBaseUI";
 import FZUIManager from "../core/FZUIManager";
 import FZCfgManager from "../core/FZCfgManager";
-import FZGameStatus from "../data/FZGameStatus";
 import FZDebug from "../../framework/FZDebug";
 import FZGameData from "../data/FZGameData";
 import FZEventManager from "../../framework/FZEventManager";
@@ -13,7 +12,6 @@ import FZSaveDateManager from "../data/FZSaveDateManager";
 import FZSoundManager from "../core/FZSoundManager";
 import FZHttps from "../../framework/FZHttps";
 import FZWechat from "../core/FZWechat";
-import FZJcdlTypeUI from "../../game/view/FZJcdlTypeUI";
 
 namespace game.view
 {

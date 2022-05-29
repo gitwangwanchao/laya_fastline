@@ -90,7 +90,7 @@ namespace game.view
             FZUIManager.instance.removeUI(FZUIManager.UI_BeOffline);
             FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.siginGetDiamond);
             FZGameData.instance.playResFlyAni(null,null,{type: 1,countType: 0},null);
-            tywx.BiLog.clickStat(tywx.clickStatEventType.getCommonOffLineAward,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.getCommonOffLineAward,[]);
         }
 
         private onClickBtnAwardDouble()
@@ -128,7 +128,7 @@ namespace game.view
             FZUIManager.instance.createUI(FZUIManager.UI_Tip,{text: "获得金币"+ FZUtils.formatNumberStr(this.gold_count*2 + "")});
             FZUIManager.instance.removeUI(FZUIManager.UI_BeOffline);
             FZGameData.instance.playResFlyAni(null,null,{type: 1,countType: 1},null);
-            tywx.BiLog.clickStat(tywx.clickStatEventType.getDoubleOffLineAward,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.getDoubleOffLineAward,[]);
         }
 
         public doDestroy():void

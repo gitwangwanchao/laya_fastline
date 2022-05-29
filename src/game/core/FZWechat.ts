@@ -116,7 +116,7 @@ module game.core
 		initShareFailedToday() {
 			this.forceShareFailedProb = this.gameConfig.force_share_failed_prob||0.3;
 			this.shareFailedToday = FZSaveDateManager.instance.getItemFromLocalStorage("SHARE_FORCE_FAILED_TODAY","0");
-			if(tywx.TuyooSDK.isTodayFirstLogin()){
+			if(FZ.TuyooSDK.isTodayFirstLogin()){
 				this.setShareFailedToday("0");
 			}
 		};
@@ -164,7 +164,7 @@ module game.core
 				return false;
 			}
 			this.gameConfig = FZCfgManager.instance.dicConfig[FZGameStatus.QCfgType.ShareCfg];
-			return (this.gameConfig.version == tywx.SystemInfo.version);
+			return (this.gameConfig.version == FZ.SystemInfo.version);
 		}
 
 		public fakeShareLeaveGameTime: number = -1;
@@ -175,7 +175,7 @@ module game.core
 		//进行一次假分享，如果从离开到返回的时间差超过指定值，则认为分享成功
 		public fakeShare(shareParam: FZShareInfo, caller: any, callback: Function, args: any[] = null, callbackfail:Function = null )
 		{
-			// if(FZDebug.isDebug == false && this.gameConfig.version == tywx.SystemInfo.version){
+			// if(FZDebug.isDebug == false && this.gameConfig.version == FZ.SystemInfo.version){
 			// 	callback.apply(this, args);
 			// 	return;
 			// }
@@ -244,7 +244,7 @@ module game.core
 				if(dt < fakeShareWaitTime * 1000){
 					shareFailed = true;
 				}else if(this.shareFailedToday=="0"){
-					if(tywx.TuyooSDK.isNewUser()){
+					if(FZ.TuyooSDK.isNewUser()){
 						shareFailed = true
 						this.setShareFailedToday("1")
 					}else{
@@ -346,7 +346,7 @@ module game.core
 			let shareSchemeId: string = this.defaultShareSchemeId;
 			let sharePointKey: string;
 
-			let msg = tywx.PropagateInterface._cachedShareConfig;
+			let msg = FZ.PropagateInterface._cachedShareConfig;
 
 			if (!this.useDefaultShare && !FZUtils.isNullOrEmpty(msg))
 			{
@@ -385,12 +385,12 @@ module game.core
 
 			if (Laya.Browser.onMiniGame)
 			{
-				tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeUserShare, [sharePointId, 1, shareSchemeId]);
+				FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeUserShare, [sharePointId, 1, shareSchemeId]);
 				this.isShare = true;
 				Laya.Browser.window.wx.shareAppMessage({
 					title: title,
 					imageUrl: url,
-					query: 'inviteCode=' + tywx.UserInfo.userId + '&sourceCode=' + sharePointId + "&inviteName=" + tywx.UserInfo.userName + "&imageType=" + shareSchemeId + "&extraInfo=" + '',
+					query: 'inviteCode=' + FZ.UserInfo.userId + '&sourceCode=' + sharePointId + "&inviteName=" + FZ.UserInfo.userName + "&imageType=" + shareSchemeId + "&extraInfo=" + '',
 					
 					cancel : function(res){
 						FZDebug.log("=====cancel share=======================");
@@ -435,7 +435,7 @@ module game.core
 					return;
 				}
 			}else if(navigator.platform=='android'){
-				if (!tywx.AndroidHelper.isNetConnected()){
+				if (!FZ.AndroidHelper.isNetConnected()){
 					if (failCallBackHander!= null) {
 						let isShield = this.isShieldCity();
 						failCallBackHander.runWith(isShield);
@@ -447,7 +447,7 @@ module game.core
 				if(Laya.Browser.onMiniGame){
 					this.doPlayVideoAd(shareParam, successCallbackHandler, failCallBackHander);
 				}else if(navigator.platform=='android'){
-					tywx.AndroidHelper.showRewardVideo(successCallbackHandler,failCallBackHander)
+					FZ.AndroidHelper.showRewardVideo(successCallbackHandler,failCallBackHander)
 				}else if (navigator.platform=='ios') {
 
 				}else {
@@ -520,8 +520,8 @@ module game.core
 							FZDebug.D("视频-------正常播放结束，可以下发游戏奖励");
 							// 正常播放结束，可以下发游戏奖励
 							if (this.videoSuccessCallbackHandler != null) this.videoSuccessCallbackHandler.run();
-							if(tywx.clickStatEventType.showRewardVideoSuc){
-								tywx.BiLog.clickStat(tywx.clickStatEventType.showRewardVideoSuc,[]);
+							if(FZ.clickStatEventType.showRewardVideoSuc){
+								FZ.BiLog.clickStat(FZ.clickStatEventType.showRewardVideoSuc,[]);
 							}
 							this.isVideoPlaying = false;
 							FZMergeDateManager.instance.addShareCount();
@@ -566,7 +566,7 @@ module game.core
 		private isShieldCity()
 		{
 			let shieldCityShareTip = FZGameData.instance.getShieldCityShareTip();
-			let userArea = tywx.UserInfo.userArea || "";
+			let userArea = FZ.UserInfo.userArea || "";
 			let shareinfo = FZCfgManager.instance.dicConfig[FZGameStatus.QCfgType.ShareCfg];
 			let shield = shieldCityShareTip.indexOf(userArea) >= 0 && shareinfo.shieldCityOpen;
 			let isAuditVersion = FZWechat.instance.isAuditVersion();
@@ -627,7 +627,7 @@ module game.core
 				{
 					this.bannerAd.style.left = (sw - bannerWidth) / 2;
 					this.bannerAd.style.width = bannerWidth;
-					if(tywx.UserInfo.systemType == 2)
+					if(FZ.UserInfo.systemType == 2)
 					{//iphoneX
 						this.bannerAd.style.top = sh - this.bannerAd.style.realHeight - 1;
 					}
@@ -640,7 +640,7 @@ module game.core
 
 					this.bannerAd.onResize(res =>
 					{
-						if(tywx.UserInfo.systemType == 2)
+						if(FZ.UserInfo.systemType == 2)
 						{//iphoneX
 							this.bannerAd.style.top = sh - this.bannerAd.style.realHeight - 1;
 						}
@@ -656,7 +656,7 @@ module game.core
 					})
 				}
 			}else if(navigator.platform=='android'){
-				tywx.AndroidHelper.showBanner();
+				FZ.AndroidHelper.showBanner();
 			}
 		}
 
@@ -669,7 +669,7 @@ module game.core
 					this.bannerAd.hide();
 				}
 			}else if(navigator.platform=='android'){
-				tywx.AndroidHelper.hideBanner();
+				FZ.AndroidHelper.hideBanner();
 			}
 		}
 
@@ -705,7 +705,7 @@ module game.core
 				let togame = jsonData.togame
 				let skip_type = jsonData.icon_skip_type
 				// let topath = jsonData.path
-				let topath = `${jsonData.path}_dev_${tywx.BiLog.device_id}_${tywx.UserInfo.userId}`;
+				let topath = `${jsonData.path}_dev_${FZ.BiLog.device_id}_${FZ.UserInfo.userId}`;
 				if (jsonData.type == 1) {
 					topath = `${jsonData.path}`;
 				}
@@ -731,14 +731,14 @@ module game.core
 							success: function (res)
 							{
 
-								tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickDirectToMiniGameSuccess, bi_paramlist);
+								FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickDirectToMiniGameSuccess, bi_paramlist);
 
 								FZDebug.log('wx.navigateToMiniProgram success');
 								FZDebug.log(res);
 							},
 							fail: function (res)
 							{
-								tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickDirectToMiniGameFail, bi_paramlist);
+								FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickDirectToMiniGameFail, bi_paramlist);
 								FZDebug.log('wx.navigateToMiniProgram fail');
 								FZDebug.log(res);
 							},
@@ -761,19 +761,19 @@ module game.core
 							},
 							success: function (res)
 							{
-								tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickDirectToMiniGameSuccess, bi_paramlist);
+								FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickDirectToMiniGameSuccess, bi_paramlist);
 								FZDebug.log('wx.navigateToMiniProgram success');
 								FZDebug.log(res);
 							},
 							fail: function (res)
 							{
-								tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickDirectToMiniGameFail, bi_paramlist);
+								FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickDirectToMiniGameFail, bi_paramlist);
 								FZDebug.log('wx.navigateToMiniProgram fail');
 								FZDebug.log(res);
 							},
 							complete: function (res)
 							{
-								tywx.AdManager.adNodeObj.resetBtnIcon();
+								FZ.AdManager.adNodeObj.resetBtnIcon();
 								FZDebug.log('navigateToMiniProgram ==== complete');
 							}
 						});
@@ -792,7 +792,7 @@ module game.core
 					return;
 				}
 
-				tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickShowQRCode, bi_paramlist);
+				FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickShowQRCode, bi_paramlist);
 
 				if (Laya.Browser.onMiniGame)
 				{
@@ -929,17 +929,17 @@ module game.core
 				{
 					if (res.hasOwnProperty('isConnected'))
 					{
-						tywx.StateInfo.networkConnected = res.isConnected;
+						FZ.StateInfo.networkConnected = res.isConnected;
 					}
 					else if (res.hasOwnProperty('errMsg'))
 					{
-						tywx.StateInfo.networkConnected = (res.errMsg == 'getNetworkType:ok');
+						FZ.StateInfo.networkConnected = (res.errMsg == 'getNetworkType:ok');
 					}
 
-					tywx.StateInfo.networkConnected = (res.networkType != 'none');
-					tywx.StateInfo.networkType = res.networkType;//wifi,2g,3g,4g,none,unknown
+					FZ.StateInfo.networkConnected = (res.networkType != 'none');
+					FZ.StateInfo.networkType = res.networkType;//wifi,2g,3g,4g,none,unknown
 
-					FZDebug.log("getNetworkType: " + JSON.stringify(res) + " : " + tywx.StateInfo.networkConnected);
+					FZDebug.log("getNetworkType: " + JSON.stringify(res) + " : " + FZ.StateInfo.networkConnected);
 				};
 
 				Laya.Browser.window.wx.getNetworkType({
@@ -952,13 +952,13 @@ module game.core
 		{
 			if (Laya.Browser.onMiniGame)
 			{
-				if (!tywx.StateInfo.networkConnected)
+				if (!FZ.StateInfo.networkConnected)
 				{
 					//@ts-ignore
 					wx.showModal({ title: FZLanguage.NETWORK_NOT_CONNECTED, showCancel:false ,duration: 2000 });
 				}
 
-				return tywx.StateInfo.networkConnected;
+				return FZ.StateInfo.networkConnected;
 			}
 
 			return true;
@@ -1094,7 +1094,7 @@ module game.core
 				{
 					Laya.Browser.window.wx.vibrateShort();
 				}else if(navigator.platform=='android'){
-					tywx.AndroidHelper.startVibrate(100);
+					FZ.AndroidHelper.startVibrate(100);
 				}
 			}
 		}

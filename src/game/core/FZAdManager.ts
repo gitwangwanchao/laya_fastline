@@ -15,7 +15,7 @@ module game.core
 
 				if (Laya.Browser.onMiniGame)
 				{
-					// tywx.TuyooSDK.wechatLogin();
+					// FZ.TuyooSDK.wechatLogin();
 				}
 			}
 			return FZAdManager._instance;
@@ -36,7 +36,7 @@ module game.core
             FZDebug.D("显示Banner--------------------1"); 
             if (Laya.Browser.onMiniGame){
                 FZDebug.D("显示Banner--------------------2");    
-                tywx.AD.createBannerAdOnBottom(this.BANNER_GAME_VIDEO_ID);
+                FZ.AD.createBannerAdOnBottom(this.BANNER_GAME_VIDEO_ID);
             }
         }
 
@@ -48,7 +48,7 @@ module game.core
                 return;
             }
             if (Laya.Browser.onMiniGame){
-                tywx.AD.bannerAdHide();
+                FZ.AD.bannerAdHide();
             }
             
         }
@@ -65,7 +65,7 @@ module game.core
                 }
             }
             if (Laya.Browser.onMiniGame) {
-                tywx.AD.createRewardedVideoAd(this.AD_VIDEO_ID, successcall, failedcall);
+                FZ.AD.createRewardedVideoAd(this.AD_VIDEO_ID, successcall, failedcall);
             }
         }
     }

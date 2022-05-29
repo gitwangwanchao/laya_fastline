@@ -1,5 +1,4 @@
 import FZUtils from "../../framework/FZUtils";
-import FZBaseUI from "./FZBaseUI";
 import FZDebug from "../../framework/FZDebug";
 import FZLoadingUI from "../view/FZLoadingUI";
 import FZMainUI from "../view/FZMainUI";
@@ -27,16 +26,12 @@ import FZGameGuide from "../view/FZGameGuide";
 import FZWeaponLevelUpUI from "../view/FZWeaponLevelUpUI";
 import FZWeaponNoticeUI from "../view/FZWeaponNoticeUI";
 import FZWeaponNotNoticeUI from "../view/FZWeaponNotNoticeUI";
-import FZAdManager from "./FZAdManager";
-import FZWechat from "./FZWechat";
-import FZJcdlTypeUI from "../../game/view/FZJcdlTypeUI";
-import FZCfgManager from "./FZCfgManager";
 import FZGameStatus from "../data/FZGameStatus";
-import FZGameData from "../data/FZGameData";
 import FZDailyDiamond from "../view/PopupWindow/FZDailyDiamond";
 import FZOnlineGiftUI from "../view/FZOnlineGiftUI";
-import FZSceneManager from "./FZSceneManager";
-
+import FZWechat from "../core/FZWechat";
+import FZBaseUI from "../core/FZBaseUI";
+import FZCfgManager from "../core/FZCfgManager";
 /**
  * UI管理器
  */
@@ -152,7 +147,7 @@ namespace game.core
                                 FZWechat.instance.showBannerAd();
                             }else {
                                 // 屏蔽城市
-                                let userArea = tywx.UserInfo.userArea || "";
+                                let userArea = FZ.UserInfo.userArea || "";
                                 let shareinfo = FZCfgManager.instance.dicConfig[FZGameStatus.QCfgType.ShareCfg];
                                 FZDebug.D("手机城市1----------------------" + userArea);
                                 FZDebug.D("手机城市2----------------------" + JSON.stringify(shareinfo.bannerLimitCity));
@@ -173,14 +168,6 @@ namespace game.core
                 if (uiName != FZUIManager.UI_Tip) {
                     // 隐藏banner
                     FZWechat.instance.hideBannerAd();
-                }
-            }
-            if (this.isShowExChangeUI(uiName) && !this.containsShowExChangeUI()){
-                FZJcdlTypeUI.instance.openShow();
-            } else {
-                // 其余界面下 显示 导流
-                if (uiName != FZUIManager.UI_DrawerDialog &&uiName != FZUIManager.UI_Tip && uiName != FZUIManager.UI_GameGuideView) {
-                    FZJcdlTypeUI.instance.closeShow();
                 }
             }
             if (this.dicUI[uiName] == null)
@@ -282,9 +269,9 @@ namespace game.core
                 }
                 this.dicUI[uiName].start();
             }
-            if(this.isShow3DInStack(uiName) == true) {
-                FZSceneManager.instance.setActive(false);
-            }
+            // if(this.isShow3DInStack(uiName) == true) {
+            //     FZSceneManager.instance.setActive(false);
+            // }
             try
             {
                 this.dicUI[uiName].setParam(param);
@@ -326,9 +313,9 @@ namespace game.core
         {
             if (!FZUtils.isNullOrEmpty(this.dicUI[uiName]))
             {
-                if(this.isShow3DInStack(uiName) == true) {
-                    FZSceneManager.instance.setActive(true);
-                }
+                // if(this.isShow3DInStack(uiName) == true) {
+                //     FZSceneManager.instance.setActive(true);
+                // }
                 if (isDestroy)
                 {
                     this.dicUI[uiName].destroy();
@@ -345,10 +332,6 @@ namespace game.core
                 if(this.isShowBannerUI(uiName) && !this.containsShowBannerUIInStack())
 				{
 					FZWechat.instance.hideBannerAd();
-                }
-                if (!this.containsShowExChangeUI())
-				{
-                    FZJcdlTypeUI.instance.openShow();   
                 }
                 
             }

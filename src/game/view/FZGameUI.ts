@@ -194,7 +194,7 @@ namespace game.view
 
             var index:any = FZMergeDateManager.instance.getCarUsedLevel();
             var data = FZCfgManager.instance.getCarInfoById(index);
-            tywx.BiLog.clickStat(tywx.clickStatEventType.useGunLevel,[data.mainWeaponId]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.useGunLevel,[data.mainWeaponId]);
             if(FZMergeDateManager.instance.getCarMaxLevel()<7)
             {
                 Laya.timer.loop(1000,this,this.noCtrlTimesAdd);
@@ -208,7 +208,7 @@ namespace game.view
             }else {
                 this.scene.img_boss.visible = false;
             }
-            tywx.BiLog.clickStat(tywx.clickStatEventType.loadGameView,[]);            
+            FZ.BiLog.clickStat(FZ.clickStatEventType.loadGameView,[]);            
         }
 
         public noCtrlTimesAdd()
@@ -285,7 +285,7 @@ namespace game.view
            
             if(Number(point) == 2)
             {
-                tywx.BiLog.clickStat(tywx.clickStatEventType.onClickSecondLevel,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.onClickSecondLevel,[]);
             }
             this.onChangeWeaponsCoin();
             this.onChangeEnemyCount();
@@ -753,8 +753,8 @@ namespace game.view
             this.playerCar.startFire();
             this.onChangeGameState(this.game_state.game_running);
             let level = FZGameData.instance.getCheckPoint();
-            if(tywx.clickStatEventType.startGameLevel[level+'']){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.startGameLevel[level+''],[]);
+            if(FZ.clickStatEventType.startGameLevel[level+'']){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.startGameLevel[level+''],[]);
             }
         }
 
@@ -791,7 +791,7 @@ namespace game.view
             FZGameData.instance.game_stop = true;
             FZEventManager.instance.sendEvent(FZEvent.GAME_VIEW_GAME_STOP);
             FZGameData.instance.startGameStop();
-            tywx.BiLog.clickStat(tywx.clickStatEventType.pauseTimesOfGameInterface,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.pauseTimesOfGameInterface,[]);
         }
 
         /**

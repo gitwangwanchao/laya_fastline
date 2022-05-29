@@ -38,13 +38,13 @@ namespace game.view
             FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.btn_close, this, this.onClickBtnClose, ["btn_close"]);
             FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.copyIDBtn, this, this.onCopyClick, ["copyIDBtn"]);
 
-            this.scene.user_id.text = String(tywx.UserInfo.userId);
+            this.scene.user_id.text = String(FZ.UserInfo.userId);
 
-            let nameStr = this.getNewNameStr(userName ? userName : tywx.UserInfo.userName);
+            let nameStr = this.getNewNameStr(userName ? userName : FZ.UserInfo.userName);
             this.scene.user_name.text = nameStr;
             this.scene.changeNameBtn.off(Laya.Event.CLICK,this,this.changeNameOkClick);
             this.scene.changeNameBtn.on(Laya.Event.CLICK,this,this.changeNameClick);
-            this.scene.lbl_bbh_value.text = tywx.SystemInfo.version;
+            this.scene.lbl_bbh_value.text = FZ.SystemInfo.version;
         }
 
         private onClickCheckBox (checkBoxName){
@@ -61,7 +61,7 @@ namespace game.view
                 FZSaveDateManager.instance.setItemToLocalStorage("GAME_SETTING_VIBRATW_STATE", tag);
             }
 
-            tywx.BiLog.clickStat(tywx.clickStatEventType.clickOnTheSoundSwitch,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.clickOnTheSoundSwitch,[]);
         }
 
         private onClickBtnClose():void
@@ -94,8 +94,8 @@ namespace game.view
                 userName = this.scene.name_inPut.text;
                 this.scene.user_name.text = this.getNewNameStr(userName);
                 
-                if(tywx.UserInfo.userName != this.scene.name_inPut.text){
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.modifyTheNickname,[]);
+                if(FZ.UserInfo.userName != this.scene.name_inPut.text){
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.modifyTheNickname,[]);
                 }
             }
         }

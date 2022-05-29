@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Scene",
-    "selectedBox":54,
-    "selecteID":47,
+    "selectedBox":65,
+    "selecteID":68,
     "searchKey":"Scene",
     "props":{"width":750,"sceneColor":"#000000","height":1334},
     "nodeParent":-1,
@@ -115,7 +115,7 @@
                                     "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_btn_merage,lab_btn_merage",
-                                    "props":{"y":69,"x":214,"width":131,"var":"lab_btn_merage","valign":"middle","text":"去闯关","scaleY":1.2,"scaleX":1.2,"name":"lab_btn_merage","height":62,"fontSize":34,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                    "props":{"y":69,"x":214,"width":131,"var":"lab_btn_merage","valign":"middle","text":"去闯关","scaleY":1.2,"scaleX":1.2,"name":"lab_btn_merage","height":62,"fontSize":34,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                     "nodeParent":54,
                                     "label":"lab_btn_merage",
                                     "isOpen":null,
@@ -134,13 +134,14 @@
                             "props":{"y":583,"x":290,"var":"box_car","name":"box_car","anchorY":0.5,"anchorX":0.5},
                             "nodeParent":7,
                             "label":"box_car",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":64,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,car_hecheng,car_hecheng",
                                     "props":{"y":0,"x":59,"var":"car_hecheng","text":"合成","name":"car_hecheng","fontSize":36,"color":"#FF934F","bold":true,"anchorX":1,"align":"right"},
@@ -154,6 +155,7 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,car_lblDes,car_lblDes",
                                     "props":{"x":147,"var":"car_lblDes","text":"车辆解锁","name":"car_lblDes","fontSize":36,"color":"#FF934F","bold":true,"anchorX":0,"align":"left"},
@@ -168,6 +170,7 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,car_lblValue,car_lblValue",
                                     "props":{"y":0,"x":103,"var":"car_lblValue","name":"car_lblValue","fontSize":36,"color":"#FF934F","bold":true,"anchorX":0.5,"align":"center"},
@@ -190,13 +193,14 @@
                             "props":{"y":583,"x":290,"var":"box_checkpoint","name":"box_checkpoint","anchorY":0.5,"anchorX":0.5},
                             "nodeParent":7,
                             "label":"box_checkpoint",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":65,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,hecheng,hecheng",
                                     "props":{"y":0,"x":59,"var":"hecheng","text":"通过","name":"hecheng","fontSize":36,"color":"#FF934F","bold":true,"anchorX":1,"align":"right"},
@@ -210,6 +214,7 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lblDes,lblDes",
                                     "props":{"y":0,"x":147,"var":"lblDes","text":"后解锁","name":"lblDes","fontSize":36,"color":"#FF934F","bold":true,"anchorX":0,"align":"left"},
@@ -224,6 +229,7 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lblValue,lblValue",
                                     "props":{"x":103,"var":"lblValue","text":"40关","name":"lblValue","fontSize":36,"color":"#FF934F","bold":true,"anchorX":0.5,"align":"center"},

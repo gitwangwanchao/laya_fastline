@@ -13,7 +13,6 @@ import { ui } from "../../ui/layaMaxUI";
 import FZDebug from "../../framework/FZDebug";
 import FZSequence from "../../framework/FZSequence";
 import FZCfgManager from "../core/FZCfgManager";
-import FZJcdlTypeUI from "../../game/view/FZJcdlTypeUI";
 import FZSaveDateManager from "../data/FZSaveDateManager";
     
 namespace game.view
@@ -400,8 +399,8 @@ namespace game.view
                 return;
             }
             
-            if(tywx.clickStatEventType.flopRewardSuc[this.getAwardTimes]){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.flopRewardSuc[this.getAwardTimes],[]);
+            if(FZ.clickStatEventType.flopRewardSuc[this.getAwardTimes]){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.flopRewardSuc[this.getAwardTimes],[]);
             }
             this.getAwardTimes++;
             this.curClickCardIndex = clickIndex;
@@ -671,8 +670,8 @@ namespace game.view
             if( ! this.scene ){
                 return;
             }
-            if(tywx.clickStatEventType.tripleRewardCard){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.tripleRewardCard,[]);
+            if(FZ.clickStatEventType.tripleRewardCard){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.tripleRewardCard,[]);
             }
             let awardNum = this.awardNumCfg[this.curGetAwardId + '']['awardCount']*3;
             if(this.curGetAwardId == 1)
@@ -771,7 +770,7 @@ namespace game.view
             Laya.timer.once(delayTime, this, function(){
                 this.scene.btn_receive.offAll();
                 this.scene.btn_receive3.offAll();
-                // tywx.BiLog.clickStat(tywx.clickStatEventType.doubleSettlement,[]);
+                // FZ.BiLog.clickStat(FZ.clickStatEventType.doubleSettlement,[]);
             })
         }
         public onBackHall3 ():void
@@ -840,7 +839,7 @@ namespace game.view
             this.scene.btn_receive.offAll();
             this.scene.btn_receive3.offAll();
             Laya.timer.once(800, this, function() {
-                // tywx.BiLog.clickStat(tywx.clickStatEventType.settlement3TimesGet,[]);
+                // FZ.BiLog.clickStat(FZ.clickStatEventType.settlement3TimesGet,[]);
             })
         }
 

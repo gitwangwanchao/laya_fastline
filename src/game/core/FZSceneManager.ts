@@ -29,7 +29,7 @@ module game.core
 
 				if (Laya.Browser.onMiniGame)
 				{
-					// tywx.TuyooSDK.wechatLogin();
+					// FZ.TuyooSDK.wechatLogin();
 				}
 			}
 			return FZSceneManager._instance;
@@ -44,14 +44,14 @@ module game.core
 		public Weapon_all:any = null;
         public loadScene(): void
 		{
-			if(Laya.Browser.onMiniGame) {
-				this.pathGarageScene =Laya.Browser.window.wx.env.USER_DATA_PATH+"/v"+ tywx.SystemInfo.version + "/" + this.pathGarageScene;
-				this.pathUIScene = Laya.Browser.window.wx.env.USER_DATA_PATH+"/v"+ tywx.SystemInfo.version + "/" + this.pathUIScene;
-			}
-			var that = this;
-			Laya.timer.frameOnce(1, this, function() {
-				Laya.loader.create(that.pathGarageScene, Laya.Handler.create(that, that.loadGarageSceneFinish));
-			})
+			// if(Laya.Browser.onMiniGame) {
+			// 	this.pathGarageScene =Laya.Browser.window.wx.env.USER_DATA_PATH+"/v"+ FZ.SystemInfo.version + "/" + this.pathGarageScene;
+			// 	this.pathUIScene = Laya.Browser.window.wx.env.USER_DATA_PATH+"/v"+ FZ.SystemInfo.version + "/" + this.pathUIScene;
+			// }
+			// var that = this;
+			// Laya.timer.frameOnce(1, this, function() {
+			// 	Laya.loader.create(that.pathGarageScene, Laya.Handler.create(that, that.loadGarageSceneFinish));
+			// })
 		}
 		/**
 		 * 3d 场景加载完成
@@ -117,7 +117,7 @@ module game.core
 			this.scene_bg_2.zOrder = 0;
 
 
-			tywx.BiLog.clickStat(tywx.clickStatEventType.onload3dScene,[]);
+			FZ.BiLog.clickStat(FZ.clickStatEventType.onload3dScene,[]);
 		}
 		public isStartRotation :boolean = true;
 		/**

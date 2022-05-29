@@ -14,7 +14,6 @@ import { ui } from "../../ui/layaMaxUI";
 import FZDebug from "../../framework/FZDebug";
 import FZSequence from "../../framework/FZSequence";
 import FZCfgManager from "../core/FZCfgManager";
-import FZJcdlTypeUI from "../../game/view/FZJcdlTypeUI";
 import FZSaveDateManager from "../data/FZSaveDateManager";
 
 namespace game.view
@@ -48,7 +47,6 @@ namespace game.view
         public init():void
         {
             this.scene = new ui.view.GameEndingSceneUI();
-            this.setStateToJCDL();
             var isShare = FZGameData.instance.getShareOrVideo();
             this.scene.free_type_icon.skin = isShare ?  "ui_common/free_share_icon.png" : "ui_main/com_icon_0.png";
             this.scene.free_type_icon0.skin = isShare ?  "ui_common/free_share_icon.png" : "ui_main/com_icon_0.png";
@@ -185,7 +183,7 @@ namespace game.view
 
             this.check_point = FZGameData.instance.getCheckPoint();
             // 添加 底部的 Banner 导流
-            // if(tywx.IsWechatPlatform()){
+            // if(FZ.IsWechatPlatform()){
             // }
 
             if (params == 0) {
@@ -194,17 +192,6 @@ namespace game.view
                 FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.fail);
                 this.scene.img_item_2.visible = false;
                 this.scene.img_item_1.x  = 375;
-
-                if(this.check_point > 2){  //右侧交叉导流
-                    this.scene.permanent1.visible = true;
-                    this.scene.btnSingleJcdlIcon.visible = true;
-                    FZJcdlTypeUI.instance.create({type : 0 });  //添加底部交叉导流
-                    this.createResidentRoll();
-                    this.createRollBanner();
-                }else{
-                    this.scene.permanent1.visible = false;
-                    this.scene.btnSingleJcdlIcon.visible = false;
-                }
             } else {
                 // 胜利
 
@@ -215,14 +202,7 @@ namespace game.view
                 FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.btnConfirm, this, this.onClickBtnAbandonTimes,[]);
 
                 this.isWin = true;
-                this.check_point-=1;  
-                if(this.check_point > 2){
-                    FZJcdlTypeUI.instance.create({type : 0 });  //创建滚动交叉导流
-                    FZJcdlTypeUI.instance.create({type : 1 });  //创建抽屉交叉导流
-                }else if(this.check_point == 2){
-                    FZJcdlTypeUI.instance.create({type : 0 });  //创建滚动交叉导流
-                    FZJcdlTypeUI.instance.create({type : 1 });  //创建抽屉交叉导流
-                }
+                this.check_point-=1;
                 
             }
             this.scene.lab_check_point.text = "第" + this.check_point + "关";
@@ -435,102 +415,6 @@ namespace game.view
                 })
             }
         }
-
-        public jcdlListData: any = null;  // 交叉导流 列表 
-        public iconTimestamp : number;  // 交叉导流(使用的随机数)
-        public jdclSingleIndex : number = 0; // 交叉导流循环 坐标
-        public jdclSingleIndex_down : number = 1; //  第二个 交叉导流循环 坐标  （ 默认从第二位开始 )
-        public jdclList_middle : number = 4; // 记录交叉导流列表中间值
-
-        // 设置 交叉导流读取的信息
-        setStateToJCDL(){
-            // this.scene.btnSingleJcdlIcon.visible = false; // 起始不显示 滚动导流
-            FZJcdlTypeUI.instance.remove();
-            this.jcdlListData = FZGameData.instance.getJcdlDataList();  // 获取交叉导流的数值信息
-            this.iconTimestamp = Math.sqrt(Math.random());
-
-            this.jdclList_middle =  Math.floor( this.jcdlListData.length / 2 );  // 获取配置 中间值
-            this.jdclSingleIndex =  this.jdclList_middle;
-
-        }
-
-        // 【常驻“滚动导流】 - 创建 常驻滚动导流
-        private createResidentRoll() : void {
-            // this.scene.jcdlRollShake_down.play(0,true);
-            this.JcdlResidentSingleInfo();
-            Laya.timer.loop(4000,this,this.JcdlResidentSingleInfo);
-        }
-
-        //  停止 常驻滚动导流 
-        private stopResidentRollBanner() : void {
-            // this.scene.jcdlRollShake_down.stop();
-            this.scene.permanent1.rotation = 0;
-            Laya.timer.clear(this,this.JcdlResidentSingleInfo);
-         }
-
-        // 常驻滚动导流 - 底部    ( 循环 前半部分 )
-        private JcdlResidentSingleInfo() : void {
-            try{
-                if( ! this.jcdlListData || !this.jcdlListData[this.jdclSingleIndex_down] ){
-                    return;
-                }
-                this.scene.permanent1.on(Laya.Event.CLICK,this,this.onClickBtnJcdlIconByMain,[this.jdclSingleIndex_down]);
-                this.scene.imgSingleJcdlIcon1.skin = this.jcdlListData[this.jdclSingleIndex_down].icon_url[0]+ "?v=" + this.iconTimestamp;
-                this.scene.lblSingleJcdlName1.text = this.jcdlListData[this.jdclSingleIndex_down].gameName;
-                this.jdclSingleIndex_down++;
-                if(this.jdclSingleIndex_down == this.jdclList_middle)
-                {
-                    this.jdclSingleIndex_down = 1;
-                }
-            } catch(e){
-
-            }
-        }
-
-        //【空投箱 “滚动" 导流】 - 创建 滚动导流
-        private createRollBanner() : void {
-            // this.scene.btnSingleJcdlIcon.visible = true;
-            // this.scene.jcdlRollShake.play(0,true);
-            this.JcdlSingleInfo();
-            Laya.timer.loop(4000,this,this.JcdlSingleInfo);
-        }
-
-        //  停止 滚动导流
-        private stopRollBanner() : void {
-            // this.scene.jcdlRollShake.stop();
-            this.scene.btnSingleJcdlIcon.rotation = 0;
-            Laya.timer.clear(this,this.JcdlSingleInfo);
-            // this.scene.btnSingleJcdlIcon.visible = false;
-        }
-
-        // 执行 交叉导流信息循环   ( 循环 后半部分 )
-        private JcdlSingleInfo():void
-        {
-            try{
-                if( ! this.jcdlListData || !this.jcdlListData[this.jdclSingleIndex] ){
-                    return;
-                }
-                this.scene.btnSingleJcdlIcon.on(Laya.Event.CLICK,this,this.onClickBtnJcdlIconByMain,[this.jdclSingleIndex]);
-                this.scene.imgSingleJcdlIcon.skin = this.jcdlListData[this.jdclSingleIndex].icon_url[0]+ "?v=" + this.iconTimestamp;
-                // this.scene.btnSingleJcdlIcon.visible = true;
-                this.scene.lblSingleJcdlName.text = this.jcdlListData[this.jdclSingleIndex].gameName;
-                this.jdclSingleIndex++;
-                if(this.jdclSingleIndex == this.jcdlListData.length)
-                {
-                    this.jdclSingleIndex = this.jdclList_middle;  //  回到中间值
-                }
-            } catch(e){
-                
-            }
-        }
-        
-        // 交叉导流 按下执行事件
-        private onClickBtnJcdlIconByMain(iconIndex : number):void
-        {
-            let toappid =  this.jcdlListData[iconIndex]["toappid"];
-            FZWechat.instance.clickAdIcon(toappid);
-        }
-
         /**
          * 领取按钮的出现
          */
@@ -633,14 +517,14 @@ namespace game.view
                 return;
             }
 
-            if(tywx.clickStatEventType.flopRewardSuc[this.getAwardTimes]){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.flopRewardSuc[this.getAwardTimes],[]);
+            if(FZ.clickStatEventType.flopRewardSuc[this.getAwardTimes]){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.flopRewardSuc[this.getAwardTimes],[]);
             }
-            if(tywx.clickStatEventType.flopRewardSuc_gameEnd[this.getAwardTimes]){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.flopRewardSuc_gameEnd[this.getAwardTimes],[]);
+            if(FZ.clickStatEventType.flopRewardSuc_gameEnd[this.getAwardTimes]){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.flopRewardSuc_gameEnd[this.getAwardTimes],[]);
             }
-            if(tywx.clickStatEventType.flopRewardSuc_firstgameEnd[this.getAwardTimes]){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.flopRewardSuc_firstgameEnd[this.getAwardTimes],[]);
+            if(FZ.clickStatEventType.flopRewardSuc_firstgameEnd[this.getAwardTimes]){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.flopRewardSuc_firstgameEnd[this.getAwardTimes],[]);
             }
             this.getAwardTimes++;
             this.curClickCardIndex = clickIndex;
@@ -989,8 +873,8 @@ namespace game.view
             if( ! this.scene ){
                 return;
             }
-            if(tywx.clickStatEventType.tripleRewardCard){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.tripleRewardCard,[]);
+            if(FZ.clickStatEventType.tripleRewardCard){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.tripleRewardCard,[]);
             }
             let awardNum = this.awardNumCfg[this.curGetAwardId]['awardCount']*3;
             if(this.curGetAwardId == 1)
@@ -1110,7 +994,7 @@ namespace game.view
                 FZGameData.instance.GameDataReset();
                 FZUIManager.instance.createUI(FZUIManager.UI_FZGameJiaZaiUI,"main");
                 //FZSoundManager.instance.playBgm(FZSoundManager.instance.soundInfo_mp3.bgMusic);
-                tywx.BiLog.clickStat(tywx.clickStatEventType.doubleSettlement,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.doubleSettlement,[]);
             })
         }
         public onBackHall3 ():void
@@ -1188,7 +1072,7 @@ namespace game.view
                 FZGameData.instance.GameDataReset();
                 FZUIManager.instance.createUI(FZUIManager.UI_FZGameJiaZaiUI,"main");
                 //FZSoundManager.instance.playBgm(FZSoundManager.instance.soundInfo_mp3.bgMusic);
-                tywx.BiLog.clickStat(tywx.clickStatEventType.settlement3TimesGet,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.settlement3TimesGet,[]);
             })
         }
 

@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Scene",
-    "selectedBox":3,
-    "selecteID":62,
+    "selectedBox":60,
+    "selecteID":61,
     "searchKey":"Scene",
     "props":{"width":750,"sceneColor":"#000000","height":1334},
     "nodeParent":-1,
@@ -87,7 +87,7 @@
                     "x":30,
                     "type":"Label",
                     "searchKey":"Label",
-                    "props":{"y":674,"x":375,"text":"是否复活继续游戏?","scaleY":0.6,"scaleX":0.6,"fontSize":36,"font":"font1_2","color":"#ffffff","bold":true,"anchorX":0.5},
+                    "props":{"y":674,"x":375,"text":"是否复活继续游戏?","scaleY":0.6,"scaleX":0.6,"fontSize":36,"font":"font1_3","color":"#ffffff","bold":true,"anchorX":0.5},
                     "nodeParent":3,
                     "label":"Label",
                     "isOpen":true,
@@ -122,13 +122,14 @@
                     "props":{"y":927,"x":161,"var":"btn_resurrect","stateNum":"1","skin":"ui_main/common_btn_yellow.png","name":"btn_resurrect"},
                     "nodeParent":3,
                     "label":"btn_resurrect",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":9,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image,img_share,img_share",
                             "props":{"y":28,"x":82,"var":"img_share","skin":"ui_main/com_icon_0.png","name":"img_share"},
@@ -142,9 +143,10 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Label",
                             "searchKey":"Label",
-                            "props":{"y":27,"x":190,"text":"免费复活","scaleY":0.9,"scaleX":0.9,"font":"font1_2"},
+                            "props":{"y":27,"x":190,"text":"免费复活","scaleY":0.9,"scaleX":0.9,"font":"font1_3"},
                             "nodeParent":9,
                             "label":"Label",
                             "isDirectory":false,
@@ -155,18 +157,20 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Sprite",
                             "searchKey":"Sprite",
                             "props":{"y":0,"x":0,"renderType":"mask"},
                             "nodeParent":9,
                             "label":"Sprite",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":20,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite",
                                     "props":{"y":0,"x":0,"texture":"ui_main/common_btn_yellow.png","alpha":1},
@@ -183,6 +187,7 @@
                             "$HIDDEN":true
                         },
                         {
+                            "x":45,
                             "type":"Sprite",
                             "searchKey":"Sprite",
                             "props":{"y":0,"x":9,"texture":"ui_game/game_btn_resurrect_ani_1.png","height":110,"alpha":0.7727272727272727},
@@ -206,13 +211,14 @@
                     "props":{"y":897,"x":161,"var":"btn_free","stateNum":"1","skin":"ui_main/common_btn_yellow.png","name":"btn_free"},
                     "nodeParent":3,
                     "label":"btn_free",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":24,
                     "child":[
                         {
+                            "x":45,
                             "type":"Sprite",
                             "searchKey":"Sprite",
                             "props":{"y":0,"x":0,"texture":"ui_main/common_btn_yellow.png"},
@@ -227,9 +233,10 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Label",
                             "searchKey":"Label",
-                            "props":{"y":25,"x":116,"valign":"middle","text":"免费复活","font":"font1_2","align":"center"},
+                            "props":{"y":25,"x":116,"valign":"middle","text":"免费复活","font":"font1_3","align":"center"},
                             "nodeParent":24,
                             "label":"Label",
                             "isDirectory":false,
@@ -237,9 +244,11 @@
                             "hasChild":false,
                             "compId":32,
                             "child":[
-                                ]
+                                ],
+                            "$HIDDEN":false
                         },
                         {
+                            "x":45,
                             "type":"Sprite",
                             "searchKey":"Sprite",
                             "props":{"y":0,"x":0,"width":428,"renderType":"mask","height":121},
@@ -252,6 +261,7 @@
                             "compId":35,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite",
                                     "props":{"y":0,"x":0,"texture":"ui_main/common_btn_yellow.png","alpha":1},
@@ -268,6 +278,7 @@
                             "$HIDDEN":false
                         },
                         {
+                            "x":45,
                             "type":"Sprite",
                             "searchKey":"Sprite",
                             "props":{"y":0,"x":9,"texture":"ui_game/game_btn_resurrect_ani_1.png","height":110,"alpha":0.7727272727272727},
@@ -287,184 +298,21 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "searchKey":"Image,permanent1,permanent1",
-                    "props":{"y":510,"x":658,"width":129,"var":"permanent1","sizeGrid":"32,30,38,25","scaleY":0.85,"scaleX":0.85,"rotation":0,"name":"permanent1","height":156,"anchorY":0.5,"anchorX":0.5},
-                    "nodeParent":3,
-                    "label":"permanent1",
-                    "isOpen":false,
-                    "isDirectory":true,
-                    "isAniNode":true,
-                    "hasChild":true,
-                    "compId":48,
-                    "child":[
-                        {
-                            "type":"Image",
-                            "searchKey":"Image",
-                            "props":{"y":1,"x":11,"width":151,"skin":"ui_common/jcdl_right_bg.png","height":135},
-                            "nodeParent":48,
-                            "label":"Image",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":50,
-                            "child":[
-                                ]
-                        },
-                        {
-                            "type":"Image",
-                            "searchKey":"Image,iconBg",
-                            "props":{"y":66,"x":65,"width":100,"skin":"ui_common/exIconBg.png","sizeGrid":"0,0,0,0","scaleY":1.3,"scaleX":1.3,"name":"iconBg","height":100,"anchorY":0.5,"anchorX":0.5},
-                            "nodeParent":48,
-                            "label":"iconBg",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":51,
-                            "child":[
-                                ]
-                        },
-                        {
-                            "type":"Image",
-                            "searchKey":"Image,imgSingleJcdlIcon1,imgSingleJcdlIcon1",
-                            "props":{"y":16,"x":14,"width":100,"var":"imgSingleJcdlIcon1","name":"imgSingleJcdlIcon1","mouseThrough":true,"height":100},
-                            "nodeParent":48,
-                            "label":"imgSingleJcdlIcon1",
-                            "isOpen":true,
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":52,
-                            "child":[
-                                ]
-                        },
-                        {
-                            "type":"Label",
-                            "searchKey":"Label,lblSingleJcdlName1,lblSingleJcdlName1",
-                            "props":{"y":-5,"x":120,"wordWrap":true,"width":35,"var":"lblSingleJcdlName1","valign":"middle","text":"开心枪手","name":"lblSingleJcdlName1","mouseThrough":true,"height":140,"fontSize":23,"color":"#ffffff","align":"center"},
-                            "nodeParent":48,
-                            "label":"lblSingleJcdlName1",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":53,
-                            "child":[
-                                ],
-                            "$HIDDEN":false
-                        },
-                        {
-                            "type":"Image",
-                            "searchKey":"Image,resident_point1",
-                            "props":{"y":6,"x":68,"visible":false,"skin":"ui_common/jcdl_point1.png","scaleY":0.6,"scaleX":0.6,"name":"resident_point1"},
-                            "nodeParent":48,
-                            "label":"resident_point1",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":54,
-                            "child":[
-                                ],
-                            "$HIDDEN":true
-                        }]
-                },
-                {
-                    "x":30,
-                    "type":"Image",
-                    "searchKey":"Image,btnSingleJcdlIcon,btnSingleJcdlIcon",
-                    "props":{"y":650,"x":659,"width":129,"visible":true,"var":"btnSingleJcdlIcon","sizeGrid":"32,30,38,25","scaleY":0.85,"scaleX":0.85,"name":"btnSingleJcdlIcon","height":156,"anchorY":0.5,"anchorX":0.5},
-                    "nodeParent":3,
-                    "label":"btnSingleJcdlIcon",
-                    "isOpen":false,
-                    "isDirectory":true,
-                    "isAniNode":true,
-                    "hasChild":true,
-                    "compId":49,
-                    "child":[
-                        {
-                            "type":"Image",
-                            "searchKey":"Image",
-                            "props":{"y":1,"x":11,"width":151,"skin":"ui_common/jcdl_right_bg.png","height":135},
-                            "nodeParent":49,
-                            "label":"Image",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":55,
-                            "child":[
-                                ]
-                        },
-                        {
-                            "type":"Image",
-                            "searchKey":"Image,iconBg1,iconBg1",
-                            "props":{"y":66,"x":65,"width":100,"var":"iconBg1","skin":"ui_common/exIconBg.png","scaleY":1.3,"scaleX":1.3,"name":"iconBg1","height":100,"anchorY":0.5,"anchorX":0.5},
-                            "nodeParent":49,
-                            "label":"iconBg1",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":56,
-                            "child":[
-                                ]
-                        },
-                        {
-                            "type":"Image",
-                            "searchKey":"Image,imgSingleJcdlIcon,imgSingleJcdlIcon",
-                            "props":{"y":16,"x":15,"width":100,"var":"imgSingleJcdlIcon","name":"imgSingleJcdlIcon","mouseThrough":true,"height":100},
-                            "nodeParent":49,
-                            "label":"imgSingleJcdlIcon",
-                            "isOpen":true,
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":57,
-                            "child":[
-                                ]
-                        },
-                        {
-                            "type":"Label",
-                            "searchKey":"Label,lblSingleJcdlName,lblSingleJcdlName",
-                            "props":{"y":-5,"x":125,"wordWrap":true,"width":35,"var":"lblSingleJcdlName","valign":"middle","text":"途游捕鱼","name":"lblSingleJcdlName","mouseThrough":true,"height":140,"fontSize":23,"color":"#ffffff","align":"center"},
-                            "nodeParent":49,
-                            "label":"lblSingleJcdlName",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":58,
-                            "child":[
-                                ]
-                        },
-                        {
-                            "type":"Image",
-                            "searchKey":"Image,roll_point,roll_point",
-                            "props":{"y":6,"x":68,"visible":false,"var":"roll_point","skin":"ui_common/jcdl_point1.png","scaleY":0.6,"scaleX":0.6,"name":"roll_point"},
-                            "nodeParent":49,
-                            "label":"roll_point",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":59,
-                            "child":[
-                                ],
-                            "$HIDDEN":true
-                        }],
-                    "$HIDDEN":false
-                },
-                {
-                    "x":30,
-                    "type":"Image",
                     "searchKey":"Image",
                     "props":{"y":180,"x":213,"skin":"ui_main/free_live_bg.png"},
                     "nodeParent":3,
                     "label":"Image",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":60,
                     "child":[
                         {
+                            "x":45,
                             "type":"Label",
                             "searchKey":"Label",
-                            "props":{"y":0,"x":61,"text":"免费复活","font":"font1_2"},
+                            "props":{"y":0,"x":61,"text":"免费复活","font":"font1_3"},
                             "nodeParent":60,
                             "label":"Label",
                             "isDirectory":false,

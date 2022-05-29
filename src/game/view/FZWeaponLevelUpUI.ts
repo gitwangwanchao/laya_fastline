@@ -1078,7 +1078,7 @@ namespace game.view
                 this.showDeputyInfo();
                 this.checkNotice();
                 FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.lvUp_deputyWeapon);
-                // tywx.BiLog.clickStat(tywx.clickStatEventType.unlockNewCar,[this.deputyWeaponLevel]);
+                // FZ.BiLog.clickStat(FZ.clickStatEventType.unlockNewCar,[this.deputyWeaponLevel]);
 
                 // 升级副武器 - 进阶 / 升级对应效果
                 this.judgeUpMoveState();
@@ -1107,7 +1107,7 @@ namespace game.view
                 this.scene.update_gudie_box.visible = false;
                 this.scene.guide_hand_ani.gotoAndStop(0);
                 this.scene.guide_mask.alpha = 0;
-                tywx.BiLog.clickStat(tywx.clickStatEventType.finishUpdateMainWeaponGuide, []);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.finishUpdateMainWeaponGuide, []);
                 FZGameData.instance.newPlayerGudieStep(FZGameStatus.NumForGuide.weaponUpdateBtn);
                 Laya.timer.once(1000, this, function(){
                     if(this.scene&&this.scene.visible){
@@ -1177,16 +1177,16 @@ namespace game.view
 
             switch(this.curSelectUAVIndex+1){
                 case 1:
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.clickTheSelectionOfUav, []);
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.clickTheSelectionOfUav, []);
                     break;
                 case 2:
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.clickTheMissileUavSelection, []);
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.clickTheMissileUavSelection, []);
                     break;             
                 case 3:
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.clickTheFrisbeeDroneSelection, []);
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.clickTheFrisbeeDroneSelection, []);
                     break;
                 case 4:
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.clickTheTrackingDroneSelection, []);
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.clickTheTrackingDroneSelection, []);
                     break;
             }
         }

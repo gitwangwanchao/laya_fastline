@@ -177,7 +177,7 @@ namespace game.view
             } else if(index == 1) {
                 this.scene.listCar.visible = false;
                 this.scene.listItem.visible = true;
-                tywx.BiLog.clickStat(tywx.clickStatEventType.clickThePrivilegeTAB,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.clickThePrivilegeTAB,[]);
             }
             if(!f_init){
                 FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.switch);
@@ -511,7 +511,7 @@ namespace game.view
                     this.scene.listCar.refresh();
                     FZUIManager.instance.createUI(FZUIManager.UI_Tip,{text : "购买成功"})
                     FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.buy_car);
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.diamondPurchaseCar,[]);
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.diamondPurchaseCar,[]);
                 } 
                 else{
                     if (mtype == FZGameStatus.QMoneyType.Coin) {
@@ -548,7 +548,7 @@ namespace game.view
             this.scene.listCar.refresh();
 
             FZUIManager.instance.createUI(FZUIManager.UI_Tip,{text : "购买成功"});
-            tywx.BiLog.clickStat(tywx.clickStatEventType.shopGetFreeCar,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.shopGetFreeCar,[]);
         }
         
         /**
@@ -636,7 +636,7 @@ namespace game.view
                     this.ItemSort();
                     this.scene.listItem.refresh();
                     FZUIManager.instance.createUI(FZUIManager.UI_Tip,{text : "购买成功"});
-                    // tywx.BiLog.clickStat(tywx.clickStatEventType.buyingPrivileges,[]);
+                    // FZ.BiLog.clickStat(FZ.clickStatEventType.buyingPrivileges,[]);
                 } 
                 else {
                     if (mtype == FZGameStatus.QMoneyType.Coin) {

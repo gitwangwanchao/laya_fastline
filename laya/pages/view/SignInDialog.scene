@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Scene",
-    "selectedBox":38,
-    "selecteID":30,
+    "selectedBox":4,
+    "selecteID":37,
     "searchKey":"Scene",
     "props":{"width":750,"sceneColor":"#000000","height":1334},
     "nodeParent":-1,
@@ -76,14 +76,13 @@
                             "props":{"y":0,"x":4,"var":"box_dayBtns","name":"box_dayBtns","anchorY":0},
                             "nodeParent":4,
                             "label":"box_dayBtns",
-                            "isOpen":true,
+                            "isOpen":false,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":44,
                             "child":[
                                 {
-                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btn_day_0,btn_day_0",
                                     "props":{"y":90,"x":20,"var":"btn_day_0","stateNum":"1","skin":"ui_main/sign_day_btn_1.png","name":"btn_day_0"},
@@ -96,7 +95,6 @@
                                     "compId":47,
                                     "child":[
                                         {
-                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,can_sign_0,can_sign_0",
                                             "props":{"y":1,"x":-4,"visible":false,"var":"can_sign_0","skin":"ui_main/sign_day_btn.png","name":"can_sign_0"},
@@ -112,10 +110,9 @@
                                             "$HIDDEN":false
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_day_0,lbl_day_0",
-                                            "props":{"y":25,"x":85,"var":"lbl_day_0","text":"第1天","scaleY":0.5,"scaleX":0.5,"name":"lbl_day_0","fontSize":60,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                            "props":{"y":25,"x":85,"var":"lbl_day_0","text":"第1天","scaleY":0.5,"scaleX":0.5,"name":"lbl_day_0","fontSize":60,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                                             "nodeParent":47,
                                             "label":"lbl_day_0",
                                             "isOpen":false,
@@ -127,7 +124,6 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Sprite",
                                             "searchKey":"Sprite",
                                             "props":{"y":66,"x":12,"texture":"ui_common/flyDiamond.png","scaleY":1,"scaleX":1},
@@ -142,10 +138,9 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_reward_count_0,lbl_reward_count_0",
-                                            "props":{"y":84,"x":70,"var":"lbl_reward_count_0","text":"x300","scaleY":0.7,"scaleX":0.7,"name":"lbl_reward_count_0","fontSize":28,"font":"font1_2","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
+                                            "props":{"y":84,"x":70,"var":"lbl_reward_count_0","text":"x300","scaleY":0.7,"scaleX":0.7,"name":"lbl_reward_count_0","fontSize":28,"font":"font1_3","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
                                             "nodeParent":47,
                                             "label":"lbl_reward_count_0",
                                             "isOpen":true,
@@ -158,7 +153,6 @@
                                         }]
                                 },
                                 {
-                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,sign_finished_0,sign_finished_0",
                                     "props":{"y":164,"x":98,"visible":false,"var":"sign_finished_0","skin":"ui_main/sign_icon_finish.png","name":"sign_finished_0","anchorY":0.5,"anchorX":0.5},
@@ -174,7 +168,6 @@
                                     "$HIDDEN":true
                                 },
                                 {
-                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btn_day_1,btn_day_1",
                                     "props":{"y":90,"x":200,"var":"btn_day_1","stateNum":"1","skin":"ui_main/sign_day_btn_1.png","name":"btn_day_1"},
@@ -187,7 +180,6 @@
                                     "compId":48,
                                     "child":[
                                         {
-                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,can_sign_1,can_sign_1",
                                             "props":{"y":1,"x":-4,"visible":false,"var":"can_sign_1","skin":"ui_main/sign_day_btn.png","name":"can_sign_1"},
@@ -203,10 +195,9 @@
                                             "$HIDDEN":false
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_day_1,lbl_day_1",
-                                            "props":{"y":25,"x":85,"var":"lbl_day_1","text":"第2天","scaleY":0.5,"scaleX":0.5,"name":"lbl_day_1","fontSize":60,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                            "props":{"y":25,"x":85,"var":"lbl_day_1","text":"第2天","scaleY":0.5,"scaleX":0.5,"name":"lbl_day_1","fontSize":60,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                                             "nodeParent":48,
                                             "label":"lbl_day_1",
                                             "isOpen":true,
@@ -218,7 +209,6 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Sprite",
                                             "searchKey":"Sprite",
                                             "props":{"y":66,"x":12,"texture":"ui_common/flyDiamond.png","scaleY":1,"scaleX":1},
@@ -233,10 +223,9 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_reward_count_1,lbl_reward_count_1",
-                                            "props":{"y":84,"x":70,"var":"lbl_reward_count_1","text":"x300","scaleY":0.7,"scaleX":0.7,"name":"lbl_reward_count_1","fontSize":28,"font":"font1_2","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
+                                            "props":{"y":84,"x":70,"var":"lbl_reward_count_1","text":"x300","scaleY":0.7,"scaleX":0.7,"name":"lbl_reward_count_1","fontSize":28,"font":"font1_3","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
                                             "nodeParent":48,
                                             "label":"lbl_reward_count_1",
                                             "isOpen":true,
@@ -250,7 +239,6 @@
                                         }]
                                 },
                                 {
-                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,sign_finished_1,sign_finished_1",
                                     "props":{"y":164,"x":283,"visible":false,"var":"sign_finished_1","skin":"ui_main/sign_icon_finish.png","name":"sign_finished_1","anchorY":0.5,"anchorX":0.5},
@@ -266,7 +254,6 @@
                                     "$HIDDEN":true
                                 },
                                 {
-                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btn_day_2,btn_day_2",
                                     "props":{"y":91,"x":380,"var":"btn_day_2","stateNum":"1","skin":"ui_main/sign_day_btn_1.png","name":"btn_day_2"},
@@ -279,7 +266,6 @@
                                     "compId":49,
                                     "child":[
                                         {
-                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,can_sign_2,can_sign_2",
                                             "props":{"y":1,"x":-4,"visible":false,"var":"can_sign_2","skin":"ui_main/sign_day_btn.png","name":"can_sign_2"},
@@ -295,10 +281,9 @@
                                             "$HIDDEN":false
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_day_2,lbl_day_2",
-                                            "props":{"y":25,"x":85,"var":"lbl_day_2","text":"第3天","scaleY":0.5,"scaleX":0.5,"name":"lbl_day_2","fontSize":60,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                            "props":{"y":25,"x":85,"var":"lbl_day_2","text":"第3天","scaleY":0.5,"scaleX":0.5,"name":"lbl_day_2","fontSize":60,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                                             "nodeParent":49,
                                             "label":"lbl_day_2",
                                             "isOpen":true,
@@ -310,7 +295,6 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Sprite",
                                             "searchKey":"Sprite",
                                             "props":{"y":66,"x":12,"texture":"ui_common/flyDiamond.png","scaleY":1,"scaleX":1},
@@ -325,10 +309,9 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_reward_count_2,lbl_reward_count_2",
-                                            "props":{"y":84,"x":70,"var":"lbl_reward_count_2","text":"x300","scaleY":0.7,"scaleX":0.7,"name":"lbl_reward_count_2","fontSize":28,"font":"font1_2","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
+                                            "props":{"y":84,"x":70,"var":"lbl_reward_count_2","text":"x300","scaleY":0.7,"scaleX":0.7,"name":"lbl_reward_count_2","fontSize":28,"font":"font1_3","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
                                             "nodeParent":49,
                                             "label":"lbl_reward_count_2",
                                             "isOpen":true,
@@ -341,7 +324,6 @@
                                         }]
                                 },
                                 {
-                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,sign_finished_2,sign_finished_2",
                                     "props":{"y":165,"x":470,"visible":false,"var":"sign_finished_2","skin":"ui_main/sign_icon_finish.png","name":"sign_finished_2","anchorY":0.5,"anchorX":0.5},
@@ -357,7 +339,6 @@
                                     "$HIDDEN":true
                                 },
                                 {
-                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btn_day_3,btn_day_3",
                                     "props":{"y":238,"x":20,"var":"btn_day_3","stateNum":"1","skin":"ui_main/sign_day_btn_1.png","name":"btn_day_3"},
@@ -370,7 +351,6 @@
                                     "compId":50,
                                     "child":[
                                         {
-                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,can_sign_3,can_sign_3",
                                             "props":{"y":1,"x":-4,"visible":false,"var":"can_sign_3","skin":"ui_main/sign_day_btn.png","name":"can_sign_3"},
@@ -386,10 +366,9 @@
                                             "$HIDDEN":false
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_day_3,lbl_day_3",
-                                            "props":{"y":25,"x":85,"var":"lbl_day_3","text":"第4天","scaleY":0.5,"scaleX":0.5,"name":"lbl_day_3","fontSize":24,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                            "props":{"y":25,"x":85,"var":"lbl_day_3","text":"第4天","scaleY":0.5,"scaleX":0.5,"name":"lbl_day_3","fontSize":24,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                                             "nodeParent":50,
                                             "label":"lbl_day_3",
                                             "isOpen":true,
@@ -401,10 +380,9 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_reward_count_3,lbl_reward_count_3",
-                                            "props":{"y":84,"x":70,"var":"lbl_reward_count_3","text":"x300","scaleY":0.7,"scaleX":0.7,"name":"lbl_reward_count_3","fontSize":28,"font":"font1_2","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
+                                            "props":{"y":84,"x":70,"var":"lbl_reward_count_3","text":"x300","scaleY":0.7,"scaleX":0.7,"name":"lbl_reward_count_3","fontSize":28,"font":"font1_3","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
                                             "nodeParent":50,
                                             "label":"lbl_reward_count_3",
                                             "isOpen":true,
@@ -416,7 +394,6 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Sprite",
                                             "searchKey":"Sprite",
                                             "props":{"y":66,"x":12,"texture":"ui_common/flyDiamond.png","scaleY":1,"scaleX":1},
@@ -432,7 +409,6 @@
                                         }]
                                 },
                                 {
-                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,sign_finished_3,sign_finished_3",
                                     "props":{"y":320,"x":98,"visible":false,"var":"sign_finished_3","skin":"ui_main/sign_icon_finish.png","name":"sign_finished_3","anchorY":0.5,"anchorX":0.5},
@@ -448,7 +424,6 @@
                                     "$HIDDEN":true
                                 },
                                 {
-                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btn_day_4,btn_day_4",
                                     "props":{"y":238,"x":200,"var":"btn_day_4","stateNum":"1","skin":"ui_main/sign_day_btn_1.png","name":"btn_day_4"},
@@ -461,7 +436,6 @@
                                     "compId":51,
                                     "child":[
                                         {
-                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,can_sign_4,can_sign_4",
                                             "props":{"y":1,"x":-4,"visible":false,"var":"can_sign_4","skin":"ui_main/sign_day_btn.png","name":"can_sign_4"},
@@ -477,10 +451,9 @@
                                             "$HIDDEN":false
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_day_4,lbl_day_4",
-                                            "props":{"y":25,"x":85,"var":"lbl_day_4","text":"第5天","scaleY":0.5,"scaleX":0.5,"name":"lbl_day_4","fontSize":24,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                            "props":{"y":25,"x":85,"var":"lbl_day_4","text":"第5天","scaleY":0.5,"scaleX":0.5,"name":"lbl_day_4","fontSize":24,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                                             "nodeParent":51,
                                             "label":"lbl_day_4",
                                             "isOpen":false,
@@ -492,7 +465,6 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Sprite",
                                             "searchKey":"Sprite",
                                             "props":{"y":66,"x":12,"texture":"ui_common/flyDiamond.png","scaleY":1,"scaleX":1},
@@ -507,10 +479,9 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_reward_count_4,lbl_reward_count_4",
-                                            "props":{"y":84,"x":70,"var":"lbl_reward_count_4","text":"x300","scaleY":0.7,"scaleX":0.7,"name":"lbl_reward_count_4","fontSize":28,"font":"font1_2","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
+                                            "props":{"y":84,"x":70,"var":"lbl_reward_count_4","text":"x300","scaleY":0.7,"scaleX":0.7,"name":"lbl_reward_count_4","fontSize":28,"font":"font1_3","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
                                             "nodeParent":51,
                                             "label":"lbl_reward_count_4",
                                             "isOpen":true,
@@ -523,7 +494,6 @@
                                         }]
                                 },
                                 {
-                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,sign_finished_4,sign_finished_4",
                                     "props":{"y":319,"x":284,"visible":false,"var":"sign_finished_4","skin":"ui_main/sign_icon_finish.png","name":"sign_finished_4","anchorY":0.5,"anchorX":0.5},
@@ -539,7 +509,6 @@
                                     "$HIDDEN":true
                                 },
                                 {
-                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btn_day_5,btn_day_5",
                                     "props":{"y":238,"x":380,"var":"btn_day_5","stateNum":"1","skin":"ui_main/sign_day_btn_1.png","name":"btn_day_5"},
@@ -552,7 +521,6 @@
                                     "compId":52,
                                     "child":[
                                         {
-                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,can_sign_5,can_sign_5",
                                             "props":{"y":1,"x":-4,"visible":false,"var":"can_sign_5","skin":"ui_main/sign_day_btn.png","name":"can_sign_5"},
@@ -568,10 +536,9 @@
                                             "$HIDDEN":false
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_day_5,lbl_day_5",
-                                            "props":{"y":25,"x":85,"var":"lbl_day_5","text":"第6天","scaleY":0.5,"scaleX":0.5,"name":"lbl_day_5","fontSize":40,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                            "props":{"y":25,"x":85,"var":"lbl_day_5","text":"第6天","scaleY":0.5,"scaleX":0.5,"name":"lbl_day_5","fontSize":40,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                                             "nodeParent":52,
                                             "label":"lbl_day_5",
                                             "isOpen":false,
@@ -583,7 +550,6 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Sprite",
                                             "searchKey":"Sprite",
                                             "props":{"y":66,"x":12,"texture":"ui_common/flyDiamond.png","scaleY":1,"scaleX":1},
@@ -598,10 +564,9 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_reward_count_5,lbl_reward_count_5",
-                                            "props":{"y":84,"x":70,"var":"lbl_reward_count_5","text":"x300","scaleY":0.7,"scaleX":0.7,"name":"lbl_reward_count_5","fontSize":28,"font":"font1_2","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
+                                            "props":{"y":84,"x":70,"var":"lbl_reward_count_5","text":"x300","scaleY":0.7,"scaleX":0.7,"name":"lbl_reward_count_5","fontSize":28,"font":"font1_3","color":"#000000","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
                                             "nodeParent":52,
                                             "label":"lbl_reward_count_5",
                                             "isOpen":true,
@@ -614,7 +579,6 @@
                                         }]
                                 },
                                 {
-                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,sign_finished_5,sign_finished_5",
                                     "props":{"y":319,"x":470,"visible":false,"var":"sign_finished_5","skin":"ui_main/sign_icon_finish.png","name":"sign_finished_5","anchorY":0.5,"anchorX":0.5},
@@ -630,7 +594,6 @@
                                     "$HIDDEN":true
                                 },
                                 {
-                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btn_day_6,btn_day_6",
                                     "props":{"y":392,"x":22,"width":535,"var":"btn_day_6","stateNum":"1","skin":"ui_main/sign_day_btn_2.png","sizeGrid":"0,55,0,55","name":"btn_day_6"},
@@ -643,7 +606,6 @@
                                     "compId":53,
                                     "child":[
                                         {
-                                            "x":75,
                                             "type":"Image",
                                             "searchKey":"Image,can_sign_6,can_sign_6",
                                             "props":{"y":-9,"x":267,"visible":false,"var":"can_sign_6","skin":"ui_main/sign_day6_btn.png","sizeGrid":"0,38,0,33","scaleX":1.01,"name":"can_sign_6","anchorX":0.5},
@@ -659,10 +621,9 @@
                                             "$HIDDEN":false
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_day_6,lbl_day_6",
-                                            "props":{"y":15,"x":266,"var":"lbl_day_6","text":"第7天","scaleY":0.6,"scaleX":0.6,"name":"lbl_day_6","fontSize":26,"font":"font1_2","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                            "props":{"y":15,"x":266,"var":"lbl_day_6","text":"第7天","scaleY":0.6,"scaleX":0.6,"name":"lbl_day_6","fontSize":26,"font":"font1_3","color":"#ffffff","anchorY":0.5,"anchorX":0.5,"align":"center"},
                                             "nodeParent":53,
                                             "label":"lbl_day_6",
                                             "isOpen":false,
@@ -674,7 +635,6 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Sprite",
                                             "searchKey":"Sprite",
                                             "props":{"y":53,"x":170,"texture":"ui_common/flyDiamond.png","scaleY":1.2,"scaleX":1.2},
@@ -689,10 +649,9 @@
                                                 ]
                                         },
                                         {
-                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_reward_count_6,lbl_reward_count_6",
-                                            "props":{"y":77,"x":236,"var":"lbl_reward_count_6","text":"x300","scaleY":0.85,"scaleX":0.85,"name":"lbl_reward_count_6","fontSize":44,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
+                                            "props":{"y":77,"x":236,"var":"lbl_reward_count_6","text":"x300","scaleY":0.85,"scaleX":0.85,"name":"lbl_reward_count_6","fontSize":44,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
                                             "nodeParent":53,
                                             "label":"lbl_reward_count_6",
                                             "isOpen":true,
@@ -705,7 +664,6 @@
                                         }]
                                 },
                                 {
-                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,sign_finished_6,sign_finished_6",
                                     "props":{"y":474,"x":293,"visible":false,"var":"sign_finished_6","skin":"ui_main/sign_icon_finish.png","name":"sign_finished_6","anchorY":0.5,"anchorX":0.5},
@@ -724,7 +682,7 @@
                             "x":45,
                             "type":"Button",
                             "searchKey":"Button,btn_close,btn_close",
-                            "props":{"y":27,"x":517,"var":"btn_close","stateNum":"1","skin":"ui_common/common_btn_close.png","name":"btn_close"},
+                            "props":{"y":27,"x":517,"var":"btn_close","stateNum":"1","skin":"ui_common/common_btn_close.png","name":"btn_close","labelStrokeColor":"#ffffff"},
                             "nodeParent":4,
                             "label":"btn_close",
                             "isDirectory":false,
@@ -741,18 +699,19 @@
                             "props":{"y":654,"x":288.225,"visible":false,"var":"lbl_des_signed_0","text":"今日已领取","scaleY":0.6,"scaleX":0.6,"name":"lbl_des_signed_0","fontSize":36,"font":"font1_3","color":"#767ca1","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                             "nodeParent":4,
                             "label":"lbl_des_signed_0",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":46,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"ColorFilterSetter",
                                     "switchAble":true,
                                     "searchKey":"ColorFilterSetter",
                                     "removeAble":true,
-                                    "props":{"saturation":"0","hue":"0","contrast":"0","color":"#767ca1","brightness":"0","alpha":"0"},
+                                    "props":{"saturation":"0","hue":"0","contrast":"0","color":"#000000","brightness":"0","alpha":0},
                                     "nodeParent":46,
                                     "label":"ColorFilterSetter",
                                     "isDirectory":false,
@@ -771,18 +730,19 @@
                             "props":{"y":714,"x":288.225,"width":531,"visible":false,"var":"lbl_des_signed_1","text":"欢迎明天再来领取！","scaleY":0.63,"scaleX":0.63,"pivotY":30,"pivotX":256,"name":"lbl_des_signed_1","height":60,"fontSize":36,"font":"font1_3","color":"#767ca1","bold":true,"align":"center"},
                             "nodeParent":4,
                             "label":"lbl_des_signed_1",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":45,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"ColorFilterSetter",
                                     "switchAble":true,
                                     "searchKey":"ColorFilterSetter",
                                     "removeAble":true,
-                                    "props":{"saturation":"0","hue":"0","contrast":"0","color":"#767ca1","brightness":"0","alpha":"0"},
+                                    "props":{"saturation":"0","hue":"0","contrast":"0","color":"#000000","brightness":"0","alpha":"0"},
                                     "nodeParent":45,
                                     "label":"ColorFilterSetter",
                                     "isDirectory":false,
@@ -811,7 +771,7 @@
                                     "x":60,
                                     "type":"Label",
                                     "searchKey":"Label",
-                                    "props":{"y":48,"x":214,"text":"领取","fontSize":44,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                    "props":{"y":48,"x":214,"text":"领取","fontSize":44,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                     "nodeParent":36,
                                     "label":"Label",
                                     "isOpen":null,
@@ -855,7 +815,7 @@
                                     "x":60,
                                     "type":"Label",
                                     "searchKey":"Label",
-                                    "props":{"y":115,"x":214,"width":236,"valign":"middle","text":"2倍领取","scaleY":1,"scaleX":1,"height":60,"fontSize":36,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                    "props":{"y":115,"x":214,"width":236,"valign":"middle","text":"2倍领取","scaleY":1,"scaleX":1,"height":60,"fontSize":36,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                     "nodeParent":38,
                                     "label":"Label",
                                     "isOpen":null,
@@ -895,13 +855,14 @@
             "props":{"y":0,"x":0,"width":750,"var":"box_title"},
             "nodeParent":2,
             "label":"box_title",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":145,
             "child":[
                 {
+                    "x":30,
                     "type":"Box",
                     "searchKey":"Box,box_game_diamond,box_game_diamond",
                     "props":{"y":10,"x":205,"var":"box_game_diamond","name":"box_game_diamond"},
@@ -914,6 +875,7 @@
                     "compId":146,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":10,"x":20,"width":160,"skin":"ui_common/coin_bg.png","sizeGrid":"0,36,0,29","height":40},
@@ -926,6 +888,7 @@
                             "compId":147,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite,title_diamond,title_diamond",
                                     "props":{"y":-5,"x":-21,"var":"title_diamond","texture":"ui_common/flyDiamond.png","name":"title_diamond"},
@@ -939,9 +902,10 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_game_diamond,lab_game_diamond",
-                                    "props":{"x":145,"var":"lab_game_diamond","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_diamond","fontSize":30,"font":"font1_2","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
+                                    "props":{"x":145,"var":"lab_game_diamond","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_diamond","fontSize":30,"font":"font1_3","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
                                     "nodeParent":147,
                                     "label":"lab_game_diamond",
                                     "isOpen":null,
@@ -953,6 +917,7 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btn_add_diamond,btn_add_diamond",
                                     "props":{"y":5,"x":156,"visible":false,"var":"btn_add_diamond","stateNum":"1","skin":"ui_main/main_add_btn.png","name":"btn_add_diamond"},
@@ -970,6 +935,7 @@
                     "$HIDDEN":false
                 },
                 {
+                    "x":30,
                     "type":"Box",
                     "searchKey":"Box,box_game_gold,box_game_gold",
                     "props":{"y":10,"x":20,"var":"box_game_gold","name":"box_game_gold"},
@@ -982,6 +948,7 @@
                     "compId":151,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":10,"x":20,"width":160,"skin":"ui_common/coin_bg.png","sizeGrid":"0,40,0,29","height":40},
@@ -994,6 +961,7 @@
                             "compId":152,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite,title_gold,title_gold",
                                     "props":{"y":-5,"x":-20,"var":"title_gold","texture":"ui_common/flyCoin.png","name":"title_gold"},
@@ -1007,9 +975,10 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_game_gold,lab_game_gold",
-                                    "props":{"y":15,"x":145,"var":"lab_game_gold","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_gold","fontSize":30,"font":"font1_2","color":"#ffffff","bold":false,"anchorY":0.5,"anchorX":1,"align":"right"},
+                                    "props":{"y":15,"x":145,"var":"lab_game_gold","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_gold","fontSize":30,"font":"font1_3","color":"#ffffff","bold":false,"anchorY":0.5,"anchorX":1,"align":"right"},
                                     "nodeParent":152,
                                     "label":"lab_game_gold",
                                     "isOpen":false,
@@ -1023,6 +992,7 @@
                         }]
                 },
                 {
+                    "x":30,
                     "type":"Script",
                     "switchAble":true,
                     "source":"src/framework/FZUIAnchor.ts",

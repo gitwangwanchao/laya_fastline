@@ -21,7 +21,6 @@ import FZConst from "../../framework/FZConst";
 import FZShareInfo from "../logic/FZShareInfo";
 
 import FZResManager from "../core/FZResManager";
-import FZJcdlTypeUI from "../../game/view/FZJcdlTypeUI";
 
 
 /**
@@ -204,7 +203,6 @@ namespace game.view
             // FZEventManager.instance.unregister(FZEvent.UVA_CAN_CHOOSE,this.leveUpNoticeCtr, this);
             FZEventManager.instance.unregister(FZEvent.MORE_GAME_NUM, this.updateMoreGameNotice, this);
 
-            FZJcdlTypeUI.instance.remove();
         }
         /**
          * 武器升级引导时将红点层级提高
@@ -229,7 +227,7 @@ namespace game.view
         {
             // 设置
             Laya.timer.clear(this, this.giftAlready);
-            Laya.timer.clear(this,this.JcdlSingleInfo); // 清理 交叉导流定时器
+            // Laya.timer.clear(this,this.JcdlSingleInfo); // 清理 交叉导流定时器
             // this.stopResidentRollBanner(); // 清理常驻导流循环 定时器
             if( this.tweenHand  ){  // 清理 引导删除车辆 缓动
                 Laya.Tween.clear( this.tweenHand );
@@ -248,7 +246,6 @@ namespace game.view
             FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.btn_rotaryTable, this, this.onBtnClick, ["btn_rotaryTable"]);
             FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.btn_levelUp, this, this.onBtnClick, ["btn_levelUp"]);
             FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.dropBox, this, this.onBtnClick, ["air_drop_box"]);
-            FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.btn_more_game, this, this.onBtnClick, ["btn_more_game"]);
             FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.btn_online_gift, this, this.onBtnClick, ["btn_online_gift"]);
 
             FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.img_clean, this, this.onBtnClick, ["img_clean"]);
@@ -348,7 +345,7 @@ namespace game.view
                 Laya.timer.once(FZMergeDateManager.instance.BOX_TIME, this, this.onRandomCar);
             }
 
-            FZSceneManager.instance.setActive(true);
+            // FZSceneManager.instance.setActive(true);
 
             if (FZUIManager.instance.longScreen()) {
                 Laya.timer.frameOnce(1, this, () => {
@@ -365,14 +362,8 @@ namespace game.view
                 FZGameData.instance.OpenUav = false;
             }
 
-            if(FZGameData.instance.getMaxCheckPoint()<3){
-                this.scene.permanent1.visible = false;
-                this.scene.permanent2.visible = false;
-                this.scene.btnSingleJcdlIcon.visible = false;
-                // this.scene.btn_levelUp.visible = false;
-            }
-            FZSceneManager.instance.initUIEffect();
-            tywx.BiLog.clickStat(tywx.clickStatEventType.onloadMainScene,[]);
+            // FZSceneManager.instance.initUIEffect();
+            FZ.BiLog.clickStat(FZ.clickStatEventType.onloadMainScene,[]);
 
             this.getUavLockPoint();  //获取无人机的解锁关卡限制
         }
@@ -426,112 +417,6 @@ namespace game.view
                     break;
             }
         }
-
-    //  -------------------------------      交叉导流    Begin       ------------------------------
-        // 设置 交叉导流读取的信息
-        // setStateToJCDL(){
-        //     // this.scene.btnSingleJcdlIcon.visible = false; // 起始不显示 滚动导流
-        //     FZJcdlTypeUI.instance.remove();
-        //     this.jcdlListData = FZGameData.instance.getJcdlDataList();  // 获取交叉导流的数值信息
-        //     this.iconTimestamp = Math.sqrt(Math.random());
-        //
-        //     this.jdclList_middle =  Math.floor( this.jcdlListData.length / 2 );  // 获取配置 中间值
-        //     this.jdclSingleIndex =  this.jdclList_middle;
-        //
-        // }
-
-        // 【常驻导流】 -  创建   交叉导流
-        // createResidentBanner(){
-        //     try{
-        //         if( ! this.jcdlListData || ! this.jcdlListData[0] ){
-        //             return;
-        //         }
-        //         // 常驻导流列表 - 跟随配置
-        //         this.scene.permanent2.on(Laya.Event.CLICK,this,this.onClickBtnJcdlIconByMain,[0]);
-        //         this.scene.imgSingleJcdlIcon2.skin = this.jcdlListData[0].icon_url[0]+ "?v=" + this.iconTimestamp;
-        //         this.scene.lblSingleJcdlName2.changeText(this.jcdlListData[0].gameName);
-        //     } catch(e) {
-        //
-        //     }
-        // }
-
-        // 【常驻“滚动导流】 - 创建 常驻滚动导流
-        // private createResidentRoll() : void {
-        //     this.scene.jcdlRollShake_down.play(0,true);
-        //     this.JcdlResidentSingleInfo();
-        //     Laya.timer.loop(4000,this,this.JcdlResidentSingleInfo);
-        // }
-
-        //  停止 常驻滚动导流
-        // private stopResidentRollBanner() : void {
-        //     this.scene.jcdlRollShake_down.stop();
-        //     this.scene.permanent1.rotation = 0;
-        //     Laya.timer.clear(this,this.JcdlResidentSingleInfo);
-        //  }
-
-        // 常驻滚动导流 - 底部    ( 循环 前半部分 )
-        private JcdlResidentSingleInfo() : void {
-            try{
-                if( ! this.jcdlListData || !this.jcdlListData[this.jdclSingleIndex_down] ){
-                    return;
-                }
-                this.scene.permanent1.on(Laya.Event.CLICK,this,this.onClickBtnJcdlIconByMain,[this.jdclSingleIndex_down]);
-                this.scene.imgSingleJcdlIcon1.skin = this.jcdlListData[this.jdclSingleIndex_down].icon_url[0]+ "?v=" + this.iconTimestamp;
-                this.scene.lblSingleJcdlName1.changeText(this.jcdlListData[this.jdclSingleIndex_down].gameName);
-                this.jdclSingleIndex_down++;
-                if(this.jdclSingleIndex_down == this.jdclList_middle)
-                {
-                    this.jdclSingleIndex_down = 1;
-                }
-            } catch(e){
-
-            }
-        }
-
-        //【空投箱 “滚动" 导流】 - 创建 滚动导流
-        // private createRollBanner() : void {
-        //     // this.scene.btnSingleJcdlIcon.visible = true;
-        //     this.scene.jcdlRollShake.play(0,true);
-        //     this.JcdlSingleInfo();
-        //     Laya.timer.loop(4000,this,this.JcdlSingleInfo);
-        // }
-
-        //  停止 滚动导流
-        // private stopRollBanner() : void {
-        //     this.scene.jcdlRollShake.stop();
-        //     this.scene.btnSingleJcdlIcon.rotation = 0;
-        //     Laya.timer.clear(this,this.JcdlSingleInfo);
-        //     // this.scene.btnSingleJcdlIcon.visible = false;
-        // }
-
-        // 执行 交叉导流信息循环   ( 循环 后半部分 )
-        private JcdlSingleInfo():void
-        {
-            try{
-                if( ! this.jcdlListData || !this.jcdlListData[this.jdclSingleIndex] ){
-                    return;
-                }
-                this.scene.btnSingleJcdlIcon.on(Laya.Event.CLICK,this,this.onClickBtnJcdlIconByMain,[this.jdclSingleIndex]);
-                this.scene.imgSingleJcdlIcon.skin = this.jcdlListData[this.jdclSingleIndex].icon_url[0]+ "?v=" + this.iconTimestamp;
-                // this.scene.btnSingleJcdlIcon.visible = true;
-                this.scene.lblSingleJcdlName.changeText(this.jcdlListData[this.jdclSingleIndex].gameName);
-                this.jdclSingleIndex++;
-                if(this.jdclSingleIndex == this.jcdlListData.length)
-                {
-                    this.jdclSingleIndex = this.jdclList_middle;  //  回到中间值
-                }
-            } catch(e){
-
-            }
-        }
-
-        // 交叉导流 按下执行事件
-        private onClickBtnJcdlIconByMain(iconIndex : number):void
-        {
-            let toappid =  this.jcdlListData[iconIndex]["toappid"];
-            FZWechat.instance.clickAdIcon(toappid);
-        }
-    //  -------------------------------      交叉导流    End       ------------------------------
 
     //  -------------------------------      删除车辆引导    Begin     ------------------------------
         public isInJudge = false; // 是否正在 最初始判断操作
@@ -970,25 +855,6 @@ namespace game.view
             this.scene.dropNumLabel.text = FZMergeDateManager.instance.AirDropCount + "";  // 显示空投剩余的数量
         }
 
-
-
-        //  显示已经存在有 空投
-        // existAirDropShow(){
-        //     this.scene.dropBox.visible = true; //  显示 空投箱子
-        //     this.scene.airDropDialog.visible = false; // 气泡信息 处于关闭状态
-        //     Laya.timer.once(3000, this, function(){
-        //         this.scene.shakeDropOnce.play(0,true);
-        //     })
-        //     var stringNum = FZSaveDateManager.instance.getItemFromLocalStorage("AIR_DROP_CAR_NUM", "12"); // (string)
-        //     var haveCarNum = 0;
-        //     if( typeof stringNum == 'string' ){
-        //         haveCarNum = this.switchToNumber(stringNum);
-        //     } else {
-        //         haveCarNum = stringNum;
-        //     }
-        //     this.scene.dropNumLabel.text = haveCarNum + "";  // 显示空投剩余的数量
-        // }
-
         /**
          *   开启新空投 ( 新的空投掉落 )
          */
@@ -997,8 +863,7 @@ namespace game.view
                 if( ! this.scene ){
                     return;
                 }
-                FZDebug.D("显示空投 ----------------------------------------1");
-                // tywx.BiLog.clickStat(tywx.clickStatEventType.ShowAirDrop,[]);
+
                 this.scene.airDropByBox.visible = true;
                 if (FZMergeDateManager.instance.AirDropIsOpen == 1){
                     this.scene.dropBox.skin = "ui_main/airDropBox_1.png";
@@ -1012,11 +877,9 @@ namespace game.view
                 this.scene.airDropDialog.visible = false;
                 this.scene.airDropWarn.visible = true;
                 this.scene.airWarnAni.play();  // 报警动画
-                FZDebug.D("显示空投 ----------------------------------------2");
                 FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.boss);
                 //  出现 空投
                 var stopAnim = function():void{
-                    FZDebug.D("显示空投 ----------------------------------------3");
                     FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.airdrop);
                     this.scene.airWarnAni.stop();
                     this.scene.airDropWarn.visible = false;
@@ -1041,11 +904,6 @@ namespace game.view
          *   点击空投箱子的事件 触发
          */
         airDropClick(){
-            // if( FZMergeDateManager.instance.JudgeSolt() == -1){
-            //     FZUIManager.instance.createUI(FZUIManager.UI_Tip, { text: "车位已满，请先合成或回收车辆" });
-            //     this.clickBuyCarInGuide(); // 空投也可以 触发车辆新手引导
-            //     return false;
-            // }
             if (FZMergeDateManager.instance.AirDropIsOpen == 0) {
                 this.startPullVideo();
             }else {
@@ -1057,7 +915,7 @@ namespace game.view
 
         //  执行拉起视频 / 分享
         startPullVideo(){
-            tywx.BiLog.clickStat(tywx.clickStatEventType.shareVideoGetAirdropPackage,[]);  //视频或者分享打开空投打点
+            FZ.BiLog.clickStat(FZ.clickStatEventType.shareVideoGetAirdropPackage,[]);  //视频或者分享打开空投打点
             let param = FZShareInfo.create();
             param.shareType = FZGameStatus.FZShareType.AirDrop;
             var isShare = FZGameData.instance.getShareOrVideo();
@@ -1087,9 +945,9 @@ namespace game.view
 
         public shareCallBack(param){
             if(!param.isFree){  //分享或者视频打开空投打点
-                tywx.BiLog.clickStat(tywx.clickStatEventType.shareVideoGetAirdropPackage,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.shareVideoGetAirdropPackage,[]);
             }
-            tywx.BiLog.clickStat(tywx.clickStatEventType.OpenAirDropSuc,[]);  //打开空投打点
+            FZ.BiLog.clickStat(FZ.clickStatEventType.OpenAirDropSuc,[]);  //打开空投打点
             FZMergeDateManager.instance.setAirDropOpenState(1,{x:this.scene.positionBox.x - 50, y :this.scene.positionBox.y});
             if(FZMergeDateManager.instance.JudgeSolt() == -1) {
                 FZUIManager.instance.createUI(FZUIManager.UI_Tip, { text: "车位已满，请先合成或回收车辆" });
@@ -1129,7 +987,7 @@ namespace game.view
             let sigin_days = parseInt(FZSaveDateManager.instance.getItemFromLocalStorage("GAME_SIGIN_DAYS", "0"));
             var flag = FZSaveDateManager.instance.getItemFromLocalStorage("GAME_SIGIN_DAYS_GREATER_7", "0");
             sigin_days = (sign_date_str != date_str && sigin_days == 7) ? 0 : sigin_days;
-            if(tywx.StateInfo.debugMode)
+            if(FZ.StateInfo.debugMode)
                 alert("自动弹出签到 date_str:"+date_str+'sign_date_str:'+sign_date_str+'sigin_days:'+sigin_days+'flag:'+flag)
 
             var state = FZSaveDateManager.instance.getItemFromLocalStorage("GAME_SIGIN_DATE_STATE", "0");
@@ -1709,7 +1567,7 @@ namespace game.view
                 FZUIManager.instance.createUI(FZUIManager.UI_Tip,{text : FZGameData.instance.getChoosePointOpenPoint()+"关之后可选关"});
                 return;
             }
-            tywx.BiLog.clickStat(tywx.clickStatEventType.clickTheSelectLevelButton,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.clickTheSelectLevelButton,[]);
             FZUIManager.instance.createUI(FZUIManager.UI_CheckPointChoose);
 
             /*let check_point = FZGameData.instance.getCheckPoint();
@@ -1799,7 +1657,7 @@ namespace game.view
                 //FZSoundManager.instance.stopBgm();
                 FZEventManager.instance.sendEvent(FZEvent.GAME_GUIDE_CTRL);
                 FZUIManager.instance.createUI(FZUIManager.UI_FZGameJiaZaiUI,"game");
-                tywx.BiLog.clickStat(tywx.clickStatEventType.onClickStartGame,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.onClickStartGame,[]);
             }
             else if (params == "btn_time")
             {
@@ -1807,7 +1665,7 @@ namespace game.view
             }
             else if (params == "btn_shop")
             {
-                // tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeUserShare,[]);
+                // FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeUserShare,[]);
                 FZUIManager.instance.createUI(FZUIManager.UI_ShopDialog,this.shopFreeCarindex);
                 if(FZMergeDateManager.instance.getCarMaxLevel()>5)
                 {
@@ -1837,14 +1695,6 @@ namespace game.view
                 }
             } else if (params == "air_drop_box"){
                 this.airDropClick();  // 点击空投箱触发事件
-            } else if (params == "btn_more_game"){
-                if(FZMergeDateManager.instance.getPopJcdlCfg().length > 0){
-                    FZJcdlTypeUI.instance.create({type : 4 });  //创建抽屉交叉导流
-                }else{
-                    FZUIManager.instance.createUI(FZUIManager.UI_Tip, {text: "无可试玩的游戏，请明天再来～"});
-                }
-                // FZSaveDateManager.instance.setItemToLocalStorage("MORE_GAME_NOTICE", "false");
-                // this.updateMoreGameNotice();
             }else if(params == "btn_online_gift"){
                 if(!this.checkGift){
                     FZUIManager.instance.createUI(FZUIManager.UI_Tip,{text : "倒计时结束点击宝箱有惊喜~"});
@@ -1957,7 +1807,7 @@ namespace game.view
                         this.onUpdateBuyCar();
                     }
                     FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.buy_car);
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.onClickFastBuyCar,[]);
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.onClickFastBuyCar,[]);
                 } else
                 {
                     FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.touch);

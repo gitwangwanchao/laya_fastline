@@ -150,7 +150,7 @@ namespace game.view
         //     FZMergeDateManager.instance.addGameSpeedTime(2,this.addDiamondTime);
         //     FZMergeDateManager.instance.addGameDiamond(-this.share_info.speedCost);
         //     this.resetProShow()
-        //     tywx.BiLog.clickStat(tywx.clickStatEventType.userDiamondQuicken,[]);
+        //     FZ.BiLog.clickStat(FZ.clickStatEventType.userDiamondQuicken,[]);
         // }
 
         //分享
@@ -207,7 +207,7 @@ namespace game.view
             FZDebug.D("加速--------------------------------------------------- = " + this.addShareTime);
             FZMergeDateManager.instance.addGameSpeedTime(5, this.addShareTime);
             this.resetProShow();
-            tywx.BiLog.clickStat(tywx.clickStatEventType.userShareOrVideoQuicken,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.userShareOrVideoQuicken,[]);
         }
 
         resetProShow(){

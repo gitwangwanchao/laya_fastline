@@ -4,14 +4,14 @@
  */
 
 
-tywx.PropagateInterface = {
+FZ.PropagateInterface = {
     //ShareConfig: {},
 
     /**
      * 通过http获取分享相关信息,根据权重自动选择条目,
      * 本地有缓存,调用后会立刻返回分享信息,不会出现http请求带来的延迟
      * http://market.touch4.me/?act=api.getShareConfig&time=1421755384&game_mark=28-20015&sign=1d356c1417a1d58fcec442eb8f655a4e
-     tywx.PropagateInterface.getShareConfigInfoAutoWeight();
+     FZ.PropagateInterface.getShareConfigInfoAutoWeight();
      * 返回值例子:
      {
            "normalshare": {
@@ -39,7 +39,7 @@ tywx.PropagateInterface = {
         var timeStamp = new Date().getTime();
         reqObj.act = 'api.getShareConfig';
         reqObj.time = timeStamp;
-        reqObj.game_mark = tywx.SystemInfo.cloudId + "-" + tywx.SystemInfo.gameId;
+        reqObj.game_mark = FZ.SystemInfo.cloudId + "-" + FZ.SystemInfo.gameId;
 
         var signStr = this.getConfigSignStr(reqObj);
         var paramStrList = [];
@@ -47,7 +47,7 @@ tywx.PropagateInterface = {
             paramStrList.push(key + '=' + reqObj[key]);
         }
         paramStrList.push('sign=' + signStr);
-        var finalUrl = tywx.SystemInfo.shareManagerUrl + '?' + paramStrList.join('&');
+        var finalUrl = FZ.SystemInfo.shareManagerUrl + '?' + paramStrList.join('&');
 
         var self = this;
         var successcb = function (ret) {
@@ -61,7 +61,7 @@ tywx.PropagateInterface = {
         };
 
         var failcb = function (ret) {
-            tywx.NotificationCenter.trigger(tywx.EventType.GET_SHARE_CONFIG_FAIL, ret);
+            FZ.NotificationCenter.trigger(FZ.EventType.GET_SHARE_CONFIG_FAIL, ret);
 
             var fc = function () {
                 self._doHttpGetShareConfig();
@@ -69,7 +69,7 @@ tywx.PropagateInterface = {
             setTimeout(fc, 10000);
 
         };
-        tywx.HttpUtil.httpGet({'url': finalUrl}, successcb, failcb);
+        FZ.HttpUtil.httpGet({'url': finalUrl}, successcb, failcb);
     },
 
     _shuffleByWeights: function () {
@@ -109,9 +109,9 @@ tywx.PropagateInterface = {
         var reqObj = {};
         var timeStamp = new Date().getTime();
         reqObj.act = 'api.getUserFeature';
-        reqObj.cloud_id = tywx.SystemInfo.cloudId;
-        reqObj.game_id = tywx.SystemInfo.gameId;
-        reqObj.user_id = tywx.UserInfo.userId;
+        reqObj.cloud_id = FZ.SystemInfo.cloudId;
+        reqObj.game_id = FZ.SystemInfo.gameId;
+        reqObj.user_id = FZ.UserInfo.userId;
         reqObj.time = timeStamp;
 
         var signStr = this.getConfigSignStr(reqObj);
@@ -120,15 +120,15 @@ tywx.PropagateInterface = {
             paramStrList.push(key + '=' + reqObj[key]);
         }
         paramStrList.push('sign=' + signStr);
-        var finalUrl = tywx.SystemInfo.shareManagerUrl + '?' + paramStrList.join('&');
+        var finalUrl = FZ.SystemInfo.shareManagerUrl + '?' + paramStrList.join('&');
         var successcb = function (ret) {
-            tywx.NotificationCenter.trigger(tywx.EventType.GET_USER_FEATURE_SUCCESS, ret);
+            FZ.NotificationCenter.trigger(FZ.EventType.GET_USER_FEATURE_SUCCESS, ret);
         };
 
         var failcb = function (ret) {
-            tywx.NotificationCenter.trigger(tywx.EventType.GET_USER_FEATURE_FAIL, ret);
+            FZ.NotificationCenter.trigger(FZ.EventType.GET_USER_FEATURE_FAIL, ret);
         };
-        tywx.HttpUtil.httpGet({'url': finalUrl}, successcb, failcb);
+        FZ.HttpUtil.httpGet({'url': finalUrl}, successcb, failcb);
     },
 
     /**
@@ -142,7 +142,7 @@ tywx.PropagateInterface = {
         if (!this._rawConfigInfo) {
             return;
         }
-        if(!tywx.UserInfo.userId){
+        if(!FZ.UserInfo.userId){
             return;
         }
 
@@ -165,7 +165,7 @@ tywx.PropagateInterface = {
                         var isUIDForbidden = false;
                         for (var j = 0; j < _len; j++) {
 
-                            var _sUid = tywx.UserInfo.userId.toString();
+                            var _sUid = FZ.UserInfo.userId.toString();
                             if (_sUid.charAt(_sUid.length - 1) == _black_rear_uidList[j]) {
                                 isUIDForbidden = true;
                                 break;
@@ -178,7 +178,7 @@ tywx.PropagateInterface = {
                 })
             }
         }
-        tywx.NotificationCenter.trigger(tywx.EventType.GET_SHARE_CONFIG_SUCCESS, this._shuffleByWeights());
+        FZ.NotificationCenter.trigger(FZ.EventType.GET_SHARE_CONFIG_SUCCESS, this._shuffleByWeights());
     },
 
     /**
@@ -217,7 +217,7 @@ tywx.PropagateInterface = {
                 signStr += key + '=' + reqObj[key];
             }
         }
-        var finalSign = tywx.hex_md5('market.tuyoo.com-api-' + signStr + '-market.tuyoo-api') || '';
+        var finalSign = FZ.hex_md5('market.tuyoo.com-api-' + signStr + '-market.tuyoo-api') || '';
         return finalSign;
     },
 };

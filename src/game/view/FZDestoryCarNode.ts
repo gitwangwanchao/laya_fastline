@@ -112,7 +112,7 @@ export default class FZDestoryCarNode extends Laya.Image{
                 FZEventManager.instance.sendEvent(FZEvent.DELETE_CAR_TRASH_STATE , "SELL");
             }
             // FZGameData.instance.playResFlyAni(this,null,{type: 1,countType: 0},null);//播放飘金币的动画
-            tywx.BiLog.clickStat(tywx.clickStatEventType.successSellCar,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.successSellCar,[]);
             
             FZMergeDateManager.instance.setIsFirstRecycleCarState(1);
         }

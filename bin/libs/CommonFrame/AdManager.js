@@ -1,7 +1,7 @@
 /**
  * 交叉导流相关系统接口, 调用导流接口使用showAd 接口， 刷新导流显示icon使用resetBtnIcon 接口
  */
-tywx.AdManagerWx = {
+FZ.AdManagerWx = {
 
     retryCrossTimes: 3, //3次网络重试的机会
     retryBannerTimes: 3, //3次网络重试的机会
@@ -24,11 +24,11 @@ tywx.AdManagerWx = {
     //创建导流icon，每调用一次就会创建一个
     showAd: function (node, tag) {
         var _adnode = null;
-        var _adnode = new tywx.AdManagerWx.adNodeClass();
-        _adnode.adInfoList = JSON.parse(JSON.stringify(tywx.AdManagerWx.allAdInfoList));
+        var _adnode = new FZ.AdManagerWx.adNodeClass();
+        _adnode.adInfoList = JSON.parse(JSON.stringify(FZ.AdManagerWx.allAdInfoList));
         _adnode.adType = 1;
         _adnode.adTag = tag || '';
-        tywx.AdManagerWx.adNodeList.push(_adnode);
+        FZ.AdManagerWx.adNodeList.push(_adnode);
         _adnode.createAdNode(node);
     },
 
@@ -39,11 +39,11 @@ tywx.AdManagerWx = {
         }
         this.selfBanner = true; // 设置为true则判断为 banner导流状态
         var _adnode = null;
-        var _adnode = new tywx.AdManagerWx.adNodeClass();
-        _adnode.adInfoList = JSON.parse(JSON.stringify(tywx.AdManagerWx.allBannerInfoList));
+        var _adnode = new FZ.AdManagerWx.adNodeClass();
+        _adnode.adInfoList = JSON.parse(JSON.stringify(FZ.AdManagerWx.allBannerInfoList));
         _adnode.adType = 2;
         _adnode.adTag = tag || '';
-        tywx.AdManagerWx.bannerNodeList.push(_adnode);
+        FZ.AdManagerWx.bannerNodeList.push(_adnode);
         _adnode.createBannerNode(null, node);
     },
 
@@ -63,7 +63,7 @@ tywx.AdManagerWx = {
             y: 83,
         };
 
-        if (tywx.UserInfo.model.search('iPhone X') != -1) {
+        if (FZ.UserInfo.model.search('iPhone X') != -1) {
             position.y += (iphoneXBottom * 3 - 15);
         } else {
             // position.y = tuyouAdHeight * xRatio / 2;
@@ -300,7 +300,7 @@ tywx.AdManagerWx = {
 
             spriteIco.setRotation(0);
 
-            tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeShowAdBtn, [that.currentAdInfo.icon_id,
+            FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeShowAdBtn, [that.currentAdInfo.icon_id,
                 '0',
                 '',
                 that.currentAdInfo.toappid,
@@ -310,7 +310,7 @@ tywx.AdManagerWx = {
             ]);
             switch (_animaType) {
 
-                case tywx.AdManagerWx.AnimType.STATIC:
+                case FZ.AdManagerWx.AnimType.STATIC:
 
                     cc.loader.load({
                         url: that.currentAdInfo.icon_url[0]
@@ -328,7 +328,7 @@ tywx.AdManagerWx = {
                     });
 
                     break;
-                case tywx.AdManagerWx.AnimType.SHAKE:
+                case FZ.AdManagerWx.AnimType.SHAKE:
 
                     cc.loader.load({
                         url: that.currentAdInfo.icon_url[0]
@@ -355,7 +355,7 @@ tywx.AdManagerWx = {
 
 
                     break;
-                case tywx.AdManagerWx.AnimType.FRAME:
+                case FZ.AdManagerWx.AnimType.FRAME:
 
                     var allFrames = [];
 
@@ -437,7 +437,7 @@ tywx.AdManagerWx = {
 
                 console.log('bi_paramlist ====> ' + JSON.stringify(bi_paramlist));
 
-                tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickAdBtn, bi_paramlist);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickAdBtn, bi_paramlist);
 
 
                 // //先尝试直接跳转
@@ -453,13 +453,13 @@ tywx.AdManagerWx = {
                             },
                             success: function (res) {
 
-                                tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickDirectToMiniGameSuccess, bi_paramlist);
+                                FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickDirectToMiniGameSuccess, bi_paramlist);
 
                                 console.log('wx.navigateToMiniProgram success');
                                 console.log(res);
                             },
                             fail: function (res) {
-                                tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickDirectToMiniGameFail, bi_paramlist);
+                                FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickDirectToMiniGameFail, bi_paramlist);
                                 console.log('wx.navigateToMiniProgram fail');
                                 console.log(res);
                             },
@@ -479,12 +479,12 @@ tywx.AdManagerWx = {
                                 from: topath ? topath : '?from=adcross',
                             },
                             success: function (res) {
-                                tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickDirectToMiniGameSuccess, bi_paramlist);
+                                FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickDirectToMiniGameSuccess, bi_paramlist);
                                 console.log('wx.navigateToMiniProgram success');
                                 console.log(res);
                             },
                             fail: function (res) {
-                                tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickDirectToMiniGameFail, bi_paramlist);
+                                FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickDirectToMiniGameFail, bi_paramlist);
                                 console.log('wx.navigateToMiniProgram fail');
                                 console.log(res);
                             },
@@ -508,17 +508,17 @@ tywx.AdManagerWx = {
                     return;
                 }
 
-                tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickShowQRCode, bi_paramlist);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickShowQRCode, bi_paramlist);
 
-                if (tywx.IsWechatPlatform()) {
+                if (FZ.IsWechatPlatform()) {
                     wx.previewImage({
                         current: [that.currentWebPage.webpage_url],
                         urls: [that.currentWebPage.webpage_url],
                         success: function (res) {
-                            tywx.LOGD(null, "预览图片成功！");
+                            FZ.LOGD(null, "预览图片成功！");
                         },
                         fail: function (res) {
-                            tywx.LOGD(null, "预览图片失败！");
+                            FZ.LOGD(null, "预览图片失败！");
                         },
                         complete: function (res) {
                             console.log('预览图片完成');
@@ -527,7 +527,7 @@ tywx.AdManagerWx = {
                     });
                 }
             } catch (err) {
-                console.log("error:", "tywx.AdManagerWx.onClickAdIconBtn——" + JSON.stringify(err));
+                console.log("error:", "FZ.AdManagerWx.onClickAdIconBtn——" + JSON.stringify(err));
             }
         },
 
@@ -553,7 +553,7 @@ tywx.AdManagerWx = {
         },
 
         hideAdNode: function () {
-            tywx.LOGD("隐藏全部Banner","隐藏全部Banner--------------3");
+            FZ.LOGD("隐藏全部Banner","隐藏全部Banner--------------3");
             if (this.adIconBtn) {
                 this.adIconBtn.active = false;
             }
@@ -563,14 +563,14 @@ tywx.AdManagerWx = {
     //定时刷新导流icon
     freshAdIconByTime: function () {
 
-        tywx.AdManagerWx.adNodeList.forEach(function (_adNode) {
+        FZ.AdManagerWx.adNodeList.forEach(function (_adNode) {
             _adNode && _adNode.resetBtnIcon && _adNode.resetBtnIcon();
         });
     },
 
     //定时刷新导流banner
     freshAdBannerByTime: function () {
-        tywx.AdManagerWx.bannerNodeList.forEach(function (_adNode) {
+        FZ.AdManagerWx.bannerNodeList.forEach(function (_adNode) {
             _adNode && _adNode.resetBtnIcon && _adNode.resetBtnIcon();
         });
     },
@@ -592,8 +592,8 @@ tywx.AdManagerWx = {
                         break;
                     }
                 }
-                clearInterval(tywx.AdManagerWx.freshAdIconByTime);
-                setInterval(tywx.AdManagerWx.freshAdIconByTime, icon_interval * 1000);
+                clearInterval(FZ.AdManagerWx.freshAdIconByTime);
+                setInterval(FZ.AdManagerWx.freshAdIconByTime, icon_interval * 1000);
             }
 
             //定时刷新banner
@@ -608,8 +608,8 @@ tywx.AdManagerWx = {
                         break;
                     }
                 }
-                clearInterval(tywx.AdManagerWx.freshAdBannerByTime);
-                setInterval(tywx.AdManagerWx.freshAdBannerByTime, banner_interval * 1000);
+                clearInterval(FZ.AdManagerWx.freshAdBannerByTime);
+                setInterval(FZ.AdManagerWx.freshAdBannerByTime, banner_interval * 1000);
             }
 
         } catch (e) {
@@ -643,7 +643,7 @@ tywx.AdManagerWx = {
                 signStr += key + '=' + reqObj[key];
             }
         }
-        var finalSign = tywx.hex_md5('market.tuyoo.com-api-' + signStr + '-market.tuyoo-api') || '';
+        var finalSign = FZ.hex_md5('market.tuyoo.com-api-' + signStr + '-market.tuyoo-api') || '';
         return finalSign;
     },
 
@@ -652,7 +652,7 @@ tywx.AdManagerWx = {
      */
     requestADInfo: function () {
         try {
-            if (!tywx.IsWechatPlatform()) {
+            if (!FZ.IsWechatPlatform()) {
                 return;
             }
             this.retryCrossTimes--;
@@ -660,14 +660,14 @@ tywx.AdManagerWx = {
             var timeStamp = new Date().getTime();
             reqObj.act = 'api.getCrossConfig';
             reqObj.time = timeStamp;
-            reqObj.game_mark = tywx.SystemInfo.cloudId + "-" + tywx.SystemInfo.gameId;
+            reqObj.game_mark = FZ.SystemInfo.cloudId + "-" + FZ.SystemInfo.gameId;
             var signStr = this.getConfigSignStr(reqObj);
             var paramStrList = [];
             for (var key in reqObj) {
                 paramStrList.push(key + '=' + reqObj[key]);
             }
             paramStrList.push('sign=' + signStr);
-            var finalUrl = tywx.SystemInfo.shareManagerUrl + '?' + paramStrList.join('&');
+            var finalUrl = FZ.SystemInfo.shareManagerUrl + '?' + paramStrList.join('&');
             var that = this;
 
             wx.request({
@@ -703,7 +703,7 @@ tywx.AdManagerWx = {
                 }
             });
         } catch (err) {
-            tywx.LOGE("error:", "tywx.AdManagerWx.requestADInfo——" + JSON.stringify(err));
+            FZ.LOGE("error:", "FZ.AdManagerWx.requestADInfo——" + JSON.stringify(err));
         }
     },
 
@@ -713,7 +713,7 @@ tywx.AdManagerWx = {
      */
     requestBannerInfo: function () {
         try {
-            if (!tywx.IsWechatPlatform()) {
+            if (!FZ.IsWechatPlatform()) {
                 return;
             }
             this.retryBannerTimes--;
@@ -721,14 +721,14 @@ tywx.AdManagerWx = {
             var timeStamp = new Date().getTime();
             reqObj.act = 'api.getBannerConfig';
             reqObj.time = timeStamp;
-            reqObj.game_mark = tywx.SystemInfo.cloudId + "-" + tywx.SystemInfo.gameId;
+            reqObj.game_mark = FZ.SystemInfo.cloudId + "-" + FZ.SystemInfo.gameId;
             var signStr = this.getConfigSignStr(reqObj);
             var paramStrList = [];
             for (var key in reqObj) {
                 paramStrList.push(key + '=' + reqObj[key]);
             }
             paramStrList.push('sign=' + signStr);
-            var finalUrl = tywx.SystemInfo.shareManagerUrl + '?' + paramStrList.join('&');
+            var finalUrl = FZ.SystemInfo.shareManagerUrl + '?' + paramStrList.join('&');
             var that = this;
 
             wx.request({
@@ -742,7 +742,7 @@ tywx.AdManagerWx = {
                         if (ret.retmsg) {
                             that.rawBannerInfoList = ret.retmsg;
                             that.processRawConfigInfo();
-                            tywx.NotificationCenter.trigger(tywx.EventType.GET_ADMANAGER_BANNER_INFO_SUCCESS);
+                            FZ.NotificationCenter.trigger(FZ.EventType.GET_ADMANAGER_BANNER_INFO_SUCCESS);
                         }
                         that.retryBannerTimes = 3;
 
@@ -765,7 +765,7 @@ tywx.AdManagerWx = {
                 }
             });
         } catch (err) {
-            tywx.LOGE("error:", "tywx.AdManagerWx.requestADInfo——" + JSON.stringify(err));
+            FZ.LOGE("error:", "FZ.AdManagerWx.requestADInfo——" + JSON.stringify(err));
         }
     },
 
@@ -786,7 +786,7 @@ tywx.AdManagerWx = {
                     that.processRawConfigInfo();
                 }
 
-                tywx.LOGD('AdManagerWx', 'requestLocalIPInfo ==>' + JSON.stringify(res));
+                FZ.LOGD('AdManagerWx', 'requestLocalIPInfo ==>' + JSON.stringify(res));
             },
             fail: function (res) {}
         });
@@ -902,18 +902,18 @@ tywx.AdManagerWx = {
 
     //隐藏全部Banner
     hideBanner() {
-        tywx.LOGD("隐藏全部Banner","隐藏全部Banner--------------1");
+        FZ.LOGD("隐藏全部Banner","隐藏全部Banner--------------1");
         try {
-            tywx.AdManagerWx.bannerNodeList.forEach(function (_adNode) {
-                tywx.LOGD("隐藏全部Banner","隐藏全部Banner--------------2");
+            FZ.AdManagerWx.bannerNodeList.forEach(function (_adNode) {
+                FZ.LOGD("隐藏全部Banner","隐藏全部Banner--------------2");
                 _adNode && _adNode.hideAdNode && _adNode.hideAdNode();
             });
         } catch (err) {
-            tywx.LOGE('tywx.AdManagerWx hideBanner getError err=', err);
+            FZ.LOGE('FZ.AdManagerWx hideBanner getError err=', err);
         }
     },
 
 };
 
-tywx.AdManagerWx.adNodeClass.prototype = tywx.AdManagerWx.adNodeObj;
-tywx.AdManagerWx.init();
+FZ.AdManagerWx.adNodeClass.prototype = FZ.AdManagerWx.adNodeObj;
+FZ.AdManagerWx.init();

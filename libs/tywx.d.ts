@@ -1,5 +1,5 @@
 
-declare module tywx
+declare module FZ
 {
     class HttpUtil
     {
@@ -289,7 +289,7 @@ declare module tywx
     }
 }
 
-declare class tywx
+declare class FZ
 {
     static IsWechatPlatform():void
     /**
@@ -298,14 +298,14 @@ declare class tywx
     static LOGD(tag : string, msg : string):void
 }
 
-declare module tywx.AdManager
+declare module FZ.AdManager
 {
     class adNodeObj
     {
         static resetBtnIcon():void
     }
 }
-declare module tywx.AndroidAloneHelper
+declare module FZ.AndroidAloneHelper
 {
     class events
     {

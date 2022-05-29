@@ -469,9 +469,9 @@ namespace game.view
         public shareCallBack(param: any){
             FZDebug.D("点击空投箱--------------------------------------1--1");
             if(!param.isFree){  //分享或者视频打开空投打点
-                tywx.BiLog.clickStat(tywx.clickStatEventType.shareVideoGetAirdropPackage,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.shareVideoGetAirdropPackage,[]);
             }
-            tywx.BiLog.clickStat(tywx.clickStatEventType.OpenAirDropSuc,[]);  //打开空投打点
+            FZ.BiLog.clickStat(FZ.clickStatEventType.OpenAirDropSuc,[]);  //打开空投打点
             FZMergeDateManager.instance.setAirDropOpenState(1,this.scene);
             if(FZMergeDateManager.instance.JudgeSolt() == -1) {
                 this.scene.ani_open_tips.play(0, false);

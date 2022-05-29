@@ -45,7 +45,7 @@ namespace game.view
             }
             Laya.timer.clearAll(this);
             this.scene_bg.destroy();
-            FZSceneManager.instance.uiScene.active = false;
+            // FZSceneManager.instance.uiScene.active = false;
             FZEventManager.instance.unregister(FZEvent.MAIN_VIEW_UPDATE_GAME_GOLD,this.onUpdateGameGold, this);
             FZEventManager.instance.unregister(FZEvent.MAIN_VIEW_UPDATE_DIAMOND,this.onUpdareDiamond, this);
             
@@ -80,11 +80,11 @@ namespace game.view
             Laya.stage.addChild(this.scene_bg);
             this.scene_bg.zOrder = 10;
             
-            if(FZSceneManager.instance.uiScene != null) {
-                Laya.stage.addChild(FZSceneManager.instance.uiScene);
-                FZSceneManager.instance.uiScene.zOrder = 10;
-                FZSceneManager.instance.uiScene.updateZOrder();
-            }
+            // if(FZSceneManager.instance.uiScene != null) {
+            //     Laya.stage.addChild(FZSceneManager.instance.uiScene);
+            //     FZSceneManager.instance.uiScene.zOrder = 10;
+            //     FZSceneManager.instance.uiScene.updateZOrder();
+            // }
             this.scene = new ui.view.FZGetCarDialogUI();
             this.scene.zOrder = 10;
             this.scene.updateZOrder();
@@ -124,10 +124,10 @@ namespace game.view
 
             if (this.showOpenDeputy) {
                 //第一次开启副武器
-                tywx.BiLog.clickStat(tywx.clickStatEventType.unlockingSecondaryWeapon,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.unlockingSecondaryWeapon,[]);
             } else if (this.showOpenUav) {
                 //第一次开启无人机
-                tywx.BiLog.clickStat(tywx.clickStatEventType.unlockingUav,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.unlockingUav,[]);
             }
 
             // this.scene.lblManipulation.text = "操控+"+ Math.floor(this.carInfo.desccontrol*100) +"%";
@@ -151,7 +151,7 @@ namespace game.view
             Laya.timer.frameOnce(60, this, function(){
                 var partPath = "particle/particle2.part";
                 Laya.loader.load(partPath, Laya.Handler.create(this, this.onAssetsLoaded), null, Laya.Loader.JSON);
-                FZSceneManager.instance.uiScene.active = true;
+                // FZSceneManager.instance.uiScene.active = true;
                 
             })
             this.moveLevelUp();  //按钮和升级文案出现的缓动动画
@@ -161,7 +161,7 @@ namespace game.view
                 this.scene.btn_close.visible = true;
             })
             FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.unlock);
-            tywx.BiLog.clickStat(tywx.clickStatEventType.unlockNewCar,[this.carMaxLv]);  //合成新车打点
+            FZ.BiLog.clickStat(FZ.clickStatEventType.unlockNewCar,[this.carMaxLv]);  //合成新车打点
             FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.btnConfirm, this, this.onClickBtnConfirm, ["btnConfirm"]);
             FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.btnVideo, this, this.onClickBtnVideo, ["btnVideo"]);
             FZUIManager.instance.RegisterBtnClickWithAnim(this.scene.btn_close, this, this.onClickClose,[]);
@@ -234,7 +234,7 @@ namespace game.view
                 this.scene.guide_click.visible = false;
                 // this.scene.guide_hand_ani.gotoAndStop(0);
                 this.openShareCallBack();
-                tywx.BiLog.clickStat(tywx.clickStatEventType.finishMergeNewCarGuide, []);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.finishMergeNewCarGuide, []);
                 return;
             }
             let param = FZShareInfo.create();
@@ -303,7 +303,7 @@ namespace game.view
                 FZGameData.instance.playResFlyAni(this.scene.img_diamond,this.scene.title_diamond,{type: 2,countType: 0},this.hide.bind(this));
                 if(this.carMaxLv == 2)
                 {
-                    // tywx.BiLog.clickStat(tywx.clickStatEventType.getFirstCarDiamond,[]);
+                    // FZ.BiLog.clickStat(FZ.clickStatEventType.getFirstCarDiamond,[]);
 
                 }
             }

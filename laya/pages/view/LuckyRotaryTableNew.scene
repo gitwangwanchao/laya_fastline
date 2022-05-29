@@ -1,14 +1,14 @@
 {
     "x":0,
     "type":"Scene",
-    "selectedBox":2,
-    "selecteID":3,
+    "selectedBox":153,
+    "selecteID":155,
     "searchKey":"Scene",
     "props":{"width":750,"sceneColor":"#000000","height":1334},
     "nodeParent":-1,
     "maxID":175,
     "label":"Scene",
-    "isOpen":false,
+    "isOpen":true,
     "isDirectory":true,
     "isAniNode":true,
     "hasChild":true,
@@ -36,13 +36,14 @@
             "props":{"y":667,"x":375,"width":750,"var":"AnchorCenter","name":"AnchorCenter","height":1334,"anchorY":0.5,"anchorX":0.5},
             "nodeParent":2,
             "label":"AnchorCenter",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":3,
             "child":[
                 {
+                    "x":30,
                     "type":"Script",
                     "switchAble":true,
                     "source":"src/framework/FZUIAnchor.ts",
@@ -60,18 +61,20 @@
                     "$HIDDEN":false
                 },
                 {
+                    "x":30,
                     "type":"Box",
                     "searchKey":"Box",
                     "props":{"y":10,"x":0,"width":750,"top":10,"height":1200},
                     "nodeParent":3,
                     "label":"Box",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":117,
                     "child":[
                         {
+                            "x":45,
                             "type":"Label",
                             "searchKey":"Label,lblContent",
                             "props":{"y":148,"x":378,"width":480,"visible":false,"var":"lblContent","valign":"middle","text":"幸运转盘","skewX":-12,"scaleY":0.8,"scaleX":0.8,"height":68,"fontSize":46,"font":"font1_2","color":"#FFFFFF","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
@@ -87,6 +90,7 @@
                             "$HIDDEN":true
                         },
                         {
+                            "x":45,
                             "type":"Button",
                             "searchKey":"Button,btnClose,btnClose",
                             "props":{"y":140,"x":640,"var":"btnClose","stateNum":"1","skin":"ui_main/ui_close_btn.png","name":"btnClose"},
@@ -101,18 +105,20 @@
                                 ]
                         },
                         {
+                            "x":45,
                             "type":"Box",
                             "searchKey":"Box",
                             "props":{},
                             "nodeParent":117,
                             "label":"Box",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":168,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,guy_bg,guy_bg",
                                     "props":{"y":495,"x":375,"var":"guy_bg","skin":"res/Texture/new_rotary_table_0.png","name":"guy_bg","anchorY":0.5,"anchorX":0.5},
@@ -128,6 +134,7 @@
                                     "$HIDDEN":false
                                 },
                                 {
+                                    "x":60,
                                     "type":"Box",
                                     "searchKey":"Box,guy_grid_box,guy_grid_box",
                                     "props":{"y":512,"x":375,"width":800,"var":"guy_grid_box","styleSkin":"ui_main/new_rotary_table_1.png","name":"guy_grid_box","height":800,"anchorY":0.5,"anchorX":0.5},
@@ -140,24 +147,26 @@
                                     "compId":101,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Box",
                                             "searchKey":"Box",
                                             "props":{"y":37,"x":78},
                                             "nodeParent":101,
                                             "label":"Box",
-                                            "isOpen":false,
+                                            "isOpen":true,
                                             "isDirectory":true,
                                             "isAniNode":true,
                                             "hasChild":true,
                                             "compId":163,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"Box",
                                                     "searchKey":"Box,box_blue_bg,box_blue_bg",
                                                     "props":{"y":359,"x":319,"var":"box_blue_bg","name":"box_blue_bg","anchorY":0.54,"anchorX":0.51},
                                                     "nodeParent":163,
                                                     "label":"box_blue_bg",
-                                                    "isOpen":true,
+                                                    "isOpen":false,
                                                     "isDirectory":true,
                                                     "isAniNode":true,
                                                     "hasChild":true,
@@ -219,12 +228,13 @@
                                                         }]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Box",
                                                     "searchKey":"Box,box_reward,box_reward",
                                                     "props":{"y":362,"x":321,"var":"box_reward","name":"box_reward","anchorY":0.5,"anchorX":0.5},
                                                     "nodeParent":163,
                                                     "label":"box_reward",
-                                                    "isOpen":true,
+                                                    "isOpen":false,
                                                     "isDirectory":true,
                                                     "isAniNode":true,
                                                     "hasChild":true,
@@ -345,6 +355,7 @@
                                         }]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Image",
                                     "searchKey":"Image,guy_stop_img,guy_stop_img",
                                     "props":{"y":506,"x":375,"var":"guy_stop_img","skin":"res/Texture/new_rotary_go.png","name":"guy_stop_img","anchorY":0.5,"anchorX":0.5},
@@ -362,33 +373,36 @@
                         }]
                 },
                 {
+                    "x":30,
                     "type":"Box",
                     "searchKey":"Box,box_move,box_move",
                     "props":{"y":889,"x":146,"visible":true,"var":"box_move","name":"box_move"},
                     "nodeParent":3,
                     "label":"box_move",
-                    "isOpen":false,
+                    "isOpen":true,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":165,
                     "child":[
                         {
+                            "x":45,
                             "type":"Box",
                             "searchKey":"Box",
                             "props":{"y":1.3444280442980698,"x":115},
                             "nodeParent":165,
                             "label":"Box",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":166,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lbl_shengyu_value,lbl_shengyu_value",
-                                    "props":{"y":51.65557195570193,"x":174,"width":131,"var":"lbl_shengyu_value","valign":"middle","text":"5","scaleY":0.7,"scaleX":0.7,"name":"lbl_shengyu_value","height":62,"fontSize":46,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
+                                    "props":{"y":51.65557195570193,"x":174,"width":131,"var":"lbl_shengyu_value","valign":"middle","text":"5","scaleY":0.7,"scaleX":0.7,"name":"lbl_shengyu_value","height":62,"fontSize":46,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0,"align":"left"},
                                     "nodeParent":166,
                                     "label":"lbl_shengyu_value",
                                     "isOpen":true,
@@ -400,9 +414,10 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lbl_shengyu,lbl_shengyu",
-                                    "props":{"y":51.65557195570193,"x":167,"width":131,"var":"lbl_shengyu","valign":"middle","text":"剩余次数:","scaleY":0.7,"scaleX":0.7,"name":"lbl_shengyu","height":62,"fontSize":46,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":1,"align":"right"},
+                                    "props":{"y":51.65557195570193,"x":167,"width":131,"var":"lbl_shengyu","valign":"middle","text":"剩余次数:","scaleY":0.7,"scaleX":0.7,"name":"lbl_shengyu","height":62,"fontSize":46,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":1,"align":"right"},
                                     "nodeParent":166,
                                     "label":"lbl_shengyu",
                                     "isOpen":true,
@@ -414,21 +429,23 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btAddCount,btAddCount",
                                     "props":{"y":-0.34442804429806984,"x":133.05,"var":"btAddCount","stateNum":"1","skin":"ui_common/common_btn_green.png","scaleY":0.5,"scaleX":0.4,"name":"btAddCount"},
                                     "nodeParent":166,
                                     "label":"btAddCount",
-                                    "isOpen":false,
+                                    "isOpen":true,
                                     "isDirectory":true,
                                     "isAniNode":true,
                                     "hasChild":true,
                                     "compId":99,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,lbl_times_value,lbl_times_value",
-                                            "props":{"y":62,"x":207,"var":"lbl_times_value","valign":"middle","text":"+5","skewX":0,"scaleY":2,"scaleX":2,"name":"lbl_times_value","fontSize":46,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                            "props":{"y":62,"x":207,"var":"lbl_times_value","valign":"middle","text":"+5","skewX":0,"scaleY":2,"scaleX":2,"name":"lbl_times_value","fontSize":46,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                             "nodeParent":99,
                                             "label":"lbl_times_value",
                                             "isOpen":null,
@@ -443,33 +460,36 @@
                                 }]
                         },
                         {
+                            "x":45,
                             "type":"Box",
                             "searchKey":"Box",
                             "props":{"y":101,"x":0},
                             "nodeParent":165,
                             "label":"Box",
-                            "isOpen":false,
+                            "isOpen":true,
                             "isDirectory":true,
                             "isAniNode":true,
                             "hasChild":true,
                             "compId":167,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btnPlayRotary,btnPlayRotary",
                                     "props":{"y":0,"x":10,"var":"btnPlayRotary","stateNum":"1","skin":"ui_common/common_btn_yellow.png","sizeGrid":"37,72,38,78","name":"btnPlayRotary"},
                                     "nodeParent":167,
                                     "label":"btnPlayRotary",
-                                    "isOpen":false,
+                                    "isOpen":true,
                                     "isDirectory":true,
                                     "isAniNode":true,
                                     "hasChild":true,
                                     "compId":54,
                                     "child":[
                                         {
+                                            "x":75,
                                             "type":"Label",
                                             "searchKey":"Label,rotary_btn_label,rotary_btn_label",
-                                            "props":{"y":80,"x":214,"width":131,"var":"rotary_btn_label","text":"抽奖","scaleY":1.2,"scaleX":1.2,"pivotY":31,"pivotX":66,"name":"rotary_btn_label","height":62,"fontSize":60,"font":"font1_2","color":"#ffffff","bold":true,"align":"center"},
+                                            "props":{"y":80,"x":214,"width":131,"var":"rotary_btn_label","text":"抽奖","scaleY":1.2,"scaleX":1.2,"pivotY":31,"pivotX":66,"name":"rotary_btn_label","height":62,"fontSize":60,"font":"font1_3","color":"#ffffff","bold":true,"align":"center"},
                                             "nodeParent":54,
                                             "label":"rotary_btn_label",
                                             "isOpen":true,
@@ -482,21 +502,23 @@
                                             "$HIDDEN":false
                                         },
                                         {
+                                            "x":75,
                                             "type":"Box",
                                             "searchKey":"Box,box_more_chance,box_more_chance",
                                             "props":{"y":32.5,"x":115,"var":"box_more_chance","name":"box_more_chance"},
                                             "nodeParent":54,
                                             "label":"box_more_chance",
-                                            "isOpen":false,
+                                            "isOpen":true,
                                             "isDirectory":true,
                                             "isAniNode":true,
                                             "hasChild":true,
                                             "compId":174,
                                             "child":[
                                                 {
+                                                    "x":90,
                                                     "type":"Label",
                                                     "searchKey":"Label",
-                                                    "props":{"y":34.5,"x":156,"text":"次数+5","scaleY":1.2,"scaleX":1.2,"font":"font1_2","anchorY":0.5,"anchorX":0.5},
+                                                    "props":{"y":34.5,"x":156,"text":"次数+5","scaleY":1.2,"scaleX":1.2,"font":"font1_3","anchorY":0.5,"anchorX":0.5},
                                                     "nodeParent":174,
                                                     "label":"Label",
                                                     "isDirectory":false,
@@ -507,6 +529,7 @@
                                                         ]
                                                 },
                                                 {
+                                                    "x":90,
                                                     "type":"Image",
                                                     "searchKey":"Image,img_more_chance,img_more_chance",
                                                     "props":{"y":15.25,"x":-40,"var":"img_more_chance","skin":"ui_game/game_img_icon_video2.png","name":"img_more_chance"},
@@ -522,9 +545,10 @@
                                         }]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,imgMulHintText,imgMulHintText",
-                                    "props":{"y":206,"x":229,"width":399,"visible":false,"var":"imgMulHintText","text":"本次奖励6倍","scaleY":0.55,"scaleX":0.55,"name":"imgMulHintText","height":75,"fontSize":45,"font":"font1_2","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                    "props":{"y":206,"x":229,"width":399,"visible":false,"var":"imgMulHintText","text":"本次奖励6倍","scaleY":0.55,"scaleX":0.55,"name":"imgMulHintText","height":75,"fontSize":45,"font":"font1_3","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                     "nodeParent":167,
                                     "label":"imgMulHintText",
                                     "isDirectory":false,
@@ -546,13 +570,14 @@
             "props":{"y":0,"x":0,"width":750,"var":"box_title"},
             "nodeParent":2,
             "label":"box_title",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":142,
             "child":[
                 {
+                    "x":30,
                     "type":"Box",
                     "searchKey":"Box,box_game_diamond,box_game_diamond",
                     "props":{"y":10,"x":195,"var":"box_game_diamond","name":"box_game_diamond"},
@@ -565,6 +590,7 @@
                     "compId":143,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":10,"x":20,"width":160,"skin":"ui_common/coin_bg.png","sizeGrid":"0,36,0,29","height":40},
@@ -577,6 +603,7 @@
                             "compId":144,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite,title_diamond,title_diamond",
                                     "props":{"y":-5,"x":-21,"var":"title_diamond","texture":"ui_common/flyDiamond.png","name":"title_diamond"},
@@ -590,9 +617,10 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_game_diamond,lab_game_diamond",
-                                    "props":{"y":3,"x":145,"var":"lab_game_diamond","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_diamond","fontSize":30,"font":"font1_2","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
+                                    "props":{"y":3,"x":145,"var":"lab_game_diamond","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_diamond","fontSize":30,"font":"font1_3","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
                                     "nodeParent":144,
                                     "label":"lab_game_diamond",
                                     "isOpen":null,
@@ -604,6 +632,7 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Button",
                                     "searchKey":"Button,btn_add_diamond,btn_add_diamond",
                                     "props":{"y":5,"x":156,"visible":false,"var":"btn_add_diamond","stateNum":"1","skin":"ui_main/main_add_btn.png","name":"btn_add_diamond"},
@@ -621,6 +650,7 @@
                     "$HIDDEN":false
                 },
                 {
+                    "x":30,
                     "type":"Box",
                     "searchKey":"Box,box_game_money,box_game_money",
                     "props":{"y":10,"x":385,"var":"box_game_money","name":"box_game_money"},
@@ -633,6 +663,7 @@
                     "compId":148,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":10,"x":30,"width":150,"skin":"ui_common/coin_bg.png","sizeGrid":"0,38,0,29","height":40},
@@ -645,6 +676,7 @@
                             "compId":149,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite,title_money,title_money",
                                     "props":{"y":-5,"x":-40,"var":"title_money","texture":"ui_common/flyDollar.png","name":"title_money"},
@@ -658,9 +690,10 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_game_money,lab_game_money",
-                                    "props":{"y":3,"x":135,"var":"lab_game_money","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_money","fontSize":30,"font":"font1_2","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
+                                    "props":{"y":3,"x":135,"var":"lab_game_money","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_money","fontSize":30,"font":"font1_3","color":"#ffffff","bold":false,"anchorX":1,"align":"right"},
                                     "nodeParent":149,
                                     "label":"lab_game_money",
                                     "isOpen":null,
@@ -676,6 +709,7 @@
                     "$HIDDEN":false
                 },
                 {
+                    "x":30,
                     "type":"Box",
                     "searchKey":"Box,box_game_gold,box_game_gold",
                     "props":{"y":10,"x":10,"var":"box_game_gold","name":"box_game_gold"},
@@ -688,6 +722,7 @@
                     "compId":152,
                     "child":[
                         {
+                            "x":45,
                             "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":10,"x":20,"width":160,"skin":"ui_common/coin_bg.png","sizeGrid":"0,40,0,29","height":40},
@@ -700,6 +735,7 @@
                             "compId":153,
                             "child":[
                                 {
+                                    "x":60,
                                     "type":"Sprite",
                                     "searchKey":"Sprite,title_gold,title_gold",
                                     "props":{"y":-5,"x":-20,"var":"title_gold","texture":"ui_common/flyCoin.png","name":"title_gold"},
@@ -713,9 +749,10 @@
                                         ]
                                 },
                                 {
+                                    "x":60,
                                     "type":"Label",
                                     "searchKey":"Label,lab_game_gold,lab_game_gold",
-                                    "props":{"y":15,"x":145,"var":"lab_game_gold","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_gold","fontSize":30,"font":"font1_2","color":"#ffffff","bold":false,"anchorY":0.5,"anchorX":1,"align":"right"},
+                                    "props":{"y":15,"x":145,"var":"lab_game_gold","text":"123456","scaleY":0.5,"scaleX":0.5,"name":"lab_game_gold","fontSize":30,"font":"font1_3","color":"#ffffff","bold":false,"anchorY":0.5,"anchorX":1,"align":"right"},
                                     "nodeParent":153,
                                     "label":"lab_game_gold",
                                     "isOpen":false,
@@ -729,6 +766,7 @@
                         }]
                 },
                 {
+                    "x":30,
                     "type":"Script",
                     "switchAble":true,
                     "source":"src/framework/FZUIAnchor.ts",

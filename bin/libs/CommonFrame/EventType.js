@@ -3,7 +3,7 @@
  */
 
 
-tywx.EventType = {
+FZ.EventType = {
     // tcp状态的事件
     TCP_ERROR: 'tcp_error',
     TCP_CLOSE: 'tcp_close',

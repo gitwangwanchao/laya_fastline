@@ -926,7 +926,7 @@ namespace game.data
         public getShareOrVideo():any{
             if (!Laya.Browser.onMiniGame) return false;//非微信环境关闭分享
             let isAuditVersion = FZWechat.instance.isAuditVersion();
-            let userArea = tywx.UserInfo.userArea || "";
+            let userArea = FZ.UserInfo.userArea || "";
             let shareinfo = FZCfgManager.instance.dicConfig[FZGameStatus.QCfgType.ShareCfg];
             let shieldCityShareTip = shareinfo.shieldCityShareTip || this.shieldCityShareTip;
             let shield = shieldCityShareTip.indexOf(userArea) >= 0 && shareinfo.shieldCityOpen;
@@ -1163,8 +1163,8 @@ namespace game.data
         public OpenUav:any = false;
         addCheckPoint(){
             FZDebug.D("addCheckPoint-----------------------------------------");
-            if(tywx.clickStatEventType.finishGameLevel[this.check_point + ""]){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.finishGameLevel[this.check_point + ""],[]);
+            if(FZ.clickStatEventType.finishGameLevel[this.check_point + ""]){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.finishGameLevel[this.check_point + ""],[]);
             }            
             this.check_point +=1; 
             this.check_point = Math.min(1000, this.check_point);

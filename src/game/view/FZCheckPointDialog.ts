@@ -42,7 +42,7 @@ namespace game.view
             FZEventManager.instance.sendEvent(FZEvent.GAME_UPDATE_POINT_SHOW);
             FZUIManager.instance.removeUI(FZUIManager.UI_CheckPointChoose);
             FZSoundManager.instance.playSfx(FZSoundManager.instance.soundInfo_wav.touch);
-            tywx.BiLog.clickStat(tywx.clickStatEventType.selectNumberOfLevels,[maxCheckPoint-(4-param)]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.selectNumberOfLevels,[maxCheckPoint-(4-param)]);
         }
 
         private onClickBtnClose():void

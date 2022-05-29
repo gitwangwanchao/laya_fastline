@@ -129,11 +129,11 @@ namespace game.core
             {
                 this.loadCfgType = 0;
                 FZDebug.log("FZGameData.initData() after config file load done! deviceId");
-                tywx.BiLog.clickStat(tywx.clickStatEventType.onloadCfg,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.onloadCfg,[]);
                 this.onloadConfig();
                 FZGameData.instance.initData();
                 FZEventManager.instance.sendEvent(FZEvent.RES_LOAD_FINISHED, FZGameStatus.QResType.Config);
-                tywx.BiLog.clickStat(tywx.clickStatEventType.loadingSuccess,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.loadingSuccess,[]);
             }
         }
         /**
@@ -146,14 +146,14 @@ namespace game.core
             let path = "https://myqn.nalrer.cn/Moyu/quanmzc/game_config/shareCfg";
             let params = {url: FZDebug.isDebug ? (path+"_debug.json") : (path+".json")}
             params.url = params.url + "?" + time + "";
-            tywx.HttpUtil.httpGet(params,this.getShareCfgSuccess,this.getShareCfgFail);
+            FZ.HttpUtil.httpGet(params,this.getShareCfgSuccess,this.getShareCfgFail);
 
             // CDN 下载 交叉倒流(Banner)配置
             let pathToB = "https://myqn.nalrer.cn/Moyu/quanmzc/game_config/jcdl_config";
             let paramsToB = {url: FZDebug.isDebug ? (pathToB+"_debug.json") : (pathToB+".json")}
             var timeToB = new Date().getTime();
             paramsToB.url = paramsToB.url + "?" + timeToB + "";
-            tywx.HttpUtil.httpGet(paramsToB,this.getJcdlSuccess,this.getShareCfgFail);
+            FZ.HttpUtil.httpGet(paramsToB,this.getJcdlSuccess,this.getShareCfgFail);
         }
         
         // 获取 交叉倒流(Banner) cdn 配置成功
@@ -168,7 +168,7 @@ namespace game.core
             if (e.AirDropTime) {
                 FZMergeDateManager.instance.AirDropTime = e.AirDropTime;
             }
-            tywx.UserInfo.shieldCityShareTip = e.shieldCityShareTip;
+            FZ.UserInfo.shieldCityShareTip = e.shieldCityShareTip;
             FZWechat.instance.BannerRefreshCount = e.BannerRefreshCount;
             FZGameData.instance.InterstitialAdCountMAX = e.InterstitialAdCount;
             // :FZAdManager
@@ -213,7 +213,7 @@ namespace game.core
         private getCfgPathByType(type: number): string
         {
             
-            let path = Laya.Browser.onMiniGame ? (Laya.Browser.window.wx.env.USER_DATA_PATH+"/v" + tywx.SystemInfo.version + "/"+ this.configPathPrefix) : this.configPathPrefix;
+            let path = Laya.Browser.onMiniGame ? (Laya.Browser.window.wx.env.USER_DATA_PATH+"/v" + FZ.SystemInfo.version + "/"+ this.configPathPrefix) : this.configPathPrefix;
             return (path + FZGameStatus.QCfgName[type] + ".json");
         }
         private configCdnPathPrefix: string = FZGameStatus.DownloadUrl + "res/config/";

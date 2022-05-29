@@ -502,7 +502,7 @@ namespace fastline.framework
             return angle;
 		}
 		public static readFile(listRes,index ,success:any){
-			tywx.wxFileUtil.readFile(listRes[index],function(){
+			FZ.wxFileUtil.readFile(listRes[index],function(){
 				if (index == listRes.length-1) {
 					if (success){
 						success();
@@ -521,13 +521,13 @@ namespace fastline.framework
 				url:path,
 				success:function(data){
 					FZDebug.D("download success!!"+JSON.stringify(data));
-					tywx.BiLog.clickStat(tywx.clickStatEventType.downZipSuccess,[]);
+					FZ.BiLog.clickStat(FZ.clickStatEventType.downZipSuccess,[]);
 					FZDebug.D(data.tempFilePath);
 					FZDebug.D("--"+Laya.Browser.window.wx.env.USER_DATA_PATH);
-					FZUtils.unzipFile(data.tempFilePath, Laya.Browser.window.wx.env.USER_DATA_PATH+"/v" + tywx.SystemInfo.version ,successFunc);
+					FZUtils.unzipFile(data.tempFilePath, Laya.Browser.window.wx.env.USER_DATA_PATH+"/v" + FZ.SystemInfo.version ,successFunc);
 				},fail:function(e){
 					FZDebug.D("download fail: "+e.errMsg);
-					tywx.BiLog.clickStat(tywx.clickStatEventType.downZipFailed,[]);
+					FZ.BiLog.clickStat(FZ.clickStatEventType.downZipFailed,[]);
 					Laya.timer.once(500, this, function(){
 						if (failFunc){
 							failFunc();
@@ -538,18 +538,18 @@ namespace fastline.framework
 		}
 		public static unzipFile(path, targetPath,successFunc){
 			var fileManager = Laya.Browser.window.wx.getFileSystemManager();
-			tywx.BiLog.clickStat(tywx.clickStatEventType.upZipStart,[]);
+			FZ.BiLog.clickStat(FZ.clickStatEventType.upZipStart,[]);
 			fileManager.unzip({
 				zipFilePath:path,
 				targetPath:targetPath,
 				success:function(){
-					tywx.BiLog.clickStat(tywx.clickStatEventType.upZipSuccess,[]);
+					FZ.BiLog.clickStat(FZ.clickStatEventType.upZipSuccess,[]);
 					if (successFunc){
 						successFunc();
 					}
 				},fail:function(e){
 					FZDebug.D("unzip fail: "+e.errMsg);
-					tywx.BiLog.clickStat(tywx.clickStatEventType.upZipFailed,[]);
+					FZ.BiLog.clickStat(FZ.clickStatEventType.upZipFailed,[]);
 					// FZUtils.removeSavedFile();
 					Laya.timer.once(500, this, function(){
 						FZUtils.unzipFile(path, targetPath,successFunc);

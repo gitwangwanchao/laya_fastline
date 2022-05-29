@@ -48,13 +48,13 @@ namespace game.core
                 Laya.stage.on(Laya.Event.FOCUS, this, this.onShow);
             }
             //监听前台事件
-			tywx.NotificationCenter.listen(tywx.EventType.GAME_SHOW, () =>
+			FZ.NotificationCenter.listen(FZ.EventType.GAME_SHOW, () =>
 			{
                 FZEventManager.instance.sendEvent(FZEvent.FAKE_SHARE_RETURN);
 			}, this);
 
 			// //监听后台事件
-			// tywx.NotificationCenter.listen(tywx.EventType.GAME_HIDE, () =>
+			// FZ.NotificationCenter.listen(FZ.EventType.GAME_HIDE, () =>
 			// {
             //     FZEventManager.instance.sendEvent(FZEvent.GAME_HIDE);
             //     // FZWechat.instance.gc();
@@ -86,7 +86,7 @@ namespace game.core
             Laya.loader.retryNum = FZGameStatus.LoadRetryNum;
             Laya.loader.retryDelay = FZGameStatus.LoadRetryDelay;
             FZResManager.instance.loadLoadingRes();
-            tywx.BiLog.clickStat(tywx.clickStatEventType.startLoadingRes,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.startLoadingRes,[]);
             
             // if (FZGameData.instance.useLocalRes == false) {
             //     Laya.URL.basePath = FZGameStatus.DownloadUrl;
@@ -123,14 +123,14 @@ namespace game.core
             }
             else if (resType == FZGameStatus.QResType.UIRes) {
                 FZEventManager.instance.sendEvent(FZEvent.GAME_ENTER_HALL, 3);
-                tywx.BiLog.clickStat(tywx.clickStatEventType.onloadRes,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.onloadRes,[]);
                 FZCfgManager.instance.loadAllCfg();
                 FZSoundManager.instance.loadSound();
             }
             else if (resType == FZGameStatus.QResType.Config)
             {
                 FZEventManager.instance.sendEvent(FZEvent.GAME_ENTER_HALL, 4);
-                FZSceneManager.instance.loadScene();
+                // FZSceneManager.instance.loadScene();
                 // 初始化sdk
                 FZWechat.instance.init();
             }
@@ -139,8 +139,8 @@ namespace game.core
             if (this.isResLoadFinished(FZGameStatus.QResType.Config)  //配置加载
                 && this.isResLoadFinished(FZGameStatus.QResType.UIRes)  //UI资源加载
                 && this.isResLoadFinished(FZGameStatus.QResType.Font)  //字体加载
-                && this.isResLoadFinished(FZGameStatus.QResType.Sound)  //音效加载
-                && this.isResLoadFinished(FZGameStatus.QResType.GarageScene))  //车底盘场景加载
+                && this.isResLoadFinished(FZGameStatus.QResType.Sound))  //音效加载
+                // && this.isResLoadFinished(FZGameStatus.QResType.GarageScene))  //车底盘场景加载
             {
                 FZDebug.log("=====加载完成: ");
                 FZEventManager.instance.sendEvent(FZEvent.GAME_ENTER_HALL, 5);

@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Scene",
-    "selectedBox":36,
-    "selecteID":38,
+    "selectedBox":29,
+    "selecteID":42,
     "searchKey":"Scene",
     "props":{"width":750,"height":1334},
     "nodeParent":-1,
@@ -83,7 +83,8 @@
                             "hasChild":false,
                             "compId":42,
                             "child":[
-                                ]
+                                ],
+                            "$HIDDEN":false
                         },
                         {
                             "x":45,
@@ -174,7 +175,7 @@
                                     "x":60,
                                     "type":"Label",
                                     "searchKey":"Label",
-                                    "props":{"y":47,"x":214,"valign":"middle","text":"去闯关!","fontSize":60,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                    "props":{"y":47,"x":214,"valign":"middle","text":"去闯关!","fontSize":60,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                     "nodeParent":53,
                                     "label":"Label",
                                     "isOpen":null,
@@ -217,7 +218,7 @@
                                     "x":60,
                                     "type":"Label",
                                     "searchKey":"Label",
-                                    "props":{"y":114,"x":214,"valign":"middle","text":"免费领取","scaleY":1,"scaleX":1,"fontSize":38,"font":"font1_2","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
+                                    "props":{"y":114,"x":214,"valign":"middle","text":"免费领取","scaleY":1,"scaleX":1,"fontSize":38,"font":"font1_3","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5,"align":"center"},
                                     "nodeParent":36,
                                     "label":"Label",
                                     "isOpen":null,

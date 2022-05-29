@@ -109,8 +109,8 @@ namespace game.view
                     this.scene.box_title.y += 70;
                 });
             }
-            if(tywx.clickStatEventType.openWheelPanel){             
-                tywx.BiLog.clickStat(tywx.clickStatEventType.openWheelPanel,[]);
+            if(FZ.clickStatEventType.openWheelPanel){             
+                FZ.BiLog.clickStat(FZ.clickStatEventType.openWheelPanel,[]);
             }
             
             this.moveLuckyRotary();  //转盘出现的缓动动画
@@ -213,7 +213,7 @@ namespace game.view
                 return;
             }
             this.curCount+=this.addCount;
-            tywx.BiLog.clickStat(tywx.clickStatEventType.successAddDialTimes,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.successAddDialTimes,[]);
             FZSaveDateManager.instance.setItemToLocalStorage("GAME_ROTARY_TABEL_CURR_COUNT", this.curCount+""); 
             
             //更新按钮的 视频 or 分享 icon显示
@@ -232,7 +232,7 @@ namespace game.view
         {
             if (this.scene) {
                 this.curCount+=this.addCount;
-                tywx.BiLog.clickStat(tywx.clickStatEventType.successAddDialTimes,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.successAddDialTimes,[]);
                 FZSaveDateManager.instance.setItemToLocalStorage("GAME_ROTARY_TABEL_CURR_COUNT", this.curCount+""); 
                 this.scene.lbl_shengyu_value.text = this.curCount.toString();
                 // this.scene.btnPlayRotary.disabled = (this.curCount==0);
@@ -321,7 +321,7 @@ namespace game.view
             let to_rotation = -(this.itemIndex-1)*45+360*3;
             //转盘旋转到所得道具
             Laya.Tween.to(this.scene.guy_grid_box, {rotation: to_rotation}, 5000, Laya.Ease.strongOut, Laya.Handler.create(this, this.finishGuy));
-            tywx.BiLog.clickStat(tywx.clickStatEventType.successTurnDial,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.successTurnDial,[]);
 
             this.setCurLuckyAllTimes();
         }
@@ -464,14 +464,14 @@ namespace game.view
             this.refreshMulInfo();
         }
         public updateNextRewardTimes(times){
-            if(times==3&&tywx.clickStatEventType.tripleRewards){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.tripleRewards,[]);
-            }else if(times==6&&tywx.clickStatEventType.doubleTripleRewards){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.doubleTripleRewards,[]);
+            if(times==3&&FZ.clickStatEventType.tripleRewards){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.tripleRewards,[]);
+            }else if(times==6&&FZ.clickStatEventType.doubleTripleRewards){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.doubleTripleRewards,[]);
             }
             this.nextTimes = times;
             FZSaveDateManager.instance.setItemToLocalStorage("GAME_ROTARY_TABEL_NEXT_TIMES", times+'');
-            tywx.BiLog.clickStat(tywx.clickStatEventType.successMoreMutipleAward,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.successMoreMutipleAward,[]);
 
             this.refreshMulInfo();
         }

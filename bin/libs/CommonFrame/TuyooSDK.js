@@ -7,7 +7,7 @@
  * 包括clientId，loginUrl等
  */
 console.log("TuyooSDK loaded");
-tywx.TuyooSDK = {
+FZ.TuyooSDK = {
     SESSION_KEY: 'TU_SESSION_STORAGE',
     LOCAL_GAME_TIME_RECORD: 'LOCAL_GAME_TIME_RECORD',
     LOCAL_SHARE_TIMES_RECORD: 'LOCAL_SHARE_TIMES_RECORD',
@@ -16,29 +16,29 @@ tywx.TuyooSDK = {
 
     /***************************以下为登录相关接口*********************************/
     login: function() {
-        if(tywx.IsWechatPlatform()) {
-            tywx.TuyooSDK.getSystemInfo();
-            tywx.TuyooSDK.getUserAreaInfo();
-            tywx.TuyooSDK.wechatLogin();
-            tywx.PropagateInterface._doHttpGetShareConfig();
+        if(FZ.IsWechatPlatform()) {
+            FZ.TuyooSDK.getSystemInfo();
+            FZ.TuyooSDK.getUserAreaInfo();
+            FZ.TuyooSDK.wechatLogin();
+            FZ.PropagateInterface._doHttpGetShareConfig();
         }else if(navigator.platform=='android'){
             //其他平台,待添加
-            tywx.TuyooSDK.getUserAreaInfo();
-            tywx.AndroidAloneHelper.login();
-            tywx.TuyooSDK.updateLastLoginDate();
+            FZ.TuyooSDK.getUserAreaInfo();
+            FZ.AndroidAloneHelper.login();
+            FZ.TuyooSDK.updateLastLoginDate();
         }
-        tywx.TuyooSDK.updateLastLoginDate();
+        FZ.TuyooSDK.updateLastLoginDate();
     },
     updateLastLoginDate:function(){
         var date = new Date().toLocaleDateString();
-		this.lastLoginDate = tywx.Util.getItemFromLocalStorage('Last_Login_Date', "0");
-        var firstloginDate = tywx.Util.getItemFromLocalStorage('First_Login_Date', date);
+		this.lastLoginDate = FZ.Util.getItemFromLocalStorage('Last_Login_Date', "0");
+        var firstloginDate = FZ.Util.getItemFromLocalStorage('First_Login_Date', date);
         if(firstloginDate==date){//当前为第一次登陆，标记为新用户
 			this.newUser = true;
-			tywx.Util.setItemToLocalStorage('First_Login_Date', date);
+			FZ.Util.setItemToLocalStorage('First_Login_Date', date);
         }
         this.isFirstLogin = this.lastLoginDate==date?false:true;
-        tywx.Util.setItemToLocalStorage('Last_Login_Date', date);
+        FZ.Util.setItemToLocalStorage('Last_Login_Date', date);
     },
     isTodayFirstLogin:function(){
         return this.isFirstLogin;
@@ -50,46 +50,46 @@ tywx.TuyooSDK = {
         this.newUser=isNewUser;
     },
     getUserAreaInfo : function () {
-        var finalUrl = tywx.SystemInfo.areaUrl + 'api/iploc5/search/city';
+        var finalUrl = FZ.SystemInfo.areaUrl + 'api/iploc5/search/city';
         var successcb = function(ret) {
             if(ret&&ret['ok']===1){
                 var loc = ret['loc'];
                 if(loc&&loc.length>3){
-                    tywx.LOGD("fengbing", " *--*-*-*-*-*  获取用户区域:  "+loc[2]);
-                    tywx.UserInfo.userArea = loc[2];
-                    tywx.UserInfo.userProvince = loc[1];
+                    FZ.LOGD("fengbing", " *--*-*-*-*-*  获取用户区域:  "+loc[2]);
+                    FZ.UserInfo.userArea = loc[2];
+                    FZ.UserInfo.userProvince = loc[1];
                 }
             }
         };
 
         var failcb = function(ret) {
         };
-        tywx.HttpUtil.httpGet({'url':finalUrl}, successcb, failcb);
+        FZ.HttpUtil.httpGet({'url':finalUrl}, successcb, failcb);
     },
     
     // 微信登录
     wechatLogin: function() {
         try {
-            if(!tywx.IsWechatPlatform()) {
+            if(!FZ.IsWechatPlatform()) {
                 return;
             }
 
-            tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeWxLoginStart, []);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeWxLoginStart, []);
             wx.login({
                 success: function(params) {
-                    tywx.LOGD(null, 'wx login success, params:' + JSON.stringify(params));
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeWxLoginSuccess, [params.code]);
+                    FZ.LOGD(null, 'wx login success, params:' + JSON.stringify(params));
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeWxLoginSuccess, [params.code]);
                     if (params.code) {
                         var code = params.code;
-                        tywx.TuyooSDK.loginTuyooWithCode(code, {});
-                        tywx.NotificationCenter.trigger(tywx.EventType.WEIXIN_LOGIN_SUCCESS);
+                        FZ.TuyooSDK.loginTuyooWithCode(code, {});
+                        FZ.NotificationCenter.trigger(FZ.EventType.WEIXIN_LOGIN_SUCCESS);
                     }
                 },
 
                 fail: function(params) {
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeWxLoginFailed, []);
-                    tywx.LOGD(null, 'wx login fail, params:' + JSON.stringify(params));
-                    tywx.NotificationCenter.trigger(tywx.EventType.WEIXIN_LOGIN_FAIL);
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeWxLoginFailed, []);
+                    FZ.LOGD(null, 'wx login fail, params:' + JSON.stringify(params));
+                    FZ.NotificationCenter.trigger(FZ.EventType.WEIXIN_LOGIN_FAIL);
                 },
 
                 complete: function(params) {
@@ -98,39 +98,39 @@ tywx.TuyooSDK = {
             });
         }
         catch(err) {
-            tywx.LOGE("error:", "tywx.TuyooSDK.wechatLogin——" + JSON.stringify(err));
+            FZ.LOGE("error:", "FZ.TuyooSDK.wechatLogin——" + JSON.stringify(err));
         }
     },
 
     // 微信不需要重新授权，使用
     loginTuyooWith3rdSession: function() {
         try {
-            if(!tywx.IsWechatPlatform()) {
+            if(!FZ.IsWechatPlatform()) {
                 return;
             }
             wx.getStorage({
-                key: tywx.TuyooSDK.SESSION_KEY,
+                key: FZ.TuyooSDK.SESSION_KEY,
                 success: function(params) {
                     if (!params.data) {
-                        tywx.TuyooSDK.wechatLogin();
+                        FZ.TuyooSDK.wechatLogin();
                         return;
                     }
                     // 微信授权成功后使用code登录途游服务器
                     wx.request({
-                        url: tywx.SystemInfo.loginUrl + 'open/v3/user/processSnsIdNew',
+                        url: FZ.SystemInfo.loginUrl + 'open/v3/user/processSnsIdNew',
                         data: {
                             snsId: params.data,
                             deviceName: 'wechatGame',
-                            clientId: tywx.SystemInfo.clientId,
-                            appId: tywx.SystemInfo.appId
+                            clientId: FZ.SystemInfo.clientId,
+                            appId: FZ.SystemInfo.appId
                         },
 
                         success: function(params) {
-                            tywx.LOGD(null, 'tuyoo login success, params:' + JSON.stringify(params));
+                            FZ.LOGD(null, 'tuyoo login success, params:' + JSON.stringify(params));
                         },
 
                         fail: function(params) {
-                            tywx.LOGD(null, 'tuyoo login fail, params:' + JSON.stringify(params));
+                            FZ.LOGD(null, 'tuyoo login fail, params:' + JSON.stringify(params));
                         },
 
                         complete: function(params) {
@@ -139,7 +139,7 @@ tywx.TuyooSDK = {
                     });
                 },
                 fail: function(params) {
-                    tywx.TuyooSDK.wechatLogin();
+                    FZ.TuyooSDK.wechatLogin();
                 },
                 complete:function(params) {
 
@@ -147,7 +147,7 @@ tywx.TuyooSDK = {
             });
         }
         catch(err) {
-            tywx.LOGE("error:", "tywx.TuyooSDK.loginTuyooWith3rdSession——" + JSON.stringify(err));
+            FZ.LOGE("error:", "FZ.TuyooSDK.loginTuyooWith3rdSession——" + JSON.stringify(err));
         }
     },
 
@@ -200,7 +200,7 @@ tywx.TuyooSDK = {
     */
     loginTuyooWithCode: function(code, userInfo) {
         try {
-            if (!tywx.IsWechatPlatform()) {
+            if (!FZ.IsWechatPlatform()) {
                 return;
             }
             // 微信授权成功后使用code登录途游服务器
@@ -212,22 +212,22 @@ tywx.TuyooSDK = {
             //咱们后端 0 是男 1 是女,要转换
             var gender = userInfo.gender || 0;
 
-            var local_uuid = tywx.Util.getLocalUUID();
-            tywx.LOGD("local_uuid:", local_uuid);
-            var sdkPath = tywx.SystemInfo.loginUrl;
+            var local_uuid = FZ.Util.getLocalUUID();
+            FZ.LOGD("local_uuid:", local_uuid);
+            var sdkPath = FZ.SystemInfo.loginUrl;
             var dataObj = {
-                appId: tywx.SystemInfo.appId,
-                wxAppId: tywx.SystemInfo.wxAppId,
-                clientId: tywx.SystemInfo.clientId,
+                appId: FZ.SystemInfo.appId,
+                wxAppId: FZ.SystemInfo.wxAppId,
+                clientId: FZ.SystemInfo.clientId,
                 snsId: 'wxapp:' + code,
                 uuid: local_uuid,
                 //以下为上传玩家的微信用户信息
                 //nickName: userInfo.nickName,
                 //avatarUrl: userInfo.avatarUrl,
                 gender: gender,
-                scene_id: tywx.UserInfo.scene_id || "",
-                scene_param: tywx.UserInfo.scene_param || "",
-                invite_id: tywx.UserInfo.invite_id || 0
+                scene_id: FZ.UserInfo.scene_id || "",
+                scene_param: FZ.UserInfo.scene_param || "",
+                invite_id: FZ.UserInfo.invite_id || 0
             };
             if (userInfo && userInfo.nickName) {
                 dataObj.nickName = userInfo.nickName;
@@ -236,7 +236,7 @@ tywx.TuyooSDK = {
             if (userInfo && userInfo.avatarUrl) {
                 dataObj.avatarUrl = userInfo.avatarUrl;
             }
-            tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeLoginSDKStart, [code, local_uuid, userInfo.nickName]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeLoginSDKStart, [code, local_uuid, userInfo.nickName]);
             wx.request({
                 url: sdkPath + 'open/v6/user/LoginBySnsIdNoVerify',
                 header: {
@@ -246,61 +246,61 @@ tywx.TuyooSDK = {
                 method: 'POST',
 
                 success: function (params) {
-                    tywx.LOGD(null, 'tuyoo login success, params:' + JSON.stringify(params));
+                    FZ.LOGD(null, 'tuyoo login success, params:' + JSON.stringify(params));
                     var checkData = params.data;
                     if ((checkData.error && checkData.error.code == 1) || !(checkData.result && checkData.result.userId)) {
-                        tywx.LOGE("TUYOO_SDK_LOGIN_FAIL", JSON.stringify(params));
+                        FZ.LOGE("TUYOO_SDK_LOGIN_FAIL", JSON.stringify(params));
                         return;
                     }
 
                     // 保存用户名/用户ID/用户头像
                     var result = checkData.result;
-                    tywx.UserInfo.userId = result.userId;
-                    tywx.UserInfo.userName = result.userName;
-                    tywx.UserInfo.userPic = result.purl;
-                    tywx.UserInfo.authorCode = result.authorCode;
-                    tywx.UserInfo.wxgame_session_key = result.wxgame_session_key;
-                    tywx.LOGD(null, 'userId:' + tywx.UserInfo.userId + ' userName:' + tywx.UserInfo.userName + ' userPic:' + tywx.UserInfo.userPic);
+                    FZ.UserInfo.userId = result.userId;
+                    FZ.UserInfo.userName = result.userName;
+                    FZ.UserInfo.userPic = result.purl;
+                    FZ.UserInfo.authorCode = result.authorCode;
+                    FZ.UserInfo.wxgame_session_key = result.wxgame_session_key;
+                    FZ.LOGD(null, 'userId:' + FZ.UserInfo.userId + ' userName:' + FZ.UserInfo.userName + ' userPic:' + FZ.UserInfo.userPic);
 
-                    if (tywx.UserInfo.userId && tywx.UserInfo.userName) {
-                        tywx.LOGE("TUYOO_SDK_LOGIN_SUCCESS", JSON.stringify(params));
+                    if (FZ.UserInfo.userId && FZ.UserInfo.userName) {
+                        FZ.LOGE("TUYOO_SDK_LOGIN_SUCCESS", JSON.stringify(params));
                     } else {
-                        tywx.LOGE("TUYOO_SDK_LOGIN_FAIL", JSON.stringify(params));
+                        FZ.LOGE("TUYOO_SDK_LOGIN_FAIL", JSON.stringify(params));
                     }
 
                     var token = result.token;
-                    tywx.LOGD(null, 'token:' + token);
+                    FZ.LOGD(null, 'token:' + token);
                     wx.setStorage({
-                        key: tywx.TuyooSDK.SESSION_KEY,
+                        key: FZ.TuyooSDK.SESSION_KEY,
                         data: token
                     });
 
 
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeLoginSDKSuccess, [code, local_uuid, userInfo.nickName, result.userId]);
-                    if (tywx.showScene && tywx.showQuery && tywx.showQuery.sourceCode) {
-                        tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeUserFrom, [tywx.showScene, tywx.showQuery.inviteCode, tywx.showQuery.sourceCode, tywx.showQuery.imageType, "GameStart"]);
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeLoginSDKSuccess, [code, local_uuid, userInfo.nickName, result.userId]);
+                    if (FZ.showScene && FZ.showQuery && FZ.showQuery.sourceCode) {
+                        FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeUserFrom, [FZ.showScene, FZ.showQuery.inviteCode, FZ.showQuery.sourceCode, FZ.showQuery.imageType, "GameStart"]);
                     }
-                    //tywx.TuyooSDK.initWebSocketUrl(result);
-                    tywx.PropagateInterface.processRawShareConfigInfo();    //处理分享数据
+                    //FZ.TuyooSDK.initWebSocketUrl(result);
+                    FZ.PropagateInterface.processRawShareConfigInfo();    //处理分享数据
                     // //建立TCP连接
-                    // if(tywx.SystemInfo.webSocketUrl != null && tywx.SystemInfo.webSocketUrl != ''){
-                    //     tywx.TCPClient.connect(tywx.SystemInfo.webSocketUrl);
+                    // if(FZ.SystemInfo.webSocketUrl != null && FZ.SystemInfo.webSocketUrl != ''){
+                    //     FZ.TCPClient.connect(FZ.SystemInfo.webSocketUrl);
                     // }
                     var params = {url: ""};
-                    params.url = tywx.SystemInfo.loginUrl + "api/quanmzc/game/getGameInfo?gameId=" + tywx.SystemInfo.gameId + "&userId=" + tywx.UserInfo.userId + "&clientId" + tywx.SystemInfo.clientId;
-                    tywx.HttpUtil.httpGet(params, function(res){
+                    params.url = FZ.SystemInfo.loginUrl + "api/quanmzc/game/getGameInfo?gameId=" + FZ.SystemInfo.gameId + "&userId=" + FZ.UserInfo.userId + "&clientId" + FZ.SystemInfo.clientId;
+                    FZ.HttpUtil.httpGet(params, function(res){
                     	// console.log('用户信息-------:' + JSON.stringify(res));
                         if(res && res.result){
                             console.log('用户信息-------1:');
                             // console.log('用户信息-------1:res.result.gamedata = ' + res.result.gamedata);
                             if(res.result.gamedata == undefined || res.result.gamedata == null) {
                             	console.log('用户信息-------2:');
-                                tywx.SystemInfo.isNewUser = true
+                                FZ.SystemInfo.isNewUser = true
                             }else {
                                 var gamedata = JSON.parse(res.result.gamedata);
                                 if(gamedata.checkPoint == 1){
                                     console.log('用户信息-------2:');
-                                    tywx.SystemInfo.isNewUser = true;
+                                    FZ.SystemInfo.isNewUser = true;
                                 }
                             }
                         }
@@ -309,14 +309,14 @@ tywx.TuyooSDK = {
                     });
 
                     // 发送登录成功事件
-                    tywx.NotificationCenter.trigger(tywx.EventType.SDK_LOGIN_SUCCESS);
+                    FZ.NotificationCenter.trigger(FZ.EventType.SDK_LOGIN_SUCCESS);
                 },
 
                 fail: function (params) {
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeLoginSDKFailed, [code, local_uuid, userInfo.nickName]);
-                    tywx.LOGD(null, 'tuyoo login fail, params:' + JSON.stringify(params));
-                    tywx.LOGE("TUYOO_SDK_LOGIN_FAIL", JSON.stringify(params));
-                    tywx.NotificationCenter.trigger(tywx.EventType.SDK_LOGIN_FAIL);
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeLoginSDKFailed, [code, local_uuid, userInfo.nickName]);
+                    FZ.LOGD(null, 'tuyoo login fail, params:' + JSON.stringify(params));
+                    FZ.LOGE("TUYOO_SDK_LOGIN_FAIL", JSON.stringify(params));
+                    FZ.NotificationCenter.trigger(FZ.EventType.SDK_LOGIN_FAIL);
                 },
 
                 complete: function (params) {
@@ -325,7 +325,7 @@ tywx.TuyooSDK = {
             });
         }
         catch(err) {
-            tywx.LOGE("error:", "tywx.TuyooSDK.loginTuyooWithCode——" + JSON.stringify(err));
+            FZ.LOGE("error:", "FZ.TuyooSDK.loginTuyooWithCode——" + JSON.stringify(err));
         }
     },
 
@@ -338,14 +338,14 @@ tywx.TuyooSDK = {
             var ip = loginResult.tcpsrv.ip;
             var port = loginResult.tcpsrv.wsport || loginResult.tcpsrv.port; //优先使用wsport
             var webSocketUrl;
-            if (tywx.SystemInfo.loginUrl.indexOf("https://") > -1){
+            if (FZ.SystemInfo.loginUrl.indexOf("https://") > -1){
                 webSocketUrl = 'wss://' + ip + '/';
             }
             else{
                 webSocketUrl = 'ws://' + ip + ':' + port.toString() + '/';
             }
-            tywx.LOGD(null, 'webSocketUrl:' + webSocketUrl);
-            tywx.SystemInfo.webSocketUrl = webSocketUrl;
+            FZ.LOGD(null, 'webSocketUrl:' + webSocketUrl);
+            FZ.SystemInfo.webSocketUrl = webSocketUrl;
         }
     },
 
@@ -372,7 +372,7 @@ tywx.TuyooSDK = {
         // }
         // }
         try {
-            if(!tywx.IsWechatPlatform()) {
+            if(!FZ.IsWechatPlatform()) {
                 return;
             }
             wx.getSystemInfo({
@@ -392,17 +392,17 @@ tywx.TuyooSDK = {
                     }else { //cc.sys.OS_ANDROID
                         resultType = 3;
                     }
-                    tywx.UserInfo.systemType = resultType;
-                    tywx.UserInfo.wechatType = result.version;
-                    tywx.UserInfo.model = result.model;
-                    tywx.UserInfo.system = result.system;
-                    tywx.UserInfo.sdkVersion = result.SDKVersion;
-                    console.error("基础库版本为:" + tywx.UserInfo.sdkVersion);
+                    FZ.UserInfo.systemType = resultType;
+                    FZ.UserInfo.wechatType = result.version;
+                    FZ.UserInfo.model = result.model;
+                    FZ.UserInfo.system = result.system;
+                    FZ.UserInfo.sdkVersion = result.SDKVersion;
+                    console.error("基础库版本为:" + FZ.UserInfo.sdkVersion);
 
-                    tywx.TuyooSDK.checkSdkVersion();
+                    FZ.TuyooSDK.checkSdkVersion();
 
                     //上报顺序为微信版本 基础库版本 平台 操作系统版本
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeSubmitVersionInfo,
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeSubmitVersionInfo,
                         [result.version, result.SDKVersion, result.platform, result.system]);
                 },
                 fail : function () {
@@ -412,12 +412,12 @@ tywx.TuyooSDK = {
             });
         }
         catch(err) {
-            tywx.LOGE("error:", "tywx.TuyooSDK.getSystemInfo——" + JSON.stringify(err));
+            FZ.LOGE("error:", "FZ.TuyooSDK.getSystemInfo——" + JSON.stringify(err));
         }
     },
 
     checkSdkVersion: function(){
-        if(tywx.TuyooSDK.compareVersion(tywx.UserInfo.sdkVersion, '2.1.0') < 0)
+        if(FZ.TuyooSDK.compareVersion(FZ.UserInfo.sdkVersion, '2.1.0') < 0)
         {
             wx.showModal({
                 title: "提示",
@@ -430,12 +430,12 @@ tywx.TuyooSDK = {
                     }
                     else
                     {
-                        tywx.TuyooSDK.checkSdkVersion();
+                        FZ.TuyooSDK.checkSdkVersion();
                     }
                     
                 },
                 fail: function(res){
-                    tywx.TuyooSDK.checkSdkVersion();
+                    FZ.TuyooSDK.checkSdkVersion();
                 }
             })
         }
@@ -471,35 +471,35 @@ tywx.TuyooSDK = {
       
     wechatAuthorize: function() {
         try {
-            if(!tywx.IsWechatPlatform()) {
+            if(!FZ.IsWechatPlatform()) {
                 return;
             }
             wx.getSetting({
                 success:function(res) {
                     if (!res.authSetting['scope.userInfo']) {
-                        tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeAuthorizationStart, []);
+                        FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeAuthorizationStart, []);
                         wx.authorize({
                             scope : "scope.userInfo",
                             success : function () {
-                                tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeAuthorizationSuccess, []);
-                                tywx.NotificationCenter.trigger(tywx.EventType.START_AUTHORIZATION_SUCCESS);
+                                FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeAuthorizationSuccess, []);
+                                FZ.NotificationCenter.trigger(FZ.EventType.START_AUTHORIZATION_SUCCESS);
                             },
                             fail:function () {
-                                tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeAuthorizationFailed, []);
-                                tywx.NotificationCenter.trigger(tywx.EventType.START_AUTHORIZATION_FAILED);
+                                FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeAuthorizationFailed, []);
+                                FZ.NotificationCenter.trigger(FZ.EventType.START_AUTHORIZATION_FAILED);
                             },
                             complete:function () {
                             }
                         });
                     }
                     else{
-                        tywx.NotificationCenter.trigger(tywx.EventType.START_AUTHORIZATION_SUCCESS);
+                        FZ.NotificationCenter.trigger(FZ.EventType.START_AUTHORIZATION_SUCCESS);
                     }
                 }
             })
         }
         catch(err) {
-            tywx.LOGE("error:", "tywx.TuyooSDK.wechatAuthorize——" + JSON.stringify(err));
+            FZ.LOGE("error:", "FZ.TuyooSDK.wechatAuthorize——" + JSON.stringify(err));
         }
     },
 
@@ -521,20 +521,20 @@ tywx.TuyooSDK = {
         data.prodId = id;
         data.prodPrice = prodPrice;
         data.chargeType = "wxapp.iap";
-        data.gameId = tywx.SystemInfo.gameId;
+        data.gameId = FZ.SystemInfo.gameId;
         data.prodName = name;
         data.prodCount = prodCount;
         data.appInfo = extraAppInfo ? extraAppInfo :{};
         data.extraProdId = extraProdId ? extraProdId : '';
-        tywx.TuyooSDK.rechargeOrder(data);
+        FZ.TuyooSDK.rechargeOrder(data);
     },
 
     orderCallFunc:function(url, platformOrderId, chargeCoin){
         try {
-            if(!tywx.IsWechatPlatform()) {
+            if(!FZ.IsWechatPlatform()) {
                 return;
             }
-            var local_uuid = tywx.Util.getLocalUUID();
+            var local_uuid = FZ.Util.getLocalUUID();
             var _chargeCoin = chargeCoin;
             wx.request({
                 url: url,
@@ -542,10 +542,10 @@ tywx.TuyooSDK = {
                     'content-type': 'application/x-www-form-urlencoded'
                 },
                 data: {
-                    userId:tywx.UserInfo.userId,
-                    appId: tywx.SystemInfo.appId,
-                    wxAppId: tywx.SystemInfo.wxAppId,
-                    clientId: tywx.SystemInfo.clientId,
+                    userId:FZ.UserInfo.userId,
+                    appId: FZ.SystemInfo.appId,
+                    wxAppId: FZ.SystemInfo.wxAppId,
+                    clientId: FZ.SystemInfo.clientId,
                     imei: 'null',
                     uuid : local_uuid,
                     platformOrderId: platformOrderId,
@@ -557,7 +557,7 @@ tywx.TuyooSDK = {
                     var tips = "购买成功";
                 },
                 fail: function(params) {
-                    tywx.LOGE(null, 'file = [Recharge] fun = [OrderCallFun] 充值失败 params = ' + JSON.stringify(params));
+                    FZ.LOGE(null, 'file = [Recharge] fun = [OrderCallFun] 充值失败 params = ' + JSON.stringify(params));
                 },
                 complete: function(params) {
 
@@ -565,7 +565,7 @@ tywx.TuyooSDK = {
             });
         }
         catch(err) {
-            tywx.LOGE("error:", "tywx.TuyooSDK.orderCallFunc——" + JSON.stringify(err));
+            FZ.LOGE("error:", "FZ.TuyooSDK.orderCallFunc——" + JSON.stringify(err));
         }
     },
 
@@ -579,22 +579,22 @@ tywx.TuyooSDK = {
      */
     rechargeOrder: function (params){
         try {
-            if(!tywx.IsWechatPlatform()) {
+            if(!FZ.IsWechatPlatform()) {
                 return;
             }
-            var local_uuid = tywx.Util.getLocalUUID();
-            var sdkPath = tywx.SystemInfo.loginUrl;
-            var reqUrl = tywx.SystemInfo.hall_version == 'hall37' ? sdkPath + 'open/v4/pay/order': sdkPath + 'open/v5/pay/order';
+            var local_uuid = FZ.Util.getLocalUUID();
+            var sdkPath = FZ.SystemInfo.loginUrl;
+            var reqUrl = FZ.SystemInfo.hall_version == 'hall37' ? sdkPath + 'open/v4/pay/order': sdkPath + 'open/v5/pay/order';
             wx.request({
                 url: reqUrl,
                 header: {
                     'content-type': 'application/x-www-form-urlencoded'
                 },
                 data: {
-                    userId:tywx.UserInfo.userId,
-                    appId: tywx.SystemInfo.appId,
-                    wxAppId: tywx.SystemInfo.wxAppId,
-                    clientId: tywx.SystemInfo.clientId,
+                    userId:FZ.UserInfo.userId,
+                    appId: FZ.SystemInfo.appId,
+                    wxAppId: FZ.SystemInfo.wxAppId,
+                    clientId: FZ.SystemInfo.clientId,
                     imei: 'null',
                     uuid : local_uuid,
                     //商品信息
@@ -612,7 +612,7 @@ tywx.TuyooSDK = {
                 method:'POST',
 
                 success: function(params) {
-                    tywx.LOGE(null, 'tuyoo rechargeOrder success, params:' + JSON.stringify(params));
+                    FZ.LOGE(null, 'tuyoo rechargeOrder success, params:' + JSON.stringify(params));
                     var results = params.data.result;
                     if (results.code == 0) {
                         var chargeInfo = results.chargeInfo;
@@ -620,7 +620,7 @@ tywx.TuyooSDK = {
                         var notifyUrl = chargeData.notifyUrl;
                         var platformOrderId = chargeData.platformOrderId;
                         var buyQuantity = chargeData.buyQuantity ? chargeData.buyQuantity : (10 * chargeInfo.chargeTotal);
-                        tywx.LOGE(null, 'tuyoo rechargeOrder success 创建订单成功, chargeData.mustcharge =' + chargeData.mustcharge);
+                        FZ.LOGE(null, 'tuyoo rechargeOrder success 创建订单成功, chargeData.mustcharge =' + chargeData.mustcharge);
                         if (chargeData && chargeData.mustcharge == 1) {
                             // wx.requestMidasPayment  购买微信币
                             wx.requestMidasPayment({
@@ -633,18 +633,18 @@ tywx.TuyooSDK = {
                                 zoneId: chargeData.zoneId,
                                 success:function(params) {
                                     // 支付成功
-                                    tywx.TuyooSDK.orderCallFunc(notifyUrl,platformOrderId,chargeInfo.chargeCoin);
+                                    FZ.TuyooSDK.orderCallFunc(notifyUrl,platformOrderId,chargeInfo.chargeCoin);
                                 },
                                 fail:function(res) {
-                                    tywx.LOGE(null, '米大师支付 fail params = ' + JSON.stringify(params));
+                                    FZ.LOGE(null, '米大师支付 fail params = ' + JSON.stringify(params));
                                     if(res.errCode && res.errCode == 1) {
                                         //支付取消
-                                        tywx.TuyooSDK.cancelOrder(platformOrderId);
+                                        FZ.TuyooSDK.cancelOrder(platformOrderId);
                                     }
                                 }
                             });
                         }else if (chargeData && chargeData.mustcharge == 0){
-                            tywx.TuyooSDK.orderCallFunc(notifyUrl,platformOrderId,chargeInfo.chargeCoin);
+                            FZ.TuyooSDK.orderCallFunc(notifyUrl,platformOrderId,chargeInfo.chargeCoin);
                         }
                     }else if (results.code == 1) {
                         //hall.MsgBoxManager.showToast({title : results.info});
@@ -660,18 +660,18 @@ tywx.TuyooSDK = {
             });
         }
         catch(err) {
-            tywx.LOGE("error:", "tywx.TuyooSDK.rechargeOrder——" + JSON.stringify(err));
+            FZ.LOGE("error:", "FZ.TuyooSDK.rechargeOrder——" + JSON.stringify(err));
         }
     },
 
     cancelOrder: function(orderId) {
         try {
-            var sendUrl = tywx.SystemInfo.loginUrl + 'open/v4/pay/cancelorder';
+            var sendUrl = FZ.SystemInfo.loginUrl + 'open/v4/pay/cancelorder';
             var postData = {
                 platformOrderId: orderId,
-                appId: tywx.SystemInfo.appId,
-                userId: tywx.UserInfo.userId,
-                clientId: tywx.SystemInfo.clientId,
+                appId: FZ.SystemInfo.appId,
+                userId: FZ.UserInfo.userId,
+                clientId: FZ.SystemInfo.clientId,
                 payType:  "wxapp.iap"
             };
             wx.request({
@@ -682,17 +682,17 @@ tywx.TuyooSDK = {
                 data: postData,
                 method:'POST',
                 success: function(params) {
-                    tywx.LOGE(null, 'tuyoo cancelOrder success, params:' + JSON.stringify(params));
+                    FZ.LOGE(null, 'tuyoo cancelOrder success, params:' + JSON.stringify(params));
                 },
                 fail: function(params) {
-                    tywx.LOGE(null, 'tuyoo cancelOrder fail, params:' + JSON.stringify(params));
+                    FZ.LOGE(null, 'tuyoo cancelOrder fail, params:' + JSON.stringify(params));
                 },
                 complete: function(params) {
                 }
             });
         }
         catch(err) {
-            tywx.LOGE("error:", "tywx.TuyooSDK.cancelOrder——" + JSON.stringify(err));
+            FZ.LOGE("error:", "FZ.TuyooSDK.cancelOrder——" + JSON.stringify(err));
         }
     },
 
@@ -700,7 +700,7 @@ tywx.TuyooSDK = {
 
     freshLocalShareTimes : function () {      //分享成功后才能调用
         try {
-            var localSTimesRecord = wx.getStorageSync(tywx.TuyooSDK.LOCAL_SHARE_TIMES_RECORD) || {};
+            var localSTimesRecord = wx.getStorageSync(FZ.TuyooSDK.LOCAL_SHARE_TIMES_RECORD) || {};
 
             var _localDate = (new Date()).toLocaleDateString();
 
@@ -717,11 +717,11 @@ tywx.TuyooSDK = {
             }
 
             wx.setStorage({
-                key:  tywx.TuyooSDK.LOCAL_SHARE_TIMES_RECORD,
+                key:  FZ.TuyooSDK.LOCAL_SHARE_TIMES_RECORD,
                 data: localSTimesRecord
             });
         }catch (e){
-            console.error("error:", "tywx.TuyooSDK.freshLocalShareTimes ===>" + JSON.stringify(e));
+            console.error("error:", "FZ.TuyooSDK.freshLocalShareTimes ===>" + JSON.stringify(e));
         }
 
     },
@@ -745,9 +745,9 @@ tywx.TuyooSDK = {
 
         try {
 
-            tywx.TuyooSDK.onShowTimeStamp = (new Date()).getTime();
+            FZ.TuyooSDK.onShowTimeStamp = (new Date()).getTime();
             
-            if(!tywx.UserInfo.userId){
+            if(!FZ.UserInfo.userId){
                 return;
             }
 
@@ -756,13 +756,13 @@ tywx.TuyooSDK = {
             var _localDate = _cDate.toLocaleDateString();
 
 
-            var localGTimeRecord = wx.getStorageSync(tywx.TuyooSDK.LOCAL_GAME_TIME_RECORD) || {};
+            var localGTimeRecord = wx.getStorageSync(FZ.TuyooSDK.LOCAL_GAME_TIME_RECORD) || {};
 
             if (localGTimeRecord) {
                 for (var k in localGTimeRecord) {
 
                     if (k != _localDate && 0 == localGTimeRecord[k].status) {
-                        tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeOnReportGameTime, [localGTimeRecord[k].count, k]);
+                        FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeOnReportGameTime, [localGTimeRecord[k].count, k]);
                         localGTimeRecord[k].status = 1;
                     }
                 }
@@ -783,17 +783,17 @@ tywx.TuyooSDK = {
             }
             //回写
             wx.setStorage({
-                key:  tywx.TuyooSDK.LOCAL_GAME_TIME_RECORD,
+                key:  FZ.TuyooSDK.LOCAL_GAME_TIME_RECORD,
                 data: _tmpGTRecord
             });
 
 
-            var localSTimeRecord = wx.getStorageSync(tywx.TuyooSDK.LOCAL_SHARE_TIMES_RECORD) || {};
+            var localSTimeRecord = wx.getStorageSync(FZ.TuyooSDK.LOCAL_SHARE_TIMES_RECORD) || {};
             if (localSTimeRecord) {
                 for (var k in localSTimeRecord) {
 
                     if (k != _localDate && 0 == localSTimeRecord[k].status) {
-                        tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeOnReportShareTimes, [localSTimeRecord[k].count, k]);
+                        FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeOnReportShareTimes, [localSTimeRecord[k].count, k]);
                         localSTimeRecord[k].status = 1;
                     }
                 }
@@ -813,12 +813,12 @@ tywx.TuyooSDK = {
             }
             //回写
             wx.setStorage({
-                key:  tywx.TuyooSDK.LOCAL_SHARE_TIMES_RECORD,
+                key:  FZ.TuyooSDK.LOCAL_SHARE_TIMES_RECORD,
                 data: _tmpSTRecord
             });
 
         }catch (e){
-            console.error("error:", "tywx.TuyooSDK.processLocalRecord ===>" + JSON.stringify(e));
+            console.error("error:", "FZ.TuyooSDK.processLocalRecord ===>" + JSON.stringify(e));
         }
 
     },
@@ -826,25 +826,25 @@ tywx.TuyooSDK = {
     writeBackLocolRecord : function () {   //onHide时候调用
         try {
 
-            if(tywx.TuyooSDK.onShowTimeStamp < 0){
+            if(FZ.TuyooSDK.onShowTimeStamp < 0){
                 return;
             }
 
-            var localGTimeRecord = wx.getStorageSync(tywx.TuyooSDK.LOCAL_GAME_TIME_RECORD) || {};
+            var localGTimeRecord = wx.getStorageSync(FZ.TuyooSDK.LOCAL_GAME_TIME_RECORD) || {};
 
             var _curDate = new Date();
             var _curTimeStamps = _curDate.getTime();
-            var _playTimeOffset = _curTimeStamps - tywx.TuyooSDK.onShowTimeStamp;
+            var _playTimeOffset = _curTimeStamps - FZ.TuyooSDK.onShowTimeStamp;
 
             //判读是否跨天
             var _startTimeStamps = Date.parse(_curDate.toLocaleDateString());
 
-            if (_startTimeStamps > tywx.TuyooSDK.onShowTimeStamp) {
+            if (_startTimeStamps > FZ.TuyooSDK.onShowTimeStamp) {
 
-                var _preDateGameTime = _startTimeStamps - tywx.TuyooSDK.onShowTimeStamp;
+                var _preDateGameTime = _startTimeStamps - FZ.TuyooSDK.onShowTimeStamp;
                 var _curDateGameTime = _playTimeOffset - _preDateGameTime;
 
-                var _preDateString = (new Date(tywx.TuyooSDK.onShowTimeStamp)).toLocaleDateString(); // 2018/08/19
+                var _preDateString = (new Date(FZ.TuyooSDK.onShowTimeStamp)).toLocaleDateString(); // 2018/08/19
                 var _curDateString = _curDate.toLocaleDateString();                                  // 2018/08/20
 
                 if (localGTimeRecord[_preDateString] && localGTimeRecord[_preDateString].count) {
@@ -885,14 +885,14 @@ tywx.TuyooSDK = {
                 }
             }
             wx.setStorage({
-                key:  tywx.TuyooSDK.LOCAL_GAME_TIME_RECORD,
+                key:  FZ.TuyooSDK.LOCAL_GAME_TIME_RECORD,
                 data: localGTimeRecord
             });
 
-            tywx.TuyooSDK.onShowTimeStamp = -1;
+            FZ.TuyooSDK.onShowTimeStamp = -1;
 
         }catch (e){
-            console.error("error:", "tywx.TuyooSDK.writeBackLocolRecord ===>" + JSON.stringify(e));
+            console.error("error:", "FZ.TuyooSDK.writeBackLocolRecord ===>" + JSON.stringify(e));
         }
     },
 
@@ -902,7 +902,7 @@ tywx.TuyooSDK = {
     getLocalGameTimeRecord : function () {
 
         try{
-            return wx.getStorageSync(tywx.TuyooSDK.LOCAL_GAME_TIME_RECORD) || {};
+            return wx.getStorageSync(FZ.TuyooSDK.LOCAL_GAME_TIME_RECORD) || {};
         }catch (e){
             return {};
         }
@@ -915,7 +915,7 @@ tywx.TuyooSDK = {
     getLocalShareTimesRecord : function () {
 
         try{
-            return wx.getStorageSync(tywx.TuyooSDK.LOCAL_SHARE_TIMES_RECORD) || {};
+            return wx.getStorageSync(FZ.TuyooSDK.LOCAL_SHARE_TIMES_RECORD) || {};
         }catch (e){
             return {};
         }
@@ -939,7 +939,7 @@ tywx.TuyooSDK = {
             return;
         }
 
-        tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeOnReportVideoAdsInfo, [sceneName, StatusCode]);
+        FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeOnReportVideoAdsInfo, [sceneName, StatusCode]);
 
     },
 
@@ -948,7 +948,7 @@ tywx.TuyooSDK = {
 
         if(!gameid || !cloudid || !userid){
 
-            tywx.LOGE('getUserFeature', 'Error: Params Error, Please Check!');
+            FZ.LOGE('getUserFeature', 'Error: Params Error, Please Check!');
         }
         var _url = 'https://analy.ywdier.com/';
 
@@ -975,15 +975,15 @@ tywx.TuyooSDK = {
             success : function (res) {
 
                 if(200 == res.status) {
-                    tywx.NotificationCenter.trigger(tywx.EventType.GET_USERFEATURE_INFO_SUCCESS, res.data);
+                    FZ.NotificationCenter.trigger(FZ.EventType.GET_USERFEATURE_INFO_SUCCESS, res.data);
                     successCallback && successCallback(res.data);
                 }else{
-                    tywx.NotificationCenter.trigger(tywx.EventType.GET_USERFEATURE_INFO_FAIL);
+                    FZ.NotificationCenter.trigger(FZ.EventType.GET_USERFEATURE_INFO_FAIL);
                     failCallBack && failCallBack();
                 }
             },
             fail : function (res) {
-                tywx.NotificationCenter.trigger(tywx.EventType.GET_USERFEATURE_INFO_FAIL);
+                FZ.NotificationCenter.trigger(FZ.EventType.GET_USERFEATURE_INFO_FAIL);
                 failCallBack && failCallBack();
             }
         });
@@ -993,51 +993,51 @@ tywx.TuyooSDK = {
     //-------------------------------------------------------------
 }
 
-tywx.WechatInterfaceInit = function() {
+FZ.WechatInterfaceInit = function() {
     try {
-        if(tywx.IsWechatPlatform()) {
+        if(FZ.IsWechatPlatform()) {
             /**
              * 小程序回到前台,具体逻辑自己实现
              */
             wx.onShow(function (result) {
                 // {"0":{"scene":1044,"shareTicket":"beecdf9e-e881-492c-8a3f-a7d8c54dfcdb","query":{}}}  (从后台切到前台才有shareTicket,启动时没有)
-                tywx.LOGE('', "+++++++++++++++++onShow+++++++++++++++++"+JSON.stringify(result));
+                FZ.LOGE('', "+++++++++++++++++onShow+++++++++++++++++"+JSON.stringify(result));
                 //取相关参数
                 var scene = result.scene;
                 var query = result.query;
                 var scenePath = '';
-                tywx.showScene = scene;
-                tywx.showQuery = query;
+                FZ.showScene = scene;
+                FZ.showQuery = query;
                 //来源处理
-                tywx.UserInfo.scene_id = scene;
-                tywx.UserInfo.scene_param = query.from || "";
-                tywx.UserInfo.invite_id = query.inviteCode || 0;
-                tywx.StateInfo.isOnForeground = true;
-                tywx.NotificationCenter.trigger(tywx.EventType.GAME_SHOW, result);
-                var hasUUID = tywx.Util.checkLocalUUID();
+                FZ.UserInfo.scene_id = scene;
+                FZ.UserInfo.scene_param = query.from || "";
+                FZ.UserInfo.invite_id = query.inviteCode || 0;
+                FZ.StateInfo.isOnForeground = true;
+                FZ.NotificationCenter.trigger(FZ.EventType.GAME_SHOW, result);
+                var hasUUID = FZ.Util.checkLocalUUID();
                 var oldUserFlag = hasUUID ? 1 : 0;
                 if (query && query.gdt_vid && query.weixinadinfo) {
                     //从广点通广告跳过来的，from的开头加入gdt标识区分
                     var from = "gdt." + query.weixinadinfo;
-                    tywx.UserInfo.scene_param = from;
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeUserFrom,[scene, from, oldUserFlag]);
+                    FZ.UserInfo.scene_param = from;
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeUserFrom,[scene, from, oldUserFlag]);
                 }
                 else if(query && query.sourceCode) {
                     if(scene == 1088){
                         //从小程序动态消息推送进入，该场景为"点击用户分享卡片进入游戏注册时，param01为场景值，param02和param03分别代表分享点id和分享图文id"
-                        tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeUserFrom,[scene, query.inviteCode, query.sourceCode, query.imageType, query.entryType, oldUserFlag])
+                        FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeUserFrom,[scene, query.inviteCode, query.sourceCode, query.imageType, query.entryType, oldUserFlag])
                     }else {
                         //从小程序消息卡片中点入,该场景为"点击用户分享卡片进入游戏注册时，分享用户的user_id直接当做场景参数放在param02，param03和param04分别代表分享点id和分享图文id"
                         //var query = "inviteCode="+ty.UserInfo.userId+"&sourceCode="+type +"&imageType="+imageMap.imageType+"&inviteName="+ty.UserInfo.userName;
-                        tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeUserFrom,[scene, query.inviteCode, query.sourceCode, query.imageType, "CardActive", oldUserFlag,query.template_type,query.fun_type]);
+                        FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeUserFrom,[scene, query.inviteCode, query.sourceCode, query.imageType, "CardActive", oldUserFlag,query.template_type,query.fun_type]);
                     }
-                    tywx.UserInfo.FromShareCard = true;
-                    if(tywx.SystemInfo.isDownZip == true){
-                        tywx.SystemInfo.isDownZip = false;
-                        tywx.BiLog.clickStat(tywx.clickStatEventType.downZipStart,[]); 
+                    FZ.UserInfo.FromShareCard = true;
+                    if(FZ.SystemInfo.isDownZip == true){
+                        FZ.SystemInfo.isDownZip = false;
+                        FZ.BiLog.clickStat(FZ.clickStatEventType.downZipStart,[]); 
                     }
                 } else {
-                    if(tywx.Util.isSceneQrCode(scene)) {
+                    if(FZ.Util.isSceneQrCode(scene)) {
                         //从小程序码进入,相关见文档https://developers.weixin.qq.com/minigame/dev/tutorial/open-ability/qrcode.html
                         if (query.hasOwnProperty('scene')){
                             scenePath = query.scene;
@@ -1046,51 +1046,51 @@ tywx.WechatInterfaceInit = function() {
                         }
                         scenePath.replace(".html", "");     //生成时可能会在path后面添加.html
                         scenePath = decodeURIComponent(scenePath);
-                        tywx.UserInfo.scene_param = scenePath;
-                        tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeUserFrom,[scene, scenePath, oldUserFlag]);
+                        FZ.UserInfo.scene_param = scenePath;
+                        FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeUserFrom,[scene, scenePath, oldUserFlag]);
                     } else {
                         //场景值和场景参数分别记录到可选参数param01和param02当中，如param01=1058，param02=tuyouqipai
                         //场景参数由项目组接入推广渠道时配置，如公众号dacihua、tuyouqipai，二维码填写企业或个人标识
-                        tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeUserFrom,[scene, query.from, oldUserFlag]);
+                        FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeUserFrom,[scene, query.from, oldUserFlag]);
                     }
                 }
-                tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeOnShowTimeStampSubmit,[tywx.SystemInfo.tywxVersion]);
-                tywx.TuyooSDK.login();
-                if(tywx.SystemInfo.openLocalRecord){
-                    setTimeout(tywx.TuyooSDK.processLocalRecord, 2000);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeOnShowTimeStampSubmit,[FZ.SystemInfo.FZVersion]);
+                FZ.TuyooSDK.login();
+                if(FZ.SystemInfo.openLocalRecord){
+                    setTimeout(FZ.TuyooSDK.processLocalRecord, 2000);
                 }
 
-                tywx.AdManager && tywx.AdManager.onForeGround && tywx.AdManager.onForeGround();
+                FZ.AdManager && FZ.AdManager.onForeGround && FZ.AdManager.onForeGround();
             });
 
             /**
              * 小程序进入后台
              */
             wx.onHide(function () {
-                tywx.LOGE('',"+++++++++++++++++onHide+++++++++++++++++");
-                tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeOnHideTimeStampSubmit,[]);
-                tywx.UserInfo.scene_id = 0;
-                tywx.StateInfo.isOnForeground = false;
-                tywx.NotificationCenter.trigger(tywx.EventType.GAME_HIDE);
-                // tywx.TCPClient.close();
+                FZ.LOGE('',"+++++++++++++++++onHide+++++++++++++++++");
+                FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeOnHideTimeStampSubmit,[]);
+                FZ.UserInfo.scene_id = 0;
+                FZ.StateInfo.isOnForeground = false;
+                FZ.NotificationCenter.trigger(FZ.EventType.GAME_HIDE);
+                // FZ.TCPClient.close();
 
-                if(tywx.SystemInfo.openLocalRecord){
-                    tywx.TuyooSDK.writeBackLocolRecord();
+                if(FZ.SystemInfo.openLocalRecord){
+                    FZ.TuyooSDK.writeBackLocolRecord();
                 }
             });
 
             var getNetSuccess = function (res) {
                 if (res.hasOwnProperty('isConnected')){
-                    tywx.StateInfo.networkConnected = res.isConnected;
+                    FZ.StateInfo.networkConnected = res.isConnected;
                 }
                 else if (res.hasOwnProperty('errMsg')){
-                    tywx.StateInfo.networkConnected = res.errMsg == 'getNetworkType:ok'
+                    FZ.StateInfo.networkConnected = res.errMsg == 'getNetworkType:ok'
                 }
                 else{
-                    tywx.StateInfo.networkConnected = res.networkType != 'none';
+                    FZ.StateInfo.networkConnected = res.networkType != 'none';
                 }
 
-                tywx.StateInfo.networkType = res.networkType;//wifi,2g,3g,4g,none,unknown
+                FZ.StateInfo.networkType = res.networkType;//wifi,2g,3g,4g,none,unknown
             };
 
             wx.getNetworkType({
@@ -1101,17 +1101,17 @@ tywx.WechatInterfaceInit = function() {
 
             wx.onError(function (res) {
                 var d = new Date();
-                var errMsg = 'userId:' + tywx.UserInfo.userId + 'time:'+ d.toDateString() + ' ' + d.toTimeString() +';' + res.message;
-                tywx.BiLog.uploadLogTimely(errMsg);
+                var errMsg = 'userId:' + FZ.UserInfo.userId + 'time:'+ d.toDateString() + ' ' + d.toTimeString() +';' + res.message;
+                FZ.BiLog.uploadLogTimely(errMsg);
             });
         }else if(navigator.platform=='android'){
-            tywx.TuyooSDK.login();
+            FZ.TuyooSDK.login();
         }
     }
     catch(err) {
-        tywx.LOGE("error:", "tywx.WechatInterfaceInit——" + JSON.stringify(err));
+        FZ.LOGE("error:", "FZ.WechatInterfaceInit——" + JSON.stringify(err));
     }
 };
 
-tywx.WechatInterfaceInit();
+FZ.WechatInterfaceInit();
 

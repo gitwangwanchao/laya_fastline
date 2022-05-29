@@ -143,7 +143,7 @@ namespace game.view
                     Laya.timer.once(this.stopTime,this,this.slideListJcdlRightAni);
                 }
 
-                if(tywx.UserInfo.systemType == 2)
+                if(FZ.UserInfo.systemType == 2)
                 {
                     if(FZUtils.isNullOrEmpty(this.defaultListJcdlY))
                     {
@@ -195,7 +195,7 @@ namespace game.view
                 this.scene.JcdlPopUpBox.visible = false;
                 this.JcdlResidentList();
             }else if( this.jcdlType == 4){  //弹窗交叉导流
-                tywx.BiLog.clickStat(tywx.clickStatEventType.moreGameOpen,[]);  //成功打开试玩游戏界面打点
+                FZ.BiLog.clickStat(FZ.clickStatEventType.moreGameOpen,[]);  //成功打开试玩游戏界面打点
                 FZDebug.D("FZMergeDateManager.instance.getPopJcdlCfg() = "+ JSON.stringify(FZMergeDateManager.instance.getPopJcdlCfg()));
                 this.scene.listPopJcdl.vScrollBarSkin = "";
                 this.scene.listPopJcdl.array = FZMergeDateManager.instance.getPopJcdlCfg();
@@ -241,7 +241,7 @@ namespace game.view
                         getType: 1
                     }
                     FZUIManager.instance.createUI(FZUIManager.UI_CongratulationGet, param);  //获得奖励弹窗
-                    tywx.BiLog.clickStat(tywx.clickStatEventType.moreGameSuccess,[]);  //成功试玩并领取奖励打点
+                    FZ.BiLog.clickStat(FZ.clickStatEventType.moreGameSuccess,[]);  //成功试玩并领取奖励打点
                     
                     var dayFresh = FZSaveDateManager.instance.getItemFromLocalStorage("MORE_GAME_DAY_FRESH", "1");
                     if (FZMergeDateManager.instance.getPopJcdlCfg().length == 0) {
@@ -457,7 +457,7 @@ namespace game.view
 				let togame = jsonData.togame
 				let skip_type = jsonData.icon_skip_type
 				// let topath = jsonData.path
-				let topath = `${jsonData.path}_dev_${tywx.BiLog.device_id}_${tywx.UserInfo.userId}`;
+				let topath = `${jsonData.path}_dev_${FZ.BiLog.device_id}_${FZ.UserInfo.userId}`;
 				if (jsonData.type == 1) {
 					topath = `${jsonData.path}`;
 				}
@@ -483,7 +483,7 @@ namespace game.view
 							success: function (res)
 							{
 
-								tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickDirectToMiniGameSuccess, bi_paramlist);
+								FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickDirectToMiniGameSuccess, bi_paramlist);
 
 								FZDebug.log('wx.navigateToMiniProgram success');
                                 FZDebug.log(res);
@@ -494,7 +494,7 @@ namespace game.view
 							},
 							fail: function (res)
 							{
-								tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickDirectToMiniGameFail, bi_paramlist);
+								FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickDirectToMiniGameFail, bi_paramlist);
 								FZDebug.log('wx.navigateToMiniProgram fail');
                                 FZDebug.log(res);
                                 FZMergeDateManager.instance.toOtherGame = false;
@@ -519,7 +519,7 @@ namespace game.view
 							},
 							success: function (res)
 							{
-								tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickDirectToMiniGameSuccess, bi_paramlist);
+								FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickDirectToMiniGameSuccess, bi_paramlist);
 								FZDebug.log('wx.navigateToMiniProgram success');
                                 FZDebug.log(res);
                                 FZMergeDateManager.instance.toOtherGame = true;  //记录从弹窗导流进入其他游戏的状态
@@ -529,7 +529,7 @@ namespace game.view
 							},
 							fail: function (res)
 							{
-								tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickDirectToMiniGameFail, bi_paramlist);
+								FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickDirectToMiniGameFail, bi_paramlist);
 								FZDebug.log('wx.navigateToMiniProgram fail');
                                 FZDebug.log(res);
                                 FZMergeDateManager.instance.toOtherGame = false;
@@ -537,7 +537,7 @@ namespace game.view
 							},
 							complete: function (res)
 							{
-								tywx.AdManager.adNodeObj.resetBtnIcon();
+								FZ.AdManager.adNodeObj.resetBtnIcon();
 								FZDebug.log('navigateToMiniProgram ==== complete');
 							}
 						});
@@ -556,7 +556,7 @@ namespace game.view
 					return;
 				}
 
-				tywx.BiLog.clickStat(tywx.clickStatEventType.clickStatEventTypeClickShowQRCode, bi_paramlist);
+				FZ.BiLog.clickStat(FZ.clickStatEventType.clickStatEventTypeClickShowQRCode, bi_paramlist);
 
 				if (Laya.Browser.onMiniGame)
 				{

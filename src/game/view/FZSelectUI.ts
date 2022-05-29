@@ -228,7 +228,7 @@ namespace game.view
                 // this.scene.lbl_dfzd_sh_value.text = Math.ceil(weaponInfo.sDps/(1000/weaponInfo.fireFrequency)/weaponInfo.bulletNumber) + "";
             }
 
-            tywx.BiLog.clickStat(tywx.clickStatEventType.goToTheAutoRacingInterface,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.goToTheAutoRacingInterface,[]);
         }
 
         private createCarsList () {
@@ -331,7 +331,7 @@ namespace game.view
             let selectLevel = this.listCarData[this.curSelectCarIndex].level;
             FZMergeDateManager.instance.setCarUsedLevel(selectLevel);
             FZUIManager.instance.removeUI(FZUIManager.UI_SelectView);
-            tywx.BiLog.clickStat(tywx.clickStatEventType.clickTheSelectInRacingInterface,[]);
+            FZ.BiLog.clickStat(FZ.clickStatEventType.clickTheSelectInRacingInterface,[]);
         }
         /**
          * 关闭界面

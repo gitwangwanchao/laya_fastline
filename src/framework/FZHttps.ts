@@ -40,7 +40,7 @@ namespace fastline.framework
                 return this;
             }
             let sendStr = this.parseSendMsg(args);
-            url = tywx.SystemInfo.loginUrl + "api/quanmzc/" + url + "?" + sendStr;
+            url = FZ.SystemInfo.loginUrl + "api/quanmzc/" + url + "?" + sendStr;
             this.httpRequest.once(Laya.Event.COMPLETE, this, this.onHttpRequestComplete);
             this.httpRequest.once(Laya.Event.ERROR, this, this.onHttpRequestError);
             this.httpRequest.send(url, null, 'get', 'text');
@@ -51,7 +51,7 @@ namespace fastline.framework
         {   
             data = this.getSendInfo(data);
             let sendStr = this.parseSendMsg(data);
-            url = tywx.SystemInfo.loginUrl + "api/quanmzc/" + url + sendStr;
+            url = FZ.SystemInfo.loginUrl + "api/quanmzc/" + url + sendStr;
             this.callback = callback;
             this.httpRequest.once(Laya.Event.COMPLETE, this, this.onHttpRequestComplete);
             this.httpRequest.once(Laya.Event.ERROR, this, this.onHttpRequestError);
@@ -105,9 +105,9 @@ namespace fastline.framework
 
         private getSendInfo(data){
             let _p = {
-                gameId   : tywx.SystemInfo.gameId,
-                userId   : tywx.UserInfo.userId || 123,
-                clientId : tywx.SystemInfo.clientId,
+                gameId   : FZ.SystemInfo.gameId,
+                userId   : FZ.UserInfo.userId || 123,
+                clientId : FZ.SystemInfo.clientId,
             }
             if(data && typeof data != "function"){
                 let keys = Object.keys(data);

@@ -19,7 +19,7 @@ let RequestMsg = function (url, params, cb, times) {
 };
 
 RequestMsg.prototype.requestMsgH5 = function () {
-    tywx.HttpUtil.httpGetForH5(this.url, this.params, (err, state, data) => {
+    FZ.HttpUtil.httpGetForH5(this.url, this.params, (err, state, data) => {
         if (err || state != 200) {
             if (--this.times > 0) {
                 setTimeout(() => {
@@ -33,7 +33,7 @@ RequestMsg.prototype.requestMsgH5 = function () {
 }
 
 
-var httpUtil = tywx.HttpUtil || {};
+var httpUtil = FZ.HttpUtil || {};
 
 /************************新添加接口***************************/
 
@@ -132,7 +132,7 @@ httpUtil.httpPostForH5 = function (url, params, callback, async) {
             err = false;
 
             var response = xhr.responseText;
-            // tywx.LOGD("tywx.HttpUtil", "response msg: ", response);
+            // FZ.LOGD("FZ.HttpUtil", "response msg: ", response);
 
             if (!response) {
                 callback && callback(err, null);
@@ -140,13 +140,13 @@ httpUtil.httpPostForH5 = function (url, params, callback, async) {
                 callback && callback(err, JSON.parse(response));
             }
         } else if (xhr.status >= 400) {
-            // tywx.LOGD("tywx.HttpUtil", "xhr readyState: " + xhr.readyState + " status: " + xhr.status);
+            // FZ.LOGD("FZ.HttpUtil", "xhr readyState: " + xhr.readyState + " status: " + xhr.status);
         }
     };
 
     params = params || {};
     var sendStr = this.parseSendMsg(params);
-    tywx.LOGD("send msg: ", url, sendStr);
+    FZ.LOGD("send msg: ", url, sendStr);
 
     try {
         xhr.send(sendStr);
@@ -157,13 +157,13 @@ httpUtil.httpPostForH5 = function (url, params, callback, async) {
 
 httpUtil.getShareMenuActivityId = function (keyid, succcallback, failcallback) {
     let _p = {
-        gameId: tywx.SystemInfo.gameId,
-        userId: tywx.UserInfo.userId,
+        gameId: FZ.SystemInfo.gameId,
+        userId: FZ.UserInfo.userId,
         index: keyid,
-        clientId: tywx.SystemInfo.clientId
+        clientId: FZ.SystemInfo.clientId
     };
 
-    let _url = tywx.SystemInfo.loginUrl + "api/bumperio/wx/getWXActivityId";
+    let _url = FZ.SystemInfo.loginUrl + "api/bumperio/wx/getWXActivityId";
     httpUtil.httpGetForH5(
         _url,
         _p,
@@ -187,9 +187,9 @@ httpUtil.getShareMenuActivityId = function (keyid, succcallback, failcallback) {
 */
 httpUtil.requestMsgH5 =  function(url, params, cb, times){
    let _p = {
-       gameId      :   tywx.SystemInfo.gameId,
-       userId      :   tywx.UserInfo.userId,
-       clientId    :   tywx.SystemInfo.clientId
+       gameId      :   FZ.SystemInfo.gameId,
+       userId      :   FZ.UserInfo.userId,
+       clientId    :   FZ.SystemInfo.clientId
    };
 
    if(cb == undefined){
@@ -200,6 +200,6 @@ httpUtil.requestMsgH5 =  function(url, params, cb, times){
        keys.forEach(v=>_p[v]= params[v]);
    }
 
-   let _url = tywx.SystemInfo.loginUrl + "api/shootmerge/" + url;
+   let _url = FZ.SystemInfo.loginUrl + "api/shootmerge/" + url;
    new RequestMsg(_url,_p,cb,times);
 };

@@ -106,8 +106,8 @@ namespace game.view
                     // this.scene.sign_bg.y += 70;
                 });
             }
-            if(tywx.clickStatEventType.openSignPanel){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.openSignPanel,[]);
+            if(FZ.clickStatEventType.openSignPanel){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.openSignPanel,[]);
             }
 
             // 延迟 "普通领取" 出现  = 签到 - ( 延迟出现 )
@@ -229,10 +229,10 @@ namespace game.view
             if (this.scene == null) {
                 return;
             }
-            if(tag == "free"&&tywx.clickStatEventType.normalSignReward){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.normalSignReward,[]);
-            }else if(tag == "video"&&tywx.clickStatEventType.doubleSignReward){
-                tywx.BiLog.clickStat(tywx.clickStatEventType.doubleSignReward,[]);
+            if(tag == "free"&&FZ.clickStatEventType.normalSignReward){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.normalSignReward,[]);
+            }else if(tag == "video"&&FZ.clickStatEventType.doubleSignReward){
+                FZ.BiLog.clickStat(FZ.clickStatEventType.doubleSignReward,[]);
             }
 
             this.scene.btn_get_free.visible = false;
@@ -285,12 +285,12 @@ namespace game.view
             if(tag == "free")
             {
                 FZGameData.instance.playResFlyAni(this.scene[lbl_reward_count],this.scene.title_diamond,{type: 2,countType: 0}, this.OpenGetWard.bind(this));
-                tywx.BiLog.clickStat(tywx.clickStatEventType.successComDailyCheck,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.successComDailyCheck,[]);
             }
             else
             {
                 FZGameData.instance.playResFlyAni(this.scene[lbl_reward_count],this.scene.title_diamond,{type: 2,countType: 1}, this.OpenGetWard.bind(this));
-                tywx.BiLog.clickStat(tywx.clickStatEventType.successDoubleDailyCheck,[]);
+                FZ.BiLog.clickStat(FZ.clickStatEventType.successDoubleDailyCheck,[]);
 
             }
         }   

@@ -4,7 +4,7 @@
 
 
 //新的json打点格式,暂未启用
-tywx.BiStatLog = {
+FZ.BiStatLog = {
     BiStatInfo: null,
     init: function() {
         this.BiStatInfo = {};
@@ -20,23 +20,23 @@ tywx.BiStatLog = {
     },
 
     getTyInfo: function() {
-        this.BiStatInfo.cloudId = tywx.SystemInfo.cloudId;
-        this.BiStatInfo.gameId = tywx.SystemInfo.gameId;
-        this.BiStatInfo.appId = tywx.SystemInfo.appId;
-        this.BiStatInfo.clientId = tywx.SystemInfo.clientId;
-        this.BiStatInfo.intClientId = tywx.SystemInfo.intClientId;
-        this.BiStatInfo.userId = tywx.UserInfo.userId;
-        this.BiStatInfo.uuid = tywx.Util.getLocalUUID();
-        this.BiStatInfo.gameVersion = tywx.SystemInfo.version;
-        this.BiStatInfo.wxAppId = tywx.SystemInfo.wxAppId;
+        this.BiStatInfo.cloudId = FZ.SystemInfo.cloudId;
+        this.BiStatInfo.gameId = FZ.SystemInfo.gameId;
+        this.BiStatInfo.appId = FZ.SystemInfo.appId;
+        this.BiStatInfo.clientId = FZ.SystemInfo.clientId;
+        this.BiStatInfo.intClientId = FZ.SystemInfo.intClientId;
+        this.BiStatInfo.userId = FZ.UserInfo.userId;
+        this.BiStatInfo.uuid = FZ.Util.getLocalUUID();
+        this.BiStatInfo.gameVersion = FZ.SystemInfo.version;
+        this.BiStatInfo.wxAppId = FZ.SystemInfo.wxAppId;
     },
 
     getUserId: function() {
-        this.BiStatInfo.userId = tywx.UserInfo.userId;
+        this.BiStatInfo.userId = FZ.UserInfo.userId;
     },
 
     getNetworkType: function() {
-        this.BiStatInfo.networkType = tywx.StateInfo.networkType;
+        this.BiStatInfo.networkType = FZ.StateInfo.networkType;
     },
 
     getLocationInfo: function(callback) {
@@ -88,18 +88,18 @@ tywx.BiStatLog = {
         this.BiStatInfo.eventTime = Date.now().valueOf();
 
         var cb = function() {
-            var eventStr = JSON.stringify(tywx.BiStatLog.BiStatInfo);
+            var eventStr = JSON.stringify(FZ.BiStatLog.BiStatInfo);
             var header = ['Content-Type:text/plain'];
             var configObj = {
-                'url': tywx.SystemInfo.biLogServer,
+                'url': FZ.SystemInfo.biLogServer,
                 'headers': header,
                 'postData': eventStr,
             };
-            tywx.HttpUtil.httpPost(configObj);
+            FZ.HttpUtil.httpPost(configObj);
         };
 
         this.getLocationInfo(cb);
     },
 };
 
-//tywx.BiStatLog.init();
+//FZ.BiStatLog.init();
